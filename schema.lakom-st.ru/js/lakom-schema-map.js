@@ -1865,10 +1865,18 @@
         title.textContent = ru(n.title);
         body.innerHTML = "";
         if (n.note) {
-            var p = document.createElement("p");
-            p.className = "sm-note-text";
-            p.textContent = ru(n.note);
-            body.appendChild(p);
+            ru(n.note).split(/\n\s*\n/).forEach(function (section) {
+                var p = document.createElement("p");
+                p.className = "sm-note-text";
+                var lines = section.split("\n");
+                if (lines.length > 1 && /:$/.test(lines[0])) {
+                    var heading = document.createElement("strong");
+                    heading.textContent = lines.shift();
+                    p.appendChild(heading);
+                    p.appendChild(document.createTextNode("\n" + lines.join("\n")));
+                } else p.textContent = section;
+                body.appendChild(p);
+            });
         }
         if (n.review_status) {
             var approval = document.createElement("p");
