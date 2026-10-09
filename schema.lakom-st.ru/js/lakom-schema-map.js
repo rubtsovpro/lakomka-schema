@@ -1,5 +1,6 @@
 (function () {
     var KIND = {
+        event: "таймер",
         check: "проверка",
         route: "маршрут",
         task: "задание",

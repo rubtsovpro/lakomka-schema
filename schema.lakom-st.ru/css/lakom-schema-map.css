@@ -792,3 +792,5 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
 
 /* Keep buttons stationary while the pointer enters a card. */
 .sm-topic:hover { transform: none; }
+
+.sm-kind-event { border-left: 4px solid #c48b45; }
