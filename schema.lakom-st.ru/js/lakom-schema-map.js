@@ -3,6 +3,7 @@
         check: "проверка",
         route: "маршрут",
         task: "задание",
+        screen: "экран",
         onec: "1С",
         result: "факт",
         open: "не ясно",
@@ -13,6 +14,9 @@
         var o = { id: id, title: title, kind: kind || "check", children: children || [] };
         if (extra) {
             if (extra.note) o.note = extra.note;
+            ["screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+                if (extra[key] !== undefined) o[key] = extra[key];
+            });
             if (extra.steps) o.steps = extra.steps;
             if (extra.side) o.side = extra.side;
             if (extra.links) o.links = extra.links;
@@ -26,6 +30,9 @@
         if (n.edge) extra.edge = n.edge;
         if (n.links && n.links.length) extra.links = n.links.slice();
         if (n.notes) extra.note = n.notes;
+        ["screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+            if (n[key] !== undefined) extra[key] = n[key];
+        });
         return N(n.id, n.title, n.kind, (n.children || []).map(fromExport), extra);
     }
     var SCHEMA = window.LAKOM_SCHEMA_EXPORT;
@@ -216,7 +223,7 @@
         if (!rec || !rec.parent || !rec.parent.children) return;
         rec.parent.children = rec.parent.children.filter(function (c) { return c.id !== node.id; });
     }
-    if ((SCHEMA.relationships || []).length) {
+    if (!SCHEMA.preserveTopology && (SCHEMA.relationships || []).length) {
     (function rehomeForks() {
         var bySrc = {};
         (SCHEMA.relationships || []).forEach(function (r) {
@@ -275,6 +282,9 @@
             children: (n.children || []).map(cloneTree)
         };
         if (n.note) o.note = n.note;
+        ["screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+            if (n[key] !== undefined) o[key] = n[key];
+        });
         if (n.steps) o.steps = n.steps.slice();
         if (n.side) o.side = n.side;
         if (n.edge) o.edge = n.edge;
@@ -1289,15 +1299,32 @@
     tag(["ship", "ship-rest", "resale-ship", "buy-ship", "gp-full-rdy", "plain-rdy"], ["waybill", "shipment"]);
     tag(["cp-end", "cm-end", "kit-end"], ["transfer", "waybill", "shipment"]);
 
+    var heightCache = {};
     function nodeH(n) {
-        var title = ru(n.title) || "";
-        var inner = nodeW(n) - 24;
-        var chars = Math.max(14, Math.floor(inner / 7.4));
-        var lines = Math.ceil(title.length / chars) || 1;
-        var h = 28 + lines * 17;
-        if (n.id !== "root") h += 28;
-        if (n.id === "root") h += 16;
-        return Math.max(52, h);
+        // Measure the same card typography used by draw(), including wrapped task text.
+        var key = JSON.stringify([n.id === "root", n.kind, ru(n.title), ru(n.screen_task || ""), n.review_status ? approvalText(n) : ""]);
+        if (heightCache[key]) return heightCache[key];
+        var probe = document.createElement("div");
+        probe.className = "sm-topic sm-kind-" + n.kind + (n.id === "root" ? " is-root" : "");
+        probe.style.cssText = "visibility:hidden;pointer-events:none;left:-10000px;top:0;width:" + nodeW(n) + "px;height:auto;";
+        if (n.id !== "root") {
+            var kind = document.createElement("span");
+            kind.className = "sm-k";
+            kind.textContent = KIND[n.kind] || "";
+            probe.appendChild(kind);
+        }
+        [["sm-title", ru(n.title)], ["sm-screen-task", n.screen_task ? "Задание: " + ru(n.screen_task) : ""], ["sm-approval", n.review_status ? approvalText(n) : ""]].forEach(function (part) {
+            if (!part[1]) return;
+            var span = document.createElement("span");
+            span.className = part[0];
+            span.textContent = part[1];
+            probe.appendChild(span);
+        });
+        document.body.appendChild(probe);
+        var height = Math.max(52, Math.ceil(probe.getBoundingClientRect().height) + 2);
+        probe.remove();
+        heightCache[key] = height;
+        return height;
     }
     function nodeW(n) {
         if (n.id === "root") return 220;
@@ -1513,7 +1540,7 @@
 
     function colorFor(n) {
         if (n.id === "root") return "#0f766e";
-        var map = { check: "#ca8a04", route: "#ea580c", task: "#3b82f6", onec: "#64748b", result: "#16a34a", open: "#dc2626", entry: "#0f766e" };
+        var map = { check: "#ca8a04", route: "#ea580c", task: "#3b82f6", screen: "#0f766e", onec: "#64748b", result: "#16a34a", open: "#dc2626", entry: "#0f766e" };
         return map[n.kind] || "#999";
     }
 
@@ -1613,6 +1640,18 @@
                 select(n.id);
             });
             el.appendChild(titleEl);
+            if (n.screen_task) {
+                var taskEl = document.createElement("span");
+                taskEl.className = "sm-screen-task";
+                taskEl.textContent = "Задание: " + ru(n.screen_task);
+                el.appendChild(taskEl);
+            }
+            if (n.review_status) {
+                var approvalEl = document.createElement("span");
+                approvalEl.className = "sm-approval";
+                approvalEl.textContent = approvalText(n);
+                el.appendChild(approvalEl);
+            }
             if (n.note || (n.steps && n.steps.length)) {
                 var mark = document.createElement("button");
                 mark.type = "button";
@@ -1810,6 +1849,13 @@
         }, 0);
     }
 
+    function approvalText(n) {
+        var labels = { approved: "Процесс утверждён", partial: "Процесс частично утверждён", pending: "Требует утверждения" };
+        var text = labels[n.review_status] || "Требует утверждения";
+        if (n.ui_review_status === "pending" && n.review_status !== "pending") text += " · экран на согласовании";
+        return text;
+    }
+
     function showNote(n) {
         if (!n || (!n.note && !(n.steps && n.steps.length))) return;
         var title = document.getElementById("smNoteTitle");
@@ -1820,8 +1866,15 @@
         body.innerHTML = "";
         if (n.note) {
             var p = document.createElement("p");
+            p.className = "sm-note-text";
             p.textContent = ru(n.note);
             body.appendChild(p);
+        }
+        if (n.review_status) {
+            var approval = document.createElement("p");
+            approval.textContent = approvalText(n) + (n.approved_scope ? "\nУтверждено: " + n.approved_scope : "");
+            approval.className = "sm-note-text";
+            body.appendChild(approval);
         }
         if (n.steps && n.steps.length) {
             var ul = document.createElement("ul");

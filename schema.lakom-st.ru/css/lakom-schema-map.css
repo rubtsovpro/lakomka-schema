@@ -780,3 +780,15 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
 @media (max-width: 900px) {
     .sm-page { height: 100vh; margin: 0; }
 }
+
+/* Screen name and the concrete assignment remain separate on the same card. */
+.sm-kind-screen { border-left: 4px solid #0f766e; }
+.sm-screen-task { display: block; margin-top: 8px; font-weight: 500; overflow-wrap: anywhere; }
+.sm-approval { display: block; margin-top: 6px; font-size: 10px; font-weight: 400; color: #69736f; }
+.sm-note-box #smNoteBody .sm-note-text { white-space: pre-wrap; }
+
+.sm-has-note { position: absolute; right: 12px; left: auto; bottom: 10px; margin-left: 0; }
+.sm-topic.is-root .sm-approval { color: #d5eee7; }
+
+/* Keep buttons stationary while the pointer enters a card. */
+.sm-topic:hover { transform: none; }
