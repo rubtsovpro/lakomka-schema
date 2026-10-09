@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+REPO=/var/www/google/repos/lakomka-schema.git
+TMP=$(mktemp -d)
+WEBROOT=/var/www/schema.lakom-st.ru
+trap 'rm -rf "$TMP"' EXIT
+GIT_WORK_TREE="$TMP" git --git-dir="$REPO" checkout -f main
+if [ ! -d "$TMP/schema.lakom-st.ru" ]; then
+  echo "schema.lakom-st.ru missing in tree" >&2
+  exit 1
+fi
+mkdir -p "$WEBROOT"
+rsync -a --delete \
+  --exclude 'data/*.json' \
+  "$TMP/schema.lakom-st.ru/" "$WEBROOT/"
+chown -R www-data:www-data "$WEBROOT" || true
+echo "deployed schema.lakom-st.ru -> $WEBROOT"
