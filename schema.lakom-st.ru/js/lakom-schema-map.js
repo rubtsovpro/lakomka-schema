@@ -15,7 +15,7 @@
         var o = { id: id, title: title, kind: kind || "check", children: children || [] };
         if (extra) {
             if (extra.note) o.note = extra.note;
-            ["screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+            ["approval_badge_visible", "screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
                 if (extra[key] !== undefined) o[key] = extra[key];
             });
             if (extra.steps) o.steps = extra.steps;
@@ -31,7 +31,7 @@
         if (n.edge) extra.edge = n.edge;
         if (n.links && n.links.length) extra.links = n.links.slice();
         if (n.notes) extra.note = n.notes;
-        ["screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+        ["approval_badge_visible", "screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
             if (n[key] !== undefined) extra[key] = n[key];
         });
         return N(n.id, n.title, n.kind, (n.children || []).map(fromExport), extra);
@@ -283,7 +283,7 @@
             children: (n.children || []).map(cloneTree)
         };
         if (n.note) o.note = n.note;
-        ["screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+        ["approval_badge_visible", "screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
             if (n[key] !== undefined) o[key] = n[key];
         });
         if (n.steps) o.steps = n.steps.slice();
@@ -1303,7 +1303,7 @@
     var heightCache = {};
     function nodeH(n) {
         // Measure the same card typography used by draw(), including wrapped task text.
-        var key = JSON.stringify([n.id === "root", n.kind, ru(n.title), ru(n.screen_task || ""), n.review_status ? approvalText(n) : ""]);
+        var key = JSON.stringify([n.id === "root", n.kind, ru(n.title), ru(n.screen_task || ""), n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]);
         if (heightCache[key]) return heightCache[key];
         var probe = document.createElement("div");
         probe.className = "sm-topic sm-kind-" + n.kind + (n.id === "root" ? " is-root" : "");
@@ -1314,7 +1314,7 @@
             kind.textContent = KIND[n.kind] || "";
             probe.appendChild(kind);
         }
-        [["sm-title", ru(n.title)], ["sm-screen-task", n.screen_task ? "Задание: " + ru(n.screen_task) : ""], ["sm-approval", n.review_status ? approvalText(n) : ""]].forEach(function (part) {
+        [["sm-title", ru(n.title)], ["sm-screen-task", n.screen_task ? "Задание: " + ru(n.screen_task) : ""], ["sm-approval", n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]].forEach(function (part) {
             if (!part[1]) return;
             var span = document.createElement("span");
             span.className = part[0];
@@ -1647,7 +1647,7 @@
                 taskEl.textContent = "Задание: " + ru(n.screen_task);
                 el.appendChild(taskEl);
             }
-            if (n.review_status) {
+            if (n.kind === "screen" && n.review_status && n.approval_badge_visible !== false) {
                 var approvalEl = document.createElement("span");
                 approvalEl.className = "sm-approval";
                 approvalEl.textContent = approvalText(n);
@@ -1879,7 +1879,7 @@
                 body.appendChild(p);
             });
         }
-        if (n.review_status) {
+        if (n.kind === "screen" && n.review_status && n.approval_badge_visible !== false) {
             var approval = document.createElement("p");
             approval.textContent = approvalText(n) + (n.approved_scope ? "\nУтверждено: " + n.approved_scope : "");
             approval.className = "sm-note-text";
