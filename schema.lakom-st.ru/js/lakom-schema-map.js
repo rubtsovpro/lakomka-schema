@@ -18,7 +18,7 @@
         var o = { id: id, title: title, kind: kind || "check", children: children || [] };
         if (extra) {
             if (extra.note) o.note = extra.note;
-            ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+            ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "layout_parent_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
                 if (extra[key] !== undefined) o[key] = extra[key];
             });
             if (extra.steps) o.steps = extra.steps;
@@ -34,7 +34,7 @@
         if (n.edge) extra.edge = n.edge;
         if (n.links && n.links.length) extra.links = n.links.slice();
         if (n.notes) extra.note = n.notes;
-        ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+        ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "layout_parent_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
             if (n[key] !== undefined) extra[key] = n[key];
         });
         return N(n.id, n.title, n.kind, (n.children || []).map(fromExport), extra);
@@ -246,6 +246,7 @@
                 var tgt = ALL[r.end2Id] && ALL[r.end2Id].node;
                 if (!tgt || tgt.id === src.id) return;
                 if (isAncestor(tgt, src)) return;
+                if (tgt.layout_parent_id && tgt.layout_parent_id !== sid) return;
                 var same = sectionId(tgt.id) === sec && sec;
                 if (!same) {
                     var jumpId = (src.id + "_to_" + tgt.id).slice(0, 64);
@@ -286,7 +287,7 @@
             children: (n.children || []).map(cloneTree)
         };
         if (n.note) o.note = n.note;
-        ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+        ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "layout_parent_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
             if (n[key] !== undefined) o[key] = n[key];
         });
         if (n.steps) o.steps = n.steps.slice();

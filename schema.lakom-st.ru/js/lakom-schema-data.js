@@ -1,4 +1,4 @@
-/* Working map version: 2026-10-15-planning-options */
+/* Working map version: 2026-10-15-planning-branches */
 window.LAKOM_SCHEMA_EXPORT = {
   "rootTopic": {
     "id": "root",
@@ -5614,35 +5614,6 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                         "approval_badge_visible": false,
                                                                                         "children": [
                                                                                           {
-                                                                                            "id": "planning_no_feasible_plan",
-                                                                                            "title": "Устранить причину недопустимого плана",
-                                                                                            "kind": "stage",
-                                                                                            "notes": "Этап: Планирование.\nШаг задания T04. Экран: Планирование замеса.\n\nВ том же T04/T35 показать затронутый замес и причину: ограничения, недостаточный объём, совместимость или занятость. Планировщик меняет допустимые назначения/количества; пересчёт проверяет новый вариант. Неопределённый приоритет минимумов остаётся вопросом, а не догадкой.",
-                                                                                            "open": true,
-                                                                                            "links": [
-                                                                                              "f_230_4740"
-                                                                                            ],
-                                                                                            "edge": "Да — разделение не поможет",
-                                                                                            "approval_badge_visible": false,
-                                                                                            "screen_id": "batch_planning",
-                                                                                            "task_type_id": "T04",
-                                                                                            "task_owner_id": "f_273_5198",
-                                                                                            "process_stage": "Планирование",
-                                                                                            "ui_review_status": "pending",
-                                                                                            "approved_scope": "Задание: роль и место по подтверждённым ответам, 15.10.2026",
-                                                                                            "approval_sources": [
-                                                                                              {
-                                                                                                "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit?tab=t.c8aj3hlyz7dv",
-                                                                                                "points": [
-                                                                                                  5
-                                                                                                ],
-                                                                                                "date": "2026-10-15",
-                                                                                                "scope": "assignment role and physical place"
-                                                                                              }
-                                                                                            ],
-                                                                                            "children": []
-                                                                                          },
-                                                                                          {
                                                                                             "id": "f_273_5218",
                                                                                             "title": "Система: рассчитать допустимое разделение",
                                                                                             "kind": "system",
@@ -5677,13 +5648,53 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                 "kind": "check",
                                                                                                 "notes": "Для каждой части есть допустимая пара; масса проходит минимум и максимум, части кратны фасовке, их сумма равна подтверждённой потребности с согласованным пополнением. Если варианты исчерпаны, вернуть проблему планировщику; автоматический подбор не повторяет одинаковый вариант бесконечно.",
                                                                                                 "open": true,
-                                                                                                "links": [
-                                                                                                  "f_230_4740",
-                                                                                                  "planning_no_feasible_plan"
-                                                                                                ],
+                                                                                                "links": [],
                                                                                                 "edge": "Варианты разделения проверены",
                                                                                                 "approval_badge_visible": false,
-                                                                                                "children": []
+                                                                                                "children": [
+                                                                                                  {
+                                                                                                    "id": "planning_apply_split",
+                                                                                                    "title": "Система: применить найденное разделение",
+                                                                                                    "kind": "system",
+                                                                                                    "notes": "Сохранить найденные массы и количество частей в рассчитываемом варианте плана. Затем проверить допустимые пары и ограничения каждой части; окончательное решение подтверждает планировщик.",
+                                                                                                    "open": true,
+                                                                                                    "links": [
+                                                                                                      "f_230_4740"
+                                                                                                    ],
+                                                                                                    "edge": "Да — разделение найдено",
+                                                                                                    "children": []
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "id": "planning_no_feasible_plan",
+                                                                                                    "title": "Устранить причину недопустимого плана",
+                                                                                                    "kind": "stage",
+                                                                                                    "notes": "Этап: Планирование.\nШаг задания T04. Экран: Планирование замеса.\n\nВ том же T04/T35 показать затронутый замес и причину: ограничения, недостаточный объём, совместимость или занятость. Планировщик меняет допустимые назначения/количества; пересчёт проверяет новый вариант. Неопределённый приоритет минимумов остаётся вопросом, а не догадкой.",
+                                                                                                    "open": true,
+                                                                                                    "links": [
+                                                                                                      "f_230_4740"
+                                                                                                    ],
+                                                                                                    "edge": "Нет — показать причину планировщику",
+                                                                                                    "approval_badge_visible": false,
+                                                                                                    "screen_id": "batch_planning",
+                                                                                                    "task_type_id": "T04",
+                                                                                                    "task_owner_id": "f_273_5198",
+                                                                                                    "process_stage": "Планирование",
+                                                                                                    "layout_parent_id": "planning_split_found",
+                                                                                                    "ui_review_status": "pending",
+                                                                                                    "approved_scope": "Задание: роль и место по подтверждённым ответам, 15.10.2026",
+                                                                                                    "approval_sources": [
+                                                                                                      {
+                                                                                                        "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit?tab=t.c8aj3hlyz7dv",
+                                                                                                        "points": [
+                                                                                                          5
+                                                                                                        ],
+                                                                                                        "date": "2026-10-15",
+                                                                                                        "scope": "assignment role and physical place"
+                                                                                                      }
+                                                                                                    ],
+                                                                                                    "children": []
+                                                                                                  }
+                                                                                                ]
                                                                                               }
                                                                                             ]
                                                                                           }
@@ -11175,13 +11186,8 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "planning_split_found",
-      "end2Id": "f_230_4740",
-      "label": "Да — проверить каждую часть"
-    },
-    {
-      "end1Id": "planning_split_found",
       "end2Id": "planning_no_feasible_plan",
-      "label": "Нет — допустимого плана нет"
+      "label": "Нет — показать причину планировщику"
     },
     {
       "end1Id": "planning_no_feasible_plan",
@@ -11447,6 +11453,16 @@ window.LAKOM_SCHEMA_EXPORT = {
       "end1Id": "f_230_4736",
       "end2Id": "local_batch_rework_approved",
       "label": "Потребности собраны"
+    },
+    {
+      "end1Id": "planning_split_found",
+      "end2Id": "planning_apply_split",
+      "label": "Да — разделение найдено"
+    },
+    {
+      "end1Id": "planning_apply_split",
+      "end2Id": "f_230_4740",
+      "label": "Проверить каждую часть найденного варианта"
     }
   ],
   "issues": [
