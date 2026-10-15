@@ -965,3 +965,10 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
 @media (max-width: 900px) {
     .sm-page { height: 100vh; margin: 0; }
 }
+
+/* Assignment text stays visible below the screen name. */
+.sm-kind-screen { border-left: 4px solid #0f766e; }
+.sm-screen-task { display: block; margin-top: 8px; font-weight: 500; overflow-wrap: anywhere; }
+.sm-approval { display: block; margin-top: 6px; font-size: 10px; font-weight: 400; color: #69736f; }
+#smNoteBody .sm-note-text { white-space: pre-wrap; }
+.sm-kind-event { border-left: 4px solid #c48b45; }

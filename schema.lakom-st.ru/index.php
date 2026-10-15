@@ -2,7 +2,7 @@
 declare(strict_types=1);
 $csrf = bin2hex(random_bytes(16));
 $meLogin = 'guest';
-$v = '53';
+$v = '2026-10-15-approved-assignments';
 ?><!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
