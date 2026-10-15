@@ -4,6 +4,7 @@
         check: "проверка",
         route: "маршрут",
         task: "задание",
+        action: "действие",
         stage: "шаг задания",
         system: "система",
         view: "экран / обзор",
@@ -1545,7 +1546,7 @@
 
     function colorFor(n) {
         if (n.id === "root") return "#0f766e";
-        var map = { check: "#ca8a04", route: "#ea580c", task: "#3b82f6", screen: "#0f766e", stage: "#0284c7", system: "#64748b", view: "#7c3aed", onec: "#64748b", result: "#16a34a", open: "#dc2626", entry: "#0f766e" };
+        var map = { check: "#ca8a04", route: "#ea580c", task: "#3b82f6", screen: "#0f766e", stage: "#0284c7", action: "#3b82f6", system: "#64748b", view: "#7c3aed", onec: "#64748b", result: "#16a34a", open: "#dc2626", entry: "#0f766e" };
         return map[n.kind] || "#999";
     }
 
