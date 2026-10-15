@@ -1,10 +1,8 @@
 (function () {
     var KIND = {
-        event: "таймер",
         check: "проверка",
         route: "маршрут",
         task: "задание",
-        screen: "экран",
         onec: "1С",
         result: "факт",
         open: "не ясно",
@@ -15,9 +13,6 @@
         var o = { id: id, title: title, kind: kind || "check", children: children || [] };
         if (extra) {
             if (extra.note) o.note = extra.note;
-            ["approval_badge_visible", "screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
-                if (extra[key] !== undefined) o[key] = extra[key];
-            });
             if (extra.steps) o.steps = extra.steps;
             if (extra.side) o.side = extra.side;
             if (extra.links) o.links = extra.links;
@@ -31,9 +26,6 @@
         if (n.edge) extra.edge = n.edge;
         if (n.links && n.links.length) extra.links = n.links.slice();
         if (n.notes) extra.note = n.notes;
-        ["approval_badge_visible", "screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
-            if (n[key] !== undefined) extra[key] = n[key];
-        });
         return N(n.id, n.title, n.kind, (n.children || []).map(fromExport), extra);
     }
     var SCHEMA = window.LAKOM_SCHEMA_EXPORT;
@@ -224,7 +216,7 @@
         if (!rec || !rec.parent || !rec.parent.children) return;
         rec.parent.children = rec.parent.children.filter(function (c) { return c.id !== node.id; });
     }
-    if (!SCHEMA.preserveTopology && (SCHEMA.relationships || []).length) {
+    if ((SCHEMA.relationships || []).length) {
     (function rehomeForks() {
         var bySrc = {};
         (SCHEMA.relationships || []).forEach(function (r) {
@@ -283,9 +275,6 @@
             children: (n.children || []).map(cloneTree)
         };
         if (n.note) o.note = n.note;
-        ["approval_badge_visible", "screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
-            if (n[key] !== undefined) o[key] = n[key];
-        });
         if (n.steps) o.steps = n.steps.slice();
         if (n.side) o.side = n.side;
         if (n.edge) o.edge = n.edge;
@@ -1300,32 +1289,15 @@
     tag(["ship", "ship-rest", "resale-ship", "buy-ship", "gp-full-rdy", "plain-rdy"], ["waybill", "shipment"]);
     tag(["cp-end", "cm-end", "kit-end"], ["transfer", "waybill", "shipment"]);
 
-    var heightCache = {};
     function nodeH(n) {
-        // Measure the same card typography used by draw(), including wrapped task text.
-        var key = JSON.stringify([n.id === "root", n.kind, ru(n.title), ru(n.screen_task || ""), n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]);
-        if (heightCache[key]) return heightCache[key];
-        var probe = document.createElement("div");
-        probe.className = "sm-topic sm-kind-" + n.kind + (n.id === "root" ? " is-root" : "");
-        probe.style.cssText = "visibility:hidden;pointer-events:none;left:-10000px;top:0;width:" + nodeW(n) + "px;height:auto;";
-        if (n.id !== "root") {
-            var kind = document.createElement("span");
-            kind.className = "sm-k";
-            kind.textContent = KIND[n.kind] || "";
-            probe.appendChild(kind);
-        }
-        [["sm-title", ru(n.title)], ["sm-screen-task", n.screen_task ? "Задание: " + ru(n.screen_task) : ""], ["sm-approval", n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]].forEach(function (part) {
-            if (!part[1]) return;
-            var span = document.createElement("span");
-            span.className = part[0];
-            span.textContent = part[1];
-            probe.appendChild(span);
-        });
-        document.body.appendChild(probe);
-        var height = Math.max(52, Math.ceil(probe.getBoundingClientRect().height) + 2);
-        probe.remove();
-        heightCache[key] = height;
-        return height;
+        var title = ru(n.title) || "";
+        var inner = nodeW(n) - 24;
+        var chars = Math.max(14, Math.floor(inner / 7.4));
+        var lines = Math.ceil(title.length / chars) || 1;
+        var h = 28 + lines * 17;
+        if (n.id !== "root") h += 28;
+        if (n.id === "root") h += 16;
+        return Math.max(52, h);
     }
     function nodeW(n) {
         if (n.id === "root") return 220;
@@ -1541,7 +1513,7 @@
 
     function colorFor(n) {
         if (n.id === "root") return "#0f766e";
-        var map = { check: "#ca8a04", route: "#ea580c", task: "#3b82f6", screen: "#0f766e", onec: "#64748b", result: "#16a34a", open: "#dc2626", entry: "#0f766e" };
+        var map = { check: "#ca8a04", route: "#ea580c", task: "#3b82f6", onec: "#64748b", result: "#16a34a", open: "#dc2626", entry: "#0f766e" };
         return map[n.kind] || "#999";
     }
 
@@ -1641,18 +1613,6 @@
                 select(n.id);
             });
             el.appendChild(titleEl);
-            if (n.screen_task) {
-                var taskEl = document.createElement("span");
-                taskEl.className = "sm-screen-task";
-                taskEl.textContent = "Задание: " + ru(n.screen_task);
-                el.appendChild(taskEl);
-            }
-            if (n.kind === "screen" && n.review_status && n.approval_badge_visible !== false) {
-                var approvalEl = document.createElement("span");
-                approvalEl.className = "sm-approval";
-                approvalEl.textContent = approvalText(n);
-                el.appendChild(approvalEl);
-            }
             if (n.note || (n.steps && n.steps.length)) {
                 var mark = document.createElement("button");
                 mark.type = "button";
@@ -1850,13 +1810,6 @@
         }, 0);
     }
 
-    function approvalText(n) {
-        var labels = { approved: "Процесс утверждён", partial: "Процесс частично утверждён", pending: "Требует утверждения" };
-        var text = labels[n.review_status] || "Требует утверждения";
-        if (n.ui_review_status === "pending" && n.review_status !== "pending") text += " · экран на согласовании";
-        return text;
-    }
-
     function showNote(n) {
         if (!n || (!n.note && !(n.steps && n.steps.length))) return;
         var title = document.getElementById("smNoteTitle");
@@ -1866,24 +1819,9 @@
         title.textContent = ru(n.title);
         body.innerHTML = "";
         if (n.note) {
-            ru(n.note).split(/\n\s*\n/).forEach(function (section) {
-                var p = document.createElement("p");
-                p.className = "sm-note-text";
-                var lines = section.split("\n");
-                if (lines.length > 1 && /:$/.test(lines[0])) {
-                    var heading = document.createElement("strong");
-                    heading.textContent = lines.shift();
-                    p.appendChild(heading);
-                    p.appendChild(document.createTextNode("\n" + lines.join("\n")));
-                } else p.textContent = section;
-                body.appendChild(p);
-            });
-        }
-        if (n.kind === "screen" && n.review_status && n.approval_badge_visible !== false) {
-            var approval = document.createElement("p");
-            approval.textContent = approvalText(n) + (n.approved_scope ? "\nУтверждено: " + n.approved_scope : "");
-            approval.className = "sm-note-text";
-            body.appendChild(approval);
+            var p = document.createElement("p");
+            p.textContent = ru(n.note);
+            body.appendChild(p);
         }
         if (n.steps && n.steps.length) {
             var ul = document.createElement("ul");
@@ -2374,21 +2312,56 @@
     var btnDelBlock = document.getElementById("btnDelBlock");
     if (btnDelBlock) btnDelBlock.hidden = true;
     (function bindChrome() {
-        var KEY = "lakom-schema-chrome-min";
+        // 0 закрыто · 1 иконки · 2 иконки+текст
+        var KEY = "lakom-schema-chrome-mode";
+        var KEY_LEGACY = "lakom-schema-chrome-min";
         var page = document.getElementById("smPage");
         var tab = document.getElementById("btnSmChromeTab");
         var hide = document.getElementById("btnSmChromeHide");
-        function apply(on) {
-            if (page) page.classList.toggle("is-chrome-min", on);
-            document.documentElement.classList.toggle("sm-chrome-min", on);
-            if (tab) tab.hidden = !on;
-            try { localStorage.setItem(KEY, on ? "1" : "0"); } catch (err) {}
+        var LABELS = [
+            "Показать панель (иконки)",
+            "Показать тексты кнопок",
+            "Скрыть панель"
+        ];
+        function readMode() {
+            try {
+                var v = localStorage.getItem(KEY);
+                if (v === "0" || v === "1" || v === "2") return Number(v);
+                if (localStorage.getItem(KEY_LEGACY) === "1") return 0;
+            } catch (err) {}
+            return 2;
         }
-        var start = false;
-        try { start = localStorage.getItem(KEY) === "1"; } catch (err) {}
-        apply(start);
-        if (hide) hide.addEventListener("click", function () { apply(true); });
-        if (tab) tab.addEventListener("click", function () { apply(false); });
+        function apply(mode) {
+            mode = mode === 0 || mode === 1 || mode === 2 ? mode : 2;
+            if (page) {
+                page.classList.toggle("is-chrome-min", mode === 0);
+                page.classList.toggle("is-chrome-icons", mode === 1);
+            }
+            document.documentElement.classList.toggle("sm-chrome-min", mode === 0);
+            if (tab) {
+                tab.hidden = false;
+                tab.setAttribute("aria-expanded", mode === 0 ? "false" : "true");
+                tab.title = LABELS[mode];
+                tab.setAttribute("aria-label", LABELS[mode]);
+            }
+            try {
+                localStorage.setItem(KEY, String(mode));
+                localStorage.removeItem(KEY_LEGACY);
+            } catch (err) {}
+        }
+        function current() {
+            if (!page) return 2;
+            if (page.classList.contains("is-chrome-min")) return 0;
+            if (page.classList.contains("is-chrome-icons")) return 1;
+            return 2;
+        }
+        apply(readMode());
+        if (hide) hide.addEventListener("click", function () { apply(0); });
+        if (tab) {
+            tab.addEventListener("click", function () {
+                apply((current() + 1) % 3);
+            });
+        }
     })();
     document.getElementById("btnZoomIn").addEventListener("click", function () {
         var p = document.getElementById("smWrap")._zoomPoint();

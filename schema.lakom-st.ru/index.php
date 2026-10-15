@@ -2,7 +2,7 @@
 declare(strict_types=1);
 $csrf = bin2hex(random_bytes(16));
 $meLogin = 'guest';
-$v = '2026-10-14-confirmed-accounting';
+$v = '51';
 ?><!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
@@ -27,43 +27,77 @@ $v = '2026-10-14-confirmed-accounting';
      data-map-ls="lakom-schema-standalone-v1"
      data-checks-url="api.php?r=checks">
     <div class="sm-toolbar" id="smToolbar">
-        <button type="button" class="sm-chrome-tab" id="btnSmChromeTab" title="Показать панель" aria-label="Показать панель" hidden></button>
+        <button type="button" class="sm-chrome-tab" id="btnSmChromeTab" title="Свернуть панель" aria-label="Свернуть панель" aria-expanded="true"></button>
         <div class="sm-toolbar-inner">
-        <div>
+        <div class="sm-toolbar-brand">
             <h1>Схема проекта</h1>
-            <p class="muted">Рабочая доска: правки и версии сохраняются на сервере.</p>
+            <p class="muted sm-toolbar-lead">Рабочая доска: правки и версии сохраняются на сервере.</p>
             <div class="sm-presence" id="smPresence">
                 <div class="sm-avatars" id="smAvatars"></div>
-                <span class="muted" id="smWho"></span>
+                <span class="muted sm-tb-txt" id="smWho"></span>
             </div>
         </div>
-        <div class="d-flex flex-wrap gap-2 align-items-center">
-            <button type="button" class="btn btn-sm btn-primary" id="btnTabMap">Карта</button>
-            <label class="sm-api-toggle mb-0">
-                <input type="checkbox" id="chkApi"> Методы и поля
+        <div class="sm-toolbar-actions d-flex flex-wrap gap-2 align-items-center">
+            <button type="button" class="btn btn-sm btn-primary sm-tb-btn" id="btnTabMap" title="Карта">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4l-5 2v14l5-2 6 2 5-2V4l-5 2-6-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 4v14M15 6v14" stroke="currentColor" stroke-width="2"/></svg>
+                <span class="sm-tb-txt">Карта</span>
+            </button>
+            <label class="sm-api-toggle sm-tb-btn mb-0" title="Методы и поля">
+                <input type="checkbox" id="chkApi" aria-label="Методы и поля">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 8l-3 4 3 4M16 8l3 4-3 4M13 5l-2 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="sm-tb-txt">Методы и поля</span>
             </label>
-            <button type="button" class="btn btn-sm btn-primary" id="btnSaveVer" title="Сохранить текущую схему как именованную версию">Сохранить версию</button>
-            <select id="smVerSelect" class="sm-ver-select" title="Открыть сохранённую версию">
+            <button type="button" class="btn btn-sm btn-primary sm-tb-btn" id="btnSaveVer" title="Сохранить текущую схему как именованную версию">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3h11l3 3v15H5V3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 3v6h8V3M8 21v-7h8v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                <span class="sm-tb-txt">Сохранить версию</span>
+            </button>
+            <select id="smVerSelect" class="sm-ver-select" title="Открыть сохранённую версию" aria-label="Версии">
                 <option value="">Версии…</option>
             </select>
             <div class="sm-hist" role="group" aria-label="История правок">
-                <button type="button" class="btn btn-sm btn-outline-secondary" id="btnUndo" title="Назад, Ctrl+Z">← Назад</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary" id="btnRedo" title="Вперёд, Ctrl+Shift+Z">Вперёд →</button>
-                <select id="smHistSelect" class="sm-hist-select" title="Перейти к шагу"></select>
+                <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn" id="btnUndo" title="Назад, Ctrl+Z">
+                    <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 14L4 9l5-5M4 9h11a5 5 0 010 10h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="sm-tb-txt">Назад</span>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn" id="btnRedo" title="Вперёд, Ctrl+Shift+Z">
+                    <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 14l5-5-5-5M20 9H9a5 5 0 000 10h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="sm-tb-txt">Вперёд</span>
+                </button>
+                <select id="smHistSelect" class="sm-hist-select" title="Перейти к шагу" aria-label="История шагов"></select>
             </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary" id="btnCollapse">Свернуть</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" id="btnExpand">Раскрыть всё</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" id="btnZoomOut">−</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" id="btnZoomIn">+</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary sm-legend-btn" id="btnLegend" title="Как читать схему">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 9h10M7 13h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                Как читать
+            <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn" id="btnCollapse" title="Свернуть ветки">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h10M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 4v4M16 6h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="sm-tb-txt">Свернуть</span>
             </button>
-            <button type="button" class="btn btn-sm btn-outline-danger" id="btnTabQ" title="Подсветить блоки, где ещё нет ответа">Вопросы</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" id="btnAllComments" title="Все комментарии по блокам">
-                Все комментарии <span id="btnAllCommentsN" class="sm-all-n" hidden></span>
+            <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn" id="btnExpand" title="Раскрыть всё">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="sm-tb-txt">Раскрыть всё</span>
             </button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" id="btnSmChromeHide" title="Свернуть панель">Свернуть панель</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn" id="btnZoomOut" title="Уменьшить">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M8 11h6M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="sm-tb-txt">−</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn" id="btnZoomIn" title="Увеличить">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M11 8v6M8 11h6M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="sm-tb-txt">+</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn sm-legend-btn" id="btnLegend" title="Как читать схему">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 9h10M7 13h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="sm-tb-txt">Как читать</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-danger sm-tb-btn" id="btnTabQ" title="Подсветить блоки, где ещё нет ответа">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M9.5 9a2.5 2.5 0 015 1c0 1.5-2.5 2-2.5 3.5M12 17h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="sm-tb-txt">Вопросы</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn" id="btnAllComments" title="Все комментарии по блокам">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5h14v11H8l-3 3V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                <span class="sm-tb-txt">Все комментарии</span>
+                <span id="btnAllCommentsN" class="sm-all-n" hidden></span>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn" id="btnSmChromeHide" title="Скрыть панель полностью">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16M8 4l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="sm-tb-txt">Свернуть панель</span>
+            </button>
         </div>
         </div>
     </div>
