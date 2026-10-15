@@ -975,3 +975,12 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
 .sm-kind-stage { border-left: 4px solid #0284c7; }
 .sm-kind-system { border-left: 4px solid #64748b; }
 .sm-kind-view { border-left: 4px solid #7c3aed; }
+
+/* Visible assignment context; buttons describe process transitions. */
+.sm-topic.sm-task-card { border: 2px solid #0f766e; border-left-width: 6px; background: #ecfdf5; box-shadow: 0 3px 12px #0f766e20; }
+.sm-task-card .sm-title { font-size: 15px; font-weight: 700; }
+.sm-task-detail { margin-top: 9px; font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; }
+.sm-task-buttons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; font-size: 11px; }
+.sm-task-buttons > strong { flex-basis: 100%; }
+.sm-task-button-label { display: inline-block; padding: 4px 7px; border: 1px solid #8cc4b0; border-radius: 5px; background: #fff; line-height: 1.35; }
+.sm-task-card .sm-has-note { position: absolute; bottom: 9px; left: 36px; margin: 0; }

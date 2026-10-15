@@ -19,7 +19,7 @@
         var o = { id: id, title: title, kind: kind || "check", children: children || [] };
         if (extra) {
             if (extra.note) o.note = extra.note;
-            ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "layout_parent_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+            ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "layout_parent_id", "task_card", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
                 if (extra[key] !== undefined) o[key] = extra[key];
             });
             if (extra.steps) o.steps = extra.steps;
@@ -35,7 +35,7 @@
         if (n.edge) extra.edge = n.edge;
         if (n.links && n.links.length) extra.links = n.links.slice();
         if (n.notes) extra.note = n.notes;
-        ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "layout_parent_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+        ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "layout_parent_id", "task_card", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
             if (n[key] !== undefined) extra[key] = n[key];
         });
         return N(n.id, n.title, n.kind, (n.children || []).map(fromExport), extra);
@@ -288,7 +288,7 @@
             children: (n.children || []).map(cloneTree)
         };
         if (n.note) o.note = n.note;
-        ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "layout_parent_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+        ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "layout_parent_id", "task_card", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
             if (n[key] !== undefined) o[key] = n[key];
         });
         if (n.steps) o.steps = n.steps.slice();
@@ -1305,10 +1305,26 @@
     tag(["ship", "ship-rest", "resale-ship", "buy-ship", "gp-full-rdy", "plain-rdy"], ["waybill", "shipment"]);
     tag(["cp-end", "cm-end", "kit-end"], ["transfer", "waybill", "shipment"]);
 
+    function appendTaskContext(el, n) {
+        if (!n.task_card) return;
+        el.classList.add("sm-task-card");
+        var card = n.task_card;
+        [["Кто", card.role], ["Экран", card.screen], ["Действие", card.action]].forEach(function (part) {
+            if (!part[1]) return;
+            var row = document.createElement("div"); row.className = "sm-task-detail";
+            var label = document.createElement("strong"); label.textContent = part[0] + ": "; row.appendChild(label);
+            var value = document.createElement("span"); value.textContent = part[1]; row.appendChild(value); el.appendChild(row);
+        });
+        var buttons = document.createElement("div"); buttons.className = "sm-task-buttons";
+        var label = document.createElement("strong"); label.textContent = "Кнопки:"; buttons.appendChild(label);
+        (card.buttons || []).forEach(function (text) { var chip = document.createElement("span"); chip.className = "sm-task-button-label"; chip.textContent = text; buttons.appendChild(chip); });
+        el.appendChild(buttons);
+    }
+
     var heightCache = {};
     function nodeH(n) {
         // Measure the same card typography used by draw(), including wrapped task text.
-        var key = JSON.stringify([n.id === "root", n.kind, ru(n.title), ru(n.screen_task || ""), n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]);
+        var key = JSON.stringify([n.id === "root", n.kind, ru(n.title), ru(n.screen_task || ""), n.task_card || null, n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]);
         if (heightCache[key]) return heightCache[key];
         var probe = document.createElement("div");
         probe.className = "sm-topic sm-kind-" + n.kind + (n.id === "root" ? " is-root" : "");
@@ -1319,13 +1335,14 @@
             kind.textContent = KIND[n.kind] || "";
             probe.appendChild(kind);
         }
-        [["sm-title", ru(n.screen_task || n.title)], ["sm-screen-task", n.screen_task ? ru(n.title) : ""], ["sm-approval", n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]].forEach(function (part) {
+        [["sm-title", ru(n.screen_task || n.title)], ["sm-screen-task", n.screen_task && !n.task_card ? ru(n.title) : ""], ["sm-approval", n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]].forEach(function (part) {
             if (!part[1]) return;
             var span = document.createElement("span");
             span.className = part[0];
             span.textContent = part[1];
             probe.appendChild(span);
         });
+        appendTaskContext(probe, n);
         document.body.appendChild(probe);
         var height = Math.max(52, Math.ceil(probe.getBoundingClientRect().height) + 2);
         probe.remove();
@@ -1334,6 +1351,7 @@
     }
     function nodeW(n) {
         if (n.id === "root") return 220;
+        if (n.task_card) return 360;
         return 260;
     }
 
@@ -1646,12 +1664,13 @@
                 select(n.id);
             });
             el.appendChild(titleEl);
-            if (n.screen_task) {
+            if (n.screen_task && !n.task_card) {
                 var taskEl = document.createElement("span");
                 taskEl.className = "sm-screen-task";
                 taskEl.textContent = ru(n.title);
                 el.appendChild(taskEl);
             }
+            appendTaskContext(el, n);
             if (n.kind === "screen" && n.review_status && n.approval_badge_visible !== false) {
                 var approvalEl = document.createElement("span");
                 approvalEl.className = "sm-approval";
