@@ -2,7 +2,7 @@
 declare(strict_types=1);
 $csrf = bin2hex(random_bytes(16));
 $meLogin = 'guest';
-$v = '51';
+$v = '53';
 ?><!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
@@ -94,11 +94,7 @@ $v = '51';
                 <span class="sm-tb-txt">Все комментарии</span>
                 <span id="btnAllCommentsN" class="sm-all-n" hidden></span>
             </button>
-            <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn" id="btnSmChromeHide" title="Скрыть панель полностью">
-                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16M8 4l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span class="sm-tb-txt">Свернуть панель</span>
-            </button>
-        </div>
+</div>
         </div>
     </div>
     <div id="smMapTab" class="sm-body">

@@ -2316,13 +2316,31 @@
         var KEY = "lakom-schema-chrome-mode";
         var KEY_LEGACY = "lakom-schema-chrome-min";
         var page = document.getElementById("smPage");
+        var toolbar = document.getElementById("smToolbar");
         var tab = document.getElementById("btnSmChromeTab");
-        var hide = document.getElementById("btnSmChromeHide");
         var LABELS = [
             "Показать панель (иконки)",
             "Показать тексты кнопок",
             "Скрыть панель"
         ];
+        function tipTargets() {
+            if (!toolbar) return [];
+            return Array.prototype.slice.call(
+                toolbar.querySelectorAll(".sm-tb-btn[title], .sm-ver-select[title], .sm-hist-select[title], [data-tip]")
+            );
+        }
+        /** В режиме иконок — data-tip снизу; title убираем, чтобы не дублировал браузерный. */
+        function syncTips(iconsMode) {
+            tipTargets().forEach(function (el) {
+                var tip = el.getAttribute("data-tip") || el.getAttribute("title") || el.getAttribute("aria-label") || "";
+                if (tip) el.setAttribute("data-tip", tip);
+                if (iconsMode) {
+                    if (el.getAttribute("title")) el.removeAttribute("title");
+                } else if (!el.getAttribute("title") && tip) {
+                    el.setAttribute("title", tip);
+                }
+            });
+        }
         function readMode() {
             try {
                 var v = localStorage.getItem(KEY);
@@ -2344,6 +2362,7 @@
                 tab.title = LABELS[mode];
                 tab.setAttribute("aria-label", LABELS[mode]);
             }
+            syncTips(mode === 1);
             try {
                 localStorage.setItem(KEY, String(mode));
                 localStorage.removeItem(KEY_LEGACY);
@@ -2356,7 +2375,6 @@
             return 2;
         }
         apply(readMode());
-        if (hide) hide.addEventListener("click", function () { apply(0); });
         if (tab) {
             tab.addEventListener("click", function () {
                 apply((current() + 1) % 3);
