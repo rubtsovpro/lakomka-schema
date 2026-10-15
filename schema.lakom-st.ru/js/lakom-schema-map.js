@@ -7,7 +7,7 @@
         stage: "шаг задания",
         system: "система",
         view: "экран / обзор",
-        screen: "экран",
+        screen: "задание",
         onec: "1С",
         result: "факт",
         open: "не ясно",
@@ -1317,7 +1317,7 @@
             kind.textContent = KIND[n.kind] || "";
             probe.appendChild(kind);
         }
-        [["sm-title", ru(n.title)], ["sm-screen-task", n.screen_task ? "Задание: " + ru(n.screen_task) : ""], ["sm-approval", n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]].forEach(function (part) {
+        [["sm-title", ru(n.screen_task || n.title)], ["sm-screen-task", n.screen_task ? ru(n.title) : ""], ["sm-approval", n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]].forEach(function (part) {
             if (!part[1]) return;
             var span = document.createElement("span");
             span.className = part[0];
@@ -1637,8 +1637,8 @@
             }
             var titleEl = document.createElement("span");
             titleEl.className = "sm-title";
-            titleEl.textContent = ru(n.title);
-            titleEl.title = ru(n.title);
+            titleEl.textContent = ru(n.screen_task || n.title);
+            titleEl.title = ru(n.screen_task || n.title);
             titleEl.addEventListener("click", function (e) {
                 e.stopPropagation();
                 select(n.id);
@@ -1647,7 +1647,7 @@
             if (n.screen_task) {
                 var taskEl = document.createElement("span");
                 taskEl.className = "sm-screen-task";
-                taskEl.textContent = "Задание: " + ru(n.screen_task);
+                taskEl.textContent = ru(n.title);
                 el.appendChild(taskEl);
             }
             if (n.kind === "screen" && n.review_status && n.approval_badge_visible !== false) {
