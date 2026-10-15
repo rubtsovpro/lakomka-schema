@@ -4,6 +4,9 @@
         check: "проверка",
         route: "маршрут",
         task: "задание",
+        stage: "шаг задания",
+        system: "система",
+        view: "экран / обзор",
         screen: "экран",
         onec: "1С",
         result: "факт",
@@ -15,7 +18,7 @@
         var o = { id: id, title: title, kind: kind || "check", children: children || [] };
         if (extra) {
             if (extra.note) o.note = extra.note;
-            ["approval_badge_visible", "screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+            ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
                 if (extra[key] !== undefined) o[key] = extra[key];
             });
             if (extra.steps) o.steps = extra.steps;
@@ -31,7 +34,7 @@
         if (n.edge) extra.edge = n.edge;
         if (n.links && n.links.length) extra.links = n.links.slice();
         if (n.notes) extra.note = n.notes;
-        ["approval_badge_visible", "screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+        ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
             if (n[key] !== undefined) extra[key] = n[key];
         });
         return N(n.id, n.title, n.kind, (n.children || []).map(fromExport), extra);
@@ -283,7 +286,7 @@
             children: (n.children || []).map(cloneTree)
         };
         if (n.note) o.note = n.note;
-        ["approval_badge_visible", "screen_task", "screen_id", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
+        ["approval_badge_visible", "screen_task", "screen_id", "task_type_id", "task_owner_id", "process_stage", "review_status", "ui_review_status", "approved_scope", "approval_sources", "route_target_id", "continuation_after_route"].forEach(function (key) {
             if (n[key] !== undefined) o[key] = n[key];
         });
         if (n.steps) o.steps = n.steps.slice();
@@ -1541,7 +1544,7 @@
 
     function colorFor(n) {
         if (n.id === "root") return "#0f766e";
-        var map = { check: "#ca8a04", route: "#ea580c", task: "#3b82f6", screen: "#0f766e", onec: "#64748b", result: "#16a34a", open: "#dc2626", entry: "#0f766e" };
+        var map = { check: "#ca8a04", route: "#ea580c", task: "#3b82f6", screen: "#0f766e", stage: "#0284c7", system: "#64748b", view: "#7c3aed", onec: "#64748b", result: "#16a34a", open: "#dc2626", entry: "#0f766e" };
         return map[n.kind] || "#999";
     }
 

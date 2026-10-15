@@ -972,3 +972,6 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
 .sm-approval { display: block; margin-top: 6px; font-size: 10px; font-weight: 400; color: #69736f; }
 #smNoteBody .sm-note-text { white-space: pre-wrap; }
 .sm-kind-event { border-left: 4px solid #c48b45; }
+.sm-kind-stage { border-left: 4px solid #0284c7; }
+.sm-kind-system { border-left: 4px solid #64748b; }
+.sm-kind-view { border-left: 4px solid #7c3aed; }
