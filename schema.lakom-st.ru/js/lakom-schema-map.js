@@ -2273,7 +2273,7 @@
     function wheelZoomTarget(scale, delta, mode, pageHeight) {
         var pixels = delta * (mode === 1 ? 16 : mode === 2 ? pageHeight : 1);
         pixels = Math.max(-120, Math.min(120, pixels));
-        return Math.min(1.5, Math.max(0.25, scale * Math.exp(-pixels * (Math.log(1.1) / 120))));
+        return Math.min(1.5, Math.max(0.25, scale * Math.exp(-pixels * (Math.log(1.5) / 120))));
     }
 
     function smoothWheelZoom(e) {

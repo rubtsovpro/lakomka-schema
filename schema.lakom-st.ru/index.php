@@ -2,7 +2,7 @@
 declare(strict_types=1);
 $csrf = bin2hex(random_bytes(16));
 $meLogin = 'guest';
-$v = '2026-10-16-all-edge-hover';
+$v = '2026-10-16-account-rework-zoom';
 ?><!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
