@@ -1508,12 +1508,13 @@
         if (!n.task_card) return;
         el.classList.add("sm-task-card");
         var card = n.task_card;
-        [["Кто", card.role], ["Экран", card.screen], ["Действие", card.action]].forEach(function (part) {
+        [["Кто", card.role], ["Экран", card.screen], ["Раздел", card.section]].forEach(function (part) {
             if (!part[1]) return;
             var row = document.createElement("div"); row.className = "sm-task-detail";
             var label = document.createElement("strong"); label.textContent = part[0] + ": "; row.appendChild(label);
             var value = document.createElement("span"); value.textContent = part[1]; row.appendChild(value); el.appendChild(row);
         });
+        if (!(card.buttons || []).length) return;
         var buttons = document.createElement("div"); buttons.className = "sm-task-buttons";
         var label = document.createElement("strong"); label.textContent = "Кнопки:"; buttons.appendChild(label);
         (card.buttons || []).forEach(function (text) { var chip = document.createElement("span"); chip.className = "sm-task-button-label"; chip.textContent = text; buttons.appendChild(chip); });

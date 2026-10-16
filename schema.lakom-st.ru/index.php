@@ -2,7 +2,7 @@
 declare(strict_types=1);
 $csrf = bin2hex(random_bytes(16));
 $meLogin = 'guest';
-$v = '2026-10-16-task-focus-roles';
+$v = '2026-10-16-aligned-buttons-screens-local';
 ?><!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
