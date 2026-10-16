@@ -1631,7 +1631,7 @@
     function clearEdgeHover() {
         clearTimeout(edgeHoverTimer); edgeHoverTimer = null;
         if (!edgeHover) return;
-        edgeHover.base.classList.remove("is-hot");
+        if (!edgeHover.wasHot) edgeHover.base.classList.remove("is-hot");
         if (!edgeHover.svg.classList.contains("is-pinned")) edgeHover.svg.classList.remove("is-dim-edges");
         edgeHover.overlay.replaceChildren();
         edgeHover.overlay.style.display = "none";
@@ -1653,8 +1653,8 @@
         copy.addEventListener("pointerenter", function () { clearTimeout(edgeHoverTimer); edgeHoverTimer = null; });
         copy.addEventListener("pointerleave", function () { deferEdgeHoverClear(base); });
         copy.addEventListener("pointerdown", function (e) { e.stopPropagation(); });
-        copy.addEventListener("click", function (e) { e.stopPropagation(); e.preventDefault(); clearEdgeHover(); if (typeof onOpen === "function") onOpen(); });
-        edgeHover = { base: base, svg: svg, overlay: overlay, copy: copy };
+        copy.addEventListener("click", function (e) { e.stopPropagation(); e.preventDefault(); clearEdgeHover(); base.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true })); });
+        edgeHover = { base: base, svg: svg, overlay: overlay, copy: copy, wasHot: base.classList.contains("is-hot") };
         base.classList.add("is-hot");
         if (!svg.classList.contains("is-pinned")) svg.classList.add("is-dim-edges");
         overlay.appendChild(copy); overlay.style.display = "";
@@ -1718,16 +1718,10 @@
             g.appendChild(lab);
         }
         g.addEventListener("pointerenter", function () {
-            if (dash) { showEdgeHover(svg, g, onOpen); return; }
-            if (svg.classList.contains("is-pinned")) return;
-            svg.classList.add("is-dim-edges");
-            g.classList.add("is-hot");
+            showEdgeHover(svg, g, onOpen);
         });
         g.addEventListener("pointerleave", function () {
-            if (dash) { deferEdgeHoverClear(g); return; }
-            if (svg.classList.contains("is-pinned")) return;
-            svg.classList.remove("is-dim-edges");
-            g.classList.remove("is-hot");
+            deferEdgeHoverClear(g);
         });
         g.addEventListener("pointerdown", function (e) {
             e.stopPropagation();
@@ -2279,7 +2273,7 @@
     function wheelZoomTarget(scale, delta, mode, pageHeight) {
         var pixels = delta * (mode === 1 ? 16 : mode === 2 ? pageHeight : 1);
         pixels = Math.max(-120, Math.min(120, pixels));
-        return Math.min(1.5, Math.max(0.25, scale * Math.exp(-pixels * 0.00045)));
+        return Math.min(1.5, Math.max(0.25, scale * Math.exp(-pixels * (Math.log(1.1) / 120))));
     }
 
     function smoothWheelZoom(e) {
