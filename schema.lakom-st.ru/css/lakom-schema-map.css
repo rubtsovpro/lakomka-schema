@@ -1095,3 +1095,9 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
 .sm-task-buttons > strong { flex-basis: 100%; }
 .sm-task-button-label { display: inline-block; padding: 4px 7px; border: 1px solid #8cc4b0; border-radius: 5px; background: #fff; line-height: 1.35; }
 .sm-task-card .sm-has-note { position: absolute; bottom: 9px; left: 36px; margin: 0; }
+
+/* Only the hovered dashed connection rises above cards. */
+.sm-svg.sm-edge-hover-layer { z-index: 30; pointer-events: none; }
+.sm-edge-hover-copy .sm-edge-hit { pointer-events: stroke; }
+.sm-edge-hover-copy .sm-edge-lab { pointer-events: auto; paint-order: stroke; stroke: #fff; stroke-width: 6px; stroke-linejoin: round; font-weight: 900; }
+.sm-edge-hover-copy .sm-edge-line, .sm-edge-hover-copy .sm-edge-head { pointer-events: none; }

@@ -1626,7 +1626,41 @@
         ];
     }
 
-    function addEdge(svg, x0, y0, x3, y3, color, width, dash, label, onOpen) {
+    var edgeHover = null;
+    var edgeHoverTimer = null;
+    function clearEdgeHover() {
+        clearTimeout(edgeHoverTimer); edgeHoverTimer = null;
+        if (!edgeHover) return;
+        edgeHover.base.classList.remove("is-hot");
+        if (!edgeHover.svg.classList.contains("is-pinned")) edgeHover.svg.classList.remove("is-dim-edges");
+        edgeHover.overlay.replaceChildren();
+        edgeHover.overlay.style.display = "none";
+        edgeHover = null;
+    }
+    function deferEdgeHoverClear(base) {
+        if (!edgeHover || edgeHover.base !== base) return;
+        clearTimeout(edgeHoverTimer);
+        edgeHoverTimer = setTimeout(function () { if (edgeHover && edgeHover.base === base) clearEdgeHover(); }, 80);
+    }
+    function showEdgeHover(svg, base, onOpen) {
+        clearTimeout(edgeHoverTimer); edgeHoverTimer = null;
+        if (edgeHover && edgeHover.base === base) return;
+        clearEdgeHover();
+        var overlay = svg._hoverLayer;
+        if (!overlay) return;
+        var copy = base.cloneNode(true);
+        copy.classList.add("is-hot", "sm-edge-hover-copy");
+        copy.addEventListener("pointerenter", function () { clearTimeout(edgeHoverTimer); edgeHoverTimer = null; });
+        copy.addEventListener("pointerleave", function () { deferEdgeHoverClear(base); });
+        copy.addEventListener("pointerdown", function (e) { e.stopPropagation(); });
+        copy.addEventListener("click", function (e) { e.stopPropagation(); e.preventDefault(); clearEdgeHover(); if (typeof onOpen === "function") onOpen(); });
+        edgeHover = { base: base, svg: svg, overlay: overlay, copy: copy };
+        base.classList.add("is-hot");
+        if (!svg.classList.contains("is-pinned")) svg.classList.add("is-dim-edges");
+        overlay.appendChild(copy); overlay.style.display = "";
+    }
+
+    function addEdge(svg, x0, y0, x3, y3, color, width, dash, label, onOpen, edgeMeta) {
         var dir = x3 >= x0 ? 1 : -1;
         var dx = Math.max(52, Math.abs(x3 - x0) * 0.58);
         var c1x = x0 + dir * dx, c1y = y0, c2x = x3 - dir * dx, c2y = y3;
@@ -1641,7 +1675,8 @@
         var by = tip[1] - vy * ah;
         var d = "M " + x0 + " " + y0 + " C " + c1x + " " + c1y + ", " + c2x + " " + c2y + ", " + bx + " " + by;
         var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-        g.setAttribute("class", "sm-edge");
+        g.setAttribute("class", "sm-edge" + (dash ? " sm-edge-link" : ""));
+        if (edgeMeta) { g.setAttribute("data-from", edgeMeta.from); g.setAttribute("data-to", edgeMeta.to); }
         var hit = document.createElementNS("http://www.w3.org/2000/svg", "path");
         hit.setAttribute("class", "sm-edge-hit");
         hit.setAttribute("d", d);
@@ -1683,11 +1718,13 @@
             g.appendChild(lab);
         }
         g.addEventListener("pointerenter", function () {
+            if (dash) { showEdgeHover(svg, g, onOpen); return; }
             if (svg.classList.contains("is-pinned")) return;
             svg.classList.add("is-dim-edges");
             g.classList.add("is-hot");
         });
         g.addEventListener("pointerleave", function () {
+            if (dash) { deferEdgeHoverClear(g); return; }
             if (svg.classList.contains("is-pinned")) return;
             svg.classList.remove("is-dim-edges");
             g.classList.remove("is-hot");
@@ -1699,6 +1736,7 @@
             e.stopPropagation();
             e.preventDefault();
             if (typeof onOpen === "function") {
+                clearEdgeHover();
                 onOpen();
                 return;
             }
@@ -1767,6 +1805,8 @@
     }
 
     function draw() {
+        cancelWheelZoom();
+        clearEdgeHover();
         layout(ROOT, "right", 0, 0);
         var nodes = collect(ROOT, []);
         var minX = 0, minY = 0, maxX = 0, maxY = 0;
@@ -1791,6 +1831,13 @@
         svg.setAttribute("width", String(W));
         svg.setAttribute("height", String(H));
         board.appendChild(svg);
+        var hoverLayer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        hoverLayer.setAttribute("class", "sm-svg sm-edge-hover-layer");
+        hoverLayer.setAttribute("width", String(W));
+        hoverLayer.setAttribute("height", String(H));
+        hoverLayer.style.display = "none";
+        svg._hoverLayer = hoverLayer;
+        board.appendChild(hoverLayer);
         var hl = state.highlightOpen ? unclearSet() : null;
         var vis = {};
         nodes.forEach(function (n) { vis[n.id] = true; });
@@ -1827,7 +1874,7 @@
                     y2 = y1;
                 }
                 var lab = (n.linkLabels && n.linkLabels[tid]) || "далее";
-                var geom = addEdge(svg, x1, y1, x2, y2, "#c2410c", 2.5, "7 5", lab, vis[tid] ? null : function () { revealNode(tid); });
+                var geom = addEdge(svg, x1, y1, x2, y2, "#c2410c", 2.5, "7 5", lab, function () { focusSchemaNode(tid); }, { from: n.id, to: tid });
                 addEdgePorts(board, geom, { type: "link", from: n.id, to: tid, label: lab });
             });
         });
@@ -2221,7 +2268,51 @@
         applyTransform();
     }
 
-    function zoomToward(nextScale, clientX, clientY) {
+    var wheelZoom = null;
+    function cancelWheelZoom() {
+        if (!wheelZoom) return;
+        cancelAnimationFrame(wheelZoom.frame);
+        wheelZoom = null;
+        save();
+    }
+
+    function wheelZoomTarget(scale, delta, mode, pageHeight) {
+        var pixels = delta * (mode === 1 ? 16 : mode === 2 ? pageHeight : 1);
+        pixels = Math.max(-120, Math.min(120, pixels));
+        return Math.min(1.5, Math.max(0.25, scale * Math.exp(-pixels * 0.00045)));
+    }
+
+    function smoothWheelZoom(e) {
+        if (!e.deltaY) return;
+        var wrap = document.getElementById("smWrap");
+        var target = wheelZoomTarget(wheelZoom ? wheelZoom.target : state.scale,
+            e.deltaY, e.deltaMode, wrap.clientHeight);
+        if (wheelZoom) {
+            wheelZoom.target = target;
+            wheelZoom.x = e.clientX;
+            wheelZoom.y = e.clientY;
+            return;
+        }
+        if (target === state.scale) return;
+        wheelZoom = { target: target, x: e.clientX, y: e.clientY, time: null, frame: null };
+        function tick(time) {
+            var z = wheelZoom;
+            if (!z) return;
+            var dt = z.time === null ? 16 : Math.min(50, time - z.time);
+            z.time = time;
+            var done = Math.abs(z.target - state.scale) < 0.0001;
+            var next = done ? z.target : state.scale + (z.target - state.scale) * (1 - Math.exp(-dt / 45));
+            zoomToward(next, z.x, z.y, true);
+            if (done) {
+                wheelZoom = null;
+                save();
+            } else z.frame = requestAnimationFrame(tick);
+        }
+        wheelZoom.frame = requestAnimationFrame(tick);
+    }
+
+    function zoomToward(nextScale, clientX, clientY, fromWheel) {
+        if (!fromWheel) cancelWheelZoom();
         var wrap = document.getElementById("smWrap");
         var prev = state.scale;
         nextScale = Math.min(1.5, Math.max(0.25, nextScale));
@@ -2234,7 +2325,7 @@
         state.scale = nextScale;
         state.x = cx - bx * nextScale;
         state.y = cy - by * nextScale;
-        save();
+        if (!fromWheel) save();
         applyTransform();
     }
 
@@ -2250,6 +2341,7 @@
         }
         wrap.addEventListener("pointermove", remember);
         wrap.addEventListener("pointerdown", function (e) {
+            cancelWheelZoom();
             remember(e);
             if (e.button !== 0 && e.button !== 1) return;
             if (e.target.closest(".sm-plus") || e.target.closest(".sm-port") || e.target.closest(".sm-leaf") || e.target.closest(".sm-edge") || e.target.closest(".sm-topic") || e.target.closest("#smComments") || e.target.closest("button") || e.target.closest("a") || e.target.closest("textarea") || e.target.closest("input") || e.target.closest("[contenteditable=true]")) return;
@@ -2298,7 +2390,7 @@
         });
         wrap.addEventListener("wheel", function (e) {
             e.preventDefault();
-            zoomToward(state.scale + (e.deltaY > 0 ? -0.08 : 0.08), e.clientX, e.clientY);
+            smoothWheelZoom(e);
         }, { passive: false });
         wrap._zoomPoint = function () {
             if (last.abs) return last;
