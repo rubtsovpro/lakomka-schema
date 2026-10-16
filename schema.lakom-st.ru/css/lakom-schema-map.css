@@ -416,7 +416,7 @@ html[data-theme="dark"] .sm-board-wrap {
 .sm-topic {
     position: absolute;
     box-sizing: border-box;
-    padding: 8px 12px 24px;
+    padding: 8px 12px 34px;
     border-radius: 8px;
     background: #fff;
     border: 1px solid #d8d6d0;
@@ -449,7 +449,7 @@ html[data-theme="dark"] .sm-topic {
     font-size: 15px;
     font-weight: 800;
     text-align: center;
-    padding: 14px 18px 28px;
+    padding: 14px 18px 34px;
     border-radius: 10px;
 }
 .sm-topic.is-selected:not(.is-root) {
@@ -593,30 +593,41 @@ html[data-theme="dark"] .sm-edit-pop {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+.sm-node-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 12px;
+    margin-bottom: 3px;
+}
 .sm-k {
-    display: block;
+    display: inline-block;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: .06em;
     text-transform: uppercase;
     color: #888;
-    margin-bottom: 2px;
+    margin-bottom: 0;
 }
 .sm-topic.is-root .sm-k { display: none; }
+.sm-topic.is-root .sm-node-header { position: absolute; top: 7px; right: 8px; margin: 0; }
 .sm-has-note {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 12px;
+    width: 12px;
+    height: 12px;
     padding: 0;
     border: 0;
     border-radius: 50%;
-    background: #0f766e;
-    margin-left: 6px;
-    vertical-align: 1px;
-    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.22);
+    background: transparent;
+    margin: 0;
     cursor: pointer;
 }
-.sm-has-note:hover { box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.35); }
+.sm-has-note::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #0f766e; box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.22); }
+.sm-has-note:hover::after { box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.35); }
+.sm-has-note:focus-visible { outline: 2px solid #0f766e; outline-offset: 2px; }
 .sm-note-box #smNoteBody p { font-size: 14px; line-height: 1.45; margin: 0 0 10px; }
 .sm-note-box #smNoteBody ul { margin: 0; padding-left: 1.15rem; }
 .sm-note-box #smNoteBody li { margin-bottom: 6px; font-size: 14px; line-height: 1.4; }
@@ -642,8 +653,8 @@ html[data-theme="dark"] .sm-edit-pop {
 .sm-topic.is-dim { opacity: 0.28; }
 .sm-check {
     position: absolute;
-    left: 6px;
-    bottom: 4px;
+    right: 8px;
+    bottom: 6px;
     width: 18px;
     height: 18px;
     border: 1.5px solid #c5c0b8;
@@ -969,9 +980,11 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
 }
 .sm-links-btn {
     position: absolute;
-    z-index: 16;
-    width: 22px;
-    height: 22px;
+    left: 8px;
+    bottom: 6px;
+    z-index: 4;
+    width: 18px;
+    height: 18px;
     border: 1px solid #cfc8be;
     border-radius: 50%;
     background: #fff;
@@ -1094,7 +1107,6 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
 .sm-task-buttons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; font-size: 11px; }
 .sm-task-buttons > strong { flex-basis: 100%; }
 .sm-task-button-label { display: inline-block; padding: 4px 7px; border: 1px solid #8cc4b0; border-radius: 5px; background: #fff; line-height: 1.35; }
-.sm-task-card .sm-has-note { position: absolute; bottom: 9px; left: 36px; margin: 0; }
 
 /* Only the hovered dashed connection rises above cards. */
 .sm-svg.sm-edge-hover-layer { z-index: 30; pointer-events: none; }

@@ -1521,6 +1521,30 @@
         el.appendChild(buttons);
     }
 
+    function appendNodeHeader(el, n, interactive) {
+        var header = document.createElement("div");
+        header.className = "sm-node-header";
+        if (n.id !== "root") {
+            var kind = document.createElement("span");
+            kind.className = "sm-k";
+            kind.textContent = KIND[n.kind] || "";
+            header.appendChild(kind);
+        }
+        if (n.note || (n.steps && n.steps.length)) {
+            var mark = document.createElement("button");
+            mark.type = "button";
+            mark.className = "sm-has-note";
+            mark.title = "Пояснение к блоку";
+            mark.setAttribute("aria-label", "Открыть пояснение");
+            if (interactive) mark.addEventListener("click", function (e) {
+                e.stopPropagation();
+                showNote(n);
+            });
+            header.appendChild(mark);
+        }
+        if (header.childNodes.length) el.appendChild(header);
+    }
+
     var heightCache = {};
     function nodeH(n) {
         // Measure the same card typography used by draw(), including wrapped task text.
@@ -1529,12 +1553,7 @@
         var probe = document.createElement("div");
         probe.className = "sm-topic sm-kind-" + n.kind + (n.id === "root" ? " is-root" : "");
         probe.style.cssText = "visibility:hidden;pointer-events:none;left:-10000px;top:0;width:" + nodeW(n) + "px;height:auto;";
-        if (n.id !== "root") {
-            var kind = document.createElement("span");
-            kind.className = "sm-k";
-            kind.textContent = KIND[n.kind] || "";
-            probe.appendChild(kind);
-        }
+        appendNodeHeader(probe, n, false);
         [["sm-title", ru(n.screen_task || n.title)], ["sm-screen-task", n.screen_task && !n.task_card ? ru(n.title) : ""], ["sm-approval", n.kind === "screen" && n.review_status && n.approval_badge_visible !== false ? approvalText(n) : ""]].forEach(function (part) {
             if (!part[1]) return;
             var span = document.createElement("span");
@@ -1833,7 +1852,26 @@
         }
     }
 
+    function renderedViewportAnchor() {
+        var wrap = document.getElementById("smWrap");
+        var board = document.getElementById("smBoard");
+        if (!didCenter || !wrap || !board) return null;
+        var best = null, distance = Infinity;
+        board.querySelectorAll(".sm-topic[data-id]").forEach(function (el) {
+            var width = parseFloat(el.style.width), height = parseFloat(el.style.height);
+            var x = state.x + (parseFloat(el.style.left) + width / 2) * state.scale;
+            var y = state.y + (parseFloat(el.style.top) + height / 2) * state.scale;
+            if (!isFinite(x) || !isFinite(y)) return;
+            if (x + width * state.scale / 2 < 0 || x - width * state.scale / 2 > wrap.clientWidth
+                || y + height * state.scale / 2 < 0 || y - height * state.scale / 2 > wrap.clientHeight) return;
+            var d = Math.pow(x - wrap.clientWidth / 2, 2) + Math.pow(y - wrap.clientHeight / 2, 2);
+            if (d < distance) { distance = d; best = { id: el.getAttribute("data-id"), x: x, y: y }; }
+        });
+        return best;
+    }
+
     function draw() {
+        var viewportAnchor = renderedViewportAnchor();
         cancelWheelZoom();
         clearEdgeHover();
         layout(ROOT, "right", 0, 0);
@@ -1933,12 +1971,7 @@
             el.style.minHeight = n._h + "px";
             el.style.height = n._h + "px";
             el.setAttribute("data-id", n.id);
-            if (n.id !== "root") {
-                var k = document.createElement("span");
-                k.className = "sm-k";
-                k.textContent = KIND[n.kind] || "";
-                el.appendChild(k);
-            }
+            appendNodeHeader(el, n, true);
             var titleEl = document.createElement("span");
             titleEl.className = "sm-title";
             titleEl.textContent = ru(n.screen_task || n.title);
@@ -1960,18 +1993,6 @@
                 approvalEl.className = "sm-approval";
                 approvalEl.textContent = approvalText(n);
                 el.appendChild(approvalEl);
-            }
-            if (n.note || (n.steps && n.steps.length)) {
-                var mark = document.createElement("button");
-                mark.type = "button";
-                mark.className = "sm-has-note";
-                mark.title = "Пояснение к блоку";
-                mark.setAttribute("aria-label", "Открыть пояснение");
-                mark.addEventListener("click", function (e) {
-                    e.stopPropagation();
-                    showNote(n);
-                });
-                el.appendChild(mark);
             }
             var tick = document.createElement("button");
             tick.type = "button";
@@ -2017,8 +2038,6 @@
             var linksBtn = document.createElement("button");
             linksBtn.type = "button";
             linksBtn.className = "sm-links-btn";
-            linksBtn.style.left = (n._x + 6) + "px";
-            linksBtn.style.top = (n._y + n._h - 8) + "px";
             linksBtn.title = "Связи блока: кнопка и кто нажимает";
             linksBtn.setAttribute("aria-label", "Связи блока");
             linksBtn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M9 7h8v8"/></svg>';
@@ -2026,8 +2045,7 @@
                 e.stopPropagation();
                 openLinkActs(n);
             });
-            styleFocusControl(linksBtn, n.id);
-            board.appendChild(linksBtn);
+            el.appendChild(linksBtn);
             if (state.showApi && apiOf(n).length) {
                 var apiBtn = document.createElement("button");
                 apiBtn.type = "button";
@@ -2108,12 +2126,15 @@
                 board.appendChild(lbtn);
             });
         });
-        applyTransform();
-        if (!didCenter) {
+        var anchoredNode = viewportAnchor && nodes.find(function (n) { return n.id === viewportAnchor.id; });
+        if (anchoredNode) {
+            state.x = viewportAnchor.x - (anchoredNode._x + anchoredNode._w / 2) * state.scale;
+            state.y = viewportAnchor.y - (anchoredNode._y + anchoredNode._h / 2) * state.scale;
+        } else {
             centerOnRoot();
-            didCenter = true;
-            applyTransform();
         }
+        didCenter = true;
+        applyTransform();
     }
 
     var didCenter = false;
