@@ -1135,3 +1135,6 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
 #smBoard.is-task-focus .sm-svg .sm-edge.is-anchor-edge:not(.is-hot) { opacity: 0.65; }
 
 #smBoard.is-task-focus .sm-topic.is-focus-anchor:hover { opacity: 1; }
+
+/* Route jump names and destination steps use separate lines. */
+.sm-kind-route .sm-title { white-space: pre-line; }

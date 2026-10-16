@@ -1,4 +1,4 @@
-/* Working map version: 2026-10-16-task-details-clean-notes-local */
+/* Working map version: 2026-10-16-explicit-route-steps-local */
 window.LAKOM_SCHEMA_EXPORT = {
   "rootTopic": {
     "id": "root",
@@ -64,7 +64,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                     "open": true,
                     "links": [
                       "f_227_4034",
-                      "local_purchased_product_route"
+                      "local_route_jump_8a027ae32814"
                     ],
                     "edge": "Да / спецификация не требуется",
                     "approval_badge_visible": false,
@@ -90,7 +90,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "notes": "Первичный поиск: нужная продукция и цвет, нужная фасовка; допускается другая этикетка. Другую фасовку здесь не учитывать. Да — маршрут ГП: полностью подходит либо замена этикетки. Нет или хватает частично — определить незакрытый объём. Другую фасовку проверять позже, после нехватки ПФ, для объёма до 250 кг.",
                             "open": true,
                             "links": [
-                              "f_257_6364",
+                              "local_route_jump_e0f6b0e136bd",
                               "local_initial_gp_partial_reserve"
                             ],
                             "edge": "Количество в килограммах",
@@ -105,7 +105,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                 "open": true,
                                 "links": [
                                   "f_227_4048",
-                                  "f_257_6364"
+                                  "local_route_jump_f23d1dc97202"
                                 ],
                                 "edge": "Нет — полное покрытие отсутствует",
                                 "approval_badge_visible": false,
@@ -131,7 +131,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "kind": "check",
                                         "open": true,
                                         "links": [
-                                          "f_262_6981",
+                                          "local_route_jump_c0d5413d27ec",
                                           "f_227_4035"
                                         ],
                                         "edge": "",
@@ -144,7 +144,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                             "kind": "check",
                                             "open": true,
                                             "links": [
-                                              "f_257_6365",
+                                              "local_route_jump_9f555ceb21bd",
                                               "f_227_4049"
                                             ],
                                             "edge": "Тип продукции — остальное",
@@ -212,13 +212,42 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                         "kind": "check",
                                                         "open": true,
                                                         "links": [
-                                                          "f_227_4043",
-                                                          "f_227_4068"
+                                                          "local_general_gp_repacking_route",
+                                                          "local_general_new_batch_route"
                                                         ],
                                                         "edge": "Нет — ПФ недостаточно",
                                                         "approval_badge_visible": false,
                                                         "review_status": "pending",
-                                                        "children": []
+                                                        "children": [
+                                                          {
+                                                            "id": "local_general_gp_repacking_route",
+                                                            "title": "Маршрут: Готовая продукция со склада\nШаг: Система: закрепить резерв ГП и партии",
+                                                            "kind": "route",
+                                                            "notes": "ПФ уже проверен и недостаточен. Сохранить выбранную ГП, партии, объём и способ подготовки «Перефасовка». Перейти к существующему резерву ГП и продолжить только ветку перефасовки; повторно не выбирать способ подготовки.",
+                                                            "open": true,
+                                                            "links": [
+                                                              "f_227_4043"
+                                                            ],
+                                                            "edge": "Да",
+                                                            "approval_badge_visible": false,
+                                                            "route_target_id": "f_227_4043",
+                                                            "children": []
+                                                          },
+                                                          {
+                                                            "id": "local_general_new_batch_route",
+                                                            "title": "Маршрут «Новый замес»",
+                                                            "kind": "route",
+                                                            "notes": "Для незакрытого объёма продолжить существующий маршрут нового замеса. Этот блок обозначает переход, не создаёт второй замес или отдельную копию цепочки.",
+                                                            "open": true,
+                                                            "links": [
+                                                              "f_227_4068"
+                                                            ],
+                                                            "edge": "Нет / хватает только частично",
+                                                            "approval_badge_visible": false,
+                                                            "route_target_id": "f_227_4068",
+                                                            "children": []
+                                                          }
+                                                        ]
                                                       }
                                                     ]
                                                   },
@@ -252,18 +281,88 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     ]
                                                   }
                                                 ]
+                                              },
+                                              {
+                                                "id": "local_route_jump_9f555ceb21bd",
+                                                "title": "Маршрут: колерованной продукции",
+                                                "kind": "route",
+                                                "notes": "",
+                                                "open": true,
+                                                "links": [
+                                                  "f_257_6365"
+                                                ],
+                                                "edge": "С цветом",
+                                                "approval_badge_visible": false,
+                                                "route_target_id": "f_257_6365",
+                                                "children": []
                                               }
                                             ]
+                                          },
+                                          {
+                                            "id": "local_route_jump_c0d5413d27ec",
+                                            "title": "Маршрут: затирки",
+                                            "kind": "route",
+                                            "notes": "",
+                                            "open": true,
+                                            "links": [
+                                              "f_262_6981"
+                                            ],
+                                            "edge": "Тип продукции — затирка",
+                                            "approval_badge_visible": false,
+                                            "route_target_id": "f_262_6981",
+                                            "children": []
                                           }
                                         ]
                                       }
                                     ]
+                                  },
+                                  {
+                                    "id": "local_route_jump_f23d1dc97202",
+                                    "title": "Маршрут: Готовая продукция со склада",
+                                    "kind": "route",
+                                    "notes": "",
+                                    "open": true,
+                                    "links": [
+                                      "f_257_6364"
+                                    ],
+                                    "edge": "Найденная часть > 0 — маршрут ГП",
+                                    "approval_badge_visible": false,
+                                    "route_target_id": "f_257_6364",
+                                    "children": []
                                   }
                                 ]
+                              },
+                              {
+                                "id": "local_route_jump_e0f6b0e136bd",
+                                "title": "Маршрут: Готовая продукция со склада",
+                                "kind": "route",
+                                "notes": "",
+                                "open": true,
+                                "links": [
+                                  "f_257_6364"
+                                ],
+                                "edge": "Полностью, с учетом Min остатка",
+                                "approval_badge_visible": false,
+                                "route_target_id": "f_257_6364",
+                                "children": []
                               }
                             ]
                           }
                         ]
+                      },
+                      {
+                        "id": "local_route_jump_8a027ae32814",
+                        "title": "Маршрут: обеспечения покупной продукции",
+                        "kind": "route",
+                        "notes": "",
+                        "open": true,
+                        "links": [
+                          "local_purchased_product_route"
+                        ],
+                        "edge": "Перекуп",
+                        "approval_badge_visible": false,
+                        "route_target_id": "local_purchased_product_route",
+                        "children": []
                       }
                     ]
                   },
@@ -435,14 +534,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "open": true,
                                     "links": [
                                       "f_227_4068",
-                                      "local_grout_base_ready"
+                                      "local_route_jump_d1c94384ebb5"
                                     ],
                                     "edge": "Нет",
                                     "approval_badge_visible": false,
                                     "review_status": "pending",
                                     "route_target_id": "f_227_4068",
                                     "continuation_after_route": true,
-                                    "children": []
+                                    "children": [
+                                      {
+                                        "id": "local_route_jump_d1c94384ebb5",
+                                        "title": "Маршрут: обеспечения из ПФ\nШаг: Компонент А обеспечен; зафиксированы масса, партия и исходная позиция",
+                                        "kind": "route",
+                                        "notes": "",
+                                        "open": true,
+                                        "links": [
+                                          "local_grout_base_ready"
+                                        ],
+                                        "edge": "После нового замеса и приёмки базы",
+                                        "approval_badge_visible": false,
+                                        "route_target_id": "local_grout_base_ready",
+                                        "children": []
+                                      }
+                                    ]
                                   }
                                 ]
                               }
@@ -835,7 +949,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "open": true,
                                         "links": [
                                           "f_230_5046",
-                                          "equipment_wash_decision"
+                                          "local_route_jump_76aab0668582"
                                         ],
                                         "edge": "",
                                         "approval_badge_visible": false,
@@ -1052,6 +1166,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                 ]
                                               }
                                             ]
+                                          },
+                                          {
+                                            "id": "local_route_jump_76aab0668582",
+                                            "title": "Маршрут: Мойка оборудования\nШаг: Решить, нужна ли мойка",
+                                            "kind": "route",
+                                            "notes": "",
+                                            "open": true,
+                                            "links": [
+                                              "equipment_wash_decision"
+                                            ],
+                                            "edge": "Параллельно: ресурс освобождён",
+                                            "approval_badge_visible": false,
+                                            "route_target_id": "equipment_wash_decision",
+                                            "children": []
                                           }
                                         ],
                                         "task_card": {
@@ -1102,7 +1230,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "open": true,
                                     "links": [
                                       "f_262_7262",
-                                      "equipment_wash_decision"
+                                      "local_route_jump_a9b163e7fb39"
                                     ],
                                     "edge": "Тара оклеена",
                                     "approval_badge_visible": false,
@@ -1137,7 +1265,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "scope": "Прямое уточнение пользователя: физическое место фасовки и назначение исполнителя"
                                       }
                                     ],
-                                    "children": [],
+                                    "children": [
+                                      {
+                                        "id": "local_route_jump_a9b163e7fb39",
+                                        "title": "Маршрут: Мойка оборудования\nШаг: Решить, нужна ли мойка",
+                                        "kind": "route",
+                                        "notes": "",
+                                        "open": true,
+                                        "links": [
+                                          "equipment_wash_decision"
+                                        ],
+                                        "edge": "Параллельно: ресурс освобождён",
+                                        "approval_badge_visible": false,
+                                        "route_target_id": "equipment_wash_decision",
+                                        "children": []
+                                      }
+                                    ],
                                     "task_card": {
                                       "role": "Сотрудник склада ПФ",
                                       "screen": "Фасовка",
@@ -1360,7 +1503,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "links": [
                                       "local_syringe_paste_to_pf",
                                       "f_230_5126",
-                                      "local_quality_unfixable_defect_route"
+                                      "local_route_jump_c59d9b98b106"
                                     ],
                                     "edge": "Пустое — самостоятельное принятие",
                                     "approval_badge_visible": true,
@@ -1467,7 +1610,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     "notes": "Экран: «Фасовка».\nЭтап: Фасовка и комплектация.\nТип задания: T24 — Наполнить шприцы.\n\nДанные:\n• Список заданий и карточка: счёт / позиция, продукция, партия, масса, фасовка, тара, план/факт количества; состав комплекта для затирки.\n• Фильтры / сортировка: физическое место фасовки, тип работы, продукция, исполнитель, статус, срок и приоритет.\n\nТекущее задание:\nСотрудник склада ПФ: наполнить шприцы; подтвердить количество по фасовкам и партию\nРоль: Сотрудник склада ПФ.\nМесто: Склад ПФ — отдельное помещение, участок мелкой фасовки.\n\nДействия:\n• «Взять в работу».\n• «Выполнено».\n• «Проблема» — указать причину.\n\nПравила процесса:\nФасовка принятой пасты выполняется на складе ПФ. Подтверждать фактический выпуск отдельно по каждой номенклатуре/фасовке.\n\nПосле фасовки:\nПри полном освобождении ресурса — задание старшему смены на запуск мойки. До её завершения ресурс недоступен. Продукция продолжает маршрут.\n\nФасовки: 5 мл / 10 мл / 12,5 мл; фактический выход по каждой отдельно. Исполнитель фасовки — сотрудник склада ПФ; физическое место — склад ПФ.",
                                                     "open": true,
                                                     "links": [
-                                                      "equipment_wash_decision"
+                                                      "local_route_jump_5a716a88fa70"
                                                     ],
                                                     "edge": "Тара оклеена",
                                                     "approval_badge_visible": false,
@@ -1636,6 +1779,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                             }
                                                           }
                                                         ]
+                                                      },
+                                                      {
+                                                        "id": "local_route_jump_5a716a88fa70",
+                                                        "title": "Маршрут: Мойка оборудования\nШаг: Решить, нужна ли мойка",
+                                                        "kind": "route",
+                                                        "notes": "",
+                                                        "open": true,
+                                                        "links": [
+                                                          "equipment_wash_decision"
+                                                        ],
+                                                        "edge": "Параллельно: ресурс освобождён",
+                                                        "approval_badge_visible": false,
+                                                        "route_target_id": "equipment_wash_decision",
+                                                        "children": []
                                                       }
                                                     ],
                                                     "task_card": {
@@ -1712,7 +1869,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                             "open": true,
                                             "links": [
                                               "local_paste_correction_material_onec",
-                                              "local_material_supply_route"
+                                              "local_route_jump_84e560e98cb8"
                                             ],
                                             "edge": "Не хватает пигмента — указать материал и количество",
                                             "screen_id": "warehouse_tasks",
@@ -1740,10 +1897,38 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                 "edge": "Материалы доставлены",
                                                 "approval_badge_visible": false,
                                                 "children": []
+                                              },
+                                              {
+                                                "id": "local_route_jump_84e560e98cb8",
+                                                "title": "Маршрут: Ожидание снабжения материалов",
+                                                "kind": "route",
+                                                "notes": "",
+                                                "open": true,
+                                                "links": [
+                                                  "local_material_supply_route"
+                                                ],
+                                                "edge": "Нет материала на складе-источнике",
+                                                "approval_badge_visible": false,
+                                                "route_target_id": "local_material_supply_route",
+                                                "children": []
                                               }
                                             ]
                                           }
                                         ]
+                                      },
+                                      {
+                                        "id": "local_route_jump_c59d9b98b106",
+                                        "title": "Маршрут: Брак и возвраты — неисправимая партия",
+                                        "kind": "route",
+                                        "notes": "",
+                                        "open": true,
+                                        "links": [
+                                          "local_quality_unfixable_defect_route"
+                                        ],
+                                        "edge": "Исправить нельзя",
+                                        "approval_badge_visible": false,
+                                        "route_target_id": "local_quality_unfixable_defect_route",
+                                        "children": []
                                       }
                                     ]
                                   },
@@ -1756,7 +1941,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "links": [
                                       "local_syringe_paste_to_pf",
                                       "f_230_5126",
-                                      "local_quality_unfixable_defect_route"
+                                      "local_route_jump_ca75edd3a65c"
                                     ],
                                     "edge": "Заполнено — повторение цвета",
                                     "approval_badge_visible": true,
@@ -1777,7 +1962,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "scope": "assignment role and physical place"
                                       }
                                     ],
-                                    "children": [],
+                                    "children": [
+                                      {
+                                        "id": "local_route_jump_ca75edd3a65c",
+                                        "title": "Маршрут: Брак и возвраты — неисправимая партия",
+                                        "kind": "route",
+                                        "notes": "",
+                                        "open": true,
+                                        "links": [
+                                          "local_quality_unfixable_defect_route"
+                                        ],
+                                        "edge": "Исправить нельзя",
+                                        "approval_badge_visible": false,
+                                        "route_target_id": "local_quality_unfixable_defect_route",
+                                        "children": []
+                                      }
+                                    ],
                                     "task_card": {
                                       "role": "Сотрудник ОТК",
                                       "screen": "ОТК / лаборатория",
@@ -1813,7 +2013,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                         "open": true,
                         "links": [
                           "local_syringe_material_transfer",
-                          "local_material_supply_route"
+                          "local_route_jump_d114b7f0942f"
                         ],
                         "edge": "Нет",
                         "approval_badge_visible": false,
@@ -1836,6 +2036,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "edge": "Выполнено — Материалы переданы",
                             "approval_badge_visible": false,
                             "review_status": "pending",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_d114b7f0942f",
+                            "title": "Маршрут: Ожидание снабжения материалов",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_material_supply_route"
+                            ],
+                            "edge": "Нет материала на складе-источнике",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_material_supply_route",
                             "children": []
                           }
                         ],
@@ -2052,14 +2266,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "open": true,
                                         "links": [
                                           "f_227_4068",
-                                          "local_resume_coloring_after_batch"
+                                          "local_route_jump_51e4b85481db"
                                         ],
                                         "edge": "",
                                         "approval_badge_visible": false,
                                         "review_status": "pending",
                                         "route_target_id": "f_227_4068",
                                         "continuation_after_route": true,
-                                        "children": []
+                                        "children": [
+                                          {
+                                            "id": "local_route_jump_51e4b85481db",
+                                            "title": "Маршрут: Новый замес\nШаг: Место колеровки этой части уже назначено?",
+                                            "kind": "route",
+                                            "notes": "",
+                                            "open": true,
+                                            "links": [
+                                              "local_resume_coloring_after_batch"
+                                            ],
+                                            "edge": "После приёмки и распределения базы",
+                                            "approval_badge_visible": false,
+                                            "route_target_id": "local_resume_coloring_after_batch",
+                                            "children": []
+                                          }
+                                        ]
                                       }
                                     ]
                                   }
@@ -2090,14 +2319,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "open": true,
                             "links": [
                               "f_227_4068",
-                              "local_resume_coloring_after_batch"
+                              "local_route_jump_fd9cac87b3a3"
                             ],
                             "edge": "",
                             "approval_badge_visible": false,
                             "review_status": "pending",
                             "route_target_id": "f_227_4068",
                             "continuation_after_route": true,
-                            "children": []
+                            "children": [
+                              {
+                                "id": "local_route_jump_fd9cac87b3a3",
+                                "title": "Маршрут: Новый замес\nШаг: Место колеровки этой части уже назначено?",
+                                "kind": "route",
+                                "notes": "",
+                                "open": true,
+                                "links": [
+                                  "local_resume_coloring_after_batch"
+                                ],
+                                "edge": "После приёмки и распределения базы",
+                                "approval_badge_visible": false,
+                                "route_target_id": "local_resume_coloring_after_batch",
+                                "children": []
+                              }
+                            ]
                           }
                         ]
                       }
@@ -2260,13 +2504,42 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "kind": "check",
                                         "open": true,
                                         "links": [
-                                          "f_241_5098",
-                                          "f_241_5114"
+                                          "local_route_jump_db8d8fc9844a",
+                                          "local_route_jump_b1bb632030e6"
                                         ],
                                         "edge": "После подготовки ПФ",
                                         "approval_badge_visible": false,
                                         "review_status": "pending",
-                                        "children": []
+                                        "children": [
+                                          {
+                                            "id": "local_route_jump_db8d8fc9844a",
+                                            "title": "Маршрут: Колеровка на КМ",
+                                            "kind": "route",
+                                            "notes": "",
+                                            "open": true,
+                                            "links": [
+                                              "f_241_5098"
+                                            ],
+                                            "edge": "Технолог выбрал КМ",
+                                            "approval_badge_visible": false,
+                                            "route_target_id": "f_241_5098",
+                                            "children": []
+                                          },
+                                          {
+                                            "id": "local_route_jump_b1bb632030e6",
+                                            "title": "Маршрут: Колеровка на производстве",
+                                            "kind": "route",
+                                            "notes": "",
+                                            "open": true,
+                                            "links": [
+                                              "f_241_5114"
+                                            ],
+                                            "edge": "Технолог выбрал производство",
+                                            "approval_badge_visible": false,
+                                            "route_target_id": "f_241_5114",
+                                            "children": []
+                                          }
+                                        ]
                                       }
                                     ]
                                   }
@@ -2335,14 +2608,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                                 "open": true,
                                 "links": [
                                   "f_227_4068",
-                                  "local_sample_fresh_batch_destination"
+                                  "local_route_jump_a3301c3faacd"
                                 ],
                                 "edge": "Подтвердить расчёт — Рецепт и место подтверждены",
                                 "approval_badge_visible": false,
                                 "review_status": "pending",
                                 "route_target_id": "f_227_4068",
                                 "continuation_after_route": true,
-                                "children": []
+                                "children": [
+                                  {
+                                    "id": "local_route_jump_a3301c3faacd",
+                                    "title": "Маршрут: Новый замес\nШаг: Куда назначена колеровка этой части?",
+                                    "kind": "route",
+                                    "notes": "",
+                                    "open": true,
+                                    "links": [
+                                      "local_sample_fresh_batch_destination"
+                                    ],
+                                    "edge": "Образец 1 кг — база готова",
+                                    "approval_badge_visible": false,
+                                    "route_target_id": "local_sample_fresh_batch_destination",
+                                    "children": []
+                                  }
+                                ]
                               }
                             ],
                             "task_card": {
@@ -2490,14 +2778,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                                             "open": true,
                                             "links": [
                                               "f_258_5065",
-                                              "f_241_5098"
+                                              "local_route_jump_4c4259d7f7e5"
                                             ],
                                             "edge": "Назначена КМ",
                                             "approval_badge_visible": false,
                                             "review_status": "pending",
                                             "route_target_id": "f_258_5065",
                                             "continuation_after_route": true,
-                                            "children": []
+                                            "children": [
+                                              {
+                                                "id": "local_route_jump_4c4259d7f7e5",
+                                                "title": "Маршрут: Колеровка на КМ",
+                                                "kind": "route",
+                                                "notes": "",
+                                                "open": true,
+                                                "links": [
+                                                  "f_241_5098"
+                                                ],
+                                                "edge": "После подготовки ПФ — колеровка на КМ",
+                                                "approval_badge_visible": false,
+                                                "route_target_id": "f_241_5098",
+                                                "children": []
+                                              }
+                                            ]
                                           }
                                         ]
                                       }
@@ -2587,13 +2890,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "notes": "Локальный резерв в Лакомке. Колеровка штукатурки допускается только на производстве.",
                                         "open": true,
                                         "links": [
-                                          "f_241_5114"
+                                          "local_route_jump_3bfa3d120d22"
                                         ],
                                         "edge": "Да — ГП достаточно",
                                         "approval_badge_visible": false,
                                         "review_status": "pending",
                                         "automatic_step": true,
-                                        "children": []
+                                        "children": [
+                                          {
+                                            "id": "local_route_jump_3bfa3d120d22",
+                                            "title": "Маршрут: Колеровка на производстве",
+                                            "kind": "route",
+                                            "notes": "",
+                                            "open": true,
+                                            "links": [
+                                              "f_241_5114"
+                                            ],
+                                            "edge": "Маршрут колеровки на производстве",
+                                            "approval_badge_visible": false,
+                                            "route_target_id": "f_241_5114",
+                                            "children": []
+                                          }
+                                        ]
                                       },
                                       {
                                         "id": "local_plaster_new_batch_route",
@@ -2603,14 +2921,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "open": true,
                                         "links": [
                                           "f_227_4068",
-                                          "f_241_5114"
+                                          "local_route_jump_19ebbe5fc252"
                                         ],
                                         "edge": "Нет — нужен новый замес",
                                         "approval_badge_visible": false,
                                         "review_status": "pending",
                                         "route_target_id": "f_227_4068",
                                         "continuation_after_route": true,
-                                        "children": []
+                                        "children": [
+                                          {
+                                            "id": "local_route_jump_19ebbe5fc252",
+                                            "title": "Маршрут: Колеровка на производстве",
+                                            "kind": "route",
+                                            "notes": "",
+                                            "open": true,
+                                            "links": [
+                                              "f_241_5114"
+                                            ],
+                                            "edge": "После готовности базы — только производство",
+                                            "approval_badge_visible": false,
+                                            "route_target_id": "f_241_5114",
+                                            "children": []
+                                          }
+                                        ]
                                       }
                                     ]
                                   },
@@ -2622,14 +2955,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "open": true,
                                     "links": [
                                       "f_227_4068",
-                                      "local_resume_coloring_after_batch"
+                                      "local_route_jump_af578fcd3154"
                                     ],
                                     "edge": "Нет: остальные",
                                     "approval_badge_visible": false,
                                     "review_status": "pending",
                                     "route_target_id": "f_227_4068",
                                     "continuation_after_route": true,
-                                    "children": []
+                                    "children": [
+                                      {
+                                        "id": "local_route_jump_af578fcd3154",
+                                        "title": "Маршрут: Новый замес\nШаг: Место колеровки этой части уже назначено?",
+                                        "kind": "route",
+                                        "notes": "",
+                                        "open": true,
+                                        "links": [
+                                          "local_resume_coloring_after_batch"
+                                        ],
+                                        "edge": "После приёмки и распределения базы",
+                                        "approval_badge_visible": false,
+                                        "route_target_id": "local_resume_coloring_after_batch",
+                                        "children": []
+                                      }
+                                    ]
                                   }
                                 ]
                               }
@@ -2718,7 +3066,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "open": true,
                             "links": [
                               "f_227_4092",
-                              "local_start_account_work"
+                              "local_route_jump_780907f786e1"
                             ],
                             "edge": "Нет — маркировка подходит",
                             "approval_badge_visible": false,
@@ -2783,6 +3131,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "children": []
                                   }
                                 ]
+                              },
+                              {
+                                "id": "local_route_jump_780907f786e1",
+                                "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                "kind": "route",
+                                "notes": "",
+                                "open": true,
+                                "links": [
+                                  "local_start_account_work"
+                                ],
+                                "edge": "Проблема — в обеспечение счёта",
+                                "approval_badge_visible": false,
+                                "route_target_id": "local_start_account_work",
+                                "children": []
                               }
                             ],
                             "task_card": {
@@ -2817,7 +3179,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                 "open": true,
                                 "links": [
                                   "f_227_4076",
-                                  "local_start_account_work"
+                                  "local_route_jump_20ffc912b385"
                                 ],
                                 "edge": "Макет и документ печати сформированы",
                                 "approval_badge_visible": false,
@@ -2838,7 +3200,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "scope": "assignment role and physical place"
                                   }
                                 ],
-                                "children": [],
+                                "children": [
+                                  {
+                                    "id": "local_route_jump_20ffc912b385",
+                                    "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                    "kind": "route",
+                                    "notes": "",
+                                    "open": true,
+                                    "links": [
+                                      "local_start_account_work"
+                                    ],
+                                    "edge": "Проблема — в обеспечение счёта",
+                                    "approval_badge_visible": false,
+                                    "route_target_id": "local_start_account_work",
+                                    "children": []
+                                  }
+                                ],
                                 "task_card": {
                                   "role": "Сотрудник склада",
                                   "screen": "Маркировка",
@@ -2866,7 +3243,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                     "open": true,
                     "links": [
                       "f_227_4045",
-                      "f_227_4058"
+                      "local_route_jump_5a2b64541ed2"
                     ],
                     "edge": "Есть объём, но другая фасовка",
                     "approval_badge_visible": false,
@@ -2918,7 +3295,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "open": true,
                                     "links": [
                                       "local_repacking_gp_production_transfer",
-                                      "local_start_account_work"
+                                      "local_route_jump_03a04a77f77a"
                                     ],
                                     "edge": "",
                                     "approval_badge_visible": false,
@@ -2964,7 +3341,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                             "notes": "Экран: «Маркировка».\nЗадание: Подготовить и оклеить новую тару перед перефасовкой.\nРоль: Этикеровщик.\nМесто: Зона фасовки производства.\nДанные: счёт, позиция, продукция, партия, фасовка, количество тары, макет и документ печати.\nКнопки: «Взять в работу», «Напечатать», «Выполнено», «Проблема».\nПодготовить тару до перефасовки; использовать подходящую ранее подготовленную тару и дополнить недостающее.\n\n«Проблема»: указать причину и фактически выполненное количество. Приостановить это задание; показать проблему в исходной позиции карточки обеспечения счёта. После решения продолжить это же задание с сохранённым результатом.",
                                             "open": true,
                                             "links": [
-                                              "local_start_account_work"
+                                              "local_route_jump_6c103f8fdf88"
                                             ],
                                             "edge": "ГП передана на место перефасовки",
                                             "approval_badge_visible": false,
@@ -2997,9 +3374,9 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                 "notes": "Экран: «Фасовка».\nТип задания: T22 — Перефасовать ГП.\nЗадание: Перефасовать зарезервированную ГП в подготовленную тару.\nРоль: Фасовщик производства.\nМесто: Зона фасовки производства.\n\nДанные:\n• Счёт и позиция, продукция, исходные партии и масса.\n• Требуемая фасовка, тара и план/факт количества.\n\nКнопки:\n• «Взять в работу» — любой свободный фасовщик производства закрепляет за собой задание; фиксируется время начала.\n• «Выполнено» — подтвердить полученное количество и остаток; продолжить текущие ветки выпуска и обработки остатка. Освобождённое оборудование передать в процесс мойки.\n• «Проблема» — указать причину и фактически выполненное количество; показать проблему в обеспечении исходного счёта.\n\nПосле решения проблемы продолжить это же задание с сохранённым результатом.",
                                                 "open": true,
                                                 "links": [
-                                                  "equipment_wash_decision",
+                                                  "local_route_jump_c9878e858bb7",
                                                   "local_repacking_parallel_outputs",
-                                                  "local_start_account_work"
+                                                  "local_route_jump_ae668be6ac01"
                                                 ],
                                                 "edge": "Выполнено — новая тара подготовлена",
                                                 "approval_badge_visible": false,
@@ -3085,7 +3462,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                             "notes": "Экран: «Карточка обеспечения счёта».\nЭтап: Пополнение склада.\nТип задания: T06 — Оформить пополнение склада.\n\nДанные:\n• Список заданий и карточка: Счёт, позиция, объём, источник, партия, связанные задания и план/факт.\n• Фильтры / сортировка: Счёт, позиция, статус, срок.\n\nТекущее задание:\nСоздать счет на пополнение ГП образцов\nРоль: Сотрудник по планированию производства.\nМесто: указано в задании; неподтверждённые места требуют уточнения.\n\nДействия:\n• «Взять в работу».\n• «Выполнено».\n• «Проблема» — указать причину.\n\nПравила процесса:\nЗафиксировать количество остатка в кг и продукцию для выпуска образцов. Эта ветка относится только к выделенному остатку, а не ко всему объёму перефасовки.\nДля пополнения ГП создать счёт на контрагента «Пополнение склада», далее обработка как у клиентского счёта. Инициатор — менеджер, руководитель склада или планировщик.\n\n«Проблема»: указать причину и фактически выполненное количество. Приостановить это задание; показать проблему в исходной позиции карточки обеспечения счёта. После решения продолжить это же задание с сохранённым результатом.",
                                                             "open": true,
                                                             "links": [
-                                                              "local_start_account_work"
+                                                              "local_route_jump_b34ace4649a0"
                                                             ],
                                                             "edge": "Есть остаток, на ГП",
                                                             "approval_badge_visible": false,
@@ -3132,7 +3509,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                     "notes": "Экран: «Маркировка».\nЗадание: Подготовить и оклеить тару для образцов\nРоль: Этикеровщик.\nМесто: Зона фасовки производства.\nДанные: продукция, партия, цвет, фасовка, количество тары и автоматический документ печати.\nКнопки: «Взять в работу», «Напечатать», «Выполнено», «Проблема» — причина.\nПодготовить и оклеить тару до фасовки; при наличии ранее подготовленной тары использовать её и дополнить недостающее. Для цвета — дополнительный стикер на арбитражный образец.\n\n\n«Проблема»: указать причину и фактически выполненное количество. Приостановить это задание; показать проблему в исходной позиции карточки обеспечения счёта. После решения продолжить это же задание с сохранённым результатом.",
                                                                     "open": true,
                                                                     "links": [
-                                                                      "local_start_account_work"
+                                                                      "local_route_jump_9c9b6732ddbf"
                                                                     ],
                                                                     "edge": "Макет и документ печати сформированы",
                                                                     "approval_badge_visible": false,
@@ -3150,8 +3527,8 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                         "notes": "Экран: «Фасовка».\nЭтап: Фасовка и комплектация.\nТип задания: T20 — Расфасовать продукцию.\n\nДанные:\n• Список заданий и карточка: счёт / позиция, продукция, партия, масса, фасовка, тара, план/факт количества; состав комплекта для затирки.\n• Фильтры / сортировка: место фасовки, тип продукции, статус, срок, приоритет.\n\nТекущее задание:\nФасовщик производства: расфасовать остаток на образцы по позициям счёта\nРоль: Фасовщик производства.\nМесто: Зона фасовки производства.\n\nДействия:\n• «Взять в работу».\n• «Выполнено».\n• «Проблема» — указать причину.\n\nПравила процесса:\nПодтвердить фактический объём, фасовку, количество ёмкостей и расход тары. Только масса, выделенная на образцы; не списывать её повторно в основной перефасовке.\n\nПосле фасовки:\nПри полном освобождении ресурса — задание старшему смены на запуск мойки. До её завершения ресурс недоступен. Продукция продолжает маршрут.\n\nЗадание берёт любой свободный фасовщик производства; зафиксировать исполнителя и время начала.\n\n«Проблема»: указать причину и фактически выполненное количество. Приостановить это задание; показать проблему в исходной позиции карточки обеспечения счёта. После решения продолжить это же задание с сохранённым результатом.",
                                                                         "open": true,
                                                                         "links": [
-                                                                          "equipment_wash_decision",
-                                                                          "local_start_account_work"
+                                                                          "local_route_jump_9f2ac657a1e7",
+                                                                          "local_route_jump_36051dffe83e"
                                                                         ],
                                                                         "edge": "Выполнено — тара оклеена",
                                                                         "approval_badge_visible": false,
@@ -3205,7 +3582,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                     "open": true,
                                                                                     "links": [
                                                                                       "local_repacking_samples_done",
-                                                                                      "local_start_account_work"
+                                                                                      "local_route_jump_dde1d3c21d88"
                                                                                     ],
                                                                                     "edge": "Передача оформлена",
                                                                                     "approval_badge_visible": false,
@@ -3238,6 +3615,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                         "approval_badge_visible": false,
                                                                                         "review_status": "pending",
                                                                                         "children": []
+                                                                                      },
+                                                                                      {
+                                                                                        "id": "local_route_jump_dde1d3c21d88",
+                                                                                        "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                                                        "kind": "route",
+                                                                                        "notes": "",
+                                                                                        "open": true,
+                                                                                        "links": [
+                                                                                          "local_start_account_work"
+                                                                                        ],
+                                                                                        "edge": "Проблема — в обеспечение счёта",
+                                                                                        "approval_badge_visible": false,
+                                                                                        "route_target_id": "local_start_account_work",
+                                                                                        "children": []
                                                                                       }
                                                                                     ],
                                                                                     "task_card": {
@@ -3253,6 +3644,34 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                 ]
                                                                               }
                                                                             ]
+                                                                          },
+                                                                          {
+                                                                            "id": "local_route_jump_9f2ac657a1e7",
+                                                                            "title": "Маршрут: Мойка оборудования\nШаг: Решить, нужна ли мойка",
+                                                                            "kind": "route",
+                                                                            "notes": "",
+                                                                            "open": true,
+                                                                            "links": [
+                                                                              "equipment_wash_decision"
+                                                                            ],
+                                                                            "edge": "Выполнено — параллельно: ресурс освобождён",
+                                                                            "approval_badge_visible": false,
+                                                                            "route_target_id": "equipment_wash_decision",
+                                                                            "children": []
+                                                                          },
+                                                                          {
+                                                                            "id": "local_route_jump_36051dffe83e",
+                                                                            "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                                            "kind": "route",
+                                                                            "notes": "",
+                                                                            "open": true,
+                                                                            "links": [
+                                                                              "local_start_account_work"
+                                                                            ],
+                                                                            "edge": "Проблема — в обеспечение счёта",
+                                                                            "approval_badge_visible": false,
+                                                                            "route_target_id": "local_start_account_work",
+                                                                            "children": []
                                                                           }
                                                                         ],
                                                                         "task_card": {
@@ -3264,6 +3683,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                             "Проблема"
                                                                           ]
                                                                         }
+                                                                      },
+                                                                      {
+                                                                        "id": "local_route_jump_9c9b6732ddbf",
+                                                                        "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                                        "kind": "route",
+                                                                        "notes": "",
+                                                                        "open": true,
+                                                                        "links": [
+                                                                          "local_start_account_work"
+                                                                        ],
+                                                                        "edge": "Проблема — в обеспечение счёта",
+                                                                        "approval_badge_visible": false,
+                                                                        "route_target_id": "local_start_account_work",
+                                                                        "children": []
                                                                       }
                                                                     ],
                                                                     "task_card": {
@@ -3279,6 +3712,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                   }
                                                                 ],
                                                                 "main_branch_id": "mark_ready_local_repacking_samples_labels"
+                                                              },
+                                                              {
+                                                                "id": "local_route_jump_b34ace4649a0",
+                                                                "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                                "kind": "route",
+                                                                "notes": "",
+                                                                "open": true,
+                                                                "links": [
+                                                                  "local_start_account_work"
+                                                                ],
+                                                                "edge": "Проблема — в обеспечение счёта",
+                                                                "approval_badge_visible": false,
+                                                                "route_target_id": "local_start_account_work",
+                                                                "children": []
                                                               }
                                                             ],
                                                             "task_card": {
@@ -3299,7 +3746,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                             "open": true,
                                                             "links": [
                                                               "local_repacking_remainder_pf_onec",
-                                                              "local_start_account_work"
+                                                              "local_route_jump_927e8a9424c8"
                                                             ],
                                                             "edge": "Есть остаток, на ПФ",
                                                             "approval_badge_visible": false,
@@ -3349,6 +3796,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                     "children": []
                                                                   }
                                                                 ]
+                                                              },
+                                                              {
+                                                                "id": "local_route_jump_927e8a9424c8",
+                                                                "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                                "kind": "route",
+                                                                "notes": "",
+                                                                "open": true,
+                                                                "links": [
+                                                                  "local_start_account_work"
+                                                                ],
+                                                                "edge": "Проблема — в обеспечение счёта",
+                                                                "approval_badge_visible": false,
+                                                                "route_target_id": "local_start_account_work",
+                                                                "children": []
                                                               }
                                                             ],
                                                             "task_card": {
@@ -3418,7 +3879,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                 "open": true,
                                                                 "links": [
                                                                   "local_repacking_prepare_ready",
-                                                                  "local_start_account_work"
+                                                                  "local_route_jump_c808b27078a9"
                                                                 ],
                                                                 "edge": "Передача оформлена",
                                                                 "approval_badge_visible": false,
@@ -3448,7 +3909,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                     "open": true,
                                                                     "links": [
                                                                       "f_227_4093",
-                                                                      "local_start_account_work"
+                                                                      "local_route_jump_00b8842cbd10"
                                                                     ],
                                                                     "edge": "Выполнено — ГП физически принята",
                                                                     "approval_badge_visible": false,
@@ -3470,7 +3931,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                         "scope": "assignment role and physical place"
                                                                       }
                                                                     ],
-                                                                    "children": [],
+                                                                    "children": [
+                                                                      {
+                                                                        "id": "local_route_jump_00b8842cbd10",
+                                                                        "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                                        "kind": "route",
+                                                                        "notes": "",
+                                                                        "open": true,
+                                                                        "links": [
+                                                                          "local_start_account_work"
+                                                                        ],
+                                                                        "edge": "Проблема — в обеспечение счёта",
+                                                                        "approval_badge_visible": false,
+                                                                        "route_target_id": "local_start_account_work",
+                                                                        "children": []
+                                                                      }
+                                                                    ],
                                                                     "task_card": {
                                                                       "role": "Сотрудник склада; руководитель склада",
                                                                       "screen": "Задания склада",
@@ -3480,6 +3956,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                         "Проблема"
                                                                       ]
                                                                     }
+                                                                  },
+                                                                  {
+                                                                    "id": "local_route_jump_c808b27078a9",
+                                                                    "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                                    "kind": "route",
+                                                                    "notes": "",
+                                                                    "open": true,
+                                                                    "links": [
+                                                                      "local_start_account_work"
+                                                                    ],
+                                                                    "edge": "Проблема — в обеспечение счёта",
+                                                                    "approval_badge_visible": false,
+                                                                    "route_target_id": "local_start_account_work",
+                                                                    "children": []
                                                                   }
                                                                 ],
                                                                 "task_card": {
@@ -3497,6 +3987,34 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                         ]
                                                       }
                                                     ]
+                                                  },
+                                                  {
+                                                    "id": "local_route_jump_c9878e858bb7",
+                                                    "title": "Маршрут: Мойка оборудования\nШаг: Решить, нужна ли мойка",
+                                                    "kind": "route",
+                                                    "notes": "",
+                                                    "open": true,
+                                                    "links": [
+                                                      "equipment_wash_decision"
+                                                    ],
+                                                    "edge": "Выполнено — параллельно: ресурс освобождён",
+                                                    "approval_badge_visible": false,
+                                                    "route_target_id": "equipment_wash_decision",
+                                                    "children": []
+                                                  },
+                                                  {
+                                                    "id": "local_route_jump_ae668be6ac01",
+                                                    "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                    "kind": "route",
+                                                    "notes": "",
+                                                    "open": true,
+                                                    "links": [
+                                                      "local_start_account_work"
+                                                    ],
+                                                    "edge": "Проблема — в обеспечение счёта",
+                                                    "approval_badge_visible": false,
+                                                    "route_target_id": "local_start_account_work",
+                                                    "children": []
                                                   }
                                                 ],
                                                 "task_card": {
@@ -3508,6 +4026,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     "Проблема"
                                                   ]
                                                 }
+                                              },
+                                              {
+                                                "id": "local_route_jump_6c103f8fdf88",
+                                                "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                "kind": "route",
+                                                "notes": "",
+                                                "open": true,
+                                                "links": [
+                                                  "local_start_account_work"
+                                                ],
+                                                "edge": "Проблема — в обеспечение счёта",
+                                                "approval_badge_visible": false,
+                                                "route_target_id": "local_start_account_work",
+                                                "children": []
                                               }
                                             ],
                                             "task_card": {
@@ -3522,6 +4054,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                             }
                                           }
                                         ]
+                                      },
+                                      {
+                                        "id": "local_route_jump_03a04a77f77a",
+                                        "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                        "kind": "route",
+                                        "notes": "",
+                                        "open": true,
+                                        "links": [
+                                          "local_start_account_work"
+                                        ],
+                                        "edge": "Проблема — в обеспечение счёта",
+                                        "approval_badge_visible": false,
+                                        "route_target_id": "local_start_account_work",
+                                        "children": []
                                       }
                                     ],
                                     "task_card": {
@@ -3540,6 +4086,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "main_branch_id": "mark_ready_f_227_4077"
                           }
                         ]
+                      },
+                      {
+                        "id": "local_route_jump_5a2b64541ed2",
+                        "title": "Маршрут: Общий выбор маршрута\nШаг: Проверить: ПФ полностью закрывает незакрытый объём с учётом минимального остатка?",
+                        "kind": "route",
+                        "notes": "",
+                        "open": true,
+                        "links": [
+                          "f_227_4058"
+                        ],
+                        "edge": "Нет — сначала проверить ПФ",
+                        "approval_badge_visible": false,
+                        "route_target_id": "f_227_4058",
+                        "children": []
                       }
                     ]
                   },
@@ -3590,7 +4150,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                 "open": true,
                                 "links": [
                                   "f_227_4076",
-                                  "local_start_account_work"
+                                  "local_route_jump_aa00522eceb3"
                                 ],
                                 "edge": "",
                                 "approval_badge_visible": false,
@@ -3629,7 +4189,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "scope": "assignment role and physical place"
                                   }
                                 ],
-                                "children": [],
+                                "children": [
+                                  {
+                                    "id": "local_route_jump_aa00522eceb3",
+                                    "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                    "kind": "route",
+                                    "notes": "",
+                                    "open": true,
+                                    "links": [
+                                      "local_start_account_work"
+                                    ],
+                                    "edge": "Проблема — в обеспечение счёта",
+                                    "approval_badge_visible": false,
+                                    "route_target_id": "local_start_account_work",
+                                    "children": []
+                                  }
+                                ],
                                 "task_card": {
                                   "role": "Сотрудник склада; этикеровщик выдаёт этикетки",
                                   "screen": "Маркировка",
@@ -3687,13 +4262,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                 "kind": "system",
                 "open": true,
                 "links": [
-                  "f_227_4044"
+                  "local_route_jump_029c19082d8d"
                 ],
                 "edge": "Есть",
                 "approval_badge_visible": false,
                 "review_status": "pending",
                 "automatic_step": true,
-                "children": []
+                "children": [
+                  {
+                    "id": "local_route_jump_029c19082d8d",
+                    "title": "Маршрут: подготовки готовой продукции к отгрузке",
+                    "kind": "route",
+                    "notes": "",
+                    "open": true,
+                    "links": [
+                      "f_227_4044"
+                    ],
+                    "edge": "Далее",
+                    "approval_badge_visible": false,
+                    "route_target_id": "f_227_4044",
+                    "children": []
+                  }
+                ]
               },
               {
                 "id": "f_227_4188",
@@ -3758,7 +4348,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                 "open": true,
                 "links": [
                   "local_grout_base_ready",
-                  "local_start_account_work"
+                  "local_route_jump_db8610c19325"
                 ],
                 "edge": "Затирка",
                 "approval_badge_visible": false,
@@ -3819,15 +4409,58 @@ window.LAKOM_SCHEMA_EXPORT = {
                         "notes": "",
                         "open": true,
                         "links": [
-                          "f_241_5170",
-                          "local_colored_grout_route"
+                          "local_route_jump_27ab3e857ff5",
+                          "local_route_jump_5e792f7015c1"
                         ],
                         "edge": "Продолжить исходный заказ",
                         "approval_badge_visible": false,
                         "review_status": "pending",
-                        "children": []
+                        "children": [
+                          {
+                            "id": "local_route_jump_27ab3e857ff5",
+                            "title": "Маршрут: Комплектация затирки",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "f_241_5170"
+                            ],
+                            "edge": "Нет — комплектация без цвета",
+                            "approval_badge_visible": false,
+                            "route_target_id": "f_241_5170",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_5e792f7015c1",
+                            "title": "Маршрут: колерованной затирки",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_colored_grout_route"
+                            ],
+                            "edge": "Да — колерованная затирка",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_colored_grout_route",
+                            "children": []
+                          }
+                        ]
                       }
                     ]
+                  },
+                  {
+                    "id": "local_route_jump_db8610c19325",
+                    "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                    "kind": "route",
+                    "notes": "",
+                    "open": true,
+                    "links": [
+                      "local_start_account_work"
+                    ],
+                    "edge": "Проблема — в обеспечение счёта",
+                    "approval_badge_visible": false,
+                    "route_target_id": "local_start_account_work",
+                    "children": []
                   }
                 ],
                 "main_branch_id": "local_grout_base_ready",
@@ -3891,7 +4524,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                         "notes": "Автоматический документ печати по продукции, партии, фасовке и количеству.",
                         "open": true,
                         "links": [
-                          "local_start_account_work"
+                          "local_route_jump_7fc9be5ef123"
                         ],
                         "edge": "Макет и документ печати сформированы",
                         "approval_badge_visible": false,
@@ -3934,8 +4567,8 @@ window.LAKOM_SCHEMA_EXPORT = {
                                 "notes": "Экран: «Фасовка».\nЭтап: Фасовка и комплектация.\nТип задания: T20 — Расфасовать продукцию.\n\nДанные:\n• Фильтр по складу: ПФ, ГП, сырьё, переработка; можно выбрать несколько складов.\n• Сортировка: по складу, статусу, сроку и приоритету задания.\n• Список заданий: склад, счёт, позиция, действие, статус и исполнитель.\n• Карточка задания: ПФ, партия, план/факт кг, фасовка, тара, этикетки и стикеры.\n• План/факт, причина проблемы и история действий.\n\nТекущее задание:\nРасфасовать продукцию из ПФ; подтвердить массу, тару и партию.\nРоль: Сотрудник склада ПФ.\nМесто: Склад ПФ.\n\nДействия:\n• «Взять в работу» — назначить себя исполнителем и начать это задание.\n• «Выполнено» — сохранить фактическое количество и продолжить цепочку; при недостаче не отмечать полное выполнение.\n• «Проблема» — указать причину в этой карточке, сохранить факт и приостановить задание.\n\nРезультат:\nВыполнение или проблема отображается в исходной позиции на экране обеспечения счёта. После решения продолжается то же задание с сохранённым фактом.\n\nПосле фасовки:\nПри полном освобождении ресурса — задание старшему смены на запуск мойки. До её завершения ресурс недоступен. Продукция продолжает маршрут.\nЭто фасовка из имеющегося складского ПФ. Фасовка свежего замеса из дежи после ОТК выполняется отдельным заданием на производстве.",
                                 "open": true,
                                 "links": [
-                                  "local_start_account_work",
-                                  "equipment_wash_decision"
+                                  "local_route_jump_7e3bc79712b9",
+                                  "local_route_jump_88798a76550f"
                                 ],
                                 "edge": "Тара оклеена",
                                 "approval_badge_visible": false,
@@ -4042,7 +4675,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                             "open": true,
                                             "links": [
                                               "f_227_4221",
-                                              "local_start_account_work"
+                                              "local_route_jump_ed4a6c89c812"
                                             ],
                                             "edge": "Передача оформлена",
                                             "approval_badge_visible": false,
@@ -4078,7 +4711,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                 "open": true,
                                                 "links": [
                                                   "f_227_4229",
-                                                  "local_start_account_work"
+                                                  "local_route_jump_d0269749d49f"
                                                 ],
                                                 "edge": "Выполнено",
                                                 "approval_badge_visible": false,
@@ -4129,6 +4762,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     "approval_badge_visible": false,
                                                     "review_status": "pending",
                                                     "children": []
+                                                  },
+                                                  {
+                                                    "id": "local_route_jump_d0269749d49f",
+                                                    "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                    "kind": "route",
+                                                    "notes": "",
+                                                    "open": true,
+                                                    "links": [
+                                                      "local_start_account_work"
+                                                    ],
+                                                    "edge": "Проблема — в обеспечение счёта",
+                                                    "approval_badge_visible": false,
+                                                    "route_target_id": "local_start_account_work",
+                                                    "children": []
                                                   }
                                                 ],
                                                 "main_branch_id": "f_227_4229",
@@ -4141,6 +4788,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     "Проблема"
                                                   ]
                                                 }
+                                              },
+                                              {
+                                                "id": "local_route_jump_ed4a6c89c812",
+                                                "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                                "kind": "route",
+                                                "notes": "",
+                                                "open": true,
+                                                "links": [
+                                                  "local_start_account_work"
+                                                ],
+                                                "edge": "Проблема — в обеспечение счёта",
+                                                "approval_badge_visible": false,
+                                                "route_target_id": "local_start_account_work",
+                                                "children": []
                                               }
                                             ],
                                             "main_branch_id": "f_227_4221",
@@ -4157,6 +4818,34 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         ]
                                       }
                                     ]
+                                  },
+                                  {
+                                    "id": "local_route_jump_7e3bc79712b9",
+                                    "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                                    "kind": "route",
+                                    "notes": "",
+                                    "open": true,
+                                    "links": [
+                                      "local_start_account_work"
+                                    ],
+                                    "edge": "Проблема — в обеспечение счёта",
+                                    "approval_badge_visible": false,
+                                    "route_target_id": "local_start_account_work",
+                                    "children": []
+                                  },
+                                  {
+                                    "id": "local_route_jump_88798a76550f",
+                                    "title": "Маршрут: Мойка оборудования\nШаг: Решить, нужна ли мойка",
+                                    "kind": "route",
+                                    "notes": "",
+                                    "open": true,
+                                    "links": [
+                                      "equipment_wash_decision"
+                                    ],
+                                    "edge": "Параллельно: ресурс освобождён",
+                                    "approval_badge_visible": false,
+                                    "route_target_id": "equipment_wash_decision",
+                                    "children": []
                                   }
                                 ],
                                 "main_branch_id": "f_227_4228",
@@ -4181,6 +4870,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                 "Проблема"
                               ]
                             }
+                          },
+                          {
+                            "id": "local_route_jump_7fc9be5ef123",
+                            "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_start_account_work"
+                            ],
+                            "edge": "Проблема — в обеспечение счёта",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_start_account_work",
+                            "children": []
                           }
                         ]
                       }
@@ -4209,8 +4912,8 @@ window.LAKOM_SCHEMA_EXPORT = {
                         "open": true,
                         "links": [
                           "local_pf_to_km_onec",
-                          "local_start_account_work",
-                          "equipment_wash_decision"
+                          "local_route_jump_df5d39ea39df",
+                          "local_route_jump_d8863f532a95"
                         ],
                         "edge": "КМ",
                         "approval_badge_visible": false,
@@ -4245,11 +4948,54 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "notes": "На фактически переданный объём и партии. Сохранить документ и признак учётной подготовки; при уже выполненном перемещении повторный документ не создавать.",
                             "open": true,
                             "links": [
-                              "f_241_5098"
+                              "local_route_jump_4ca445979b1f"
                             ],
                             "edge": "Выполнено — Вёдра получены",
                             "approval_badge_visible": false,
                             "review_status": "pending",
+                            "children": [
+                              {
+                                "id": "local_route_jump_4ca445979b1f",
+                                "title": "Маршрут: Колеровка на КМ",
+                                "kind": "route",
+                                "notes": "",
+                                "open": true,
+                                "links": [
+                                  "f_241_5098"
+                                ],
+                                "edge": "Колеровка на КМ",
+                                "approval_badge_visible": false,
+                                "route_target_id": "f_241_5098",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "id": "local_route_jump_df5d39ea39df",
+                            "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_start_account_work"
+                            ],
+                            "edge": "Проблема — в обеспечение счёта",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_start_account_work",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_d8863f532a95",
+                            "title": "Маршрут: Мойка оборудования\nШаг: Решить, нужна ли мойка",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "equipment_wash_decision"
+                            ],
+                            "edge": "Параллельно: ресурс освобождён",
+                            "approval_badge_visible": false,
+                            "route_target_id": "equipment_wash_decision",
                             "children": []
                           }
                         ],
@@ -4272,7 +5018,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                         "open": true,
                         "links": [
                           "local_pf_to_prod_onec",
-                          "local_start_account_work"
+                          "local_route_jump_64aabfeb8d2e"
                         ],
                         "edge": "Производство / штукатурка",
                         "approval_badge_visible": false,
@@ -4307,11 +5053,40 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "notes": "На фактически переданный объём и партии. Сохранить документ; если материалы уже учтены на Производстве, повторного перемещения нет.",
                             "open": true,
                             "links": [
-                              "f_241_5114"
+                              "local_route_jump_7655c012fe23"
                             ],
                             "edge": "Выполнено — База получена",
                             "approval_badge_visible": false,
                             "review_status": "pending",
+                            "children": [
+                              {
+                                "id": "local_route_jump_7655c012fe23",
+                                "title": "Маршрут: Колеровка на производстве",
+                                "kind": "route",
+                                "notes": "",
+                                "open": true,
+                                "links": [
+                                  "f_241_5114"
+                                ],
+                                "edge": "Колеровка на производстве",
+                                "approval_badge_visible": false,
+                                "route_target_id": "f_241_5114",
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "id": "local_route_jump_64aabfeb8d2e",
+                            "title": "Маршрут: Общий выбор маршрута\nШаг: Карточка обеспечения счёта — проблема позиции",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_start_account_work"
+                            ],
+                            "edge": "Проблема — в обеспечение счёта",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_start_account_work",
                             "children": []
                           }
                         ],
@@ -4771,7 +5546,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                             "open": true,
                                                                             "links": [
                                                                               "local_new_batch_extra_move",
-                                                                              "local_material_supply_route"
+                                                                              "local_route_jump_263865f92093"
                                                                             ],
                                                                             "edge": "Нет — подобрать недостающие добавки",
                                                                             "screen_id": "warehouse_tasks",
@@ -4796,7 +5571,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                 "open": true,
                                                                                 "links": [
                                                                                   "local_new_batch_extra_onec",
-                                                                                  "local_material_supply_route"
+                                                                                  "local_route_jump_7eeadabf5cb1"
                                                                                 ],
                                                                                 "edge": "Выполнено — Добавки подобраны",
                                                                                 "approval_badge_visible": false,
@@ -4840,6 +5615,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                       }
                                                                                     ],
                                                                                     "children": []
+                                                                                  },
+                                                                                  {
+                                                                                    "id": "local_route_jump_7eeadabf5cb1",
+                                                                                    "title": "Маршрут: Ожидание снабжения материалов",
+                                                                                    "kind": "route",
+                                                                                    "notes": "",
+                                                                                    "open": true,
+                                                                                    "links": [
+                                                                                      "local_material_supply_route"
+                                                                                    ],
+                                                                                    "edge": "Нет материала на складе-источнике",
+                                                                                    "approval_badge_visible": false,
+                                                                                    "route_target_id": "local_material_supply_route",
+                                                                                    "children": []
                                                                                   }
                                                                                 ],
                                                                                 "task_card": {
@@ -4852,6 +5641,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                     "Проблема"
                                                                                   ]
                                                                                 }
+                                                                              },
+                                                                              {
+                                                                                "id": "local_route_jump_263865f92093",
+                                                                                "title": "Маршрут: Ожидание снабжения материалов",
+                                                                                "kind": "route",
+                                                                                "notes": "",
+                                                                                "open": true,
+                                                                                "links": [
+                                                                                  "local_material_supply_route"
+                                                                                ],
+                                                                                "edge": "Нет материала на складе-источнике",
+                                                                                "approval_badge_visible": false,
+                                                                                "route_target_id": "local_material_supply_route",
+                                                                                "children": []
                                                                               }
                                                                             ]
                                                                           }
@@ -4974,7 +5777,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                         "notes": "Проверить тип базы, сохранённый при планировании всего замеса. Это не выбор нового типа продукции для выделенного объёма. Один замес содержит одну совместимую базу: смолу для затирки либо базу другой продукции. Все заказные объёмы одного замеса проходят одну и ту же ветку типа; могут отличаться цветом, фасовкой и назначением.",
                                                                                         "open": true,
                                                                                         "links": [
-                                                                                          "local_grout_base_ready",
+                                                                                          "local_route_jump_841a9a56f5bd",
                                                                                           "f_227_4257"
                                                                                         ],
                                                                                         "edge": "Выпуск базы ПФ учтён",
@@ -5014,13 +5817,42 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                     "notes": "Использовать сохранённое назначение КМ или производства. Для образца — решение технолога до нового замеса. Источник — готовая база нового замеса, количество и партия известны; повторно обеспечение ПФ не выполнять. Для штукатурки допустимо только производство.\n\nВопрос для согласования:\nДля обычного малого объёма очередь могла измениться за время изготовления базы. Нужно подтвердить: сохранить предварительное место колеровки или повторно проверить очереди после готовности базы. До решения действуют текущие связи. Для образца сохраняется решение технолога; штукатурку на КМ не направлять.",
                                                                                                     "open": true,
                                                                                                     "links": [
-                                                                                                      "f_241_5098",
-                                                                                                      "f_241_5114"
+                                                                                                      "local_route_jump_630d49cdeb59",
+                                                                                                      "local_route_jump_74c778161734"
                                                                                                     ],
                                                                                                     "edge": "Да — назначение сохранено",
                                                                                                     "approval_badge_visible": false,
                                                                                                     "review_status": "pending",
-                                                                                                    "children": []
+                                                                                                    "children": [
+                                                                                                      {
+                                                                                                        "id": "local_route_jump_630d49cdeb59",
+                                                                                                        "title": "Маршрут: Колеровка на КМ",
+                                                                                                        "kind": "route",
+                                                                                                        "notes": "",
+                                                                                                        "open": true,
+                                                                                                        "links": [
+                                                                                                          "f_241_5098"
+                                                                                                        ],
+                                                                                                        "edge": "КМ",
+                                                                                                        "approval_badge_visible": false,
+                                                                                                        "route_target_id": "f_241_5098",
+                                                                                                        "children": []
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "id": "local_route_jump_74c778161734",
+                                                                                                        "title": "Маршрут: Колеровка на производстве",
+                                                                                                        "kind": "route",
+                                                                                                        "notes": "",
+                                                                                                        "open": true,
+                                                                                                        "links": [
+                                                                                                          "f_241_5114"
+                                                                                                        ],
+                                                                                                        "edge": "Производство",
+                                                                                                        "approval_badge_visible": false,
+                                                                                                        "route_target_id": "f_241_5114",
+                                                                                                        "children": []
+                                                                                                      }
+                                                                                                    ]
                                                                                                   },
                                                                                                   {
                                                                                                     "id": "local_large_batch_color_allocation",
@@ -5043,7 +5875,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                         "notes": "Экран: «Фасовка». Шаг задания разделения партии. Выполнить назначение планировщика: оставить подходящую наибольшую часть в исходной деже либо отобрать в другую допустимую дежу. Подтвердить код ёмкости и массу; ДС уже указан в плане.\nРоль: Фасовщик производства.",
                                                                                                         "open": true,
                                                                                                         "links": [
-                                                                                                          "local_deja_coloring_route"
+                                                                                                          "local_route_jump_a634ff6c9098"
                                                                                                         ],
                                                                                                         "edge": "Да — назначенная дежа",
                                                                                                         "approval_badge_visible": false,
@@ -5069,7 +5901,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                             "scope": "Прямое уточнение пользователя: физическое место фасовки и назначение исполнителя"
                                                                                                           }
                                                                                                         ],
-                                                                                                        "children": []
+                                                                                                        "children": [
+                                                                                                          {
+                                                                                                            "id": "local_route_jump_a634ff6c9098",
+                                                                                                            "title": "Маршрут: Колеровка в деже после замеса",
+                                                                                                            "kind": "route",
+                                                                                                            "notes": "",
+                                                                                                            "open": true,
+                                                                                                            "links": [
+                                                                                                              "local_deja_coloring_route"
+                                                                                                            ],
+                                                                                                            "edge": "Колеровка в деже после замеса",
+                                                                                                            "approval_badge_visible": false,
+                                                                                                            "route_target_id": "local_deja_coloring_route",
+                                                                                                            "children": []
+                                                                                                          }
+                                                                                                        ]
                                                                                                       },
                                                                                                       {
                                                                                                         "id": "local_other_colored_base_container",
@@ -5078,7 +5925,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                         "notes": "Экран: «Фасовка». Шаг задания разделения партии. Отобрать массу по плану в назначенную бочку, сохранить партию и передать на допустимый свободный ДС.\nРоль: Фасовщик производства.",
                                                                                                         "open": true,
                                                                                                         "links": [
-                                                                                                          "f_241_5114"
+                                                                                                          "local_route_jump_9234472839d5"
                                                                                                         ],
                                                                                                         "edge": "Нет — бочка",
                                                                                                         "approval_badge_visible": false,
@@ -5104,7 +5951,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                             "scope": "Прямое уточнение пользователя: физическое место фасовки и назначение исполнителя"
                                                                                                           }
                                                                                                         ],
-                                                                                                        "children": []
+                                                                                                        "children": [
+                                                                                                          {
+                                                                                                            "id": "local_route_jump_9234472839d5",
+                                                                                                            "title": "Маршрут: Колеровка на производстве",
+                                                                                                            "kind": "route",
+                                                                                                            "notes": "",
+                                                                                                            "open": true,
+                                                                                                            "links": [
+                                                                                                              "f_241_5114"
+                                                                                                            ],
+                                                                                                            "edge": "Выполнено — Колеровка на производстве",
+                                                                                                            "approval_badge_visible": false,
+                                                                                                            "route_target_id": "f_241_5114",
+                                                                                                            "children": []
+                                                                                                          }
+                                                                                                        ]
                                                                                                       }
                                                                                                     ],
                                                                                                     "inline_incoming": true
@@ -5371,6 +6233,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                 }
                                                                                               }
                                                                                             ]
+                                                                                          },
+                                                                                          {
+                                                                                            "id": "local_route_jump_841a9a56f5bd",
+                                                                                            "title": "Маршрут: обеспечения из ПФ\nШаг: Компонент А обеспечен; зафиксированы масса, партия и исходная позиция",
+                                                                                            "kind": "route",
+                                                                                            "notes": "",
+                                                                                            "open": true,
+                                                                                            "links": [
+                                                                                              "local_grout_base_ready"
+                                                                                            ],
+                                                                                            "edge": "Да — база затирки",
+                                                                                            "approval_badge_visible": false,
+                                                                                            "route_target_id": "local_grout_base_ready",
+                                                                                            "children": []
                                                                                           }
                                                                                         ]
                                                                                       }
@@ -5558,7 +6434,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "open": true,
                             "links": [
                               "f_227_4224",
-                              "local_material_supply_route"
+                              "local_route_jump_eed1aa7267dc"
                             ],
                             "edge": "Нет — пополнить дефицит",
                             "approval_badge_visible": false,
@@ -5581,6 +6457,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                 "edge": "Выполнено — Сырьё доставлено",
                                 "approval_badge_visible": false,
                                 "review_status": "pending",
+                                "children": []
+                              },
+                              {
+                                "id": "local_route_jump_eed1aa7267dc",
+                                "title": "Маршрут: Ожидание снабжения материалов",
+                                "kind": "route",
+                                "notes": "",
+                                "open": true,
+                                "links": [
+                                  "local_material_supply_route"
+                                ],
+                                "edge": "Нет материала на складе-источнике",
+                                "approval_badge_visible": false,
+                                "route_target_id": "local_material_supply_route",
                                 "children": []
                               }
                             ],
@@ -6506,7 +7396,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                 "notes": "Экран: «Карточка обеспечения счёта».\nПовторный запуск из карточки счёта относится к выбранной позиции.\nДействие: «Принять в работу». Пересчитать актуальное обеспечение, резервы и дальнейший маршрут.\nРоль: Сотрудник по планированию производства.",
                                                 "open": true,
                                                 "links": [
-                                                  "f_227_4040"
+                                                  "local_route_jump_d90b3677ac7c"
                                                 ],
                                                 "edge": "Повторный запуск из счёта",
                                                 "approval_badge_visible": true,
@@ -6515,7 +7405,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                 "process_stage": "Обеспечение счёта",
                                                 "review_status": "pending",
                                                 "ui_review_status": "pending",
-                                                "children": [],
+                                                "children": [
+                                                  {
+                                                    "id": "local_route_jump_d90b3677ac7c",
+                                                    "title": "Маршрут: Общий выбор маршрута\nШаг: Проверка наша или перекуп",
+                                                    "kind": "route",
+                                                    "notes": "",
+                                                    "open": true,
+                                                    "links": [
+                                                      "f_227_4040"
+                                                    ],
+                                                    "edge": "Пересчитать обеспечение этой позиции",
+                                                    "approval_badge_visible": false,
+                                                    "route_target_id": "f_227_4040",
+                                                    "children": []
+                                                  }
+                                                ],
                                                 "task_card": {
                                                   "role": "Сотрудник по планированию производства",
                                                   "screen": "Карточка обеспечения счёта",
@@ -6835,7 +7740,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                 "links": [
                                                   "f_230_4826",
                                                   "f_230_4878",
-                                                  "local_quality_unfixable_defect_route"
+                                                  "local_route_jump_0fa0245eeea2"
                                                 ],
                                                 "edge": "Пустое — самостоятельное принятие",
                                                 "approval_badge_visible": true,
@@ -7142,7 +8047,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                             "open": true,
                                                             "links": [
                                                               "local_km_correction_onec",
-                                                              "local_material_supply_route"
+                                                              "local_route_jump_a0dd6aff9c37"
                                                             ],
                                                             "edge": "Нет — доставить дефицит",
                                                             "approval_badge_visible": false,
@@ -7166,6 +8071,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                 "approval_badge_visible": false,
                                                                 "review_status": "pending",
                                                                 "children": []
+                                                              },
+                                                              {
+                                                                "id": "local_route_jump_a0dd6aff9c37",
+                                                                "title": "Маршрут: Ожидание снабжения материалов",
+                                                                "kind": "route",
+                                                                "notes": "",
+                                                                "open": true,
+                                                                "links": [
+                                                                  "local_material_supply_route"
+                                                                ],
+                                                                "edge": "Нет материала на складе-источнике",
+                                                                "approval_badge_visible": false,
+                                                                "route_target_id": "local_material_supply_route",
+                                                                "children": []
                                                               }
                                                             ],
                                                             "task_card": {
@@ -7183,6 +8102,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                         "main_branch_id": "local_km_correction_apply"
                                                       }
                                                     ]
+                                                  },
+                                                  {
+                                                    "id": "local_route_jump_0fa0245eeea2",
+                                                    "title": "Маршрут: Брак и возвраты — неисправимая партия",
+                                                    "kind": "route",
+                                                    "notes": "",
+                                                    "open": true,
+                                                    "links": [
+                                                      "local_quality_unfixable_defect_route"
+                                                    ],
+                                                    "edge": "Исправить нельзя",
+                                                    "approval_badge_visible": false,
+                                                    "route_target_id": "local_quality_unfixable_defect_route",
+                                                    "children": []
                                                   }
                                                 ]
                                               },
@@ -7195,7 +8128,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                 "links": [
                                                   "f_230_4826",
                                                   "f_230_4878",
-                                                  "local_quality_unfixable_defect_route"
+                                                  "local_route_jump_819301e7dc3a"
                                                 ],
                                                 "edge": "Заполнено — повторение цвета",
                                                 "approval_badge_visible": true,
@@ -7216,7 +8149,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     "scope": "assignment role and physical place"
                                                   }
                                                 ],
-                                                "children": [],
+                                                "children": [
+                                                  {
+                                                    "id": "local_route_jump_819301e7dc3a",
+                                                    "title": "Маршрут: Брак и возвраты — неисправимая партия",
+                                                    "kind": "route",
+                                                    "notes": "",
+                                                    "open": true,
+                                                    "links": [
+                                                      "local_quality_unfixable_defect_route"
+                                                    ],
+                                                    "edge": "Исправить нельзя",
+                                                    "approval_badge_visible": false,
+                                                    "route_target_id": "local_quality_unfixable_defect_route",
+                                                    "children": []
+                                                  }
+                                                ],
                                                 "task_card": {
                                                   "role": "Сотрудник ОТК",
                                                   "screen": "ОТК / лаборатория",
@@ -7254,7 +8202,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                 "open": true,
                                 "links": [
                                   "local_km_new_batch_move",
-                                  "equipment_wash_decision"
+                                  "local_route_jump_0a23a9835871"
                                 ],
                                 "edge": "Новый замес; база принята ОТК",
                                 "approval_badge_visible": false,
@@ -7309,6 +8257,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "Проблема"
                                       ]
                                     }
+                                  },
+                                  {
+                                    "id": "local_route_jump_0a23a9835871",
+                                    "title": "Маршрут: Мойка оборудования\nШаг: Решить, нужна ли мойка",
+                                    "kind": "route",
+                                    "notes": "",
+                                    "open": true,
+                                    "links": [
+                                      "equipment_wash_decision"
+                                    ],
+                                    "edge": "Параллельно: ресурс освобождён",
+                                    "approval_badge_visible": false,
+                                    "route_target_id": "equipment_wash_decision",
+                                    "children": []
                                   }
                                 ],
                                 "task_card": {
@@ -7333,7 +8295,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                         "open": true,
                         "links": [
                           "local_km_pigment_transfer_onec",
-                          "local_material_supply_route"
+                          "local_route_jump_0f191b8bcf8b"
                         ],
                         "edge": "Нет — требуется пополнение",
                         "approval_badge_visible": false,
@@ -7356,6 +8318,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "edge": "Выполнено — Материалы доставлены",
                             "approval_badge_visible": false,
                             "review_status": "pending",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_0f191b8bcf8b",
+                            "title": "Маршрут: Ожидание снабжения материалов",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_material_supply_route"
+                            ],
+                            "edge": "Нет материала на складе-источнике",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_material_supply_route",
                             "children": []
                           }
                         ],
@@ -7765,7 +8741,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                     "links": [
                                                                       "f_230_4928",
                                                                       "f_230_4980",
-                                                                      "local_quality_unfixable_defect_route"
+                                                                      "local_route_jump_6dc76b7fda2c"
                                                                     ],
                                                                     "edge": "Пустое — самостоятельное принятие",
                                                                     "approval_badge_visible": true,
@@ -7807,7 +8783,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                             "notes": "Экран: «Фасовка».\nЭтап: Фасовка и комплектация.\nТип задания: T20 — Расфасовать продукцию.\n\nДанные:\n• Список заданий и карточка: счёт / позиция, продукция, партия, масса, фасовка, тара, план/факт количества; состав комплекта для затирки.\n• Фильтры / сортировка: место фасовки, тип продукции, статус, срок, приоритет.\n\nТекущее задание:\nРасфасовать принятую колерованную продукцию\nРоль: Фасовщик производства; для затирки и пигментной пасты — сотрудник склада ПФ.\nМесто: Производство, зона фасовки; для затирки и пигментной пасты — склад ПФ.\n\nДействия:\n• «Взять в работу».\n• «Выполнено».\n• «Проблема» — указать причину.\n\nПравила процесса:\nФасовать по исходным позициям; подтвердить фактическое количество, тару и партию. Фасовать в заранее подготовленную и оклеенную тару.\n\nПосле фасовки:\nПри полном освобождении ресурса — задание старшему смены на запуск мойки. До её завершения ресурс недоступен. Продукция продолжает маршрут.",
                                                                             "open": true,
                                                                             "links": [
-                                                                              "equipment_wash_decision"
+                                                                              "local_route_jump_423559ebdfe5"
                                                                             ],
                                                                             "edge": "Нет",
                                                                             "approval_badge_visible": false,
@@ -7965,6 +8941,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                     ]
                                                                                   }
                                                                                 ]
+                                                                              },
+                                                                              {
+                                                                                "id": "local_route_jump_423559ebdfe5",
+                                                                                "title": "Маршрут: Мойка оборудования\nШаг: Решить, нужна ли мойка",
+                                                                                "kind": "route",
+                                                                                "notes": "",
+                                                                                "open": true,
+                                                                                "links": [
+                                                                                  "equipment_wash_decision"
+                                                                                ],
+                                                                                "edge": "Параллельно: ресурс освобождён",
+                                                                                "approval_badge_visible": false,
+                                                                                "route_target_id": "equipment_wash_decision",
+                                                                                "children": []
                                                                               }
                                                                             ],
                                                                             "task_card": {
@@ -8127,7 +9117,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                 "open": true,
                                                                                 "links": [
                                                                                   "local_prod_correction_onec",
-                                                                                  "local_material_supply_route"
+                                                                                  "local_route_jump_5d6dee9c29b1"
                                                                                 ],
                                                                                 "edge": "Нет — доставить дефицит",
                                                                                 "approval_badge_visible": false,
@@ -8151,6 +9141,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                     "approval_badge_visible": false,
                                                                                     "review_status": "pending",
                                                                                     "children": []
+                                                                                  },
+                                                                                  {
+                                                                                    "id": "local_route_jump_5d6dee9c29b1",
+                                                                                    "title": "Маршрут: Ожидание снабжения материалов",
+                                                                                    "kind": "route",
+                                                                                    "notes": "",
+                                                                                    "open": true,
+                                                                                    "links": [
+                                                                                      "local_material_supply_route"
+                                                                                    ],
+                                                                                    "edge": "Нет материала на складе-источнике",
+                                                                                    "approval_badge_visible": false,
+                                                                                    "route_target_id": "local_material_supply_route",
+                                                                                    "children": []
                                                                                   }
                                                                                 ],
                                                                                 "task_card": {
@@ -8168,6 +9172,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                             "main_branch_id": "local_prod_correction_apply"
                                                                           }
                                                                         ]
+                                                                      },
+                                                                      {
+                                                                        "id": "local_route_jump_6dc76b7fda2c",
+                                                                        "title": "Маршрут: Брак и возвраты — неисправимая партия",
+                                                                        "kind": "route",
+                                                                        "notes": "",
+                                                                        "open": true,
+                                                                        "links": [
+                                                                          "local_quality_unfixable_defect_route"
+                                                                        ],
+                                                                        "edge": "Исправить нельзя",
+                                                                        "approval_badge_visible": false,
+                                                                        "route_target_id": "local_quality_unfixable_defect_route",
+                                                                        "children": []
                                                                       }
                                                                     ]
                                                                   },
@@ -8180,7 +9198,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                     "links": [
                                                                       "f_230_4928",
                                                                       "f_230_4980",
-                                                                      "local_quality_unfixable_defect_route"
+                                                                      "local_route_jump_fe6f86170b72"
                                                                     ],
                                                                     "edge": "Заполнено — повторение цвета",
                                                                     "approval_badge_visible": true,
@@ -8201,7 +9219,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                         "scope": "assignment role and physical place"
                                                                       }
                                                                     ],
-                                                                    "children": [],
+                                                                    "children": [
+                                                                      {
+                                                                        "id": "local_route_jump_fe6f86170b72",
+                                                                        "title": "Маршрут: Брак и возвраты — неисправимая партия",
+                                                                        "kind": "route",
+                                                                        "notes": "",
+                                                                        "open": true,
+                                                                        "links": [
+                                                                          "local_quality_unfixable_defect_route"
+                                                                        ],
+                                                                        "edge": "Исправить нельзя",
+                                                                        "approval_badge_visible": false,
+                                                                        "route_target_id": "local_quality_unfixable_defect_route",
+                                                                        "children": []
+                                                                      }
+                                                                    ],
                                                                     "task_card": {
                                                                       "role": "Сотрудник ОТК",
                                                                       "screen": "ОТК / лаборатория",
@@ -8318,7 +9351,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                         "open": true,
                         "links": [
                           "local_prod_pigment_transfer_onec",
-                          "local_material_supply_route"
+                          "local_route_jump_bea3316624f9"
                         ],
                         "edge": "Нет — требуется пополнение",
                         "approval_badge_visible": false,
@@ -8341,6 +9374,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "edge": "Выполнено — Материалы доставлены",
                             "approval_badge_visible": false,
                             "review_status": "pending",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_bea3316624f9",
+                            "title": "Маршрут: Ожидание снабжения материалов",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_material_supply_route"
+                            ],
+                            "edge": "Нет материала на складе-источнике",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_material_supply_route",
                             "children": []
                           }
                         ],
@@ -8874,7 +9921,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                             "links": [
                                               "local_deja_f_230_4928",
                                               "local_deja_f_230_4980",
-                                              "local_quality_unfixable_defect_route"
+                                              "local_route_jump_8332b387f21a"
                                             ],
                                             "edge": "Пустое — самостоятельное принятие",
                                             "approval_badge_visible": true,
@@ -8916,7 +9963,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     "notes": "Экран: «Фасовка».\nЭтап: Фасовка и комплектация.\nТип задания: T20 — Расфасовать продукцию.\n\nДанные:\n• Список заданий и карточка: счёт / позиция, продукция, партия, масса, фасовка, тара, план/факт количества; состав комплекта для затирки.\n• Фильтры / сортировка: место фасовки, тип продукции, статус, срок, приоритет.\n\nТекущее задание:\nРасфасовать принятую колерованную продукцию\nРоль: Фасовщик производства; для затирки и пигментной пасты — сотрудник склада ПФ.\nМесто: Производство, зона фасовки; для затирки и пигментной пасты — склад ПФ.\n\nДействия:\n• «Взять в работу».\n• «Выполнено».\n• «Проблема» — указать причину.\n\nПравила процесса:\nФасовать по исходным позициям; подтвердить фактическое количество, тару и партию. Фасовать в заранее подготовленную и оклеенную тару.\n\nПосле фасовки:\nПри полном освобождении ресурса — задание старшему смены на запуск мойки. До её завершения ресурс недоступен. Продукция продолжает маршрут.",
                                                     "open": true,
                                                     "links": [
-                                                      "equipment_wash_decision"
+                                                      "local_route_jump_33b53fa8d927"
                                                     ],
                                                     "edge": "Нет",
                                                     "approval_badge_visible": false,
@@ -9074,6 +10121,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                             ]
                                                           }
                                                         ]
+                                                      },
+                                                      {
+                                                        "id": "local_route_jump_33b53fa8d927",
+                                                        "title": "Маршрут: Мойка оборудования\nШаг: Решить, нужна ли мойка",
+                                                        "kind": "route",
+                                                        "notes": "",
+                                                        "open": true,
+                                                        "links": [
+                                                          "equipment_wash_decision"
+                                                        ],
+                                                        "edge": "Параллельно: ресурс освобождён",
+                                                        "approval_badge_visible": false,
+                                                        "route_target_id": "equipment_wash_decision",
+                                                        "children": []
                                                       }
                                                     ],
                                                     "task_card": {
@@ -9236,7 +10297,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                         "open": true,
                                                         "links": [
                                                           "local_deja_correction_onec",
-                                                          "local_material_supply_route"
+                                                          "local_route_jump_476a5b875520"
                                                         ],
                                                         "edge": "Нет — доставить дефицит",
                                                         "approval_badge_visible": false,
@@ -9260,6 +10321,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                             "approval_badge_visible": false,
                                                             "review_status": "pending",
                                                             "children": []
+                                                          },
+                                                          {
+                                                            "id": "local_route_jump_476a5b875520",
+                                                            "title": "Маршрут: Ожидание снабжения материалов",
+                                                            "kind": "route",
+                                                            "notes": "",
+                                                            "open": true,
+                                                            "links": [
+                                                              "local_material_supply_route"
+                                                            ],
+                                                            "edge": "Нет материала на складе-источнике",
+                                                            "approval_badge_visible": false,
+                                                            "route_target_id": "local_material_supply_route",
+                                                            "children": []
                                                           }
                                                         ],
                                                         "task_card": {
@@ -9277,6 +10352,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     "main_branch_id": "local_deja_correction_apply"
                                                   }
                                                 ]
+                                              },
+                                              {
+                                                "id": "local_route_jump_8332b387f21a",
+                                                "title": "Маршрут: Брак и возвраты — неисправимая партия",
+                                                "kind": "route",
+                                                "notes": "",
+                                                "open": true,
+                                                "links": [
+                                                  "local_quality_unfixable_defect_route"
+                                                ],
+                                                "edge": "Исправить нельзя",
+                                                "approval_badge_visible": false,
+                                                "route_target_id": "local_quality_unfixable_defect_route",
+                                                "children": []
                                               }
                                             ]
                                           },
@@ -9289,7 +10378,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                             "links": [
                                               "local_deja_f_230_4928",
                                               "local_deja_f_230_4980",
-                                              "local_quality_unfixable_defect_route"
+                                              "local_route_jump_21b3f4bd1a39"
                                             ],
                                             "edge": "Заполнено — повторение цвета",
                                             "approval_badge_visible": true,
@@ -9310,7 +10399,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                 "scope": "assignment role and physical place"
                                               }
                                             ],
-                                            "children": [],
+                                            "children": [
+                                              {
+                                                "id": "local_route_jump_21b3f4bd1a39",
+                                                "title": "Маршрут: Брак и возвраты — неисправимая партия",
+                                                "kind": "route",
+                                                "notes": "",
+                                                "open": true,
+                                                "links": [
+                                                  "local_quality_unfixable_defect_route"
+                                                ],
+                                                "edge": "Исправить нельзя",
+                                                "approval_badge_visible": false,
+                                                "route_target_id": "local_quality_unfixable_defect_route",
+                                                "children": []
+                                              }
+                                            ],
                                             "task_card": {
                                               "role": "Сотрудник ОТК",
                                               "screen": "ОТК / лаборатория",
@@ -9361,7 +10465,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                         "open": true,
                         "links": [
                           "local_deja_pigment_transfer",
-                          "local_material_supply_route"
+                          "local_route_jump_be34fc9948a6"
                         ],
                         "edge": "Нет — пополнить",
                         "approval_badge_visible": false,
@@ -9384,6 +10488,20 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "edge": "Выполнено — Материалы доставлены",
                             "approval_badge_visible": false,
                             "review_status": "pending",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_be34fc9948a6",
+                            "title": "Маршрут: Ожидание снабжения материалов",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_material_supply_route"
+                            ],
+                            "edge": "Нет материала на складе-источнике",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_material_supply_route",
                             "children": []
                           }
                         ],
@@ -9540,23 +10658,178 @@ window.LAKOM_SCHEMA_EXPORT = {
                         "title": "Материалы обеспечены: продолжить исходное задание доставки",
                         "kind": "system",
                         "links": [
-                          "f_227_4223",
-                          "local_new_batch_extra_move",
-                          "local_km_pigment_move",
-                          "local_prod_pigment_move",
-                          "local_deja_pigment_move",
-                          "local_syringe_material_move",
-                          "local_km_correction_move",
-                          "local_prod_correction_move",
-                          "local_deja_correction_move",
-                          "local_paste_correction_material_move",
-                          "local_new_batch_extra_pick"
+                          "local_route_jump_ac343fc57376",
+                          "local_route_jump_f2434fef7f7c",
+                          "local_route_jump_c72ffbd87a4d",
+                          "local_route_jump_c98bccca8f0a",
+                          "local_route_jump_45fce2d7ad86",
+                          "local_route_jump_9bd47c95d905",
+                          "local_route_jump_e7eb965ed4fd",
+                          "local_route_jump_e916a57be827",
+                          "local_route_jump_ca4e46fcfa66",
+                          "local_route_jump_62e29596a70a",
+                          "local_route_jump_e9f7576f21d7"
                         ],
                         "notes": "Снять статус дефицита и просрочки, закрыть соответствующую потребность снабжения и обновить обеспечение счёта. Вернуться только в сохранённое исходное задание доставки; не создавать повторный резерв или доставку. Если счёт приостановлен, показать «Материалы поступили» и ждать продолжения планировщиком. Выходы ниже альтернативные: выбрать один по ID исходного задания, не запускать их все.",
                         "open": true,
                         "approval_badge_visible": false,
                         "edge": "Да",
-                        "children": []
+                        "children": [
+                          {
+                            "id": "local_route_jump_ac343fc57376",
+                            "title": "Маршрут: Новый замес\nШаг: Сотрудник склада: доставить недостающее сырьё на производство",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "f_227_4223"
+                            ],
+                            "edge": "Сырьё нового замеса — исходное задание",
+                            "approval_badge_visible": false,
+                            "route_target_id": "f_227_4223",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_f2434fef7f7c",
+                            "title": "Маршрут: Новый замес\nШаг: Сотрудник склада: доставить недостающие добавки на производство",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_new_batch_extra_move"
+                            ],
+                            "edge": "Добавки доведения замеса — исходное задание",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_new_batch_extra_move",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_c72ffbd87a4d",
+                            "title": "Маршрут: Колеровка на КМ\nШаг: Сотрудник склада: доставить недостающие пигменты и добавки со склада сырья на производство",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_km_pigment_move"
+                            ],
+                            "edge": "Пигменты КМ — исходное задание",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_km_pigment_move",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_c98bccca8f0a",
+                            "title": "Маршрут: Колеровка на производстве\nШаг: Сотрудник склада: доставить недостающие пигменты и добавки со склада сырья на производство",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_prod_pigment_move"
+                            ],
+                            "edge": "Пигменты колеровки на производстве — исходное задание",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_prod_pigment_move",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_45fce2d7ad86",
+                            "title": "Маршрут: Колеровка в деже после замеса\nШаг: Сотрудник склада: доставить недостающие пигменты и добавки на производство",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_deja_pigment_move"
+                            ],
+                            "edge": "Пигменты колеровки в деже — исходное задание",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_deja_pigment_move",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_9bd47c95d905",
+                            "title": "Маршрут: Изготовление колерованных шприцов\nШаг: Задание складу: передать недостающие пигменты и пустые шприцы",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_syringe_material_move"
+                            ],
+                            "edge": "Материалы пасты и шприцов — исходное задание",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_syringe_material_move",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_e7eb965ed4fd",
+                            "title": "Маршрут: Колеровка на КМ\nШаг: Сотрудник склада: доставить недостающие пигменты и добавки для доведения",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_km_correction_move"
+                            ],
+                            "edge": "Доведение на КМ — исходное задание",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_km_correction_move",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_e916a57be827",
+                            "title": "Маршрут: Колеровка на производстве\nШаг: Сотрудник склада: доставить недостающие пигменты и добавки для доведения",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_prod_correction_move"
+                            ],
+                            "edge": "Доведение на производстве — исходное задание",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_prod_correction_move",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_ca4e46fcfa66",
+                            "title": "Маршрут: Колеровка в деже после замеса\nШаг: Сотрудник склада: доставить недостающие пигменты и добавки для доведения",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_deja_correction_move"
+                            ],
+                            "edge": "Доведение в деже — исходное задание",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_deja_correction_move",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_62e29596a70a",
+                            "title": "Маршрут: Изготовление колерованных шприцов\nШаг: Доставить пигменты и добавки для доведения пасты",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_paste_correction_material_move"
+                            ],
+                            "edge": "Доведение пасты — исходное задание",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_paste_correction_material_move",
+                            "children": []
+                          },
+                          {
+                            "id": "local_route_jump_e9f7576f21d7",
+                            "title": "Маршрут: Новый замес\nШаг: Подобрать добавки для доведения по назначению ОТК",
+                            "kind": "route",
+                            "notes": "",
+                            "open": true,
+                            "links": [
+                              "local_new_batch_extra_pick"
+                            ],
+                            "edge": "Добавки доведения — исходный подбор",
+                            "approval_badge_visible": false,
+                            "route_target_id": "local_new_batch_extra_pick",
+                            "children": []
+                          }
+                        ]
                       }
                     ]
                   }
@@ -11193,7 +12466,7 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "f_227_4038",
-      "end2Id": "f_257_6364",
+      "end2Id": "local_route_jump_e0f6b0e136bd",
       "label": "Полностью, с учетом Min остатка"
     },
     {
@@ -11253,8 +12526,8 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "f_227_4125",
-      "end2Id": "f_227_4044",
-      "label": ""
+      "end2Id": "local_route_jump_029c19082d8d",
+      "label": "Далее"
     },
     {
       "end1Id": "f_241_5090",
@@ -11278,12 +12551,12 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_gp_other_pack_check",
-      "end2Id": "f_227_4043",
-      "label": "Да — перефасовка"
+      "end2Id": "local_general_gp_repacking_route",
+      "label": "Да"
     },
     {
       "end1Id": "local_gp_other_pack_check",
-      "end2Id": "f_227_4068",
+      "end2Id": "local_general_new_batch_route",
       "label": "Нет / хватает только частично"
     },
     {
@@ -11308,12 +12581,12 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_colored_plaster_gp_reserve",
-      "end2Id": "f_241_5114",
+      "end2Id": "local_route_jump_3bfa3d120d22",
       "label": "Маршрут колеровки на производстве"
     },
     {
       "end1Id": "local_other_colored_base_container",
-      "end2Id": "f_241_5114",
+      "end2Id": "local_route_jump_9234472839d5",
       "label": "Выполнено — Колеровка на производстве"
     },
     {
@@ -11328,7 +12601,7 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_sample_new_batch_route",
-      "end2Id": "local_sample_fresh_batch_destination",
+      "end2Id": "local_route_jump_a3301c3faacd",
       "label": "Образец 1 кг — база готова"
     },
     {
@@ -11338,7 +12611,7 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_plaster_new_batch_route",
-      "end2Id": "f_241_5114",
+      "end2Id": "local_route_jump_19ebbe5fc252",
       "label": "После готовности базы — только производство"
     },
     {
@@ -11348,22 +12621,22 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_keep_largest_colored_base_in_deja",
-      "end2Id": "local_deja_coloring_route",
+      "end2Id": "local_route_jump_a634ff6c9098",
       "label": "Колеровка в деже после замеса"
     },
     {
       "end1Id": "f_227_4040",
-      "end2Id": "local_purchased_product_route",
+      "end2Id": "local_route_jump_8a027ae32814",
       "label": "Перекуп"
     },
     {
       "end1Id": "f_227_4033",
-      "end2Id": "f_262_6981",
+      "end2Id": "local_route_jump_c0d5413d27ec",
       "label": "Тип продукции — затирка"
     },
     {
       "end1Id": "f_227_4035",
-      "end2Id": "f_257_6365",
+      "end2Id": "local_route_jump_9f555ceb21bd",
       "label": "С цветом"
     },
     {
@@ -11393,17 +12666,17 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "f_227_4130",
-      "end2Id": "local_grout_base_ready",
+      "end2Id": "local_route_jump_d1c94384ebb5",
       "label": "После нового замеса и приёмки базы"
     },
     {
       "end1Id": "local_grout_base_color",
-      "end2Id": "f_241_5170",
+      "end2Id": "local_route_jump_27ab3e857ff5",
       "label": "Нет — комплектация без цвета"
     },
     {
       "end1Id": "local_grout_base_color",
-      "end2Id": "local_colored_grout_route",
+      "end2Id": "local_route_jump_5e792f7015c1",
       "label": "Да — колерованная затирка"
     },
     {
@@ -11423,12 +12696,12 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_pf_to_km_onec",
-      "end2Id": "f_241_5098",
+      "end2Id": "local_route_jump_4ca445979b1f",
       "label": "Колеровка на КМ"
     },
     {
       "end1Id": "local_pf_to_prod_onec",
-      "end2Id": "f_241_5114",
+      "end2Id": "local_route_jump_7655c012fe23",
       "label": "Колеровка на производстве"
     },
     {
@@ -11448,7 +12721,7 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_colored_km_pf_supply",
-      "end2Id": "f_241_5098",
+      "end2Id": "local_route_jump_4c4259d7f7e5",
       "label": "После подготовки ПФ — колеровка на КМ"
     },
     {
@@ -11458,12 +12731,12 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_sample_pf_coloring_destination",
-      "end2Id": "f_241_5098",
+      "end2Id": "local_route_jump_db8d8fc9844a",
       "label": "Технолог выбрал КМ"
     },
     {
       "end1Id": "local_sample_pf_coloring_destination",
-      "end2Id": "f_241_5114",
+      "end2Id": "local_route_jump_b1bb632030e6",
       "label": "Технолог выбрал производство"
     },
     {
@@ -11533,17 +12806,17 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_sample_fresh_batch_destination",
-      "end2Id": "f_241_5098",
+      "end2Id": "local_route_jump_630d49cdeb59",
       "label": "КМ"
     },
     {
       "end1Id": "local_sample_fresh_batch_destination",
-      "end2Id": "f_241_5114",
+      "end2Id": "local_route_jump_74c778161734",
       "label": "Производство"
     },
     {
       "end1Id": "local_new_batch_grout_type",
-      "end2Id": "local_grout_base_ready",
+      "end2Id": "local_route_jump_841a9a56f5bd",
       "label": "Да — база затирки"
     },
     {
@@ -11578,7 +12851,7 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "f_241_5050",
-      "end2Id": "local_resume_coloring_after_batch",
+      "end2Id": "local_route_jump_51e4b85481db",
       "label": "После приёмки и распределения базы"
     },
     {
@@ -11588,7 +12861,7 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "f_227_4119",
-      "end2Id": "local_resume_coloring_after_batch",
+      "end2Id": "local_route_jump_fd9cac87b3a3",
       "label": "После приёмки и распределения базы"
     },
     {
@@ -11598,7 +12871,7 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "f_227_4132",
-      "end2Id": "local_resume_coloring_after_batch",
+      "end2Id": "local_route_jump_af578fcd3154",
       "label": "После приёмки и распределения базы"
     },
     {
@@ -11638,37 +12911,37 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "f_227_4222",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_ed4a6c89c812",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "f_227_4221",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_d0269749d49f",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "local_pf_supply_grout",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_db8610c19325",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "local_pf_to_km_physical",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_df5d39ea39df",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "local_pf_to_prod_physical",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_64aabfeb8d2e",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "mark_ready_f_227_4079",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_7fc9be5ef123",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "f_227_4085",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_7e3bc79712b9",
       "label": "Проблема — в обеспечение счёта"
     },
     {
@@ -11718,57 +12991,57 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "f_230_5042",
-      "end2Id": "equipment_wash_decision",
+      "end2Id": "local_route_jump_76aab0668582",
       "label": "Параллельно: ресурс освобождён"
     },
     {
       "end1Id": "f_262_7299",
-      "end2Id": "equipment_wash_decision",
+      "end2Id": "local_route_jump_a9b163e7fb39",
       "label": "Параллельно: ресурс освобождён"
     },
     {
       "end1Id": "f_227_4167",
-      "end2Id": "equipment_wash_decision",
+      "end2Id": "local_route_jump_5a716a88fa70",
       "label": "Параллельно: ресурс освобождён"
     },
     {
       "end1Id": "f_227_4090",
-      "end2Id": "equipment_wash_decision",
+      "end2Id": "local_route_jump_c9878e858bb7",
       "label": "Выполнено — параллельно: ресурс освобождён"
     },
     {
       "end1Id": "f_227_4085",
-      "end2Id": "equipment_wash_decision",
+      "end2Id": "local_route_jump_88798a76550f",
       "label": "Параллельно: ресурс освобождён"
     },
     {
       "end1Id": "f_230_4932",
-      "end2Id": "equipment_wash_decision",
+      "end2Id": "local_route_jump_423559ebdfe5",
       "label": "Параллельно: ресурс освобождён"
     },
     {
       "end1Id": "local_deja_f_230_4932",
-      "end2Id": "equipment_wash_decision",
+      "end2Id": "local_route_jump_33b53fa8d927",
       "label": "Параллельно: ресурс освобождён"
     },
     {
       "end1Id": "local_pf_to_km_physical",
-      "end2Id": "equipment_wash_decision",
+      "end2Id": "local_route_jump_d8863f532a95",
       "label": "Параллельно: ресурс освобождён"
     },
     {
       "end1Id": "local_km_new_batch_fill",
-      "end2Id": "equipment_wash_decision",
+      "end2Id": "local_route_jump_0a23a9835871",
       "label": "Параллельно: ресурс освобождён"
     },
     {
       "end1Id": "local_repacking_samples_fill",
-      "end2Id": "equipment_wash_decision",
+      "end2Id": "local_route_jump_9f2ac657a1e7",
       "label": "Выполнено — параллельно: ресурс освобождён"
     },
     {
       "end1Id": "local_initial_gp_partial_reserve",
-      "end2Id": "f_257_6364",
+      "end2Id": "local_route_jump_f23d1dc97202",
       "label": "Найденная часть > 0 — маршрут ГП"
     },
     {
@@ -11778,42 +13051,42 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "quality_km_self",
-      "end2Id": "local_quality_unfixable_defect_route",
+      "end2Id": "local_route_jump_0fa0245eeea2",
       "label": "Исправить нельзя"
     },
     {
       "end1Id": "quality_km_lab",
-      "end2Id": "local_quality_unfixable_defect_route",
+      "end2Id": "local_route_jump_819301e7dc3a",
       "label": "Исправить нельзя"
     },
     {
       "end1Id": "quality_prod_self",
-      "end2Id": "local_quality_unfixable_defect_route",
+      "end2Id": "local_route_jump_6dc76b7fda2c",
       "label": "Исправить нельзя"
     },
     {
       "end1Id": "quality_prod_lab",
-      "end2Id": "local_quality_unfixable_defect_route",
+      "end2Id": "local_route_jump_fe6f86170b72",
       "label": "Исправить нельзя"
     },
     {
       "end1Id": "quality_deja_self",
-      "end2Id": "local_quality_unfixable_defect_route",
+      "end2Id": "local_route_jump_8332b387f21a",
       "label": "Исправить нельзя"
     },
     {
       "end1Id": "quality_deja_lab",
-      "end2Id": "local_quality_unfixable_defect_route",
+      "end2Id": "local_route_jump_21b3f4bd1a39",
       "label": "Исправить нельзя"
     },
     {
       "end1Id": "quality_syringe_self",
-      "end2Id": "local_quality_unfixable_defect_route",
+      "end2Id": "local_route_jump_c59d9b98b106",
       "label": "Исправить нельзя"
     },
     {
       "end1Id": "quality_syringe_lab",
-      "end2Id": "local_quality_unfixable_defect_route",
+      "end2Id": "local_route_jump_ca75edd3a65c",
       "label": "Исправить нельзя"
     },
     {
@@ -11958,7 +13231,7 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_restart_position",
-      "end2Id": "f_227_4040",
+      "end2Id": "local_route_jump_d90b3677ac7c",
       "label": "Пересчитать обеспечение этой позиции"
     },
     {
@@ -12188,67 +13461,67 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "f_227_4076",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_780907f786e1",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "mark_ready_f_227_4081",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_20ffc912b385",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "f_227_4084",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_03a04a77f77a",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "local_repacking_label_task",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_6c103f8fdf88",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "f_227_4090",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_ae668be6ac01",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "local_2072f40c1e824f81b2482a3720797b08",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_b34ace4649a0",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "mark_ready_local_repacking_samples_labels",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_9c9b6732ddbf",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "local_repacking_samples_fill",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_36051dffe83e",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "local_repacking_samples_warehouse",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_dde1d3c21d88",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "local_14565bca119a4b0a8cb1781e02cad8a7",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_927e8a9424c8",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "f_227_4089",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_c808b27078a9",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "local_repacking_prepare_ready",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_00b8842cbd10",
       "label": "Проблема — в обеспечение счёта"
     },
     {
       "end1Id": "f_227_4087",
-      "end2Id": "local_start_account_work",
+      "end2Id": "local_route_jump_aa00522eceb3",
       "label": "Проблема — в обеспечение счёта"
     },
     {
@@ -12268,7 +13541,7 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_gp_repacking_pf_gate",
-      "end2Id": "f_227_4058",
+      "end2Id": "local_route_jump_5a2b64541ed2",
       "label": "Нет — сначала проверить ПФ"
     },
     {
@@ -12323,92 +13596,92 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "f_227_4223",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_eed1aa7267dc",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "f_227_4223",
+      "end2Id": "local_route_jump_ac343fc57376",
       "label": "Сырьё нового замеса — исходное задание"
     },
     {
       "end1Id": "local_new_batch_extra_move",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_7eeadabf5cb1",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "local_new_batch_extra_move",
+      "end2Id": "local_route_jump_f2434fef7f7c",
       "label": "Добавки доведения замеса — исходное задание"
     },
     {
       "end1Id": "local_km_pigment_move",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_0f191b8bcf8b",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "local_km_pigment_move",
+      "end2Id": "local_route_jump_c72ffbd87a4d",
       "label": "Пигменты КМ — исходное задание"
     },
     {
       "end1Id": "local_prod_pigment_move",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_bea3316624f9",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "local_prod_pigment_move",
+      "end2Id": "local_route_jump_c98bccca8f0a",
       "label": "Пигменты колеровки на производстве — исходное задание"
     },
     {
       "end1Id": "local_deja_pigment_move",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_be34fc9948a6",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "local_deja_pigment_move",
+      "end2Id": "local_route_jump_45fce2d7ad86",
       "label": "Пигменты колеровки в деже — исходное задание"
     },
     {
       "end1Id": "local_syringe_material_move",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_d114b7f0942f",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "local_syringe_material_move",
+      "end2Id": "local_route_jump_9bd47c95d905",
       "label": "Материалы пасты и шприцов — исходное задание"
     },
     {
       "end1Id": "local_km_correction_move",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_a0dd6aff9c37",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "local_km_correction_move",
+      "end2Id": "local_route_jump_e7eb965ed4fd",
       "label": "Доведение на КМ — исходное задание"
     },
     {
       "end1Id": "local_prod_correction_move",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_5d6dee9c29b1",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "local_prod_correction_move",
+      "end2Id": "local_route_jump_e916a57be827",
       "label": "Доведение на производстве — исходное задание"
     },
     {
       "end1Id": "local_deja_correction_move",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_476a5b875520",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "local_deja_correction_move",
+      "end2Id": "local_route_jump_ca4e46fcfa66",
       "label": "Доведение в деже — исходное задание"
     },
     {
@@ -12438,12 +13711,12 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_paste_correction_material_move",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_84e560e98cb8",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "local_paste_correction_material_move",
+      "end2Id": "local_route_jump_62e29596a70a",
       "label": "Доведение пасты — исходное задание"
     },
     {
@@ -12558,13 +13831,458 @@ window.LAKOM_SCHEMA_EXPORT = {
     },
     {
       "end1Id": "local_new_batch_extra_pick",
-      "end2Id": "local_material_supply_route",
+      "end2Id": "local_route_jump_263865f92093",
       "label": "Нет материала на складе-источнике"
     },
     {
       "end1Id": "local_material_supply_resume",
-      "end2Id": "local_new_batch_extra_pick",
+      "end2Id": "local_route_jump_e9f7576f21d7",
       "label": "Добавки доведения — исходный подбор"
+    },
+    {
+      "end1Id": "local_general_gp_repacking_route",
+      "end2Id": "f_227_4043",
+      "label": "Зарезервировать выбранную ГП и продолжить перефасовку"
+    },
+    {
+      "end1Id": "local_general_new_batch_route",
+      "end2Id": "f_227_4068",
+      "label": "Открыть схему «Новый замес»"
+    },
+    {
+      "end1Id": "local_route_jump_e0f6b0e136bd",
+      "end2Id": "f_257_6364",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_029c19082d8d",
+      "end2Id": "f_227_4044",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_3bfa3d120d22",
+      "end2Id": "f_241_5114",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_9234472839d5",
+      "end2Id": "f_241_5114",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_a3301c3faacd",
+      "end2Id": "local_sample_fresh_batch_destination",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_19ebbe5fc252",
+      "end2Id": "f_241_5114",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_a634ff6c9098",
+      "end2Id": "local_deja_coloring_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_8a027ae32814",
+      "end2Id": "local_purchased_product_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_c0d5413d27ec",
+      "end2Id": "f_262_6981",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_9f555ceb21bd",
+      "end2Id": "f_257_6365",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_d1c94384ebb5",
+      "end2Id": "local_grout_base_ready",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_27ab3e857ff5",
+      "end2Id": "f_241_5170",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_5e792f7015c1",
+      "end2Id": "local_colored_grout_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_4ca445979b1f",
+      "end2Id": "f_241_5098",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_7655c012fe23",
+      "end2Id": "f_241_5114",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_4c4259d7f7e5",
+      "end2Id": "f_241_5098",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_db8d8fc9844a",
+      "end2Id": "f_241_5098",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_b1bb632030e6",
+      "end2Id": "f_241_5114",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_630d49cdeb59",
+      "end2Id": "f_241_5098",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_74c778161734",
+      "end2Id": "f_241_5114",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_841a9a56f5bd",
+      "end2Id": "local_grout_base_ready",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_51e4b85481db",
+      "end2Id": "local_resume_coloring_after_batch",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_fd9cac87b3a3",
+      "end2Id": "local_resume_coloring_after_batch",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_af578fcd3154",
+      "end2Id": "local_resume_coloring_after_batch",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_ed4a6c89c812",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_d0269749d49f",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_db8610c19325",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_df5d39ea39df",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_64aabfeb8d2e",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_7fc9be5ef123",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_7e3bc79712b9",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_76aab0668582",
+      "end2Id": "equipment_wash_decision",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_a9b163e7fb39",
+      "end2Id": "equipment_wash_decision",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_5a716a88fa70",
+      "end2Id": "equipment_wash_decision",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_c9878e858bb7",
+      "end2Id": "equipment_wash_decision",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_88798a76550f",
+      "end2Id": "equipment_wash_decision",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_423559ebdfe5",
+      "end2Id": "equipment_wash_decision",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_33b53fa8d927",
+      "end2Id": "equipment_wash_decision",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_d8863f532a95",
+      "end2Id": "equipment_wash_decision",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_0a23a9835871",
+      "end2Id": "equipment_wash_decision",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_9f2ac657a1e7",
+      "end2Id": "equipment_wash_decision",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_f23d1dc97202",
+      "end2Id": "f_257_6364",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_0fa0245eeea2",
+      "end2Id": "local_quality_unfixable_defect_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_819301e7dc3a",
+      "end2Id": "local_quality_unfixable_defect_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_6dc76b7fda2c",
+      "end2Id": "local_quality_unfixable_defect_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_fe6f86170b72",
+      "end2Id": "local_quality_unfixable_defect_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_8332b387f21a",
+      "end2Id": "local_quality_unfixable_defect_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_21b3f4bd1a39",
+      "end2Id": "local_quality_unfixable_defect_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_c59d9b98b106",
+      "end2Id": "local_quality_unfixable_defect_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_ca75edd3a65c",
+      "end2Id": "local_quality_unfixable_defect_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_d90b3677ac7c",
+      "end2Id": "f_227_4040",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_780907f786e1",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_20ffc912b385",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_03a04a77f77a",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_6c103f8fdf88",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_ae668be6ac01",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_b34ace4649a0",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_9c9b6732ddbf",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_36051dffe83e",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_dde1d3c21d88",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_927e8a9424c8",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_c808b27078a9",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_00b8842cbd10",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_aa00522eceb3",
+      "end2Id": "local_start_account_work",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_5a2b64541ed2",
+      "end2Id": "f_227_4058",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_eed1aa7267dc",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_ac343fc57376",
+      "end2Id": "f_227_4223",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_7eeadabf5cb1",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_f2434fef7f7c",
+      "end2Id": "local_new_batch_extra_move",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_0f191b8bcf8b",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_c72ffbd87a4d",
+      "end2Id": "local_km_pigment_move",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_bea3316624f9",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_c98bccca8f0a",
+      "end2Id": "local_prod_pigment_move",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_be34fc9948a6",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_45fce2d7ad86",
+      "end2Id": "local_deja_pigment_move",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_d114b7f0942f",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_9bd47c95d905",
+      "end2Id": "local_syringe_material_move",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_a0dd6aff9c37",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_e7eb965ed4fd",
+      "end2Id": "local_km_correction_move",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_5d6dee9c29b1",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_e916a57be827",
+      "end2Id": "local_prod_correction_move",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_476a5b875520",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_ca4e46fcfa66",
+      "end2Id": "local_deja_correction_move",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_84e560e98cb8",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_62e29596a70a",
+      "end2Id": "local_paste_correction_material_move",
+      "label": "Открыть указанный шаг"
+    },
+    {
+      "end1Id": "local_route_jump_263865f92093",
+      "end2Id": "local_material_supply_route",
+      "label": "Открыть маршрут"
+    },
+    {
+      "end1Id": "local_route_jump_e9f7576f21d7",
+      "end2Id": "local_new_batch_extra_pick",
+      "label": "Открыть указанный шаг"
     }
   ],
   "issues": [
@@ -14493,9 +16211,9 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "f_227_4038\tf_257_6364": {
+    "f_227_4038\tlocal_route_jump_e0f6b0e136bd": {
       "from": "f_227_4038",
-      "to": "f_257_6364",
+      "to": "local_route_jump_e0f6b0e136bd",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14565,9 +16283,9 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "Выполнено",
       "who": "Роль: Сотрудник склада; этикеровщик выдаёт этикетки.\nЭкран: Маркировка."
     },
-    "f_227_4125\tf_227_4044": {
+    "f_227_4125\tlocal_route_jump_029c19082d8d": {
       "from": "f_227_4125",
-      "to": "f_227_4044",
+      "to": "local_route_jump_029c19082d8d",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14595,15 +16313,15 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_gp_other_pack_check\tf_227_4043": {
+    "local_gp_other_pack_check\tlocal_general_gp_repacking_route": {
       "from": "local_gp_other_pack_check",
-      "to": "f_227_4043",
+      "to": "local_general_gp_repacking_route",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_gp_other_pack_check\tf_227_4068": {
+    "local_gp_other_pack_check\tlocal_general_new_batch_route": {
       "from": "local_gp_other_pack_check",
-      "to": "f_227_4068",
+      "to": "local_general_new_batch_route",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14631,15 +16349,15 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_colored_plaster_gp_reserve\tf_241_5114": {
+    "local_colored_plaster_gp_reserve\tlocal_route_jump_3bfa3d120d22": {
       "from": "local_colored_plaster_gp_reserve",
-      "to": "f_241_5114",
+      "to": "local_route_jump_3bfa3d120d22",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_other_colored_base_container\tf_241_5114": {
+    "local_other_colored_base_container\tlocal_route_jump_9234472839d5": {
       "from": "local_other_colored_base_container",
-      "to": "f_241_5114",
+      "to": "local_route_jump_9234472839d5",
       "button": "Выполнено",
       "who": "Роль: Фасовщик производства.\nЭкран: Фасовка."
     },
@@ -14655,9 +16373,9 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_sample_new_batch_route\tlocal_sample_fresh_batch_destination": {
+    "local_sample_new_batch_route\tlocal_route_jump_a3301c3faacd": {
       "from": "local_sample_new_batch_route",
-      "to": "local_sample_fresh_batch_destination",
+      "to": "local_route_jump_a3301c3faacd",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14667,9 +16385,9 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_plaster_new_batch_route\tf_241_5114": {
+    "local_plaster_new_batch_route\tlocal_route_jump_19ebbe5fc252": {
       "from": "local_plaster_new_batch_route",
-      "to": "f_241_5114",
+      "to": "local_route_jump_19ebbe5fc252",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14679,27 +16397,27 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_keep_largest_colored_base_in_deja\tlocal_deja_coloring_route": {
+    "local_keep_largest_colored_base_in_deja\tlocal_route_jump_a634ff6c9098": {
       "from": "local_keep_largest_colored_base_in_deja",
-      "to": "local_deja_coloring_route",
+      "to": "local_route_jump_a634ff6c9098",
       "button": "Выполнено",
       "who": "Роль: Фасовщик производства.\nЭкран: Фасовка."
     },
-    "f_227_4040\tlocal_purchased_product_route": {
+    "f_227_4040\tlocal_route_jump_8a027ae32814": {
       "from": "f_227_4040",
-      "to": "local_purchased_product_route",
+      "to": "local_route_jump_8a027ae32814",
       "button": "",
       "who": "Автоматизация"
     },
-    "f_227_4033\tf_262_6981": {
+    "f_227_4033\tlocal_route_jump_c0d5413d27ec": {
       "from": "f_227_4033",
-      "to": "f_262_6981",
+      "to": "local_route_jump_c0d5413d27ec",
       "button": "",
       "who": "Автоматизация"
     },
-    "f_227_4035\tf_257_6365": {
+    "f_227_4035\tlocal_route_jump_9f555ceb21bd": {
       "from": "f_227_4035",
-      "to": "f_257_6365",
+      "to": "local_route_jump_9f555ceb21bd",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14733,21 +16451,21 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "f_227_4130\tlocal_grout_base_ready": {
+    "f_227_4130\tlocal_route_jump_d1c94384ebb5": {
       "from": "f_227_4130",
-      "to": "local_grout_base_ready",
+      "to": "local_route_jump_d1c94384ebb5",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_grout_base_color\tf_241_5170": {
+    "local_grout_base_color\tlocal_route_jump_27ab3e857ff5": {
       "from": "local_grout_base_color",
-      "to": "f_241_5170",
+      "to": "local_route_jump_27ab3e857ff5",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_grout_base_color\tlocal_colored_grout_route": {
+    "local_grout_base_color\tlocal_route_jump_5e792f7015c1": {
       "from": "local_grout_base_color",
-      "to": "local_colored_grout_route",
+      "to": "local_route_jump_5e792f7015c1",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14769,15 +16487,15 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_pf_to_km_onec\tf_241_5098": {
+    "local_pf_to_km_onec\tlocal_route_jump_4ca445979b1f": {
       "from": "local_pf_to_km_onec",
-      "to": "f_241_5098",
+      "to": "local_route_jump_4ca445979b1f",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_pf_to_prod_onec\tf_241_5114": {
+    "local_pf_to_prod_onec\tlocal_route_jump_7655c012fe23": {
       "from": "local_pf_to_prod_onec",
-      "to": "f_241_5114",
+      "to": "local_route_jump_7655c012fe23",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14799,9 +16517,9 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_colored_km_pf_supply\tf_241_5098": {
+    "local_colored_km_pf_supply\tlocal_route_jump_4c4259d7f7e5": {
       "from": "local_colored_km_pf_supply",
-      "to": "f_241_5098",
+      "to": "local_route_jump_4c4259d7f7e5",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14811,15 +16529,15 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_sample_pf_coloring_destination\tf_241_5098": {
+    "local_sample_pf_coloring_destination\tlocal_route_jump_db8d8fc9844a": {
       "from": "local_sample_pf_coloring_destination",
-      "to": "f_241_5098",
+      "to": "local_route_jump_db8d8fc9844a",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_sample_pf_coloring_destination\tf_241_5114": {
+    "local_sample_pf_coloring_destination\tlocal_route_jump_b1bb632030e6": {
       "from": "local_sample_pf_coloring_destination",
-      "to": "f_241_5114",
+      "to": "local_route_jump_b1bb632030e6",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14901,21 +16619,21 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "Выполнено",
       "who": "Роль: Замесчик.\nЭкран: Замесы."
     },
-    "local_sample_fresh_batch_destination\tf_241_5098": {
+    "local_sample_fresh_batch_destination\tlocal_route_jump_630d49cdeb59": {
       "from": "local_sample_fresh_batch_destination",
-      "to": "f_241_5098",
+      "to": "local_route_jump_630d49cdeb59",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_sample_fresh_batch_destination\tf_241_5114": {
+    "local_sample_fresh_batch_destination\tlocal_route_jump_74c778161734": {
       "from": "local_sample_fresh_batch_destination",
-      "to": "f_241_5114",
+      "to": "local_route_jump_74c778161734",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_new_batch_grout_type\tlocal_grout_base_ready": {
+    "local_new_batch_grout_type\tlocal_route_jump_841a9a56f5bd": {
       "from": "local_new_batch_grout_type",
-      "to": "local_grout_base_ready",
+      "to": "local_route_jump_841a9a56f5bd",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14955,9 +16673,9 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "f_241_5050\tlocal_resume_coloring_after_batch": {
+    "f_241_5050\tlocal_route_jump_51e4b85481db": {
       "from": "f_241_5050",
-      "to": "local_resume_coloring_after_batch",
+      "to": "local_route_jump_51e4b85481db",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14967,9 +16685,9 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "f_227_4119\tlocal_resume_coloring_after_batch": {
+    "f_227_4119\tlocal_route_jump_fd9cac87b3a3": {
       "from": "f_227_4119",
-      "to": "local_resume_coloring_after_batch",
+      "to": "local_route_jump_fd9cac87b3a3",
       "button": "",
       "who": "Автоматизация"
     },
@@ -14979,9 +16697,9 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "f_227_4132\tlocal_resume_coloring_after_batch": {
+    "f_227_4132\tlocal_route_jump_af578fcd3154": {
       "from": "f_227_4132",
-      "to": "local_resume_coloring_after_batch",
+      "to": "local_route_jump_af578fcd3154",
       "button": "",
       "who": "Автоматизация"
     },
@@ -15027,45 +16745,45 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "Выполнено",
       "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
     },
-    "f_227_4222\tlocal_start_account_work": {
+    "f_227_4222\tlocal_route_jump_ed4a6c89c812": {
       "from": "f_227_4222",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_ed4a6c89c812",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада — приёмка; старший смены — сдача.\nЭкран: Задания склада."
     },
-    "f_227_4221\tlocal_start_account_work": {
+    "f_227_4221\tlocal_route_jump_d0269749d49f": {
       "from": "f_227_4221",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_d0269749d49f",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада; руководитель склада.\nЭкран: Задания склада."
     },
-    "local_pf_supply_grout\tlocal_start_account_work": {
+    "local_pf_supply_grout\tlocal_route_jump_db8610c19325": {
       "from": "local_pf_supply_grout",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_db8610c19325",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада."
     },
-    "local_pf_to_km_physical\tlocal_start_account_work": {
+    "local_pf_to_km_physical\tlocal_route_jump_df5d39ea39df": {
       "from": "local_pf_to_km_physical",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_df5d39ea39df",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
     },
-    "local_pf_to_prod_physical\tlocal_start_account_work": {
+    "local_pf_to_prod_physical\tlocal_route_jump_64aabfeb8d2e": {
       "from": "local_pf_to_prod_physical",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_64aabfeb8d2e",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада."
     },
-    "mark_ready_f_227_4079\tlocal_start_account_work": {
+    "mark_ready_f_227_4079\tlocal_route_jump_7fc9be5ef123": {
       "from": "mark_ready_f_227_4079",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_7fc9be5ef123",
       "button": "",
       "who": "Автоматизация"
     },
-    "f_227_4085\tlocal_start_account_work": {
+    "f_227_4085\tlocal_route_jump_7e3bc79712b9": {
       "from": "f_227_4085",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_7e3bc79712b9",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
     },
@@ -15123,69 +16841,69 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "Отправить на доведение",
       "who": "Роль: Сотрудник ОТК.\nЭкран: ОТК / лаборатория."
     },
-    "f_230_5042\tequipment_wash_decision": {
+    "f_230_5042\tlocal_route_jump_76aab0668582": {
       "from": "f_230_5042",
-      "to": "equipment_wash_decision",
+      "to": "local_route_jump_76aab0668582",
       "button": "Выполнено",
       "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
     },
-    "f_262_7299\tequipment_wash_decision": {
+    "f_262_7299\tlocal_route_jump_a9b163e7fb39": {
       "from": "f_262_7299",
-      "to": "equipment_wash_decision",
+      "to": "local_route_jump_a9b163e7fb39",
       "button": "Выполнено",
       "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
     },
-    "f_227_4167\tequipment_wash_decision": {
+    "f_227_4167\tlocal_route_jump_5a716a88fa70": {
       "from": "f_227_4167",
-      "to": "equipment_wash_decision",
+      "to": "local_route_jump_5a716a88fa70",
       "button": "Выполнено",
       "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
     },
-    "f_227_4090\tequipment_wash_decision": {
+    "f_227_4090\tlocal_route_jump_c9878e858bb7": {
       "from": "f_227_4090",
-      "to": "equipment_wash_decision",
+      "to": "local_route_jump_c9878e858bb7",
       "button": "Выполнено",
       "who": "Роль: Фасовщик производства.\nЭкран: Фасовка."
     },
-    "f_227_4085\tequipment_wash_decision": {
+    "f_227_4085\tlocal_route_jump_88798a76550f": {
       "from": "f_227_4085",
-      "to": "equipment_wash_decision",
+      "to": "local_route_jump_88798a76550f",
       "button": "Выполнено",
       "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
     },
-    "f_230_4932\tequipment_wash_decision": {
+    "f_230_4932\tlocal_route_jump_423559ebdfe5": {
       "from": "f_230_4932",
-      "to": "equipment_wash_decision",
+      "to": "local_route_jump_423559ebdfe5",
       "button": "Выполнено",
       "who": "Роль: Фасовщик производства; для затирки и пигментной пасты — сотрудник склада ПФ.\nЭкран: Фасовка."
     },
-    "local_deja_f_230_4932\tequipment_wash_decision": {
+    "local_deja_f_230_4932\tlocal_route_jump_33b53fa8d927": {
       "from": "local_deja_f_230_4932",
-      "to": "equipment_wash_decision",
+      "to": "local_route_jump_33b53fa8d927",
       "button": "Выполнено",
       "who": "Роль: Фасовщик производства; для затирки и пигментной пасты — сотрудник склада ПФ.\nЭкран: Фасовка."
     },
-    "local_pf_to_km_physical\tequipment_wash_decision": {
+    "local_pf_to_km_physical\tlocal_route_jump_d8863f532a95": {
       "from": "local_pf_to_km_physical",
-      "to": "equipment_wash_decision",
+      "to": "local_route_jump_d8863f532a95",
       "button": "Выполнено",
       "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
     },
-    "local_km_new_batch_fill\tequipment_wash_decision": {
+    "local_km_new_batch_fill\tlocal_route_jump_0a23a9835871": {
       "from": "local_km_new_batch_fill",
-      "to": "equipment_wash_decision",
+      "to": "local_route_jump_0a23a9835871",
       "button": "Выполнено",
       "who": "Роль: Фасовщик производства.\nЭкран: Фасовка."
     },
-    "local_repacking_samples_fill\tequipment_wash_decision": {
+    "local_repacking_samples_fill\tlocal_route_jump_9f2ac657a1e7": {
       "from": "local_repacking_samples_fill",
-      "to": "equipment_wash_decision",
+      "to": "local_route_jump_9f2ac657a1e7",
       "button": "Выполнено",
       "who": "Роль: Фасовщик производства.\nЭкран: Фасовка."
     },
-    "local_initial_gp_partial_reserve\tf_257_6364": {
+    "local_initial_gp_partial_reserve\tlocal_route_jump_f23d1dc97202": {
       "from": "local_initial_gp_partial_reserve",
-      "to": "f_257_6364",
+      "to": "local_route_jump_f23d1dc97202",
       "button": "",
       "who": "Автоматизация"
     },
@@ -15195,51 +16913,51 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "quality_km_self\tlocal_quality_unfixable_defect_route": {
+    "quality_km_self\tlocal_route_jump_0fa0245eeea2": {
       "from": "quality_km_self",
-      "to": "local_quality_unfixable_defect_route",
+      "to": "local_route_jump_0fa0245eeea2",
       "button": "Исправить нельзя",
       "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка."
     },
-    "quality_km_lab\tlocal_quality_unfixable_defect_route": {
+    "quality_km_lab\tlocal_route_jump_819301e7dc3a": {
       "from": "quality_km_lab",
-      "to": "local_quality_unfixable_defect_route",
+      "to": "local_route_jump_819301e7dc3a",
       "button": "Исправить нельзя",
       "who": "Роль: Сотрудник ОТК.\nЭкран: ОТК / лаборатория."
     },
-    "quality_prod_self\tlocal_quality_unfixable_defect_route": {
+    "quality_prod_self\tlocal_route_jump_6dc76b7fda2c": {
       "from": "quality_prod_self",
-      "to": "local_quality_unfixable_defect_route",
+      "to": "local_route_jump_6dc76b7fda2c",
       "button": "Исправить нельзя",
       "who": "Роль: Колеровщик производства; для затирки — сотрудник склада ПФ, при отсутствии — колеровщик производства.\nЭкран: Колеровка."
     },
-    "quality_prod_lab\tlocal_quality_unfixable_defect_route": {
+    "quality_prod_lab\tlocal_route_jump_fe6f86170b72": {
       "from": "quality_prod_lab",
-      "to": "local_quality_unfixable_defect_route",
+      "to": "local_route_jump_fe6f86170b72",
       "button": "Исправить нельзя",
       "who": "Роль: Сотрудник ОТК.\nЭкран: ОТК / лаборатория."
     },
-    "quality_deja_self\tlocal_quality_unfixable_defect_route": {
+    "quality_deja_self\tlocal_route_jump_8332b387f21a": {
       "from": "quality_deja_self",
-      "to": "local_quality_unfixable_defect_route",
+      "to": "local_route_jump_8332b387f21a",
       "button": "Исправить нельзя",
       "who": "Роль: Колеровщик производства; при необходимости — колеровщик КМ.\nЭкран: Колеровка."
     },
-    "quality_deja_lab\tlocal_quality_unfixable_defect_route": {
+    "quality_deja_lab\tlocal_route_jump_21b3f4bd1a39": {
       "from": "quality_deja_lab",
-      "to": "local_quality_unfixable_defect_route",
+      "to": "local_route_jump_21b3f4bd1a39",
       "button": "Исправить нельзя",
       "who": "Роль: Сотрудник ОТК.\nЭкран: ОТК / лаборатория."
     },
-    "quality_syringe_self\tlocal_quality_unfixable_defect_route": {
+    "quality_syringe_self\tlocal_route_jump_c59d9b98b106": {
       "from": "quality_syringe_self",
-      "to": "local_quality_unfixable_defect_route",
+      "to": "local_route_jump_c59d9b98b106",
       "button": "Исправить нельзя",
       "who": "Роль: Сотрудник склада ПФ или колеровщик производства — исполнитель колеровки.\nЭкран: Колеровка."
     },
-    "quality_syringe_lab\tlocal_quality_unfixable_defect_route": {
+    "quality_syringe_lab\tlocal_route_jump_ca75edd3a65c": {
       "from": "quality_syringe_lab",
-      "to": "local_quality_unfixable_defect_route",
+      "to": "local_route_jump_ca75edd3a65c",
       "button": "Исправить нельзя",
       "who": "Роль: Сотрудник ОТК.\nЭкран: ОТК / лаборатория."
     },
@@ -15411,9 +17129,9 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_restart_position\tf_227_4040": {
+    "local_restart_position\tlocal_route_jump_d90b3677ac7c": {
       "from": "local_restart_position",
-      "to": "f_227_4040",
+      "to": "local_route_jump_d90b3677ac7c",
       "button": "Принять в работу",
       "who": "Роль: Сотрудник по планированию производства.\nЭкран: Карточка обеспечения счёта."
     },
@@ -15687,81 +17405,81 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "f_227_4076\tlocal_start_account_work": {
+    "f_227_4076\tlocal_route_jump_780907f786e1": {
       "from": "f_227_4076",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_780907f786e1",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада; руководитель склада.\nЭкран: Задания склада."
     },
-    "mark_ready_f_227_4081\tlocal_start_account_work": {
+    "mark_ready_f_227_4081\tlocal_route_jump_20ffc912b385": {
       "from": "mark_ready_f_227_4081",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_20ffc912b385",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада.\nЭкран: Маркировка."
     },
-    "f_227_4084\tlocal_start_account_work": {
+    "f_227_4084\tlocal_route_jump_03a04a77f77a": {
       "from": "f_227_4084",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_03a04a77f77a",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада — передача; Фасовщик производства — приёмка.\nЭкран: Задания склада."
     },
-    "local_repacking_label_task\tlocal_start_account_work": {
+    "local_repacking_label_task\tlocal_route_jump_6c103f8fdf88": {
       "from": "local_repacking_label_task",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_6c103f8fdf88",
       "button": "Проблема",
       "who": "Роль: Этикеровщик.\nЭкран: Маркировка."
     },
-    "f_227_4090\tlocal_start_account_work": {
+    "f_227_4090\tlocal_route_jump_ae668be6ac01": {
       "from": "f_227_4090",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_ae668be6ac01",
       "button": "Проблема",
       "who": "Роль: Фасовщик производства.\nЭкран: Фасовка."
     },
-    "local_2072f40c1e824f81b2482a3720797b08\tlocal_start_account_work": {
+    "local_2072f40c1e824f81b2482a3720797b08\tlocal_route_jump_b34ace4649a0": {
       "from": "local_2072f40c1e824f81b2482a3720797b08",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_b34ace4649a0",
       "button": "Проблема",
       "who": "Роль: Сотрудник по планированию производства.\nЭкран: Карточка обеспечения счёта."
     },
-    "mark_ready_local_repacking_samples_labels\tlocal_start_account_work": {
+    "mark_ready_local_repacking_samples_labels\tlocal_route_jump_9c9b6732ddbf": {
       "from": "mark_ready_local_repacking_samples_labels",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_9c9b6732ddbf",
       "button": "Проблема",
       "who": "Роль: Этикеровщик.\nЭкран: Маркировка."
     },
-    "local_repacking_samples_fill\tlocal_start_account_work": {
+    "local_repacking_samples_fill\tlocal_route_jump_36051dffe83e": {
       "from": "local_repacking_samples_fill",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_36051dffe83e",
       "button": "Проблема",
       "who": "Роль: Фасовщик производства.\nЭкран: Фасовка."
     },
-    "local_repacking_samples_warehouse\tlocal_start_account_work": {
+    "local_repacking_samples_warehouse\tlocal_route_jump_dde1d3c21d88": {
       "from": "local_repacking_samples_warehouse",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_dde1d3c21d88",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада — приёмка; старший смены — сдача.\nЭкран: Задания склада."
     },
-    "local_14565bca119a4b0a8cb1781e02cad8a7\tlocal_start_account_work": {
+    "local_14565bca119a4b0a8cb1781e02cad8a7\tlocal_route_jump_927e8a9424c8": {
       "from": "local_14565bca119a4b0a8cb1781e02cad8a7",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_927e8a9424c8",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада; конкретный склад указан в задании.\nЭкран: Задания склада."
     },
-    "f_227_4089\tlocal_start_account_work": {
+    "f_227_4089\tlocal_route_jump_c808b27078a9": {
       "from": "f_227_4089",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_c808b27078a9",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада — приёмка; старший смены — сдача.\nЭкран: Задания склада."
     },
-    "local_repacking_prepare_ready\tlocal_start_account_work": {
+    "local_repacking_prepare_ready\tlocal_route_jump_00b8842cbd10": {
       "from": "local_repacking_prepare_ready",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_00b8842cbd10",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада; руководитель склада.\nЭкран: Задания склада."
     },
-    "f_227_4087\tlocal_start_account_work": {
+    "f_227_4087\tlocal_route_jump_aa00522eceb3": {
       "from": "f_227_4087",
-      "to": "local_start_account_work",
+      "to": "local_route_jump_aa00522eceb3",
       "button": "Проблема",
       "who": "Роль: Сотрудник склада; этикеровщик выдаёт этикетки.\nЭкран: Маркировка."
     },
@@ -15783,9 +17501,9 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_gp_repacking_pf_gate\tf_227_4058": {
+    "local_gp_repacking_pf_gate\tlocal_route_jump_5a2b64541ed2": {
       "from": "local_gp_repacking_pf_gate",
-      "to": "f_227_4058",
+      "to": "local_route_jump_5a2b64541ed2",
       "button": "",
       "who": "Автоматизация"
     },
@@ -15849,111 +17567,111 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "f_227_4223\tlocal_material_supply_route": {
+    "f_227_4223\tlocal_route_jump_eed1aa7267dc": {
       "from": "f_227_4223",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_eed1aa7267dc",
       "button": "Нет на складе",
       "who": "Роль: Сотрудник склада; конкретный склад указан в задании.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tf_227_4223": {
+    "local_material_supply_resume\tlocal_route_jump_ac343fc57376": {
       "from": "local_material_supply_resume",
-      "to": "f_227_4223",
+      "to": "local_route_jump_ac343fc57376",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_new_batch_extra_move\tlocal_material_supply_route": {
+    "local_new_batch_extra_move\tlocal_route_jump_7eeadabf5cb1": {
       "from": "local_new_batch_extra_move",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_7eeadabf5cb1",
       "button": "Нет на складе",
       "who": "Роль: Оператор погрузчика склада; при отсутствии — Руководитель склада.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tlocal_new_batch_extra_move": {
+    "local_material_supply_resume\tlocal_route_jump_f2434fef7f7c": {
       "from": "local_material_supply_resume",
-      "to": "local_new_batch_extra_move",
+      "to": "local_route_jump_f2434fef7f7c",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_km_pigment_move\tlocal_material_supply_route": {
+    "local_km_pigment_move\tlocal_route_jump_0f191b8bcf8b": {
       "from": "local_km_pigment_move",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_0f191b8bcf8b",
       "button": "Нет на складе",
       "who": "Роль: Сотрудник склада; конкретный склад указан в задании.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tlocal_km_pigment_move": {
+    "local_material_supply_resume\tlocal_route_jump_c72ffbd87a4d": {
       "from": "local_material_supply_resume",
-      "to": "local_km_pigment_move",
+      "to": "local_route_jump_c72ffbd87a4d",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_prod_pigment_move\tlocal_material_supply_route": {
+    "local_prod_pigment_move\tlocal_route_jump_bea3316624f9": {
       "from": "local_prod_pigment_move",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_bea3316624f9",
       "button": "Нет на складе",
       "who": "Роль: Сотрудник склада; конкретный склад указан в задании.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tlocal_prod_pigment_move": {
+    "local_material_supply_resume\tlocal_route_jump_c98bccca8f0a": {
       "from": "local_material_supply_resume",
-      "to": "local_prod_pigment_move",
+      "to": "local_route_jump_c98bccca8f0a",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_deja_pigment_move\tlocal_material_supply_route": {
+    "local_deja_pigment_move\tlocal_route_jump_be34fc9948a6": {
       "from": "local_deja_pigment_move",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_be34fc9948a6",
       "button": "Нет на складе",
       "who": "Роль: Сотрудник склада; конкретный склад указан в задании.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tlocal_deja_pigment_move": {
+    "local_material_supply_resume\tlocal_route_jump_45fce2d7ad86": {
       "from": "local_material_supply_resume",
-      "to": "local_deja_pigment_move",
+      "to": "local_route_jump_45fce2d7ad86",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_syringe_material_move\tlocal_material_supply_route": {
+    "local_syringe_material_move\tlocal_route_jump_d114b7f0942f": {
       "from": "local_syringe_material_move",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_d114b7f0942f",
       "button": "Нет на складе",
       "who": "Роль: Сотрудник склада; конкретный склад указан в задании.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tlocal_syringe_material_move": {
+    "local_material_supply_resume\tlocal_route_jump_9bd47c95d905": {
       "from": "local_material_supply_resume",
-      "to": "local_syringe_material_move",
+      "to": "local_route_jump_9bd47c95d905",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_km_correction_move\tlocal_material_supply_route": {
+    "local_km_correction_move\tlocal_route_jump_a0dd6aff9c37": {
       "from": "local_km_correction_move",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_a0dd6aff9c37",
       "button": "Нет на складе",
       "who": "Роль: Сотрудник склада; конкретный склад указан в задании.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tlocal_km_correction_move": {
+    "local_material_supply_resume\tlocal_route_jump_e7eb965ed4fd": {
       "from": "local_material_supply_resume",
-      "to": "local_km_correction_move",
+      "to": "local_route_jump_e7eb965ed4fd",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_prod_correction_move\tlocal_material_supply_route": {
+    "local_prod_correction_move\tlocal_route_jump_5d6dee9c29b1": {
       "from": "local_prod_correction_move",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_5d6dee9c29b1",
       "button": "Нет на складе",
       "who": "Роль: Сотрудник склада; конкретный склад указан в задании.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tlocal_prod_correction_move": {
+    "local_material_supply_resume\tlocal_route_jump_e916a57be827": {
       "from": "local_material_supply_resume",
-      "to": "local_prod_correction_move",
+      "to": "local_route_jump_e916a57be827",
       "button": "",
       "who": "Автоматизация"
     },
-    "local_deja_correction_move\tlocal_material_supply_route": {
+    "local_deja_correction_move\tlocal_route_jump_476a5b875520": {
       "from": "local_deja_correction_move",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_476a5b875520",
       "button": "Нет на складе",
       "who": "Роль: Сотрудник склада; конкретный склад указан в задании.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tlocal_deja_correction_move": {
+    "local_material_supply_resume\tlocal_route_jump_ca4e46fcfa66": {
       "from": "local_material_supply_resume",
-      "to": "local_deja_correction_move",
+      "to": "local_route_jump_ca4e46fcfa66",
       "button": "",
       "who": "Автоматизация"
     },
@@ -15987,15 +17705,15 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "",
       "who": "Автоматизация"
     },
-    "local_paste_correction_material_move\tlocal_material_supply_route": {
+    "local_paste_correction_material_move\tlocal_route_jump_84e560e98cb8": {
       "from": "local_paste_correction_material_move",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_84e560e98cb8",
       "button": "Нет на складе",
       "who": "Роль: Сотрудник склада.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tlocal_paste_correction_material_move": {
+    "local_material_supply_resume\tlocal_route_jump_62e29596a70a": {
       "from": "local_material_supply_resume",
-      "to": "local_paste_correction_material_move",
+      "to": "local_route_jump_62e29596a70a",
       "button": "",
       "who": "Автоматизация"
     },
@@ -16131,14 +17849,548 @@ window.LAKOM_SCHEMA_EXPORT = {
       "button": "Выполнено",
       "who": "Роль: Подборщик сырья.\nЭкран: Задания склада."
     },
-    "local_new_batch_extra_pick\tlocal_material_supply_route": {
+    "local_new_batch_extra_pick\tlocal_route_jump_263865f92093": {
       "from": "local_new_batch_extra_pick",
-      "to": "local_material_supply_route",
+      "to": "local_route_jump_263865f92093",
       "button": "Нет на складе",
       "who": "Роль: Подборщик сырья.\nЭкран: Задания склада."
     },
-    "local_material_supply_resume\tlocal_new_batch_extra_pick": {
+    "local_material_supply_resume\tlocal_route_jump_e9f7576f21d7": {
       "from": "local_material_supply_resume",
+      "to": "local_route_jump_e9f7576f21d7",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_general_gp_repacking_route\tf_227_4043": {
+      "from": "local_general_gp_repacking_route",
+      "to": "f_227_4043",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_general_new_batch_route\tf_227_4068": {
+      "from": "local_general_new_batch_route",
+      "to": "f_227_4068",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_e0f6b0e136bd\tf_257_6364": {
+      "from": "local_route_jump_e0f6b0e136bd",
+      "to": "f_257_6364",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_029c19082d8d\tf_227_4044": {
+      "from": "local_route_jump_029c19082d8d",
+      "to": "f_227_4044",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_3bfa3d120d22\tf_241_5114": {
+      "from": "local_route_jump_3bfa3d120d22",
+      "to": "f_241_5114",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_9234472839d5\tf_241_5114": {
+      "from": "local_route_jump_9234472839d5",
+      "to": "f_241_5114",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_a3301c3faacd\tlocal_sample_fresh_batch_destination": {
+      "from": "local_route_jump_a3301c3faacd",
+      "to": "local_sample_fresh_batch_destination",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_19ebbe5fc252\tf_241_5114": {
+      "from": "local_route_jump_19ebbe5fc252",
+      "to": "f_241_5114",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_a634ff6c9098\tlocal_deja_coloring_route": {
+      "from": "local_route_jump_a634ff6c9098",
+      "to": "local_deja_coloring_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_8a027ae32814\tlocal_purchased_product_route": {
+      "from": "local_route_jump_8a027ae32814",
+      "to": "local_purchased_product_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_c0d5413d27ec\tf_262_6981": {
+      "from": "local_route_jump_c0d5413d27ec",
+      "to": "f_262_6981",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_9f555ceb21bd\tf_257_6365": {
+      "from": "local_route_jump_9f555ceb21bd",
+      "to": "f_257_6365",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_d1c94384ebb5\tlocal_grout_base_ready": {
+      "from": "local_route_jump_d1c94384ebb5",
+      "to": "local_grout_base_ready",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_27ab3e857ff5\tf_241_5170": {
+      "from": "local_route_jump_27ab3e857ff5",
+      "to": "f_241_5170",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_5e792f7015c1\tlocal_colored_grout_route": {
+      "from": "local_route_jump_5e792f7015c1",
+      "to": "local_colored_grout_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_4ca445979b1f\tf_241_5098": {
+      "from": "local_route_jump_4ca445979b1f",
+      "to": "f_241_5098",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_7655c012fe23\tf_241_5114": {
+      "from": "local_route_jump_7655c012fe23",
+      "to": "f_241_5114",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_4c4259d7f7e5\tf_241_5098": {
+      "from": "local_route_jump_4c4259d7f7e5",
+      "to": "f_241_5098",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_db8d8fc9844a\tf_241_5098": {
+      "from": "local_route_jump_db8d8fc9844a",
+      "to": "f_241_5098",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_b1bb632030e6\tf_241_5114": {
+      "from": "local_route_jump_b1bb632030e6",
+      "to": "f_241_5114",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_630d49cdeb59\tf_241_5098": {
+      "from": "local_route_jump_630d49cdeb59",
+      "to": "f_241_5098",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_74c778161734\tf_241_5114": {
+      "from": "local_route_jump_74c778161734",
+      "to": "f_241_5114",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_841a9a56f5bd\tlocal_grout_base_ready": {
+      "from": "local_route_jump_841a9a56f5bd",
+      "to": "local_grout_base_ready",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_51e4b85481db\tlocal_resume_coloring_after_batch": {
+      "from": "local_route_jump_51e4b85481db",
+      "to": "local_resume_coloring_after_batch",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_fd9cac87b3a3\tlocal_resume_coloring_after_batch": {
+      "from": "local_route_jump_fd9cac87b3a3",
+      "to": "local_resume_coloring_after_batch",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_af578fcd3154\tlocal_resume_coloring_after_batch": {
+      "from": "local_route_jump_af578fcd3154",
+      "to": "local_resume_coloring_after_batch",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_ed4a6c89c812\tlocal_start_account_work": {
+      "from": "local_route_jump_ed4a6c89c812",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_d0269749d49f\tlocal_start_account_work": {
+      "from": "local_route_jump_d0269749d49f",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_db8610c19325\tlocal_start_account_work": {
+      "from": "local_route_jump_db8610c19325",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_df5d39ea39df\tlocal_start_account_work": {
+      "from": "local_route_jump_df5d39ea39df",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_64aabfeb8d2e\tlocal_start_account_work": {
+      "from": "local_route_jump_64aabfeb8d2e",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_7fc9be5ef123\tlocal_start_account_work": {
+      "from": "local_route_jump_7fc9be5ef123",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_7e3bc79712b9\tlocal_start_account_work": {
+      "from": "local_route_jump_7e3bc79712b9",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_76aab0668582\tequipment_wash_decision": {
+      "from": "local_route_jump_76aab0668582",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_a9b163e7fb39\tequipment_wash_decision": {
+      "from": "local_route_jump_a9b163e7fb39",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_5a716a88fa70\tequipment_wash_decision": {
+      "from": "local_route_jump_5a716a88fa70",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_c9878e858bb7\tequipment_wash_decision": {
+      "from": "local_route_jump_c9878e858bb7",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_88798a76550f\tequipment_wash_decision": {
+      "from": "local_route_jump_88798a76550f",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_423559ebdfe5\tequipment_wash_decision": {
+      "from": "local_route_jump_423559ebdfe5",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_33b53fa8d927\tequipment_wash_decision": {
+      "from": "local_route_jump_33b53fa8d927",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_d8863f532a95\tequipment_wash_decision": {
+      "from": "local_route_jump_d8863f532a95",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_0a23a9835871\tequipment_wash_decision": {
+      "from": "local_route_jump_0a23a9835871",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_9f2ac657a1e7\tequipment_wash_decision": {
+      "from": "local_route_jump_9f2ac657a1e7",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_f23d1dc97202\tf_257_6364": {
+      "from": "local_route_jump_f23d1dc97202",
+      "to": "f_257_6364",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_0fa0245eeea2\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_0fa0245eeea2",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_819301e7dc3a\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_819301e7dc3a",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_6dc76b7fda2c\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_6dc76b7fda2c",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_fe6f86170b72\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_fe6f86170b72",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_8332b387f21a\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_8332b387f21a",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_21b3f4bd1a39\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_21b3f4bd1a39",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_c59d9b98b106\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_c59d9b98b106",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_ca75edd3a65c\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_ca75edd3a65c",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_d90b3677ac7c\tf_227_4040": {
+      "from": "local_route_jump_d90b3677ac7c",
+      "to": "f_227_4040",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_780907f786e1\tlocal_start_account_work": {
+      "from": "local_route_jump_780907f786e1",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_20ffc912b385\tlocal_start_account_work": {
+      "from": "local_route_jump_20ffc912b385",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_03a04a77f77a\tlocal_start_account_work": {
+      "from": "local_route_jump_03a04a77f77a",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_6c103f8fdf88\tlocal_start_account_work": {
+      "from": "local_route_jump_6c103f8fdf88",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_ae668be6ac01\tlocal_start_account_work": {
+      "from": "local_route_jump_ae668be6ac01",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_b34ace4649a0\tlocal_start_account_work": {
+      "from": "local_route_jump_b34ace4649a0",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_9c9b6732ddbf\tlocal_start_account_work": {
+      "from": "local_route_jump_9c9b6732ddbf",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_36051dffe83e\tlocal_start_account_work": {
+      "from": "local_route_jump_36051dffe83e",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_dde1d3c21d88\tlocal_start_account_work": {
+      "from": "local_route_jump_dde1d3c21d88",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_927e8a9424c8\tlocal_start_account_work": {
+      "from": "local_route_jump_927e8a9424c8",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_c808b27078a9\tlocal_start_account_work": {
+      "from": "local_route_jump_c808b27078a9",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_00b8842cbd10\tlocal_start_account_work": {
+      "from": "local_route_jump_00b8842cbd10",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_aa00522eceb3\tlocal_start_account_work": {
+      "from": "local_route_jump_aa00522eceb3",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_5a2b64541ed2\tf_227_4058": {
+      "from": "local_route_jump_5a2b64541ed2",
+      "to": "f_227_4058",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_eed1aa7267dc\tlocal_material_supply_route": {
+      "from": "local_route_jump_eed1aa7267dc",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_ac343fc57376\tf_227_4223": {
+      "from": "local_route_jump_ac343fc57376",
+      "to": "f_227_4223",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_7eeadabf5cb1\tlocal_material_supply_route": {
+      "from": "local_route_jump_7eeadabf5cb1",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_f2434fef7f7c\tlocal_new_batch_extra_move": {
+      "from": "local_route_jump_f2434fef7f7c",
+      "to": "local_new_batch_extra_move",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_0f191b8bcf8b\tlocal_material_supply_route": {
+      "from": "local_route_jump_0f191b8bcf8b",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_c72ffbd87a4d\tlocal_km_pigment_move": {
+      "from": "local_route_jump_c72ffbd87a4d",
+      "to": "local_km_pigment_move",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_bea3316624f9\tlocal_material_supply_route": {
+      "from": "local_route_jump_bea3316624f9",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_c98bccca8f0a\tlocal_prod_pigment_move": {
+      "from": "local_route_jump_c98bccca8f0a",
+      "to": "local_prod_pigment_move",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_be34fc9948a6\tlocal_material_supply_route": {
+      "from": "local_route_jump_be34fc9948a6",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_45fce2d7ad86\tlocal_deja_pigment_move": {
+      "from": "local_route_jump_45fce2d7ad86",
+      "to": "local_deja_pigment_move",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_d114b7f0942f\tlocal_material_supply_route": {
+      "from": "local_route_jump_d114b7f0942f",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_9bd47c95d905\tlocal_syringe_material_move": {
+      "from": "local_route_jump_9bd47c95d905",
+      "to": "local_syringe_material_move",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_a0dd6aff9c37\tlocal_material_supply_route": {
+      "from": "local_route_jump_a0dd6aff9c37",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_e7eb965ed4fd\tlocal_km_correction_move": {
+      "from": "local_route_jump_e7eb965ed4fd",
+      "to": "local_km_correction_move",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_5d6dee9c29b1\tlocal_material_supply_route": {
+      "from": "local_route_jump_5d6dee9c29b1",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_e916a57be827\tlocal_prod_correction_move": {
+      "from": "local_route_jump_e916a57be827",
+      "to": "local_prod_correction_move",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_476a5b875520\tlocal_material_supply_route": {
+      "from": "local_route_jump_476a5b875520",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_ca4e46fcfa66\tlocal_deja_correction_move": {
+      "from": "local_route_jump_ca4e46fcfa66",
+      "to": "local_deja_correction_move",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_84e560e98cb8\tlocal_material_supply_route": {
+      "from": "local_route_jump_84e560e98cb8",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_62e29596a70a\tlocal_paste_correction_material_move": {
+      "from": "local_route_jump_62e29596a70a",
+      "to": "local_paste_correction_material_move",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_263865f92093\tlocal_material_supply_route": {
+      "from": "local_route_jump_263865f92093",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "local_route_jump_e9f7576f21d7\tlocal_new_batch_extra_pick": {
+      "from": "local_route_jump_e9f7576f21d7",
       "to": "local_new_batch_extra_pick",
       "button": "",
       "who": "Автоматизация"
