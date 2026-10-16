@@ -2,7 +2,7 @@
 declare(strict_types=1);
 $csrf = bin2hex(random_bytes(16));
 $meLogin = 'guest';
-$v = '2026-10-15-planner-card';
+$v = '2026-10-16-link-acts';
 ?><!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
@@ -166,6 +166,15 @@ $v = '2026-10-15-planner-card';
             <button type="button" class="btn btn-sm btn-primary" id="smVerSaveGo">Сохранить</button>
             <button type="button" class="btn btn-sm btn-outline-secondary" id="smVerCancel">Отмена</button>
         </div>
+    </div>
+</div>
+<div id="smLinksBox" class="sm-lb sm-hidden" hidden>
+    <div class="sm-lb-back" id="smLinksBack"></div>
+    <div class="sm-lb-card sm-links-card" role="dialog" aria-labelledby="smLinksTitle">
+        <button type="button" class="sm-lb-close" id="smLinksClose" aria-label="Закрыть">×</button>
+        <h2 id="smLinksTitle">Связи</h2>
+        <p class="muted" style="margin:0 0 12px">Стрелка от блока к блоку. Кнопка — что нажимают, чтобы пройти по связи. Ниже — кто нажимает и как это происходит. Пишется само.</p>
+        <div id="smLinksList"></div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

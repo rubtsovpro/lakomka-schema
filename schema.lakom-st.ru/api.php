@@ -15,7 +15,7 @@ if ($route === '') {
         $route = $m[1];
     }
 }
-if (! in_array($route, ['comments', 'checks', 'presence'], true)) {
+if (! in_array($route, ['comments', 'checks', 'presence', 'linkacts'], true)) {
     http_response_code(404);
     echo json_encode(['ok' => false, 'error' => 'not found'], JSON_UNESCAPED_UNICODE);
     exit;

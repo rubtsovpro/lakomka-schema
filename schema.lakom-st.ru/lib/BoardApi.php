@@ -36,6 +36,7 @@ class BoardApi
             'comments' => $this->comments($method, $query, $body),
             'checks' => $this->checks($method, $query, $body),
             'presence' => $this->presence($method, $query, $body),
+            'linkacts' => $this->linkActs($method, $body),
             default => [404, ['ok' => false, 'error' => 'not found']],
         };
     }
@@ -112,6 +113,71 @@ class BoardApi
         });
 
         return [200, ['ok' => true, 'item' => $item]];
+    }
+
+    /**
+     * Подписи к стрелкам: какая кнопка ведёт A→B и кто её нажимает.
+     *
+     * @return array{0:int,1:array<string,mixed>}
+     */
+    private function linkActs(string $method, array $body): array
+    {
+        if ($method === 'GET') {
+            return [200, ['ok' => true, 'items' => $this->readLinkActs()['items']]];
+        }
+        if ($method !== 'POST') {
+            return [405, ['ok' => false, 'error' => 'method']];
+        }
+        $from = trim((string) ($body['from'] ?? ''));
+        $to = trim((string) ($body['to'] ?? ''));
+        if (! $this->validNode($from) || ! $this->validNode($to) || $from === $to) {
+            return [422, ['ok' => false, 'error' => 'неверная связь']];
+        }
+        $button = trim((string) ($body['button'] ?? ''));
+        $who = trim((string) ($body['who'] ?? ''));
+        if (mb_strlen($button) > 200 || mb_strlen($who) > 4000) {
+            return [422, ['ok' => false, 'error' => 'слишком длинный текст']];
+        }
+        $key = $from."\t".$to;
+        $item = [
+            'from' => $from,
+            'to' => $to,
+            'button' => $button,
+            'who' => $who,
+            'user' => $this->userName,
+            'login' => $this->login,
+            'ts' => date('c'),
+        ];
+        $this->withLockedJson($this->path('schema_map_link_acts.json'), function (array &$data) use ($key, $item, $button, $who) {
+            if (! isset($data['items']) || ! is_array($data['items'])) {
+                $data['items'] = [];
+            }
+            if ($button === '' && $who === '') {
+                unset($data['items'][$key]);
+            } else {
+                $data['items'][$key] = $item;
+            }
+        }, ['items' => []]);
+
+        return [200, ['ok' => true, 'item' => $item]];
+    }
+
+    /**
+     * @return array{items: array<string, array<string, mixed>>}
+     */
+    private function readLinkActs(): array
+    {
+        $path = $this->path('schema_map_link_acts.json');
+        if (! is_file($path)) {
+            return ['items' => []];
+        }
+        $raw = file_get_contents($path);
+        $json = is_string($raw) ? json_decode($raw, true) : null;
+        if (! is_array($json) || ! isset($json['items']) || ! is_array($json['items'])) {
+            return ['items' => []];
+        }
+
+        return ['items' => $json['items']];
     }
 
     private function checks(string $method, array $query, array $body): array

@@ -961,6 +961,65 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
     color: #888;
     cursor: pointer;
 }
+.sm-links-btn {
+    position: absolute;
+    z-index: 16;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #cfc8be;
+    border-radius: 50%;
+    background: #fff;
+    padding: 2px;
+    color: #c2410c;
+    cursor: pointer;
+    line-height: 0;
+}
+.sm-links-btn svg { width: 100%; height: 100%; display: block; }
+.sm-links-card { width: min(640px, 100%); }
+.sm-link-card {
+    border: 1px solid #e6e7e9;
+    border-radius: 10px;
+    padding: 10px 12px 12px;
+    margin-bottom: 10px;
+}
+.sm-link-path {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+}
+.sm-link-path b { font-weight: 700; }
+.sm-link-arrow { color: #c2410c; font-weight: 800; }
+.sm-link-lab, .sm-link-dir {
+    font-size: 11px;
+    color: #667085;
+    background: #f3f4f6;
+    border-radius: 999px;
+    padding: 1px 7px;
+}
+.sm-link-field {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+.sm-link-field input,
+.sm-link-field textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 4px;
+    font: inherit;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 7px 9px;
+    border-radius: 8px;
+    border: 1px solid #d8d6d0;
+    resize: vertical;
+}
 .sm-hidden { display: none !important; }
 @media (max-width: 900px) {
     .sm-page { height: 100vh; margin: 0; }

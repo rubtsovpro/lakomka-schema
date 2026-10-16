@@ -884,6 +884,153 @@
         };
     }
 
+    var linkActs = {};
+    function linkActsUrl() {
+        var checks = pageCfg().checks || "";
+        if (!checks) return "";
+        if (checks.indexOf("r=checks") !== -1) return checks.replace("r=checks", "r=linkacts");
+        return checks.replace(/checks\/?(\?|$)/, "linkacts$1");
+    }
+    function loadLinkActs() {
+        var url = linkActsUrl();
+        if (!url) return;
+        fetch(url, { headers: { Accept: "application/json" }, credentials: "same-origin" })
+            .then(function (r) { return r.json(); })
+            .then(function (j) {
+                if (j && j.ok && j.items) linkActs = j.items;
+            })
+            .catch(function () {});
+    }
+    function saveLinkAct(from, to, button, who) {
+        var url = linkActsUrl();
+        if (!url) return;
+        var key = from + "\t" + to;
+        linkActs[key] = { from: from, to: to, button: button, who: who };
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            credentials: "same-origin",
+            body: JSON.stringify({ from: from, to: to, button: button, who: who })
+        }).catch(function () {});
+    }
+    function connectionsOf(id) {
+        var n = ALL[id] && ALL[id].node;
+        if (!n) return [];
+        var out = [];
+        var seen = {};
+        function add(from, to, kind, label) {
+            if (!from || !to || from === to) return;
+            var key = from + "\t" + to;
+            if (seen[key]) return;
+            var a = ALL[from] && ALL[from].node;
+            var b = ALL[to] && ALL[to].node;
+            if (!a || !b) return;
+            seen[key] = true;
+            out.push({
+                from: from,
+                to: to,
+                kind: kind,
+                label: label || "",
+                fromTitle: ru(a.title),
+                toTitle: ru(b.title)
+            });
+        }
+        (n.children || []).forEach(function (c) {
+            add(id, c.id, "out", c.edge || "");
+        });
+        var rec = ALL[id];
+        if (rec && rec.parent) add(rec.parent.id, id, "in", n.edge || "");
+        (n.links || []).forEach(function (tid) {
+            add(id, tid, "out", (n.linkLabels && n.linkLabels[tid]) || "");
+        });
+        Object.keys(ALL).forEach(function (oid) {
+            if (oid === id) return;
+            var o = ALL[oid].node;
+            if ((o.links || []).indexOf(id) !== -1) {
+                add(oid, id, "in", (o.linkLabels && o.linkLabels[id]) || "");
+            }
+        });
+        return out;
+    }
+    function openLinkActs(n) {
+        var box = document.getElementById("smLinksBox");
+        var list = document.getElementById("smLinksList");
+        var title = document.getElementById("smLinksTitle");
+        if (!box || !list) return;
+        if (title) title.textContent = "Связи · " + ru(n.title);
+        var rows = connectionsOf(n.id);
+        list.innerHTML = "";
+        if (!rows.length) {
+            var empty = document.createElement("p");
+            empty.className = "muted";
+            empty.textContent = "У этого блока нет стрелок к другим блокам.";
+            list.appendChild(empty);
+        }
+        rows.forEach(function (row) {
+            var key = row.from + "\t" + row.to;
+            var saved = linkActs[key] || {};
+            var card = document.createElement("div");
+            card.className = "sm-link-card";
+            var path = document.createElement("div");
+            path.className = "sm-link-path";
+            path.innerHTML = "<b></b><span class=\"sm-link-arrow\" aria-hidden=\"true\">→</span><b></b>";
+            path.querySelectorAll("b")[0].textContent = row.fromTitle;
+            path.querySelectorAll("b")[1].textContent = row.toTitle;
+            if (row.label) {
+                var lab = document.createElement("span");
+                lab.className = "sm-link-lab";
+                lab.textContent = row.label;
+                path.appendChild(lab);
+            }
+            var dir = document.createElement("span");
+            dir.className = "sm-link-dir";
+            dir.textContent = row.kind === "in" ? "в этот блок" : "из этого блока";
+            path.appendChild(dir);
+            card.appendChild(path);
+            var labBtn = document.createElement("label");
+            labBtn.className = "sm-link-field";
+            labBtn.appendChild(document.createTextNode("Кнопка"));
+            var inp = document.createElement("input");
+            inp.type = "text";
+            inp.maxLength = 200;
+            inp.placeholder = "Какая кнопка ведёт по этой стрелке";
+            inp.value = saved.button || "";
+            labBtn.appendChild(inp);
+            card.appendChild(labBtn);
+            var labWho = document.createElement("label");
+            labWho.className = "sm-link-field";
+            labWho.appendChild(document.createTextNode("Кто нажимает и как"));
+            var ta = document.createElement("textarea");
+            ta.rows = 3;
+            ta.maxLength = 4000;
+            ta.placeholder = "Кто нажимает, в каком экране и что происходит";
+            ta.value = saved.who || "";
+            labWho.appendChild(ta);
+            card.appendChild(labWho);
+            var timer = null;
+            function flush() {
+                saveLinkAct(row.from, row.to, inp.value.trim(), ta.value.trim());
+            }
+            function schedule() {
+                if (timer) clearTimeout(timer);
+                timer = setTimeout(flush, 400);
+            }
+            inp.addEventListener("input", schedule);
+            ta.addEventListener("input", schedule);
+            inp.addEventListener("blur", flush);
+            ta.addEventListener("blur", flush);
+            list.appendChild(card);
+        });
+        box.hidden = false;
+        box.classList.remove("sm-hidden");
+    }
+    function closeLinkActs() {
+        var box = document.getElementById("smLinksBox");
+        if (!box) return;
+        box.hidden = true;
+        box.classList.add("sm-hidden");
+    }
+
     function setCommentsOpen(on) {
         var box = document.getElementById("smComments");
         if (!box) return;
@@ -1701,7 +1848,7 @@
             });
             el.appendChild(tick);
             el.addEventListener("click", function (e) {
-                if (e.target.closest(".sm-check, .sm-has-note")) return;
+                if (e.target.closest(".sm-check, .sm-has-note, .sm-links-btn")) return;
                 e.stopPropagation();
                 select(n.id);
             });
@@ -1729,6 +1876,19 @@
                 openComments(n);
             });
             board.appendChild(leaf);
+            var linksBtn = document.createElement("button");
+            linksBtn.type = "button";
+            linksBtn.className = "sm-links-btn";
+            linksBtn.style.left = (n._x + 6) + "px";
+            linksBtn.style.top = (n._y + n._h - 8) + "px";
+            linksBtn.title = "Связи блока: кнопка и кто нажимает";
+            linksBtn.setAttribute("aria-label", "Связи блока");
+            linksBtn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M9 7h8v8"/></svg>';
+            linksBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                openLinkActs(n);
+            });
+            board.appendChild(linksBtn);
             if (state.showApi && apiOf(n).length) {
                 var apiBtn = document.createElement("button");
                 apiBtn.type = "button";
@@ -2505,6 +2665,10 @@
     var smApiBack = document.getElementById("smApiBack");
     if (smApiClose) smApiClose.addEventListener("click", function () { setApiBox(false); });
     if (smApiBack) smApiBack.addEventListener("click", function () { setApiBox(false); });
+    var smLinksClose = document.getElementById("smLinksClose");
+    var smLinksBack = document.getElementById("smLinksBack");
+    if (smLinksClose) smLinksClose.addEventListener("click", closeLinkActs);
+    if (smLinksBack) smLinksBack.addEventListener("click", closeLinkActs);
     document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") {
             setLegend(false);
@@ -2512,6 +2676,7 @@
             setNoteBox(false);
             setApiBox(false);
             setVerBox(false);
+            closeLinkActs();
         }
         if ((e.key === "z" || e.key === "Z") && (e.ctrlKey || e.metaKey) && !e.target.closest("input, textarea, [contenteditable=true]")) {
             e.preventDefault();
@@ -2561,6 +2726,7 @@
     renderHistUi();
     applyVersions([]);
     draw();
+    loadLinkActs();
     loadCounts(function () {
         loadChecks(function () { draw(); });
     });
