@@ -971,11 +971,26 @@
             var saved = linkActs[key] || {};
             var card = document.createElement("div");
             card.className = "sm-link-card";
+            card.setAttribute("data-from", row.from);
+            card.setAttribute("data-to", row.to);
             var path = document.createElement("div");
             path.className = "sm-link-path";
-            path.innerHTML = "<b></b><span class=\"sm-link-arrow\" aria-hidden=\"true\">→</span><b></b>";
-            path.querySelectorAll("b")[0].textContent = row.fromTitle;
-            path.querySelectorAll("b")[1].textContent = row.toTitle;
+            var fromEl = document.createElement("b");
+            fromEl.className = "sm-link-jump";
+            fromEl.textContent = row.fromTitle;
+            fromEl.title = "Показать этот блок на схеме";
+            var arrow = document.createElement("button");
+            arrow.type = "button";
+            arrow.className = "sm-link-arrow sm-link-jump";
+            arrow.textContent = "→";
+            arrow.title = "Перейти к блоку справа";
+            var toEl = document.createElement("b");
+            toEl.className = "sm-link-jump";
+            toEl.textContent = row.toTitle;
+            toEl.title = "Показать этот блок на схеме";
+            path.appendChild(fromEl);
+            path.appendChild(arrow);
+            path.appendChild(toEl);
             if (row.label) {
                 var lab = document.createElement("span");
                 lab.className = "sm-link-lab";
@@ -1019,13 +1034,49 @@
             ta.addEventListener("input", schedule);
             inp.addEventListener("blur", flush);
             ta.addEventListener("blur", flush);
+            function jump(id) {
+                flush();
+                focusSchemaNode(id);
+                list.querySelectorAll(".sm-link-card").forEach(function (c) { c.classList.remove("is-current"); });
+                card.classList.add("is-current");
+            }
+            fromEl.addEventListener("click", function (e) { e.preventDefault(); jump(row.from); });
+            arrow.addEventListener("click", function (e) { e.preventDefault(); jump(row.to); });
+            toEl.addEventListener("click", function (e) { e.preventDefault(); jump(row.to); });
             list.appendChild(card);
         });
         box.hidden = false;
         box.classList.remove("sm-hidden");
     }
+    var linkHop = null;
+    function focusSchemaNode(id) {
+        var rec = ALL[id];
+        if (!rec) return;
+        var cur = rec.parent;
+        while (cur) {
+            state.open[cur.id] = true;
+            cur = ALL[cur.id] && ALL[cur.id].parent;
+        }
+        linkHop = id;
+        state.selected = id;
+        state.open[id] = true;
+        save();
+        draw();
+        shareOpen();
+        var n = ALL[id] && ALL[id].node;
+        var wrap = document.getElementById("smWrap");
+        var panel = document.getElementById("smLinksBox");
+        if (!wrap || !n || wrap.clientWidth < 40) return;
+        var panelW = panel && !panel.hidden ? panel.getBoundingClientRect().width : 0;
+        var viewW = Math.max(220, wrap.clientWidth - panelW);
+        state.x = viewW / 2 - (n._x + n._w / 2) * state.scale;
+        state.y = wrap.clientHeight / 2 - (n._y + n._h / 2) * state.scale;
+        applyTransform();
+    }
     function closeLinkActs() {
         var box = document.getElementById("smLinksBox");
+        linkHop = null;
+        document.querySelectorAll(".sm-topic.is-hop").forEach(function (el) { el.classList.remove("is-hop"); });
         if (!box) return;
         box.hidden = true;
         box.classList.add("sm-hidden");
@@ -1785,6 +1836,7 @@
             el.className = "sm-topic sm-kind-" + n.kind
                 + (n.id === "root" ? " is-root" : "")
                 + (state.selected === n.id ? " is-selected" : "")
+                + (linkHop === n.id ? " is-hop" : "")
                 + (isUnclear(n) ? " has-q" : "")
                 + (hl && isUnclear(n) ? " is-open-hl" : "")
                 + (hl && !hl[n.id] && n.id !== "root" ? " is-dim" : "")

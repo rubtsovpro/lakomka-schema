@@ -457,6 +457,12 @@ html[data-theme="dark"] .sm-topic {
     outline-offset: 1px;
 }
 .sm-topic.is-root.is-selected { outline: 2px solid #134e4a; outline-offset: 2px; }
+.sm-topic.is-hop {
+    outline: 3px solid #ea580c !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(234, 88, 12, 0.22);
+    z-index: 8;
+}
 .sm-plus {
     position: absolute;
     width: 18px;
@@ -975,7 +981,53 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
     line-height: 0;
 }
 .sm-links-btn svg { width: 100%; height: 100%; display: block; }
+#smLinksBox.sm-lb {
+    inset: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: min(420px, 94vw);
+    padding: 0;
+    align-items: stretch;
+    justify-content: flex-end;
+    pointer-events: none;
+    background: transparent;
+}
+#smLinksBox .sm-lb-back { display: none; }
+#smLinksBox .sm-links-card {
+    pointer-events: auto;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: -10px 0 28px rgba(0, 0, 0, 0.16);
+}
 .sm-links-card { width: min(640px, 100%); }
+.sm-link-card.is-current {
+    border-color: #ea580c;
+    box-shadow: inset 3px 0 0 #ea580c;
+}
+.sm-link-jump {
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(15, 118, 110, 0.35);
+    text-underline-offset: 2px;
+}
+.sm-link-jump:hover { color: #0f766e; }
+.sm-link-arrow.sm-link-jump {
+    color: #c2410c;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1;
+}
 .sm-link-card {
     border: 1px solid #e6e7e9;
     border-radius: 10px;
