@@ -1101,3 +1101,25 @@ html[data-theme="dark"] .sm-lb-card { background: #1a222c; color: #e8eef4; }
 .sm-edge-hover-copy .sm-edge-hit { pointer-events: stroke; }
 .sm-edge-hover-copy .sm-edge-lab { pointer-events: auto; paint-order: stroke; stroke: #fff; stroke-width: 6px; stroke-linejoin: round; font-weight: 900; }
 .sm-edge-hover-copy .sm-edge-line, .sm-edge-hover-copy .sm-edge-head { pointer-events: none; }
+
+/* Task focus keeps the map geometry and one-step context intact. */
+#smBoard.is-task-focus .sm-topic { opacity: 0.055; }
+#smBoard.is-task-focus .sm-topic.is-focus-context { opacity: 0.4; }
+#smBoard.is-task-focus .sm-topic.is-focus-task { opacity: 1; }
+#smBoard.is-task-focus .sm-topic:not(.is-focus-task):hover { opacity: 0.85; }
+#smBoard.is-task-focus .sm-svg .sm-edge { opacity: 0.035; }
+#smBoard.is-task-focus .sm-svg .sm-edge.is-task-edge { opacity: 0.35; }
+#smBoard.is-task-focus .sm-svg .sm-edge.is-hot,
+#smBoard.is-task-focus .sm-edge-hover-layer .sm-edge { opacity: 1; }
+
+#smBoard.is-task-focus .sm-focus-control { opacity: 0.055; }
+#smBoard.is-task-focus .sm-focus-control.is-focus-context { opacity: 0.4; }
+#smBoard.is-task-focus .sm-focus-control.is-focus-task,
+#smBoard.is-task-focus .sm-focus-control:hover { opacity: 1; }
+
+/* Keep the order and primary routes as navigation landmarks. */
+#smBoard.is-task-focus .sm-topic.is-focus-anchor,
+#smBoard.is-task-focus .sm-focus-control.is-focus-anchor { opacity: 1; }
+#smBoard.is-task-focus .sm-svg .sm-edge.is-anchor-edge:not(.is-hot) { opacity: 0.65; }
+
+#smBoard.is-task-focus .sm-topic.is-focus-anchor:hover { opacity: 1; }

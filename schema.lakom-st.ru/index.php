@@ -2,7 +2,7 @@
 declare(strict_types=1);
 $csrf = bin2hex(random_bytes(16));
 $meLogin = 'guest';
-$v = '2026-10-16-account-rework-zoom';
+$v = '2026-10-16-task-focus-roles';
 ?><!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
@@ -84,6 +84,10 @@ $v = '2026-10-16-account-rework-zoom';
             <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn sm-legend-btn" id="btnLegend" title="Как читать схему">
                 <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 9h10M7 13h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                 <span class="sm-tb-txt">Как читать</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary sm-tb-btn" id="btnTaskFocus" title="Выделить задания" aria-label="Выделить задания" aria-pressed="false">
+                <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="m8 9 2 2 5-5M8 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="sm-tb-txt">Выделить задания</span>
             </button>
             <button type="button" class="btn btn-sm btn-outline-danger sm-tb-btn" id="btnTabQ" title="Подсветить блоки, где ещё нет ответа">
                 <svg class="sm-tb-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M9.5 9a2.5 2.5 0 015 1c0 1.5-2.5 2-2.5 3.5M12 17h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>

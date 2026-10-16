@@ -69,7 +69,7 @@
     var LS = (pageEl && pageEl.getAttribute("data-map-ls")) || "lakom-xmind-v7";
     var defaultOpen = { root: true };
     (ROOT.children || []).forEach(function (c) { defaultOpen[c.id] = true; });
-    var state = { open: defaultOpen, selected: "root", scale: 0.58, x: 80, y: 40, highlightOpen: false, showApi: false, checked: {} };
+    var state = { open: defaultOpen, selected: "root", scale: 0.58, x: 80, y: 40, highlightOpen: false, showApi: false, taskFocus: false, checked: {} };
     var sharedBoard = !!(pageEl
         && pageEl.getAttribute("data-presence-url")
         && pageEl.getAttribute("data-checks-url")
@@ -85,12 +85,13 @@
             if (saved.selected) state.selected = saved.selected;
             if (saved.highlightOpen) state.highlightOpen = !!saved.highlightOpen;
             if (saved.showApi) state.showApi = !!saved.showApi;
+            if (saved.taskFocus) state.taskFocus = true;
         }
         if (!state.checked || typeof state.checked !== "object") state.checked = {};
     } catch (e) {}
 
     function save() {
-        try { localStorage.setItem(LS, JSON.stringify({ open: state.open, selected: state.selected, scale: state.scale, highlightOpen: state.highlightOpen, showApi: state.showApi, checked: state.checked })); } catch (e2) {}
+        try { localStorage.setItem(LS, JSON.stringify({ open: state.open, selected: state.selected, scale: state.scale, highlightOpen: state.highlightOpen, showApi: state.showApi, taskFocus: state.taskFocus, checked: state.checked })); } catch (e2) {}
     }
 
     var ignoreOpenUntil = 0;
@@ -884,7 +885,7 @@
         };
     }
 
-    var linkActs = {};
+    var linkActs = Object.assign({}, SCHEMA.linkActs || {});
     function linkActsUrl() {
         var checks = pageCfg().checks || "";
         if (!checks) return "";
@@ -897,7 +898,7 @@
         fetch(url, { headers: { Accept: "application/json" }, credentials: "same-origin" })
             .then(function (r) { return r.json(); })
             .then(function (j) {
-                if (j && j.ok && j.items) linkActs = j.items;
+                if (j && j.ok && j.items) linkActs = Object.assign({}, SCHEMA.linkActs || {}, j.items);
             })
             .catch(function () {});
     }
@@ -1677,6 +1678,8 @@
         var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
         g.setAttribute("class", "sm-edge" + (dash ? " sm-edge-link" : ""));
         if (edgeMeta) { g.setAttribute("data-from", edgeMeta.from); g.setAttribute("data-to", edgeMeta.to); }
+        if (edgeMeta && (isTaskNode(ALL[edgeMeta.from] && ALL[edgeMeta.from].node) || isTaskNode(ALL[edgeMeta.to] && ALL[edgeMeta.to].node))) g.classList.add("is-task-edge");
+        if (edgeMeta && edgeMeta.from === "root" && ALL[edgeMeta.to] && ALL[edgeMeta.to].node.kind === "route") g.classList.add("is-anchor-edge");
         var hit = document.createElementNS("http://www.w3.org/2000/svg", "path");
         hit.setAttribute("class", "sm-edge-hit");
         hit.setAttribute("d", d);
@@ -1798,6 +1801,37 @@
         return map[n.kind] || "#999";
     }
 
+    function isTaskNode(n) {
+        return !!n && (n.kind === "screen" || n.kind === "task" || !!n.task_card);
+    }
+    function taskFocusKinds() {
+        var tasks = {}, nearby = {}, anchors = { root: true };
+        Object.keys(ALL).forEach(function (id) {
+            if (isTaskNode(ALL[id].node)) tasks[id] = true;
+            if (ALL[id].node.kind === "route" && ALL[id].parent && ALL[id].parent.id === "root") anchors[id] = true;
+        });
+        Object.keys(ALL).forEach(function (id) {
+            var n = ALL[id].node;
+            var targets = (n.children || []).map(function (c) { return c.id; }).concat(n.links || []);
+            targets.forEach(function (tid) {
+                if (tasks[id]) nearby[tid] = true;
+                if (tasks[tid]) nearby[id] = true;
+            });
+        });
+        return { tasks: tasks, nearby: nearby, anchors: anchors };
+    }
+    function setTaskFocus(on) {
+        state.taskFocus = !!on;
+        var board = document.getElementById("smBoard");
+        if (board) board.classList.toggle("is-task-focus", state.taskFocus);
+        var button = document.getElementById("btnTaskFocus");
+        if (button) {
+            button.setAttribute("aria-pressed", state.taskFocus ? "true" : "false");
+            button.classList.toggle("btn-primary", state.taskFocus);
+            button.classList.toggle("btn-outline-secondary", !state.taskFocus);
+        }
+    }
+
     function draw() {
         cancelWheelZoom();
         clearEdgeHover();
@@ -1819,6 +1853,14 @@
         board.style.width = W + "px";
         board.style.height = H + "px";
         board.innerHTML = "";
+        board.classList.toggle("is-task-focus", !!state.taskFocus);
+        var focus = taskFocusKinds();
+        function styleFocusControl(control, id, targetId) {
+            control.classList.add("sm-focus-control");
+            if (focus.anchors[id]) control.classList.add("is-focus-anchor");
+            if (focus.tasks[id] || (targetId && focus.tasks[targetId])) control.classList.add(targetId ? "is-focus-context" : "is-focus-task");
+            else if (focus.nearby[id]) control.classList.add("is-focus-context");
+        }
 
         var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         svg.setAttribute("class", "sm-svg");
@@ -1843,7 +1885,7 @@
                 var y2 = c._y + c._h / 2;
                 var hot = hl && (hl[c.id] === true || hl[c.id] === "path");
                 var col = hot ? "#dc2626" : (hl ? "#94a3b8" : colorFor(n.id === "root" ? c : n));
-                var geom = addEdge(svg, x1, y1, x2, y2, col, hot ? 5 : 2.7, null, edgeLabel(c));
+                var geom = addEdge(svg, x1, y1, x2, y2, col, hot ? 5 : 2.7, null, edgeLabel(c), null, { from: n.id, to: c.id });
                 addEdgePorts(board, geom, { type: "tree", from: n.id, to: c.id, label: edgeLabel(c) });
             });
         });
@@ -1882,7 +1924,8 @@
                 + (hl && isUnclear(n) ? " is-open-hl" : "")
                 + (hl && !hl[n.id] && n.id !== "root" ? " is-dim" : "")
                 + (state.checked[n.id] ? " is-reviewed" : "")
-                + (n.loose ? " is-loose" : "");
+                + (n.loose ? " is-loose" : "")
+                + (focus.tasks[n.id] ? " is-focus-task" : focus.anchors[n.id] ? " is-focus-anchor" : focus.nearby[n.id] ? " is-focus-context" : "");
             el.style.left = n._x + "px";
             el.style.top = n._y + "px";
             el.style.width = n._w + "px";
@@ -1968,6 +2011,7 @@
                 }
                 openComments(n);
             });
+            styleFocusControl(leaf, n.id);
             board.appendChild(leaf);
             var linksBtn = document.createElement("button");
             linksBtn.type = "button";
@@ -1981,6 +2025,7 @@
                 e.stopPropagation();
                 openLinkActs(n);
             });
+            styleFocusControl(linksBtn, n.id);
             board.appendChild(linksBtn);
             if (state.showApi && apiOf(n).length) {
                 var apiBtn = document.createElement("button");
@@ -1994,6 +2039,7 @@
                     e.stopPropagation();
                     showApi(n);
                 });
+                styleFocusControl(apiBtn, n.id);
                 board.appendChild(apiBtn);
             }
             if (n.children && n.children.length) {
@@ -2013,6 +2059,7 @@
                         draw();
                         shareOpen();
                     });
+                    styleFocusControl(btn, n.id);
                     board.appendChild(btn);
                 }
                 if (n.id === "root") {
@@ -2056,6 +2103,7 @@
                     e.stopPropagation();
                     revealNode(tid);
                 });
+                styleFocusControl(lbtn, n.id, tid);
                 board.appendChild(lbtn);
             });
         });
@@ -2775,6 +2823,13 @@
     });
     var btnTabQ = document.getElementById("btnTabQ");
     if (btnTabQ) btnTabQ.addEventListener("click", function () { setTab(state.highlightOpen ? "map" : "q"); });
+    var btnTaskFocus = document.getElementById("btnTaskFocus");
+    if (btnTaskFocus) btnTaskFocus.addEventListener("click", function () {
+        setTaskFocus(!state.taskFocus);
+        clearEdgeHover();
+        save();
+    });
+    setTaskFocus(state.taskFocus);
     var btnAllComments = document.getElementById("btnAllComments");
     if (btnAllComments) btnAllComments.addEventListener("click", function () { openAllComments(); });
     var chkApi = document.getElementById("chkApi");
