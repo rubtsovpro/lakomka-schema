@@ -1,4 +1,4 @@
-/* Working map version: 2026-10-19-done-canonical-positions */
+/* Working map version: 2026-10-20-remove-repeated-route-jumps */
 window.LAKOM_SCHEMA_EXPORT = {
   "rootTopic": {
     "id": "root",
@@ -298,7 +298,37 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                       }
                                                     ],
                                                     "parent_id": "f_227_4049",
-                                                    "comments": []
+                                                    "comments": [],
+                                                    "before_screen_extension": {
+                                                      "id": "f_265_5077",
+                                                      "title": "Задание технологу — использовать переработку или нет? Для неколерованной продукции при большом объёме. Весь доступный список переработки: 1. Совпадает база и цвет. 2. Совпадает только цвет. 3. Все остальные позиции. Фильтр по базе; остальные позиции доступны для ручного выбора. Использовать: подтвердить совместимость, партии и массу; новый замес — на оставшийся объём, выбранная переработка — в этот замес. Не использовать / 30 минут без решения: новый замес на весь объём.",
+                                                      "kind": "check",
+                                                      "edge": "Да",
+                                                      "links": [
+                                                        "local_5f255159617746bd9e46f86e07d2d037",
+                                                        "f_227_4068"
+                                                      ],
+                                                      "checked": {
+                                                        "login": "admin",
+                                                        "user": "Админ",
+                                                        "ts": "2026-10-04T13:06:20+00:00"
+                                                      },
+                                                      "parent_id": "f_227_4049",
+                                                      "child_ids": [
+                                                        "local_5f255159617746bd9e46f86e07d2d037"
+                                                      ],
+                                                      "comments": [],
+                                                      "open": true,
+                                                      "review_status": "pending",
+                                                      "notes": "\nРешение по переработке: уведомление всем ответственным; приоритет главный технолог → технолог → планировщик. Общие 30 минут; более высокая роль может изменить решение в этом же окне. Источник: комментарий Данилы AAACArc6Lfc.",
+                                                      "approval_sources": [
+                                                        {
+                                                          "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                          "comment_id": "AAACArc6Lfc",
+                                                          "author": "Данила"
+                                                        }
+                                                      ]
+                                                    }
                                                   }
                                                 ],
                                                 "notes": "",
@@ -765,7 +795,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                       ]
                     },
                     "parent_id": "f_227_4145",
-                    "comments": []
+                    "comments": [],
+                    "before_screen_extension": {
+                      "id": "f_227_4147",
+                      "title": "Задача снабжению",
+                      "kind": "task",
+                      "edge": "Нет",
+                      "checked": {
+                        "login": "admin",
+                        "user": "Админ",
+                        "ts": "2026-10-06T10:03:38+00:00"
+                      },
+                      "parent_id": "f_227_4145",
+                      "child_ids": [
+                        "local_b93b71843809415bad27c69d83255b95"
+                      ],
+                      "comments": [],
+                      "open": true,
+                      "links": [
+                        "local_b93b71843809415bad27c69d83255b95"
+                      ],
+                      "review_status": "pending"
+                    }
                   }
                 ],
                 "parent_id": "f_227_4054",
@@ -809,31 +860,13 @@ window.LAKOM_SCHEMA_EXPORT = {
                     "kind": "route",
                     "open": true,
                     "links": [
-                      "f_241_5130"
+                      "f_230_4904"
                     ],
                     "edge": "Нет — колеровка А на производстве",
                     "approval_badge_visible": false,
                     "review_status": "pending",
-                    "route_target_id": "f_241_5114",
-                    "children": [
-                      {
-                        "id": "f_241_5130",
-                        "title": "Далее → схема «Колеровка на производстве»",
-                        "kind": "route",
-                        "open": true,
-                        "links": [
-                          "f_241_5114"
-                        ],
-                        "edge": "",
-                        "approval_badge_visible": false,
-                        "review_status": "pending",
-                        "route_target_id": "f_241_5114",
-                        "children": [],
-                        "notes": "",
-                        "parent_id": "f_227_4155",
-                        "comments": []
-                      }
-                    ],
+                    "route_target_id": "f_230_4904",
+                    "children": [],
                     "notes": "",
                     "parent_id": "local_grout_base_syringes",
                     "comments": []
@@ -923,31 +956,13 @@ window.LAKOM_SCHEMA_EXPORT = {
                             "kind": "route",
                             "open": true,
                             "links": [
-                              "f_258_5072"
+                              "f_227_4163"
                             ],
                             "edge": "Нет: изготовить шприцы",
                             "approval_badge_visible": false,
                             "review_status": "pending",
-                            "route_target_id": "f_258_5068",
-                            "children": [
-                              {
-                                "id": "f_258_5072",
-                                "title": "Далее → схема «Изготовление колерованных шприцов»",
-                                "kind": "route",
-                                "open": true,
-                                "links": [
-                                  "f_258_5068"
-                                ],
-                                "edge": "",
-                                "approval_badge_visible": false,
-                                "review_status": "pending",
-                                "route_target_id": "f_258_5068",
-                                "children": [],
-                                "notes": "",
-                                "parent_id": "f_227_4170",
-                                "comments": []
-                              }
-                            ],
+                            "route_target_id": "f_227_4163",
+                            "children": [],
                             "notes": "",
                             "parent_id": "f_227_4159",
                             "comments": []
@@ -1275,7 +1290,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                               ]
                                                             },
                                                             "parent_id": "f_262_7160",
-                                                            "comments": []
+                                                            "comments": [],
+                                                            "before_screen_extension": {
+                                                              "id": "f_262_7159",
+                                                              "title": "Задание кладовщику Подготовка позиций к отгрузке",
+                                                              "kind": "task",
+                                                              "links": [
+                                                                "local_c4fc033279a04f0c8b11f7929854de1e"
+                                                              ],
+                                                              "checked": {
+                                                                "login": "admin",
+                                                                "user": "Админ",
+                                                                "ts": "2026-10-06T10:11:54+00:00"
+                                                              },
+                                                              "open": true,
+                                                              "parent_id": "f_262_7160",
+                                                              "child_ids": [
+                                                                "local_c4fc033279a04f0c8b11f7929854de1e"
+                                                              ],
+                                                              "comments": [],
+                                                              "review_status": "pending",
+                                                              "edge": ""
+                                                            }
                                                           }
                                                         ],
                                                         "task_card": {
@@ -1297,19 +1333,78 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                             "text": "Перемещение кладовщику со склада ПФ на ГП",
                                                             "ts": "2026-10-06T10:34:45+00:00"
                                                           }
-                                                        ]
+                                                        ],
+                                                        "before_screen_extension": {
+                                                          "id": "f_262_7160",
+                                                          "title": "Задание кладовщику на перемещение на склад ГП",
+                                                          "kind": "task",
+                                                          "links": [
+                                                            "f_262_7159"
+                                                          ],
+                                                          "comments": [
+                                                            {
+                                                              "id": "c03ae12b33590",
+                                                              "parent": null,
+                                                              "user": "Админ",
+                                                              "login": "admin",
+                                                              "text": "Перемещение кладовщику со склада ПФ на ГП",
+                                                              "ts": "2026-10-06T10:34:45+00:00"
+                                                            }
+                                                          ],
+                                                          "checked": {
+                                                            "login": "admin",
+                                                            "user": "Админ",
+                                                            "ts": "2026-10-06T10:11:52+00:00"
+                                                          },
+                                                          "open": true,
+                                                          "parent_id": "local_grout_assembly_output_onec",
+                                                          "child_ids": [
+                                                            "f_262_7159"
+                                                          ],
+                                                          "edge": "Передача оформлена",
+                                                          "review_status": "pending"
+                                                        }
                                                       }
                                                     ],
                                                     "parent_id": "f_230_5050",
-                                                    "comments": []
+                                                    "comments": [],
+                                                    "before_danila_2026_10_08": {
+                                                      "title": "1С: оформить МХ-18 — передачу выпущенных комплектов на склад ГП",
+                                                      "notes": "Передача готового комплекта в контексте производства; отдельное перемещение того же выпуска не создавать. Физическая комплектация на складе ПФ не меняет принятую схему учёта выпуска через Производство."
+                                                    }
                                                   }
                                                 ],
                                                 "parent_id": "f_230_5046",
-                                                "comments": []
+                                                "comments": [],
+                                                "before_danila_2026_10_08": {
+                                                  "title": "1С: отразить выпуск / сборку комплекта и фактически использованные материалы единым методом производства. Готовые компоненты повторно не производить",
+                                                  "notes": ""
+                                                }
                                               }
                                             ],
                                             "parent_id": "f_230_5042",
-                                            "comments": []
+                                            "comments": [],
+                                            "before_marking_workflow": {
+                                              "id": "f_230_5046",
+                                              "title": "Ответственный печатает маркировку. Исполнитель наклеивает этикетки и стикеры, подтверждает комплектность и количество",
+                                              "kind": "task",
+                                              "links": [
+                                                "f_230_5050"
+                                              ],
+                                              "checked": {
+                                                "login": "admin",
+                                                "user": "Админ",
+                                                "ts": "2026-10-06T10:10:59+00:00"
+                                              },
+                                              "open": true,
+                                              "parent_id": "f_230_5042",
+                                              "child_ids": [
+                                                "f_230_5050"
+                                              ],
+                                              "comments": [],
+                                              "review_status": "pending",
+                                              "edge": ""
+                                            }
                                           },
                                           {
                                             "id": "local_route_jump_76aab0668582",
@@ -1338,7 +1433,40 @@ window.LAKOM_SCHEMA_EXPORT = {
                                           ]
                                         },
                                         "parent_id": "mark_ready_f_262_7262",
-                                        "comments": []
+                                        "comments": [],
+                                        "before_screen_extension": {
+                                          "id": "f_230_5042",
+                                          "title": "Сотрудник склада ПФ: фасовать А, собрать А + Б + перчатки; при необходимости добавить шприцы",
+                                          "kind": "task",
+                                          "links": [
+                                            "f_230_5046"
+                                          ],
+                                          "checked": {
+                                            "login": "admin",
+                                            "user": "Админ",
+                                            "ts": "2026-10-06T10:10:45+00:00"
+                                          },
+                                          "open": true,
+                                          "parent_id": "mark_ready_f_262_7262",
+                                          "child_ids": [
+                                            "f_230_5046"
+                                          ],
+                                          "comments": [],
+                                          "notes": "Физическое место фасовки и комплектации — склад ПФ (06.10, часть 2, 24:23–26:31 и 30:59–31:23). Это не означает автоматического перемещения материалов на склад ПФ в 1С: склад учёта и физическое место могут отличаться. Если колерованный А находится на производстве, нужна физическая передача к комплектации; её факт и исходное место фиксировать в задании, не повторять уже выполненную передачу.",
+                                          "review_status": "partial",
+                                          "approved_scope": "Роль — Сотрудник склада ПФ; фасовка затирки на складе ПФ",
+                                          "approval_sources": [
+                                            {
+                                              "comment_id": "AAACIF6YlTM",
+                                              "author": "Данила"
+                                            },
+                                            {
+                                              "comment_id": "AAACIF6YlTQ",
+                                              "author": "Данила"
+                                            }
+                                          ],
+                                          "edge": ""
+                                        }
                                       }
                                     ],
                                     "task_card": {
@@ -1357,7 +1485,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                                 ],
                                 "main_branch_id": "mark_ready_f_262_7262",
                                 "parent_id": "f_262_7102",
-                                "comments": []
+                                "comments": [],
+                                "before_marking_workflow": {
+                                  "id": "f_262_7262",
+                                  "title": "Задание на печать стикеров",
+                                  "kind": "task",
+                                  "edge": "Да",
+                                  "links": [
+                                    "f_230_5042"
+                                  ],
+                                  "checked": {
+                                    "login": "admin",
+                                    "user": "Админ",
+                                    "ts": "2026-10-06T10:10:20+00:00"
+                                  },
+                                  "open": true,
+                                  "parent_id": "f_262_7102",
+                                  "child_ids": [
+                                    "f_230_5042"
+                                  ],
+                                  "comments": [],
+                                  "review_status": "pending"
+                                }
                               },
                               {
                                 "id": "local_hardener_tare_prepare",
@@ -1445,7 +1594,44 @@ window.LAKOM_SCHEMA_EXPORT = {
                                       ]
                                     },
                                     "parent_id": "local_hardener_tare_prepare",
-                                    "comments": []
+                                    "comments": [],
+                                    "before_danila_2026_10_08": {
+                                      "title": "Задание на фасовку отвердителя",
+                                      "notes": ""
+                                    },
+                                    "before_screen_extension": {
+                                      "id": "f_262_7299",
+                                      "title": "Задание на фасовку отвердителя",
+                                      "kind": "task",
+                                      "links": [
+                                        "f_262_7262"
+                                      ],
+                                      "checked": {
+                                        "login": "admin",
+                                        "user": "Админ",
+                                        "ts": "2026-10-06T10:10:21+00:00"
+                                      },
+                                      "open": true,
+                                      "parent_id": "f_262_7102",
+                                      "child_ids": [],
+                                      "comments": [],
+                                      "edge": "Нет — расфасовать",
+                                      "review_status": "partial",
+                                      "before_danila_2026_10_08": {
+                                        "title": "Задание на фасовку отвердителя",
+                                        "notes": ""
+                                      },
+                                      "notes": "Физически расфасовать нужный объём отвердителя. В 1С отвердитель — сырьё в спецификации комплекта; отдельный выпуск фасованного отвердителя не подтверждён и не требуется по текущему ответу. Роль и реализация учёта фасованного запаса требуют уточнения.",
+                                      "approved_scope": "Отвердитель списывается как сырьё в спецификации",
+                                      "approval_sources": [
+                                        {
+                                          "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                          "comment_id": "AAACGqcevZc",
+                                          "author": "Данила",
+                                          "date": "2026-10-08"
+                                        }
+                                      ]
+                                    }
                                   }
                                 ],
                                 "task_card": {
@@ -1535,7 +1721,21 @@ window.LAKOM_SCHEMA_EXPORT = {
                           ]
                         },
                         "parent_id": "f_230_5038",
-                        "comments": []
+                        "comments": [],
+                        "before_screen_extension": {
+                          "id": "f_230_5078",
+                          "title": "Отвердитель (Б) / перчаток / шприцов: задача ответственному за снабжение. Комплект не отмечать готовым до поступления всех компонентов",
+                          "kind": "task",
+                          "edge": "Нет",
+                          "links": [
+                            "f_230_5038"
+                          ],
+                          "parent_id": "f_230_5038",
+                          "child_ids": [],
+                          "comments": [],
+                          "open": true,
+                          "review_status": "pending"
+                        }
                       }
                     ],
                     "notes": "",
@@ -1544,7 +1744,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                   }
                 ],
                 "parent_id": "f_241_5170",
-                "comments": []
+                "comments": [],
+                "before_screen_extension": {
+                  "id": "f_230_5034",
+                  "title": "Вход: готовый компонент А нужного цвета либо прозрачный А и шприцы.",
+                  "kind": "task",
+                  "links": [
+                    "f_230_5038"
+                  ],
+                  "checked": {
+                    "login": "admin",
+                    "user": "Админ",
+                    "ts": "2026-10-06T10:08:48+00:00"
+                  },
+                  "open": true,
+                  "parent_id": "f_241_5170",
+                  "child_ids": [
+                    "f_230_5038"
+                  ],
+                  "comments": [],
+                  "notes": "",
+                  "edge": "",
+                  "review_status": "pending"
+                }
               }
             ],
             "notes": "",
@@ -1941,7 +2163,26 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                           ]
                                                         },
                                                         "parent_id": "local_syringe_production",
-                                                        "comments": []
+                                                        "comments": [],
+                                                        "before_screen_extension": {
+                                                          "id": "local_syringe_output_allocation",
+                                                          "title": "Распределить готовые шприцы: в комплект, отдельный заказ или на склад",
+                                                          "kind": "task",
+                                                          "parent_id": "local_syringe_production",
+                                                          "child_ids": [
+                                                            "f_258_5076",
+                                                            "local_syringe_gp_transfer"
+                                                          ],
+                                                          "links": [
+                                                            "f_258_5076",
+                                                            "local_syringe_gp_transfer"
+                                                          ],
+                                                          "comments": [],
+                                                          "open": true,
+                                                          "notes": "Встреча 06.10.2026, часть 2, 13:15–29:19. Часть 2, 10:18–10:45: шприцы продаются отдельно или с затиркой. Часть 2, 13:45–19:38: замес от 1 кг, остаток выпуска — пополнение. Сохранить количество и партии по назначениям; отгружать отдельные шприцы без обязательной комплектации затирки.",
+                                                          "edge": "Выпуск подтверждён",
+                                                          "review_status": "pending"
+                                                        }
                                                       }
                                                     ],
                                                     "parent_id": "f_227_4167",
@@ -1974,7 +2215,40 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                   ]
                                                 },
                                                 "parent_id": "mark_ready_local_syringe_labels",
-                                                "comments": []
+                                                "comments": [],
+                                                "before_screen_extension": {
+                                                  "id": "f_227_4167",
+                                                  "title": "Сотрудник склада ПФ: наполнить шприцы; записать количество и партию",
+                                                  "kind": "task",
+                                                  "edge": "Физически; без перемещения пасты в 1С",
+                                                  "links": [
+                                                    "local_syringe_labels"
+                                                  ],
+                                                  "checked": {
+                                                    "login": "admin",
+                                                    "user": "Админ",
+                                                    "ts": "2026-10-06T10:29:18+00:00"
+                                                  },
+                                                  "open": true,
+                                                  "parent_id": "local_syringe_paste_to_pf",
+                                                  "child_ids": [
+                                                    "local_syringe_labels"
+                                                  ],
+                                                  "comments": [],
+                                                  "notes": "Встреча 06.10.2026, часть 2, 13:15–29:19. Фасовка принятой пасты выполняется на складе ПФ. Подтверждать фактический выпуск отдельно по каждой номенклатуре/фасовке. Не изготавливать принятую смесь второй раз.",
+                                                  "review_status": "partial",
+                                                  "approved_scope": "Роль — Сотрудник склада ПФ; фасовка затирки на складе ПФ",
+                                                  "approval_sources": [
+                                                    {
+                                                      "comment_id": "AAACIF6YlTM",
+                                                      "author": "Данила"
+                                                    },
+                                                    {
+                                                      "comment_id": "AAACIF6YlTQ",
+                                                      "author": "Данила"
+                                                    }
+                                                  ]
+                                                }
                                               }
                                             ],
                                             "task_card": {
@@ -1993,7 +2267,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         ],
                                         "main_branch_id": "mark_ready_local_syringe_labels",
                                         "parent_id": "local_syringe_paste_to_pf",
-                                        "comments": []
+                                        "comments": [],
+                                        "before_marking_workflow": {
+                                          "id": "local_syringe_labels",
+                                          "title": "Наклеить маркировку шприцов: цвет, фасовка, партия",
+                                          "kind": "task",
+                                          "parent_id": "f_227_4167",
+                                          "child_ids": [
+                                            "local_syringe_production"
+                                          ],
+                                          "links": [
+                                            "local_syringe_production"
+                                          ],
+                                          "comments": [],
+                                          "open": true,
+                                          "notes": "Маркировка — черновой шаг по общей логике готовой продукции; состав наклейки для шприцев требует уточнения, отдельного согласования в этом фрагменте встречи нет.",
+                                          "edge": "Факт фасовки подтверждён",
+                                          "review_status": "pending"
+                                        }
                                       }
                                     ],
                                     "task_card": {
@@ -2006,7 +2297,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                       ]
                                     },
                                     "parent_id": "quality_syringe_lab",
-                                    "comments": []
+                                    "comments": [],
+                                    "before_screen_extension": {
+                                      "id": "local_syringe_paste_to_pf",
+                                      "title": "Задание фасовщику: перенести принятую пасту на склад ПФ",
+                                      "kind": "task",
+                                      "parent_id": "f_230_5118",
+                                      "child_ids": [
+                                        "f_227_4167"
+                                      ],
+                                      "links": [
+                                        "f_227_4167"
+                                      ],
+                                      "comments": [],
+                                      "open": true,
+                                      "notes": "Встреча 06.10.2026, часть 2, 13:15–29:19. 26:03–29:19. Только физическая передача для фасовки. В 1С паста остаётся на Производстве: отдельного выпуска пасты и перемещения Производство → ПФ в этой цепочке нет.",
+                                      "edge": "Да",
+                                      "review_status": "pending"
+                                    }
                                   },
                                   {
                                     "id": "f_230_5126",
@@ -2099,7 +2407,26 @@ window.LAKOM_SCHEMA_EXPORT = {
                                       }
                                     ],
                                     "parent_id": "quality_syringe_lab",
-                                    "comments": []
+                                    "comments": [],
+                                    "before_screen_extension": {
+                                      "id": "f_230_5126",
+                                      "title": "Скорректировать пасту; дописать расход; повторить пробный выкрас",
+                                      "kind": "task",
+                                      "edge": "Нет",
+                                      "links": [
+                                        "f_227_4165"
+                                      ],
+                                      "checked": {
+                                        "login": "admin",
+                                        "user": "Админ",
+                                        "ts": "2026-10-06T10:51:21+00:00"
+                                      },
+                                      "parent_id": "f_230_5118",
+                                      "child_ids": [],
+                                      "comments": [],
+                                      "open": true,
+                                      "review_status": "pending"
+                                    }
                                   },
                                   {
                                     "id": "local_route_jump_ca75edd3a65c",
@@ -2143,7 +2470,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                               }
                             ],
                             "parent_id": "local_syringe_paste_mix",
-                            "comments": []
+                            "comments": [],
+                            "before_screen_extension": {
+                              "id": "f_227_4165",
+                              "title": "Пробная колеровка на 1 кг прозрачного А; передать выкрас на проверку",
+                              "kind": "task",
+                              "links": [
+                                "f_230_5118"
+                              ],
+                              "checked": {
+                                "login": "admin",
+                                "user": "Админ",
+                                "ts": "2026-10-06T10:26:36+00:00"
+                              },
+                              "open": true,
+                              "parent_id": "local_syringe_paste_mix",
+                              "child_ids": [
+                                "f_230_5118"
+                              ],
+                              "comments": [],
+                              "edge": "Паста приготовлена",
+                              "review_status": "pending"
+                            }
                           }
                         ],
                         "task_card": {
@@ -2156,7 +2504,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                           ]
                         },
                         "parent_id": "local_syringe_material_check",
-                        "comments": []
+                        "comments": [],
+                        "before_screen_extension": {
+                          "id": "local_syringe_paste_mix",
+                          "title": "Колеровщик: смешать пасту по рецепту; записать фактический расход",
+                          "kind": "task",
+                          "parent_id": "local_syringe_material_check",
+                          "child_ids": [
+                            "f_227_4165"
+                          ],
+                          "links": [
+                            "f_227_4165"
+                          ],
+                          "comments": [],
+                          "open": true,
+                          "notes": "",
+                          "edge": "Да",
+                          "review_status": "pending"
+                        }
                       },
                       {
                         "id": "local_syringe_material_move",
@@ -2221,7 +2586,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                           ]
                         },
                         "parent_id": "local_syringe_material_check",
-                        "comments": []
+                        "comments": [],
+                        "before_screen_extension": {
+                          "id": "local_syringe_material_move",
+                          "title": "Задание складу: передать недостающие пигменты и пустые шприцы",
+                          "kind": "task",
+                          "parent_id": "local_syringe_material_check",
+                          "child_ids": [
+                            "local_syringe_material_transfer"
+                          ],
+                          "links": [
+                            "local_syringe_material_transfer"
+                          ],
+                          "comments": [],
+                          "open": true,
+                          "notes": "Встреча 06.10.2026, часть 2, 13:15–29:19. Источник пустых шприцов уточнить. Если материала нет и на исходном складе, задача остаётся в ожидании снабжения; смешивание не запускать.",
+                          "edge": "Нет",
+                          "review_status": "pending"
+                        }
                       }
                     ],
                     "parent_id": "f_227_4163",
@@ -2246,7 +2628,38 @@ window.LAKOM_SCHEMA_EXPORT = {
                     "text": "Шприцы делаем от 1кг пигментной пасты. Проверка другой фасовки одного цвета для пополнения запаса.",
                     "ts": "2026-10-06T10:22:52+00:00"
                   }
-                ]
+                ],
+                "before_screen_extension": {
+                  "id": "f_227_4163",
+                  "title": "Технолог: рецепт пасты, масса от 1 кг, количество шприцов по фасовкам.\n\nМеньше чем 1 кг массы для шприцов не делаем.",
+                  "kind": "task",
+                  "links": [
+                    "local_syringe_material_check"
+                  ],
+                  "comments": [
+                    {
+                      "id": "c721859b577c6",
+                      "parent": null,
+                      "user": "Админ",
+                      "login": "admin",
+                      "text": "Шприцы делаем от 1кг пигментной пасты. Проверка другой фасовки одного цвета для пополнения запаса.",
+                      "ts": "2026-10-06T10:22:52+00:00"
+                    }
+                  ],
+                  "checked": {
+                    "login": "admin",
+                    "user": "Админ",
+                    "ts": "2026-10-06T10:26:19+00:00"
+                  },
+                  "open": true,
+                  "parent_id": "f_258_5068",
+                  "child_ids": [
+                    "local_syringe_material_check"
+                  ],
+                  "notes": "Встреча 06.10.2026, часть 2, 13:15–29:19. Минимальный замес пигментной пасты — 1 кг. Учитывать потребность заказа и пополнение; распределение между шприцами 5 и 12,5 мл задавать явно. Правило совместного пополнения двух фасовок обсуждалось без окончательного алгоритма: не заменять его автоматическим одинаковым Max. Историю комментариев по цвету показывать при расчёте.",
+                  "edge": "",
+                  "review_status": "pending"
+                }
               }
             ],
             "parent_id": "f_262_6981",
@@ -2415,7 +2828,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "children": [
                                           {
                                             "id": "f_241_5154",
-                                            "title": "Далее → схема «Колеровка на производстве»",
+                                            "title": "Маршрут: Колеровка на производстве",
                                             "kind": "route",
                                             "open": true,
                                             "links": [
@@ -2574,7 +2987,31 @@ window.LAKOM_SCHEMA_EXPORT = {
                   ]
                 },
                 "parent_id": "f_227_4050",
-                "comments": []
+                "comments": [],
+                "before_screen_extension": {
+                  "id": "f_227_4075",
+                  "title": "Задание технологу — использовать переработку или нет? Весь доступный список переработки: 1. Совпадает база и цвет. 2. Совпадает только цвет. 3. Все остальные позиции. Фильтр по базе; остальные позиции доступны для ручного выбора. Технолог проверяет совместимость и выбирает партии и массу. Срок решения — 30 минут.",
+                  "kind": "task",
+                  "edge": "Да",
+                  "links": [
+                    "f_227_4094"
+                  ],
+                  "open": true,
+                  "parent_id": "f_227_4050",
+                  "child_ids": [
+                    "f_227_4094"
+                  ],
+                  "comments": [],
+                  "review_status": "pending",
+                  "notes": "\nРешение по переработке: уведомление всем ответственным; приоритет главный технолог → технолог → планировщик. Общие 30 минут; более высокая роль может изменить решение в этом же окне. Источник: комментарий Данилы AAACArc6Lfc.",
+                  "approval_sources": [
+                    {
+                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                      "comment_id": "AAACArc6Lfc",
+                      "author": "Данила"
+                    }
+                  ]
+                }
               },
               {
                 "id": "f_271_5169",
@@ -2801,7 +3238,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                           "section": "Задания на расчёт"
                         },
                         "parent_id": "f_300_6438",
-                        "comments": []
+                        "comments": [],
+                        "before_screen_extension": {
+                          "id": "f_271_5173",
+                          "title": "Задание технологу: рассчитать рецепт образца 1 кг и выбрать КМ или производство",
+                          "kind": "task",
+                          "edge": "Да — база на ГП",
+                          "links": [
+                            "f_305_6994"
+                          ],
+                          "parent_id": "f_300_6438",
+                          "child_ids": [
+                            "f_305_6994"
+                          ],
+                          "comments": [],
+                          "open": true,
+                          "notes": "База уже найдена на ГП либо ПФ. Технолог рассчитывает рецепт образца, определяет необходимую массу выбранной базы и выбирает КМ или производство. После подтверждения — резерв и фиксация партии. Повторный поиск базы и новый замес в этой ветке не нужны. Штукатурка — только производство.",
+                          "review_status": "pending"
+                        }
                       },
                       {
                         "id": "f_300_6454",
@@ -2892,7 +3346,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                               "section": "Задания на расчёт"
                             },
                             "parent_id": "f_300_6454",
-                            "comments": []
+                            "comments": [],
+                            "before_screen_extension": {
+                              "id": "local_sample_missing_base_recipe",
+                              "title": "Задание технологу: рассчитать рецепт образца 1 кг для новой базы и выбрать КМ или производство",
+                              "kind": "task",
+                              "parent_id": "f_300_6454",
+                              "child_ids": [
+                                "local_sample_new_batch_route"
+                              ],
+                              "links": [
+                                "local_sample_new_batch_route"
+                              ],
+                              "comments": [],
+                              "open": true,
+                              "notes": "Базы нет ни на ГП, ни на ПФ. До планирования нового замеса технолог определяет необходимую массу базы и рецепт образца, выбирает место колеровки. Решение сохраняется: после готовности новой базы образец направляется на выбранную колеровку. Штукатурка — только производство.",
+                              "edge": "Нет — нужна новая база",
+                              "review_status": "pending"
+                            }
                           }
                         ],
                         "notes": "",
@@ -2975,31 +3446,13 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "kind": "route",
                                         "open": true,
                                         "links": [
-                                          "f_241_5106"
+                                          "f_230_4798"
                                         ],
                                         "edge": "ГП уже в вёдрах: без фасовки",
                                         "approval_badge_visible": false,
                                         "review_status": "pending",
-                                        "route_target_id": "f_241_5098",
-                                        "children": [
-                                          {
-                                            "id": "f_241_5106",
-                                            "title": "Далее → схема «Колеровка на КМ»",
-                                            "kind": "route",
-                                            "open": true,
-                                            "links": [
-                                              "f_241_5098"
-                                            ],
-                                            "edge": "",
-                                            "approval_badge_visible": false,
-                                            "review_status": "pending",
-                                            "route_target_id": "f_241_5098",
-                                            "children": [],
-                                            "notes": "",
-                                            "parent_id": "f_227_4105",
-                                            "comments": []
-                                          }
-                                        ],
+                                        "route_target_id": "f_230_4798",
+                                        "children": [],
                                         "notes": "",
                                         "parent_id": "f_227_4064",
                                         "comments": []
@@ -3132,7 +3585,7 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "children": [
                                           {
                                             "id": "f_241_5162",
-                                            "title": "Далее → схема «Колеровка на производстве»",
+                                            "title": "Маршрут: Колеровка на производстве",
                                             "kind": "route",
                                             "open": true,
                                             "links": [
@@ -3491,7 +3944,58 @@ window.LAKOM_SCHEMA_EXPORT = {
                               ]
                             },
                             "parent_id": "local_gp_sticker_required",
-                            "comments": []
+                            "comments": [],
+                            "before_danila_2026_10_08": {
+                              "title": "Задание кладовщику: подготовить позиции к отгрузке",
+                              "notes": "Подбор, проверка количества и подготовка к отгрузке. После перефасовки этикетки и стикеры уже наклеены в отдельном задании; повторную наклейку не выполнять."
+                            },
+                            "before_screen_extension": {
+                              "id": "f_227_4076",
+                              "title": "Задание кладовщику: подготовить позиции к отгрузке",
+                              "kind": "task",
+                              "links": [
+                                "f_227_4092"
+                              ],
+                              "checked": {
+                                "login": "admin",
+                                "user": "Админ",
+                                "ts": "2026-10-04T12:30:56+00:00"
+                              },
+                              "parent_id": "local_gp_sticker_required",
+                              "child_ids": [
+                                "f_227_4092"
+                              ],
+                              "comments": [],
+                              "open": true,
+                              "notes": "Роль: Сотрудник склада. Сформировать заказ на складе ГП Лакма-СТ, затем физически переместить собранный заказ на склад ГП для отгрузки. Точное место размещения определяют сотрудники склада. Названия ролей должны настраиваться; один сотрудник может выполнять несколько функций.",
+                              "edge": "Нет — маркировка подходит",
+                              "review_status": "approved",
+                              "before_danila_2026_10_08": {
+                                "title": "Задание кладовщику: подготовить позиции к отгрузке",
+                                "notes": "Подбор, проверка количества и подготовка к отгрузке. После перефасовки этикетки и стикеры уже наклеены в отдельном задании; повторную наклейку не выполнять."
+                              },
+                              "approved_scope": "Роль и место подготовки заказа",
+                              "approval_sources": [
+                                {
+                                  "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                  "comment_id": "AAACIF6YlPg",
+                                  "author": "Данила",
+                                  "date": "2026-10-08"
+                                },
+                                {
+                                  "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                  "comment_id": "AAACIF6YlPY",
+                                  "author": "Данила",
+                                  "date": "2026-10-08"
+                                },
+                                {
+                                  "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                  "comment_id": "AAACIF6YlPU",
+                                  "author": "Данила",
+                                  "date": "2026-10-08"
+                                }
+                              ]
+                            }
                           },
                           {
                             "id": "f_227_4081",
@@ -3570,7 +4074,26 @@ window.LAKOM_SCHEMA_EXPORT = {
                             ],
                             "main_branch_id": "mark_ready_f_227_4081",
                             "parent_id": "local_gp_sticker_required",
-                            "comments": []
+                            "comments": [],
+                            "before_marking_workflow": {
+                              "id": "f_227_4081",
+                              "title": "Задание на печать стикеров",
+                              "kind": "task",
+                              "links": [
+                                "f_227_4076"
+                              ],
+                              "checked": {
+                                "login": "admin",
+                                "user": "Админ",
+                                "ts": "2026-10-04T12:30:55+00:00"
+                              },
+                              "parent_id": "local_gp_sticker_required",
+                              "child_ids": [],
+                              "comments": [],
+                              "open": true,
+                              "edge": "Да",
+                              "review_status": "pending"
+                            }
                           }
                         ],
                         "main_branch_id": "f_227_4076",
@@ -3992,11 +4515,32 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                       ]
                                                                                     },
                                                                                     "parent_id": "local_repacking_samples_transfer",
-                                                                                    "comments": []
+                                                                                    "comments": [],
+                                                                                    "before_screen_extension": {
+                                                                                      "id": "local_repacking_samples_warehouse",
+                                                                                      "title": "Задание кладовщику: переместить образцы на склад ГП Лакма",
+                                                                                      "kind": "task",
+                                                                                      "parent_id": "local_repacking_samples_transfer",
+                                                                                      "child_ids": [
+                                                                                        "local_repacking_samples_done"
+                                                                                      ],
+                                                                                      "links": [
+                                                                                        "local_repacking_samples_done"
+                                                                                      ],
+                                                                                      "comments": [],
+                                                                                      "open": true,
+                                                                                      "notes": "",
+                                                                                      "edge": "Передача оформлена",
+                                                                                      "review_status": "pending"
+                                                                                    }
                                                                                   }
                                                                                 ],
                                                                                 "parent_id": "local_repacking_samples_production",
-                                                                                "comments": []
+                                                                                "comments": [],
+                                                                                "before_danila_2026_10_08": {
+                                                                                  "title": "1С: оформить МХ-18 — передачу выпущенных образцов на склад ГП Лакма",
+                                                                                  "notes": "Передача образцов в контексте выпуска по счёту пополнения. Не создавать самостоятельное перемещение того же выпуска; если метод производства сразу оформляет передачу, использовать результат без дубля. Склад-получатель — ГП Лакма."
+                                                                                }
                                                                               }
                                                                             ],
                                                                             "parent_id": "local_repacking_samples_fill",
@@ -4045,7 +4589,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                           ]
                                                                         },
                                                                         "parent_id": "mark_ready_local_repacking_samples_labels",
-                                                                        "comments": []
+                                                                        "comments": [],
+                                                                        "before_screen_extension": {
+                                                                          "id": "local_repacking_samples_fill",
+                                                                          "title": "Фасовщик: расфасовать остаток на образцы по позициям счёта",
+                                                                          "kind": "task",
+                                                                          "parent_id": "local_2072f40c1e824f81b2482a3720797b08",
+                                                                          "child_ids": [
+                                                                            "local_repacking_samples_labels"
+                                                                          ],
+                                                                          "links": [
+                                                                            "local_repacking_samples_labels"
+                                                                          ],
+                                                                          "comments": [],
+                                                                          "open": true,
+                                                                          "edge": "Счёт пополнения создан",
+                                                                          "notes": "Подтвердить фактический объём, фасовку, количество ёмкостей и расход тары. Только масса, выделенная на образцы; не списывать её повторно в основной перефасовке.",
+                                                                          "review_status": "pending"
+                                                                        }
                                                                       },
                                                                       {
                                                                         "id": "local_route_jump_9c9b6732ddbf",
@@ -4080,7 +4641,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                 ],
                                                                 "main_branch_id": "mark_ready_local_repacking_samples_labels",
                                                                 "parent_id": "local_2072f40c1e824f81b2482a3720797b08",
-                                                                "comments": []
+                                                                "comments": [],
+                                                                "before_marking_workflow": {
+                                                                  "id": "local_repacking_samples_labels",
+                                                                  "title": "Задание: наклеить этикетки и стикеры на образцы",
+                                                                  "kind": "task",
+                                                                  "parent_id": "local_repacking_samples_fill",
+                                                                  "child_ids": [
+                                                                    "local_repacking_samples_production"
+                                                                  ],
+                                                                  "links": [
+                                                                    "local_repacking_samples_production"
+                                                                  ],
+                                                                  "comments": [],
+                                                                  "open": true,
+                                                                  "notes": "",
+                                                                  "edge": "Образцы расфасованы",
+                                                                  "review_status": "pending"
+                                                                }
                                                               },
                                                               {
                                                                 "id": "local_route_jump_b34ace4649a0",
@@ -4109,7 +4687,47 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                               ]
                                                             },
                                                             "parent_id": "local_repacking_remainder_destination",
-                                                            "comments": []
+                                                            "comments": [],
+                                                            "before_danila_2026_10_08": {
+                                                              "title": "Создать счет на пополнение ГП образцов",
+                                                              "notes": "Зафиксировать количество остатка в кг и продукцию для выпуска образцов. Эта ветка относится только к выделенному остатку, а не ко всему объёму перефасовки."
+                                                            },
+                                                            "before_screen_extension": {
+                                                              "id": "local_2072f40c1e824f81b2482a3720797b08",
+                                                              "title": "Создать счет на пополнение ГП образцов",
+                                                              "kind": "task",
+                                                              "parent_id": "local_repacking_remainder_destination",
+                                                              "child_ids": [
+                                                                "local_repacking_samples_fill"
+                                                              ],
+                                                              "links": [
+                                                                "local_repacking_samples_fill"
+                                                              ],
+                                                              "comments": [],
+                                                              "open": true,
+                                                              "edge": "Есть остаток, на ГП",
+                                                              "notes": "Зафиксировать количество остатка в кг и продукцию для выпуска образцов. Эта ветка относится только к выделенному остатку, а не ко всему объёму перефасовки.\nДля пополнения ГП создать счёт на контрагента «Пополнение склада», далее обработка как у клиентского счёта. Инициатор — менеджер, руководитель склада или планировщик.",
+                                                              "review_status": "approved",
+                                                              "before_danila_2026_10_08": {
+                                                                "title": "Создать счет на пополнение ГП образцов",
+                                                                "notes": "Зафиксировать количество остатка в кг и продукцию для выпуска образцов. Эта ветка относится только к выделенному остатку, а не ко всему объёму перефасовки."
+                                                              },
+                                                              "approved_scope": "Пополнение ГП через счёт",
+                                                              "approval_sources": [
+                                                                {
+                                                                  "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                                  "comment_id": "AAACIF4yhr4",
+                                                                  "author": "Данила",
+                                                                  "date": "2026-10-08"
+                                                                },
+                                                                {
+                                                                  "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                                  "comment_id": "AAACIF6YlTw",
+                                                                  "author": "Данила",
+                                                                  "date": "2026-10-08"
+                                                                }
+                                                              ]
+                                                            }
                                                           },
                                                           {
                                                             "id": "local_14565bca119a4b0a8cb1781e02cad8a7",
@@ -4172,7 +4790,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                   }
                                                                 ],
                                                                 "parent_id": "local_14565bca119a4b0a8cb1781e02cad8a7",
-                                                                "comments": []
+                                                                "comments": [],
+                                                                "before_danila_2026_10_08": {
+                                                                  "title": "1С: превратить ГП в ПФ — ждём ответа Данилы",
+                                                                  "notes": "Открытый вопрос Даниле: как оформить в 1С превращение остатка готовой продукции после перефасовки в ПФ? Требуется уточнить документ, продукцию, материалы и склад-получатель ПФ. Физическая передача остатка на склад ПФ показана отдельным заданием кладовщику. Учётное превращение не считать подтверждённым до ответа Данилы."
+                                                                }
                                                               },
                                                               {
                                                                 "id": "local_route_jump_927e8a9424c8",
@@ -4201,7 +4823,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                               ]
                                                             },
                                                             "parent_id": "local_repacking_remainder_destination",
-                                                            "comments": []
+                                                            "comments": [],
+                                                            "before_screen_extension": {
+                                                              "id": "local_14565bca119a4b0a8cb1781e02cad8a7",
+                                                              "title": "Задание кладовщику: переместить остаток на склад ПФ",
+                                                              "kind": "task",
+                                                              "parent_id": "local_repacking_remainder_destination",
+                                                              "child_ids": [
+                                                                "local_repacking_remainder_pf_onec"
+                                                              ],
+                                                              "links": [
+                                                                "local_repacking_remainder_pf_onec"
+                                                              ],
+                                                              "comments": [],
+                                                              "open": true,
+                                                              "edge": "Есть остаток, на ПФ",
+                                                              "notes": "Физическое перемещение выделенного нерасфасованного остатка на склад ПФ. Зафиксировать количество и партию.",
+                                                              "review_status": "pending"
+                                                            }
                                                           },
                                                           {
                                                             "id": "local_repacking_no_remainder",
@@ -4344,7 +4983,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                       ]
                                                                     },
                                                                     "parent_id": "f_227_4089",
-                                                                    "comments": []
+                                                                    "comments": [],
+                                                                    "before_screen_extension": {
+                                                                      "id": "local_repacking_prepare_ready",
+                                                                      "title": "Кладовщик: подготовить перефасованные позиции к отгрузке",
+                                                                      "kind": "task",
+                                                                      "parent_id": "f_227_4089",
+                                                                      "child_ids": [],
+                                                                      "links": [
+                                                                        "f_227_4093"
+                                                                      ],
+                                                                      "comments": [],
+                                                                      "open": true,
+                                                                      "notes": "Проверить количество и комплектность. Маркировка уже наклеена после перефасовки; повторную наклейку не выполнять.",
+                                                                      "edge": "ГП физически принята",
+                                                                      "review_status": "pending"
+                                                                    }
                                                                   },
                                                                   {
                                                                     "id": "local_route_jump_c808b27078a9",
@@ -4382,11 +5036,45 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                     "text": "В 1с Производство Выпуск счета с получателем ГП.\nПодготовить к отгрузке. \n\n5 кг лишний остался -- новый счет или на склад ПФ",
                                                                     "ts": "2026-10-05T10:32:53+00:00"
                                                                   }
-                                                                ]
+                                                                ],
+                                                                "before_screen_extension": {
+                                                                  "id": "f_227_4089",
+                                                                  "title": "Задание кладовщику на перемещение на склад ГП",
+                                                                  "kind": "task",
+                                                                  "links": [
+                                                                    "local_repacking_prepare_ready"
+                                                                  ],
+                                                                  "comments": [
+                                                                    {
+                                                                      "id": "ce3a0bf09bd75",
+                                                                      "parent": null,
+                                                                      "user": "Админ",
+                                                                      "login": "admin",
+                                                                      "text": "В 1с Производство Выпуск счета с получателем ГП.\nПодготовить к отгрузке. \n\n5 кг лишний остался -- новый счет или на склад ПФ",
+                                                                      "ts": "2026-10-05T10:32:53+00:00"
+                                                                    }
+                                                                  ],
+                                                                  "checked": {
+                                                                    "login": "admin",
+                                                                    "user": "Админ",
+                                                                    "ts": "2026-10-04T12:31:18+00:00"
+                                                                  },
+                                                                  "parent_id": "local_repacking_output_onec",
+                                                                  "child_ids": [
+                                                                    "local_repacking_prepare_ready"
+                                                                  ],
+                                                                  "open": true,
+                                                                  "edge": "Передача оформлена",
+                                                                  "review_status": "pending"
+                                                                }
                                                               }
                                                             ],
                                                             "parent_id": "local_repacking_main_production",
-                                                            "comments": []
+                                                            "comments": [],
+                                                            "before_danila_2026_10_08": {
+                                                              "title": "1С: оформить МХ-18 — передачу перефасованной ГП на склад ГП",
+                                                              "notes": "В контексте производства новой фасовки. Не повторять перемещение ГП Лакма → ГП из маршрута подбора ранее готовой продукции."
+                                                            }
                                                           }
                                                         ],
                                                         "parent_id": "local_repacking_parallel_outputs",
@@ -4448,7 +5136,73 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     "text": "Перефасовали, наклеили стикеры и этикетки на Производстве",
                                                     "ts": "2026-10-05T10:31:21+00:00"
                                                   }
-                                                ]
+                                                ],
+                                                "before_danila_2026_10_08": {
+                                                  "title": "Задание фасовщику осуществить перефасовку",
+                                                  "notes": "Перефасовка выполняется на производстве. Старший смены назначает свободного сотрудника; он выполняет фасовку, затем отдельное задание наклейки этикеток / стикеров. 05.10, 12:00–13:00."
+                                                },
+                                                "before_screen_extension": {
+                                                  "id": "f_227_4090",
+                                                  "title": "Задание фасовщику осуществить перефасовку",
+                                                  "kind": "task",
+                                                  "links": [
+                                                    "local_repacking_remainder_destination"
+                                                  ],
+                                                  "comments": [
+                                                    {
+                                                      "id": "c43468892f198",
+                                                      "parent": null,
+                                                      "user": "Админ",
+                                                      "login": "admin",
+                                                      "text": "Перефасовали, наклеили стикеры и этикетки на Производстве",
+                                                      "ts": "2026-10-05T10:31:21+00:00"
+                                                    }
+                                                  ],
+                                                  "checked": {
+                                                    "login": "admin",
+                                                    "user": "Админ",
+                                                    "ts": "2026-10-04T12:31:07+00:00"
+                                                  },
+                                                  "parent_id": "local_repacking_gp_production_transfer",
+                                                  "child_ids": [
+                                                    "local_repacking_remainder_destination"
+                                                  ],
+                                                  "open": true,
+                                                  "notes": "Перефасовка — на производстве. Фасовщик выполняет; Старший смены может выполнять ту же функцию. Этикеровщик получает стикеры, готовит и оклеивает пустую тару. После перефасовки обязательное задание на наклейку этикеток и стикеров сохраняется.",
+                                                  "review_status": "approved",
+                                                  "before_danila_2026_10_08": {
+                                                    "title": "Задание фасовщику осуществить перефасовку",
+                                                    "notes": "Перефасовка выполняется на производстве. Старший смены назначает свободного сотрудника; он выполняет фасовку, затем отдельное задание наклейки этикеток / стикеров. 05.10, 12:00–13:00."
+                                                  },
+                                                  "approved_scope": "Место перефасовки, роли и обязательная маркировка",
+                                                  "approval_sources": [
+                                                    {
+                                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                      "comment_id": "AAACIF6YlPk",
+                                                      "author": "Данила",
+                                                      "date": "2026-10-08"
+                                                    },
+                                                    {
+                                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                      "comment_id": "AAACIF6YlSE",
+                                                      "author": "Данила",
+                                                      "date": "2026-10-08"
+                                                    },
+                                                    {
+                                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                      "comment_id": "AAACIF6YlSA",
+                                                      "author": "Данила",
+                                                      "date": "2026-10-08"
+                                                    },
+                                                    {
+                                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                      "comment_id": "AAACIF6YlS8",
+                                                      "author": "Данила",
+                                                      "date": "2026-10-08"
+                                                    }
+                                                  ],
+                                                  "edge": ""
+                                                }
                                               },
                                               {
                                                 "id": "local_route_jump_6c103f8fdf88",
@@ -4478,7 +5232,47 @@ window.LAKOM_SCHEMA_EXPORT = {
                                               ]
                                             },
                                             "parent_id": "local_repacking_gp_production_transfer",
-                                            "comments": []
+                                            "comments": [],
+                                            "before_danila_2026_10_08": {
+                                              "title": "Задание на наклейку этикеток и стикеров после перефасовки",
+                                              "notes": ""
+                                            },
+                                            "before_marking_workflow": {
+                                              "id": "local_repacking_label_task",
+                                              "title": "Задание на наклейку этикеток и стикеров после перефасовки",
+                                              "kind": "task",
+                                              "parent_id": "local_repacking_remainder_destination",
+                                              "child_ids": [
+                                                "local_repacking_main_production"
+                                              ],
+                                              "links": [
+                                                "local_repacking_main_production"
+                                              ],
+                                              "comments": [],
+                                              "open": true,
+                                              "edge": "Без остатка",
+                                              "review_status": "approved",
+                                              "before_danila_2026_10_08": {
+                                                "title": "Задание на наклейку этикеток и стикеров после перефасовки",
+                                                "notes": ""
+                                              },
+                                              "notes": "После перефасовки обязательно наклеить/переклеить этикетки и стикеры. Этикеровщик заранее готовит тару и маркировку. Не дублировать это действие в задании склада на подготовку к отгрузке.",
+                                              "approved_scope": "Обязательная маркировка после перефасовки",
+                                              "approval_sources": [
+                                                {
+                                                  "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                  "comment_id": "AAACIF6YlPk",
+                                                  "author": "Данила",
+                                                  "date": "2026-10-08"
+                                                },
+                                                {
+                                                  "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                  "comment_id": "AAACIF6YlSE",
+                                                  "author": "Данила",
+                                                  "date": "2026-10-08"
+                                                }
+                                              ]
+                                            }
                                           }
                                         ],
                                         "parent_id": "f_227_4084",
@@ -4520,7 +5314,37 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         "text": "Перемещение в 1с со склада ГП на Производство",
                                         "ts": "2026-10-05T10:28:31+00:00"
                                       }
-                                    ]
+                                    ],
+                                    "before_screen_extension": {
+                                      "id": "f_227_4084",
+                                      "title": "Задание кладовщику на перемещение на Производство",
+                                      "kind": "task",
+                                      "links": [
+                                        "local_repacking_gp_production_transfer"
+                                      ],
+                                      "comments": [
+                                        {
+                                          "id": "c9db570e487ac",
+                                          "parent": null,
+                                          "user": "Админ",
+                                          "login": "admin",
+                                          "text": "Перемещение в 1с со склада ГП на Производство",
+                                          "ts": "2026-10-05T10:28:31+00:00"
+                                        }
+                                      ],
+                                      "checked": {
+                                        "login": "admin",
+                                        "user": "Админ",
+                                        "ts": "2026-10-04T12:31:21+00:00"
+                                      },
+                                      "parent_id": "mark_ready_f_227_4077",
+                                      "child_ids": [
+                                        "local_repacking_gp_production_transfer"
+                                      ],
+                                      "open": true,
+                                      "review_status": "pending",
+                                      "edge": ""
+                                    }
                                   }
                                 ],
                                 "parent_id": "f_227_4077",
@@ -4529,7 +5353,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                             ],
                             "main_branch_id": "mark_ready_f_227_4077",
                             "parent_id": "f_227_4045",
-                            "comments": []
+                            "comments": [],
+                            "before_marking_workflow": {
+                              "id": "f_227_4077",
+                              "title": "Задание на печать стикеров",
+                              "kind": "task",
+                              "links": [
+                                "f_227_4084"
+                              ],
+                              "checked": {
+                                "login": "admin",
+                                "user": "Админ",
+                                "ts": "2026-10-04T12:30:59+00:00"
+                              },
+                              "parent_id": "f_227_4045",
+                              "child_ids": [
+                                "f_227_4084"
+                              ],
+                              "comments": [],
+                              "open": true,
+                              "review_status": "pending",
+                              "edge": ""
+                            }
                           }
                         ],
                         "notes": "",
@@ -4680,7 +5525,56 @@ window.LAKOM_SCHEMA_EXPORT = {
                                   ]
                                 },
                                 "parent_id": "mark_ready_f_227_4078",
-                                "comments": []
+                                "comments": [],
+                                "before_danila_2026_10_08": {
+                                  "title": "Задание кладовщику переклеить этикетки",
+                                  "notes": ""
+                                },
+                                "before_marking_workflow": {
+                                  "id": "f_227_4087",
+                                  "title": "Задание кладовщику переклеить этикетки",
+                                  "kind": "task",
+                                  "links": [
+                                    "f_227_4076"
+                                  ],
+                                  "checked": {
+                                    "login": "admin",
+                                    "user": "Админ",
+                                    "ts": "2026-10-04T12:31:03+00:00"
+                                  },
+                                  "parent_id": "mark_ready_f_227_4078",
+                                  "child_ids": [],
+                                  "comments": [],
+                                  "open": true,
+                                  "review_status": "approved",
+                                  "before_danila_2026_10_08": {
+                                    "title": "Задание кладовщику переклеить этикетки",
+                                    "notes": ""
+                                  },
+                                  "notes": "Переклейка без перефасовки — на складе ГП, без передачи на производство. Этикеровщик выдаёт этикетки; Кладовщик наклеивает. Один сотрудник может выполнять несколько ролей.",
+                                  "approved_scope": "Место переклейки и роли исполнителей",
+                                  "approval_sources": [
+                                    {
+                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                      "comment_id": "AAACIF6YlTA",
+                                      "author": "Данила",
+                                      "date": "2026-10-08"
+                                    },
+                                    {
+                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                      "comment_id": "AAACIF6YlTE",
+                                      "author": "Данила",
+                                      "date": "2026-10-08"
+                                    },
+                                    {
+                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                      "comment_id": "AAACIF6YlTI",
+                                      "author": "Данила",
+                                      "date": "2026-10-08"
+                                    }
+                                  ],
+                                  "edge": ""
+                                }
                               }
                             ],
                             "parent_id": "f_227_4078",
@@ -4689,7 +5583,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                         ],
                         "main_branch_id": "mark_ready_f_227_4078",
                         "parent_id": "f_227_4046",
-                        "comments": []
+                        "comments": [],
+                        "before_marking_workflow": {
+                          "id": "f_227_4078",
+                          "title": "Задание на печать стикеров",
+                          "kind": "task",
+                          "links": [
+                            "f_227_4087"
+                          ],
+                          "checked": {
+                            "login": "admin",
+                            "user": "Админ",
+                            "ts": "2026-10-04T12:31:00+00:00"
+                          },
+                          "parent_id": "f_227_4046",
+                          "child_ids": [
+                            "f_227_4087"
+                          ],
+                          "comments": [],
+                          "open": true,
+                          "review_status": "pending",
+                          "edge": ""
+                        }
                       }
                     ],
                     "notes": "",
@@ -4803,7 +5718,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                   ]
                 },
                 "parent_id": "f_227_4123",
-                "comments": []
+                "comments": [],
+                "before_screen_extension": {
+                  "id": "f_227_4188",
+                  "title": "Задача для менеджера ответственного за счет",
+                  "kind": "task",
+                  "edge": "Нет",
+                  "checked": {
+                    "login": "admin",
+                    "user": "Админ",
+                    "ts": "2026-10-04T12:01:46+00:00"
+                  },
+                  "parent_id": "f_227_4123",
+                  "child_ids": [],
+                  "comments": [],
+                  "open": true,
+                  "links": [],
+                  "review_status": "pending"
+                }
               }
             ],
             "notes": "",
@@ -4986,7 +5918,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                   ]
                 },
                 "parent_id": "local_pf_supply_type",
-                "comments": []
+                "comments": [],
+                "before_danila_2026_10_08": {
+                  "title": "Сотрудник склада ПФ: подготовить компонент А; подтвердить массу и партию",
+                  "notes": "На складе ПФ подготовить зарезервированный компонент А. Пока не фасовать его в конечный комплект: следующий шаг определяет цвет и шприцы. Без цвета или со шприцами — фасовка и комплектация на складе ПФ. Для прямой колеровки — передача на производство в маршруте колеровки; не выдавать её здесь повторно. Подтвердить фактическое местонахождение и склад учёта 1С."
+                }
               },
               {
                 "id": "local_pf_supply_color",
@@ -5308,7 +6244,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                   ]
                                                 },
                                                 "parent_id": "f_227_4222",
-                                                "comments": []
+                                                "comments": [],
+                                                "before_danila_2026_10_08": {
+                                                  "title": "Задание кладовщику Подготовка позиций к отгрузке",
+                                                  "notes": ""
+                                                }
                                               },
                                               {
                                                 "id": "local_route_jump_ed4a6c89c812",
@@ -5338,7 +6278,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                               ]
                                             },
                                             "parent_id": "pilot_pf_gp_mh18",
-                                            "comments": []
+                                            "comments": [],
+                                            "before_danila_2026_10_08": {
+                                              "title": "Задание кладовщику на перемещение на склад ГП",
+                                              "notes": ""
+                                            }
                                           }
                                         ],
                                         "parent_id": "f_227_4228",
@@ -5346,7 +6290,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                       }
                                     ],
                                     "parent_id": "f_227_4085",
-                                    "comments": []
+                                    "comments": [],
+                                    "before_danila_2026_10_08": {
+                                      "title": "1С: производство из ПФ с выпуском на склад ГП",
+                                      "notes": "После подтверждения фактической фасовки оформить производство. В продукции — готовая продукция в нужной фасовке; в материалах — фактически использованный ПФ, тара и добавленные компоненты. Выпуск на склад ГП. Сырьё ранее выпущенного ПФ повторно не списывать."
+                                    }
                                   },
                                   {
                                     "id": "local_route_jump_7e3bc79712b9",
@@ -5401,7 +6349,66 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "text": "После этого в 1с Производство со склада ПФ на ГП",
                                     "ts": "2026-10-05T10:42:29+00:00"
                                   }
-                                ]
+                                ],
+                                "before_danila_2026_10_08": {
+                                  "title": "Задание фасовщику на складе ПФ расфасовать и наклеить этикетки и стикеры",
+                                  "notes": "Ветка неколерованной продукции, кроме затирки. Подтвердить фактическую фасовку, расход ПФ и тары. Для цветной продукции и затирки использовать соответствующие выходы маршрута обеспечения из ПФ.\nПо встрече 05.10, 20:56–21:54: фасовка выполняется на складе ПФ, предварительно тащить ПФ на производство не нужно. Если запас физически находится в другом месте, сначала требуется его доставка к месту фасовки; конкретные исходные места уточняются сотрудником склада."
+                                },
+                                "before_marking_workflow": {
+                                  "id": "f_227_4085",
+                                  "title": "Экран «Фасовка»",
+                                  "kind": "screen",
+                                  "links": [
+                                    "f_227_4228",
+                                    "pilot_pf_order_supply"
+                                  ],
+                                  "comments": [
+                                    {
+                                      "id": "cdbd4faad0128",
+                                      "parent": null,
+                                      "user": "Админ",
+                                      "login": "admin",
+                                      "text": "После этого в 1с Производство со склада ПФ на ГП",
+                                      "ts": "2026-10-05T10:42:29+00:00"
+                                    }
+                                  ],
+                                  "checked": {
+                                    "login": "admin",
+                                    "user": "Админ",
+                                    "ts": "2026-10-04T13:04:16+00:00"
+                                  },
+                                  "parent_id": "mark_ready_f_227_4079",
+                                  "child_ids": [
+                                    "f_227_4228"
+                                  ],
+                                  "open": true,
+                                  "notes": "Название экрана:\nФасовка — общий экран заданий на фасовку, перефасовку и комплектацию; место выполнения (склад ПФ или производство) указано в задании.\n\nСостав экрана:\n• Фильтр по складу: ПФ, ГП, сырьё, переработка; можно выбрать несколько складов.\n• Сортировка: по складу, статусу, сроку и приоритету задания.\n• Список заданий: склад, счёт, позиция, действие, статус и исполнитель.\n• Карточка задания: ПФ, партия, план/факт кг, фасовка, тара, этикетки и стикеры.\n• План/факт, причина проблемы и история действий.\n\nТекущее задание:\nРасфасовать продукцию из ПФ; подтвердить массу, тару и партию.\nРоль: Сотрудник склада ПФ.\nМесто выполнения: Склад ПФ; место фасовки конкретного типа уточнить.\n\nВход — как здесь оказаться:\n• Источник задания: После подготовки стикеров выдано задание расфасовать продукцию.\n• Сотрудник открывает экран фасовки, выбирает место выполнения и задание.\n• Из обеспечения счёта — «Открыть задание» по исходной позиции.\n\nКнопки:\n• «Взять в работу» — назначить себя исполнителем и начать это задание.\n• «Выполнено» — сохранить фактическое количество и продолжить цепочку; при недостаче не отмечать полное выполнение.\n• «Проблема» — указать причину в этой карточке, сохранить факт и приостановить задание.\n\nРезультат:\nВыполнение или проблема отображается в исходной позиции на экране обеспечения счёта. После решения продолжается то же задание с сохранённым фактом.\n\nСогласование:\nЭкран, входы и кнопки — предложение; требуют утверждения.",
+                                  "review_status": "partial",
+                                  "edge": "Выполнено",
+                                  "before_danila_2026_10_08": {
+                                    "title": "Задание фасовщику на складе ПФ расфасовать и наклеить этикетки и стикеры",
+                                    "notes": "Ветка неколерованной продукции, кроме затирки. Подтвердить фактическую фасовку, расход ПФ и тары. Для цветной продукции и затирки использовать соответствующие выходы маршрута обеспечения из ПФ.\nПо встрече 05.10, 20:56–21:54: фасовка выполняется на складе ПФ, предварительно тащить ПФ на производство не нужно. Если запас физически находится в другом месте, сначала требуется его доставка к месту фасовки; конкретные исходные места уточняются сотрудником склада."
+                                  },
+                                  "approved_scope": "Роль / место — в пределах ответа Данилы. Детали действий требуют утверждения.",
+                                  "approval_sources": [
+                                    {
+                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                      "comment_id": "AAACIF6YlTM",
+                                      "author": "Данила",
+                                      "date": "2026-10-08"
+                                    },
+                                    {
+                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                      "comment_id": "AAACIF4yhsQ",
+                                      "author": "Данила",
+                                      "date": "2026-10-08"
+                                    }
+                                  ],
+                                  "ui_review_status": "pending",
+                                  "main_branch_id": "f_227_4228",
+                                  "screen_id": "packing_tasks",
+                                  "screen_task": "Расфасовать продукцию из ПФ; подтвердить массу, тару и партию."
+                                }
                               }
                             ],
                             "task_card": {
@@ -5440,7 +6447,56 @@ window.LAKOM_SCHEMA_EXPORT = {
                     ],
                     "main_branch_id": "mark_ready_f_227_4079",
                     "parent_id": "local_pf_supply_color",
-                    "comments": []
+                    "comments": [],
+                    "before_danila_2026_10_08": {
+                      "title": "Задание на печать стикеров",
+                      "notes": ""
+                    },
+                    "before_marking_workflow": {
+                      "id": "f_227_4079",
+                      "title": "Экран «Задания сотрудников»",
+                      "kind": "screen",
+                      "links": [
+                        "f_227_4085",
+                        "pilot_pf_order_supply"
+                      ],
+                      "checked": {
+                        "login": "admin",
+                        "user": "Админ",
+                        "ts": "2026-10-04T13:04:13+00:00"
+                      },
+                      "parent_id": "local_pf_supply_color",
+                      "child_ids": [
+                        "f_227_4085"
+                      ],
+                      "comments": [],
+                      "open": true,
+                      "edge": "Нет — конечная фасовка",
+                      "review_status": "partial",
+                      "before_danila_2026_10_08": {
+                        "title": "Задание на печать стикеров",
+                        "notes": ""
+                      },
+                      "notes": "Название экрана:\nЗадания сотрудников — общий экран с фильтром по роли.\n\nСостав экрана:\n• Список заданий: счёт, позиция, действие, статус и исполнитель.\n• Карточка задания: Номенклатура, фасовка, количество стикеров, партия, макет.\n• План/факт, причина проблемы и история действий.\n\nТекущее задание:\nНапечатать стикеры и передать на фасовку.\nРоль: Этикеровщик.\nМесто выполнения: Место печати требует уточнения.\n\nВход — как здесь оказаться:\n• Источник задания: После отправки позиции на прямую фасовку из ПФ выдано задание напечатать стикеры.\n• Сотрудник открывает задание из своего списка.\n• Из обеспечения счёта — «Открыть задание» по исходной позиции.\n\nКнопки:\n• «Взять в работу» — назначить себя исполнителем и начать это задание.\n• «Выполнено» — сохранить фактическое количество и продолжить цепочку; при недостаче не отмечать полное выполнение.\n• «Проблема» — указать причину в этой карточке, сохранить факт и приостановить задание.\n\nРезультат:\nВыполнение или проблема отображается в исходной позиции на экране обеспечения счёта. После решения продолжается то же задание с сохранённым фактом.\n\nСогласование:\nЭкран, входы и кнопки — предложение; требуют утверждения.",
+                      "approved_scope": "Роль / место — в пределах ответа Данилы. Детали действий требуют утверждения.",
+                      "approval_sources": [
+                        {
+                          "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                          "comment_id": "AAACIF6YlTE",
+                          "author": "Данила",
+                          "date": "2026-10-08"
+                        },
+                        {
+                          "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                          "comment_id": "AAACIF6YlSE",
+                          "author": "Данила",
+                          "date": "2026-10-08"
+                        }
+                      ],
+                      "ui_review_status": "pending",
+                      "main_branch_id": "f_227_4085",
+                      "screen_id": "employee_tasks"
+                    }
                   },
                   {
                     "id": "local_pf_supply_coloring_place",
@@ -5570,7 +6626,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                           ]
                         },
                         "parent_id": "local_pf_supply_coloring_place",
-                        "comments": []
+                        "comments": [],
+                        "before_danila_2026_10_08": {
+                          "title": "Сотрудник склада ПФ: набрать базу в вёдра и передать на КМ",
+                          "notes": "Подтвердить фактическое количество и партии при получении на КМ. Сохранить выполненную подготовку для следующего маршрута, чтобы не выдать её повторно."
+                        }
                       },
                       {
                         "id": "local_pf_to_prod_physical",
@@ -5669,7 +6729,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                           ]
                         },
                         "parent_id": "local_pf_supply_coloring_place",
-                        "comments": []
+                        "comments": [],
+                        "before_danila_2026_10_08": {
+                          "title": "Сотрудник склада ПФ: передать базу в ёмкости на производство",
+                          "notes": "Исполнитель на производстве подтверждает массу и партии. Сохранить факт передачи; не повторять его в маршруте колеровки."
+                        }
                       }
                     ],
                     "parent_id": "local_pf_supply_color",
@@ -5880,7 +6944,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                           ]
                                         },
                                         "parent_id": "local_new_batch_rework_check",
-                                        "comments": []
+                                        "comments": [],
+                                        "before_screen_extension": {
+                                          "id": "local_new_batch_rework_move",
+                                          "title": "Сотрудник склада переработки: передать согласованные партии и массу на производство",
+                                          "kind": "task",
+                                          "parent_id": "local_new_batch_rework_check",
+                                          "child_ids": [
+                                            "local_new_batch_rework_onec"
+                                          ],
+                                          "links": [
+                                            "local_new_batch_rework_onec"
+                                          ],
+                                          "comments": [],
+                                          "open": true,
+                                          "notes": "Сохранить резерв, если ещё не закреплён, фактические партии и массу. Подтвердить получение. Использовать ранее выполненную передачу без дубля; при недостаче уточнить состав у технолога.",
+                                          "edge": "Да",
+                                          "review_status": "pending"
+                                        }
                                       },
                                       {
                                         "id": "f_227_4237",
@@ -6225,7 +7306,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                     ],
                                                                                     "children": [],
                                                                                     "parent_id": "local_new_batch_extra_move",
-                                                                                    "comments": []
+                                                                                    "comments": [],
+                                                                                    "before_danila_2026_10_08": {
+                                                                                      "title": "1С: пополнить склад доведения — учёт уточнить",
+                                                                                      "notes": "Планируется учётное перемещение из склада-источника на отдельный виртуальный склад сырья для доведения. Согласовать с Данилой и 1С название склада, его создание и как расход из него включать в итоговое производство партии. Материал уже в этом запасе повторно не перемещать. Не списывать по назначению ОТК до подтверждения фактического внесения."
+                                                                                    }
                                                                                   },
                                                                                   {
                                                                                     "id": "local_route_jump_7eeadabf5cb1",
@@ -6255,7 +7340,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                   ]
                                                                                 },
                                                                                 "parent_id": "local_new_batch_extra_pick",
-                                                                                "comments": []
+                                                                                "comments": [],
+                                                                                "before_screen_extension": {
+                                                                                  "id": "local_new_batch_extra_move",
+                                                                                  "title": "Кладовщик: пополнить запас доведения у замесчика",
+                                                                                  "kind": "task",
+                                                                                  "parent_id": "local_new_batch_extra_available",
+                                                                                  "child_ids": [
+                                                                                    "local_new_batch_extra_onec"
+                                                                                  ],
+                                                                                  "links": [
+                                                                                    "local_new_batch_extra_onec"
+                                                                                  ],
+                                                                                  "comments": [],
+                                                                                  "open": true,
+                                                                                  "notes": "Доставить только недостающие компоненты и количества. Указать фактический источник и место передачи на производстве. При отсутствии материала ждать обеспечения; партию не принимать.",
+                                                                                  "edge": "Нет — пополнить запас",
+                                                                                  "review_status": "pending"
+                                                                                }
                                                                               },
                                                                               {
                                                                                 "id": "local_route_jump_263865f92093",
@@ -6279,7 +7381,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                           }
                                                                         ],
                                                                         "parent_id": "f_227_4245",
-                                                                        "comments": []
+                                                                        "comments": [],
+                                                                        "before_danila_2026_10_08": {
+                                                                          "title": "Материалы есть в отдельном запасе доведения?",
+                                                                          "notes": "Проверить назначенные ОТК количества в запасе доведения у замесчика и его отдельный остаток в 1С. Этот запас не резервируется на основной замес. Если хватает — выполнить доведение; если нет — пополнить только дефицит. Виртуальный склад 1С планируется, настройка учёта требует подтверждения."
+                                                                        }
                                                                       }
                                                                     ],
                                                                     "parent_id": "f_227_4244",
@@ -6292,7 +7398,55 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                         "text": "ОТК забивает сколько нужно добавить доп материалов. У замсесчиков допзапас на складе Производства. Заведем доп склад в 1с сырья для доведения замесов.",
                                                                         "ts": "2026-10-05T11:04:28+00:00"
                                                                       }
-                                                                    ]
+                                                                    ],
+                                                                    "before_danila_2026_10_08": {
+                                                                      "title": "ОТК: указать компоненты и массу для доведения; вернуть задание замесчику",
+                                                                      "notes": "ОТК выбирает компоненты и массу добавок; замесчик вносит их по этому заданию. Для доведения используется отдельный запас у замесчиков на производстве. Планируется отдельный виртуальный склад 1С; его создание, точное название и правила учёта ждут подтверждения. Указание ОТК ещё не является фактическим расходом. Подтверждённые внесения сохранять по исходной партии и включать в итоговое производство. 05.10, 40:46–46:53."
+                                                                    },
+                                                                    "before_screen_extension": {
+                                                                      "id": "f_227_4245",
+                                                                      "title": "ОТК: указать компоненты и массу для доведения; вернуть задание замесчику",
+                                                                      "kind": "task",
+                                                                      "edge": "Нет",
+                                                                      "links": [
+                                                                        "local_new_batch_extra_available"
+                                                                      ],
+                                                                      "comments": [
+                                                                        {
+                                                                          "id": "cb94d1e408fb1",
+                                                                          "parent": null,
+                                                                          "user": "Админ",
+                                                                          "login": "admin",
+                                                                          "text": "ОТК забивает сколько нужно добавить доп материалов. У замсесчиков допзапас на складе Производства. Заведем доп склад в 1с сырья для доведения замесов.",
+                                                                          "ts": "2026-10-05T11:04:28+00:00"
+                                                                        }
+                                                                      ],
+                                                                      "checked": {
+                                                                        "login": "admin",
+                                                                        "user": "Админ",
+                                                                        "ts": "2026-10-04T13:23:46+00:00"
+                                                                      },
+                                                                      "parent_id": "f_227_4244",
+                                                                      "child_ids": [
+                                                                        "local_new_batch_extra_available"
+                                                                      ],
+                                                                      "open": true,
+                                                                      "notes": "ОТК указывает компоненты и массу доведения. Замесчик подтверждает фактическое внесение по партии; расход включается в итоговое производство. Запас добавок общий; в 1С он учитывается на существующем складе Производство. Отдельный виртуальный склад не требуется по ответу Данилы.",
+                                                                      "review_status": "approved",
+                                                                      "before_danila_2026_10_08": {
+                                                                        "title": "ОТК: указать компоненты и массу для доведения; вернуть задание замесчику",
+                                                                        "notes": "ОТК выбирает компоненты и массу добавок; замесчик вносит их по этому заданию. Для доведения используется отдельный запас у замесчиков на производстве. Планируется отдельный виртуальный склад 1С; его создание, точное название и правила учёта ждут подтверждения. Указание ОТК ещё не является фактическим расходом. Подтверждённые внесения сохранять по исходной партии и включать в итоговое производство. 05.10, 40:46–46:53."
+                                                                      },
+                                                                      "approved_scope": "Общий запас добавок, склад учёта — Производство",
+                                                                      "approval_sources": [
+                                                                        {
+                                                                          "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                                          "comment_id": "AAACIU-xD6w",
+                                                                          "author": "Данила",
+                                                                          "date": "2026-10-08"
+                                                                        }
+                                                                      ]
+                                                                    }
                                                                   },
                                                                   {
                                                                     "id": "f_227_4248",
@@ -6558,7 +7712,21 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                           }
                                                                                                         ],
                                                                                                         "parent_id": "local_large_batch_color_allocation",
-                                                                                                        "comments": []
+                                                                                                        "comments": [],
+                                                                                                        "before_screen_extension": {
+                                                                                                          "id": "local_keep_largest_colored_base_in_deja",
+                                                                                                          "title": "Оставить самую большую колеруемую часть в деже; назначить колеровку в этой деже",
+                                                                                                          "kind": "task",
+                                                                                                          "parent_id": "local_large_batch_color_allocation",
+                                                                                                          "child_ids": [],
+                                                                                                          "links": [
+                                                                                                            "local_deja_coloring_route"
+                                                                                                          ],
+                                                                                                          "comments": [],
+                                                                                                          "open": true,
+                                                                                                          "edge": "Да",
+                                                                                                          "review_status": "pending"
+                                                                                                        }
                                                                                                       },
                                                                                                       {
                                                                                                         "id": "local_other_colored_base_container",
@@ -6612,7 +7780,21 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                           }
                                                                                                         ],
                                                                                                         "parent_id": "local_large_batch_color_allocation",
-                                                                                                        "comments": []
+                                                                                                        "comments": [],
+                                                                                                        "before_screen_extension": {
+                                                                                                          "id": "local_other_colored_base_container",
+                                                                                                          "title": "Выделить остальные колеруемые части в отдельные ёмкости на производстве",
+                                                                                                          "kind": "task",
+                                                                                                          "parent_id": "local_large_batch_color_allocation",
+                                                                                                          "child_ids": [],
+                                                                                                          "links": [
+                                                                                                            "f_241_5114"
+                                                                                                          ],
+                                                                                                          "comments": [],
+                                                                                                          "open": true,
+                                                                                                          "edge": "Нет",
+                                                                                                          "review_status": "pending"
+                                                                                                        }
                                                                                                       }
                                                                                                     ],
                                                                                                     "inline_incoming": true,
@@ -6886,7 +8068,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                                   ]
                                                                                                                 },
                                                                                                                 "parent_id": "f_227_4264",
-                                                                                                                "comments": []
+                                                                                                                "comments": [],
+                                                                                                                "before_screen_extension": {
+                                                                                                                  "id": "f_227_4263",
+                                                                                                                  "title": "Задание кладовщику Подготовка позиций к отгрузке",
+                                                                                                                  "kind": "task",
+                                                                                                                  "links": [
+                                                                                                                    "f_227_4267"
+                                                                                                                  ],
+                                                                                                                  "checked": {
+                                                                                                                    "login": "admin",
+                                                                                                                    "user": "Админ",
+                                                                                                                    "ts": "2026-10-04T13:25:30+00:00"
+                                                                                                                  },
+                                                                                                                  "parent_id": "f_227_4264",
+                                                                                                                  "child_ids": [
+                                                                                                                    "f_227_4267"
+                                                                                                                  ],
+                                                                                                                  "comments": [],
+                                                                                                                  "open": true,
+                                                                                                                  "edge": "Продукция передана на ГП",
+                                                                                                                  "review_status": "pending"
+                                                                                                                }
                                                                                                               }
                                                                                                             ],
                                                                                                             "task_card": {
@@ -6899,7 +8102,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                               ]
                                                                                                             },
                                                                                                             "parent_id": "f_227_4266",
-                                                                                                            "comments": []
+                                                                                                            "comments": [],
+                                                                                                            "before_screen_extension": {
+                                                                                                              "id": "f_227_4264",
+                                                                                                              "title": "Задание кладовщику на перемещение на склад ГП",
+                                                                                                              "kind": "task",
+                                                                                                              "links": [
+                                                                                                                "f_227_4263"
+                                                                                                              ],
+                                                                                                              "checked": {
+                                                                                                                "login": "admin",
+                                                                                                                "user": "Админ",
+                                                                                                                "ts": "2026-10-04T13:25:28+00:00"
+                                                                                                              },
+                                                                                                              "parent_id": "f_227_4266",
+                                                                                                              "child_ids": [
+                                                                                                                "f_227_4263"
+                                                                                                              ],
+                                                                                                              "comments": [],
+                                                                                                              "open": true,
+                                                                                                              "edge": "МХ-18 оформлена",
+                                                                                                              "review_status": "pending"
+                                                                                                            }
                                                                                                           }
                                                                                                         ],
                                                                                                         "parent_id": "local_new_batch_fill_production",
@@ -6912,7 +8136,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                             "text": "Производство +  перемещение с помощью МХ 18",
                                                                                                             "ts": "2026-10-05T11:20:22+00:00"
                                                                                                           }
-                                                                                                        ]
+                                                                                                        ],
+                                                                                                        "before_danila_2026_10_08": {
+                                                                                                          "title": "1С: оформить МХ-18 — передачу выпущенной ГП на склад ГП",
+                                                                                                          "notes": "Передача в контексте выпуска ГП; отдельное перемещение того же выпуска не создавать."
+                                                                                                        }
                                                                                                       }
                                                                                                     ],
                                                                                                     "parent_id": "f_227_4261",
@@ -6929,7 +8157,75 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                   ]
                                                                                                 },
                                                                                                 "parent_id": "f_227_4257",
-                                                                                                "comments": []
+                                                                                                "comments": [],
+                                                                                                "before_marking_workflow": {
+                                                                                                  "id": "f_227_4261",
+                                                                                                  "title": "Экран «Фасовка»",
+                                                                                                  "kind": "task",
+                                                                                                  "links": [
+                                                                                                    "local_new_batch_fill_production"
+                                                                                                  ],
+                                                                                                  "checked": {
+                                                                                                    "login": "admin",
+                                                                                                    "user": "Админ",
+                                                                                                    "ts": "2026-10-04T13:25:27+00:00"
+                                                                                                  },
+                                                                                                  "parent_id": "mark_ready_f_227_4259",
+                                                                                                  "child_ids": [
+                                                                                                    "local_new_batch_fill_production"
+                                                                                                  ],
+                                                                                                  "comments": [],
+                                                                                                  "open": true,
+                                                                                                  "review_status": "pending",
+                                                                                                  "edge": "",
+                                                                                                  "screen_id": "packing_tasks",
+                                                                                                  "screen_task": "Задание фасовщику: расфасовать продукцию на производстве",
+                                                                                                  "notes": "Название экрана:\nФасовка — общий экран заданий на фасовку, перефасовку и комплектацию; место выполнения (склад ПФ или производство) указано в задании.\n\nСостав экрана:\n• Список заданий и карточка: счёт / позиция, продукция, партия, масса, фасовка, тара, план/факт количества; состав комплекта для затирки.\n• Фильтры / сортировка: место фасовки, тип продукции, статус, срок, приоритет.\n• Исполнитель, статус, срок, план/факт, причина проблемы и история.\n\nТекущее задание:\nЗадание фасовщику: расфасовать продукцию на производстве\nРоль: Фасовщик или сотрудник склада ПФ — согласно текущему заданию и месту выполнения.\nМесто: указано в задании; неподтверждённые места требуют уточнения.\n\nВход — как здесь оказаться:\n• Из списка заданий своего рабочего места.\n• Из обеспечения счёта — открыть связанное задание позиции.\n• Задание возникает по текущему маршруту после завершения предшествующего шага; сохранить счёт/позицию/партию и исходное задание.\n\nКнопки:\n• «Взять в работу» — закрепить исполнителя и начать задание.\n• «Выполнено» — сохранить факт / решение и продолжить маршрут по существующим связям.\n• «Проблема» — указать причину в карточке; сохранить факт и приостановить задание.\n\nРезультат:\nФакт / решение и проблема видны в исходной позиции на экране обеспечения счёта и в задании. После решения проблемы возобновляется то же задание с сохранённым фактом; повторный экземпляр не создаётся. Нет оборудования / проблема рецептуры — планировщик; сырьё — Снабжение; ошибка обмена — Оператор 1С только для устранения ошибки.\n\nСогласование:\nНовые экраны, кнопки и неподтверждённые роли / места требуют утверждения.\n\nПравила процесса:\nРоль: Фасовщик. Место: Производство. Расфасовать продукцию свежего замеса; подтвердить количество и партию. После фасовки передать продукцию на маркировку.",
+                                                                                                  "ui_review_status": "pending"
+                                                                                                },
+                                                                                                "before_screen_extension": {
+                                                                                                  "id": "f_227_4261",
+                                                                                                  "title": "Задание фасовщику: расфасовать продукцию на производстве",
+                                                                                                  "kind": "task",
+                                                                                                  "links": [
+                                                                                                    "mark_apply_f_227_4261"
+                                                                                                  ],
+                                                                                                  "checked": {
+                                                                                                    "login": "admin",
+                                                                                                    "user": "Админ",
+                                                                                                    "ts": "2026-10-04T13:25:27+00:00"
+                                                                                                  },
+                                                                                                  "parent_id": "mark_ready_f_227_4259",
+                                                                                                  "child_ids": [
+                                                                                                    "mark_apply_f_227_4261"
+                                                                                                  ],
+                                                                                                  "comments": [],
+                                                                                                  "open": true,
+                                                                                                  "review_status": "pending",
+                                                                                                  "edge": "",
+                                                                                                  "before_marking_workflow": {
+                                                                                                    "id": "f_227_4261",
+                                                                                                    "title": "Задание фасовщику на складе Производства расфасовать и наклеить этикетки и стикеры",
+                                                                                                    "kind": "task",
+                                                                                                    "links": [
+                                                                                                      "local_new_batch_fill_production"
+                                                                                                    ],
+                                                                                                    "checked": {
+                                                                                                      "login": "admin",
+                                                                                                      "user": "Админ",
+                                                                                                      "ts": "2026-10-04T13:25:27+00:00"
+                                                                                                    },
+                                                                                                    "parent_id": "mark_ready_f_227_4259",
+                                                                                                    "child_ids": [
+                                                                                                      "local_new_batch_fill_production"
+                                                                                                    ],
+                                                                                                    "comments": [],
+                                                                                                    "open": true,
+                                                                                                    "review_status": "pending",
+                                                                                                    "edge": ""
+                                                                                                  },
+                                                                                                  "notes": "Роль: Фасовщик. Место: Производство. Расфасовать продукцию свежего замеса; подтвердить количество и партию. После фасовки передать продукцию на маркировку."
+                                                                                                }
                                                                                               }
                                                                                             ],
                                                                                             "notes": "",
@@ -6958,7 +8254,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                       }
                                                                                     ],
                                                                                     "parent_id": "local_new_batch_part_destination",
-                                                                                    "comments": []
+                                                                                    "comments": [],
+                                                                                    "before_danila_2026_10_08": {
+                                                                                      "title": "1С: производство базы ПФ для позиций заказов с итоговым расходом материалов",
+                                                                                      "notes": "После приёмки ОТК и распределения оформить выпуск только заказного объёма базы ПФ: продукция — соответствующая база, материалы — его доля итогового фактического сырья, добавок для доведения и переработки. Складское пополнение выпускается в отдельной ветке по счёту пополнения с получателем Склад ПФ. Совокупный выход и расход по всем документам должны соответствовать факту одного замеса, без двойного списания. Сохранить документ и номер партии."
+                                                                                    }
                                                                                   },
                                                                                   {
                                                                                     "id": "local_new_batch_pf_stock_move",
@@ -7022,7 +8322,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                           }
                                                                                         ],
                                                                                         "parent_id": "local_new_batch_pf_stock_move",
-                                                                                        "comments": []
+                                                                                        "comments": [],
+                                                                                        "before_danila_2026_10_08": {
+                                                                                          "title": "1С: производство ПФ по счёту пополнения; получатель — Склад ПФ",
+                                                                                          "notes": "Документ производства на выделенный фактический объём пополнения. Продукция — нужный ПФ; получатель — Склад ПФ; основание — счёт пополнения, созданный при планировании. Материалы — соответствующая этой части доля фактического сырья, добавок и переработки. Не списывать уже учтённый расход повторно и не создавать отдельное перемещение того же выпуска. Это выпуск пополнения, а не повторное производство всей базы. Точные поля документа и способ разделения фактического расхода требует подтверждения со стороны 1С."
+                                                                                        }
                                                                                       }
                                                                                     ],
                                                                                     "task_card": {
@@ -7035,7 +8339,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                       ]
                                                                                     },
                                                                                     "parent_id": "local_new_batch_part_destination",
-                                                                                    "comments": []
+                                                                                    "comments": [],
+                                                                                    "before_screen_extension": {
+                                                                                      "id": "local_new_batch_pf_stock_move",
+                                                                                      "title": "Кладовщик: передать объём пополнения на склад ПФ",
+                                                                                      "kind": "task",
+                                                                                      "parent_id": "local_new_batch_part_destination",
+                                                                                      "child_ids": [
+                                                                                        "local_new_batch_pf_stock_account"
+                                                                                      ],
+                                                                                      "links": [
+                                                                                        "local_new_batch_pf_stock_account"
+                                                                                      ],
+                                                                                      "comments": [],
+                                                                                      "open": true,
+                                                                                      "notes": "Только выделенная масса пополнения, а не весь замес. Подтвердить фактическое количество, партии и место хранения.",
+                                                                                      "edge": "Да — пополнение ПФ",
+                                                                                      "review_status": "pending"
+                                                                                    }
                                                                                   }
                                                                                 ],
                                                                                 "main_branch_id": "f_230_4702",
@@ -7053,7 +8374,46 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                               ]
                                                                             },
                                                                             "parent_id": "quality_generate_passport",
-                                                                            "comments": []
+                                                                            "comments": [],
+                                                                            "before_danila_2026_10_08": {
+                                                                              "title": "Распределить объём принятого замеса по позициям счетов согласно плану",
+                                                                              "notes": "Использовать подтверждённые назначения: позиции заказов и счёт пополнения ПФ. Зафиксировать для каждой позиции фактическую массу и партию. Все объёмы относятся к одной базе этого замеса; не смешивать краску и смолу для затирки. Сумма распределённых объёмов равна фактическому выходу."
+                                                                            },
+                                                                            "before_screen_extension": {
+                                                                              "id": "f_227_4249",
+                                                                              "title": "Распределить объём принятого замеса по позициям счетов согласно плану",
+                                                                              "kind": "task",
+                                                                              "edge": "Партия принята",
+                                                                              "links": [
+                                                                                "local_new_batch_part_destination"
+                                                                              ],
+                                                                              "checked": {
+                                                                                "login": "admin",
+                                                                                "user": "Админ",
+                                                                                "ts": "2026-10-04T13:25:01+00:00"
+                                                                              },
+                                                                              "open": true,
+                                                                              "parent_id": "f_227_4248",
+                                                                              "child_ids": [
+                                                                                "local_new_batch_part_destination"
+                                                                              ],
+                                                                              "comments": [],
+                                                                              "notes": "Распределить фактический выход одной базы по позициям заказов и пополнению ПФ согласно плану. В ТЗ на фасовку указать, что и сколько расфасовать, включая ПФ. Пополнение ПФ сейчас без отдельного счёта. Сумма частей равна фактическому выходу; краску и смолу затирки в одном замесе не объединять.",
+                                                                              "review_status": "approved",
+                                                                              "before_danila_2026_10_08": {
+                                                                                "title": "Распределить объём принятого замеса по позициям счетов согласно плану",
+                                                                                "notes": "Использовать подтверждённые назначения: позиции заказов и счёт пополнения ПФ. Зафиксировать для каждой позиции фактическую массу и партию. Все объёмы относятся к одной базе этого замеса; не смешивать краску и смолу для затирки. Сумма распределённых объёмов равна фактическому выходу."
+                                                                              },
+                                                                              "approved_scope": "Одна база; разделение по ТЗ на фасовку, включая ПФ",
+                                                                              "approval_sources": [
+                                                                                {
+                                                                                  "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                                                  "comment_id": "AAACIF4yhr8",
+                                                                                  "author": "Данила",
+                                                                                  "date": "2026-10-08"
+                                                                                }
+                                                                              ]
+                                                                            }
                                                                           }
                                                                         ],
                                                                         "parent_id": "f_227_4248",
@@ -7093,11 +8453,56 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                   ]
                                                                 },
                                                                 "parent_id": "f_227_4243",
-                                                                "comments": []
+                                                                "comments": [],
+                                                                "before_screen_extension": {
+                                                                  "id": "f_227_4244",
+                                                                  "title": "Партия соответствует требованиям?",
+                                                                  "kind": "check",
+                                                                  "links": [
+                                                                    "f_227_4245",
+                                                                    "f_227_4248"
+                                                                  ],
+                                                                  "checked": {
+                                                                    "login": "admin",
+                                                                    "user": "Админ",
+                                                                    "ts": "2026-10-04T13:23:41+00:00"
+                                                                  },
+                                                                  "open": true,
+                                                                  "parent_id": "f_227_4243",
+                                                                  "child_ids": [
+                                                                    "f_227_4245",
+                                                                    "f_227_4248"
+                                                                  ],
+                                                                  "comments": [],
+                                                                  "notes": "Лаборатория фиксирует время начала/завершения, измеренные показатели и решение по партии. ОТК качества базы отличается от внутреннего контроля цвета колеровщиком.",
+                                                                  "review_status": "pending",
+                                                                  "edge": ""
+                                                                }
                                                               }
                                                             ],
                                                             "parent_id": "f_227_4239",
-                                                            "comments": []
+                                                            "comments": [],
+                                                            "before_screen_extension": {
+                                                              "id": "f_227_4243",
+                                                              "title": "Передать пробу партии в лабораторию ОТК",
+                                                              "kind": "task",
+                                                              "links": [
+                                                                "f_227_4244"
+                                                              ],
+                                                              "checked": {
+                                                                "login": "admin",
+                                                                "user": "Админ",
+                                                                "ts": "2026-10-04T13:23:36+00:00"
+                                                              },
+                                                              "open": true,
+                                                              "parent_id": "f_227_4239",
+                                                              "child_ids": [
+                                                                "f_227_4244"
+                                                              ],
+                                                              "comments": [],
+                                                              "review_status": "pending",
+                                                              "edge": ""
+                                                            }
                                                           }
                                                         ],
                                                         "task_card": {
@@ -7110,7 +8515,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                           ]
                                                         },
                                                         "parent_id": "mark_apply_f_227_4261",
-                                                        "comments": []
+                                                        "comments": [],
+                                                        "before_screen_extension": {
+                                                          "id": "f_227_4239",
+                                                          "title": "Замесчик: принять материалы и задание; начать замес",
+                                                          "kind": "task",
+                                                          "links": [
+                                                            "f_227_4243"
+                                                          ],
+                                                          "checked": {
+                                                            "login": "admin",
+                                                            "user": "Админ",
+                                                            "ts": "2026-10-04T13:22:05+00:00"
+                                                          },
+                                                          "open": true,
+                                                          "parent_id": "f_227_4237",
+                                                          "child_ids": [
+                                                            "f_227_4243"
+                                                          ],
+                                                          "comments": [],
+                                                          "notes": "Подтвердить фактическую ёмкость/оборудование, партии и количество материалов, время начала. Не изменять оборудование на недопустимое и не запускать неподготовленный замес.",
+                                                          "review_status": "pending",
+                                                          "edge": ""
+                                                        }
                                                       }
                                                     ],
                                                     "task_card": {
@@ -7142,7 +8569,37 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                 "text": "После подтверждения маршрута, сразу задание делаем",
                                                 "ts": "2026-10-05T11:16:42+00:00"
                                               }
-                                            ]
+                                            ],
+                                            "before_marking_workflow": {
+                                              "id": "f_227_4259",
+                                              "title": "Задание на печать стикеров",
+                                              "kind": "task",
+                                              "edge": "Нет",
+                                              "links": [
+                                                "f_227_4261"
+                                              ],
+                                              "comments": [
+                                                {
+                                                  "id": "c12fa04b4ebf5",
+                                                  "parent": null,
+                                                  "user": "Админ",
+                                                  "login": "admin",
+                                                  "text": "После подтверждения маршрута, сразу задание делаем",
+                                                  "ts": "2026-10-05T11:16:42+00:00"
+                                                }
+                                              ],
+                                              "checked": {
+                                                "login": "admin",
+                                                "user": "Админ",
+                                                "ts": "2026-10-04T13:25:26+00:00"
+                                              },
+                                              "parent_id": "f_227_4257",
+                                              "child_ids": [
+                                                "f_227_4261"
+                                              ],
+                                              "open": true,
+                                              "review_status": "pending"
+                                            }
                                           }
                                         ],
                                         "parent_id": "local_new_batch_rework_check",
@@ -7171,7 +8628,54 @@ window.LAKOM_SCHEMA_EXPORT = {
                                             "text": "Нужен метод вызова печатной формы из 1с Рецептура для производства",
                                             "ts": "2026-10-04T13:11:45+00:00"
                                           }
-                                        ]
+                                        ],
+                                        "before_screen_extension": {
+                                          "id": "f_227_4237",
+                                          "title": "Выдать задание замесчику и печатную рецептуру",
+                                          "kind": "task",
+                                          "links": [
+                                            "f_227_4239"
+                                          ],
+                                          "comments": [
+                                            {
+                                              "id": "c35a49e123378",
+                                              "parent": null,
+                                              "user": "Админ",
+                                              "login": "admin",
+                                              "text": "Нужен метод",
+                                              "ts": "2026-10-04T13:10:16+00:00"
+                                            },
+                                            {
+                                              "id": "c5ae9cc54f9c5",
+                                              "parent": "c35a49e123378",
+                                              "user": "Админ",
+                                              "login": "admin",
+                                              "text": "Рецептуры",
+                                              "ts": "2026-10-04T13:10:26+00:00"
+                                            },
+                                            {
+                                              "id": "cdebc811062ba",
+                                              "parent": null,
+                                              "user": "Админ",
+                                              "login": "admin",
+                                              "text": "Нужен метод вызова печатной формы из 1с Рецептура для производства",
+                                              "ts": "2026-10-04T13:11:45+00:00"
+                                            }
+                                          ],
+                                          "checked": {
+                                            "login": "admin",
+                                            "user": "Админ",
+                                            "ts": "2026-10-04T13:09:57+00:00"
+                                          },
+                                          "open": true,
+                                          "parent_id": "local_new_batch_rework_check",
+                                          "child_ids": [
+                                            "f_227_4239"
+                                          ],
+                                          "edge": "Нет — без переработки в замесе",
+                                          "notes": "Оператор и замесчик — один исполнитель (05.10, 47:24–47:50). Задание: оборудование/ёмкость, партия, масса, компоненты и порядок внесения, назначения по позициям и фасовкам. Печатная рецептура — привычная форма 1С. Не запускать до обеспечения материалов.\nПоказать ТЗ на фасовку по партии: назначения, количества и фасовки (05.10, 46:55–47:23).",
+                                          "review_status": "pending"
+                                        }
                                       }
                                     ],
                                     "main_branch_id": "f_227_4237",
@@ -7202,7 +8706,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                               ]
                             },
                             "parent_id": "local_new_batch_raw_available",
-                            "comments": []
+                            "comments": [],
+                            "before_screen_extension": {
+                              "id": "local_new_batch_raw_pick",
+                              "title": "Подборщик сырья на производстве: набрать компоненты по рецептуре",
+                              "kind": "task",
+                              "parent_id": "local_new_batch_raw_available",
+                              "child_ids": [
+                                "local_new_batch_rework_check"
+                              ],
+                              "links": [
+                                "local_new_batch_rework_check"
+                              ],
+                              "comments": [],
+                              "open": true,
+                              "notes": "05.10, 36:45–38:49: подборщик отмеряет компоненты, комплектует и подписывает палет под замес/оборудование. Сохранить фактические количества и партии, передать оператору. Перемещения со склада сырья выполняются только при недостатке на Производстве.",
+                              "edge": "Да",
+                              "review_status": "pending"
+                            }
                           },
                           {
                             "id": "f_227_4223",
@@ -7284,11 +8805,53 @@ window.LAKOM_SCHEMA_EXPORT = {
                                 "text": "Проверка склада Производства. Если нет, на производстве, то запрашиваем перемещение из склада Сырья",
                                 "ts": "2026-10-05T10:57:44+00:00"
                               }
-                            ]
+                            ],
+                            "before_screen_extension": {
+                              "id": "f_227_4223",
+                              "title": "Кладовщик: доставить недостающее сырьё со склада сырья на производство",
+                              "kind": "task",
+                              "links": [
+                                "f_227_4224"
+                              ],
+                              "comments": [
+                                {
+                                  "id": "c727cf1b1c37f",
+                                  "parent": null,
+                                  "user": "Админ",
+                                  "login": "admin",
+                                  "text": "Подборщик сырья. Задание на подбор сырья",
+                                  "ts": "2026-10-05T10:56:15+00:00"
+                                },
+                                {
+                                  "id": "c293638596661",
+                                  "parent": null,
+                                  "user": "Админ",
+                                  "login": "admin",
+                                  "text": "Проверка склада Производства. Если нет, на производстве, то запрашиваем перемещение из склада Сырья",
+                                  "ts": "2026-10-05T10:57:44+00:00"
+                                }
+                              ],
+                              "checked": {
+                                "login": "admin",
+                                "user": "Админ",
+                                "ts": "2026-10-04T13:09:51+00:00"
+                              },
+                              "open": true,
+                              "parent_id": "local_new_batch_raw_available",
+                              "child_ids": [
+                                "f_227_4224"
+                              ],
+                              "edge": "Нет — пополнить дефицит",
+                              "review_status": "pending"
+                            }
                           }
                         ],
                         "parent_id": "local_new_batch_recipe",
-                        "comments": []
+                        "comments": [],
+                        "before_danila_2026_10_08": {
+                          "title": "Сырьё для замеса обеспечено без запаса доведения?",
+                          "notes": "Проверить физическое наличие и склад учёта 1С с учётом резервов. Уже обеспеченное количество закрепить за замесом; переместить только дефицит. Если в источнике сырья также нет, ждать обеспечения и не запускать замес.\nЗапас доведения у замесчиков исключить из свободного остатка для основного подбора и резервирования замеса. Физически он находится на производстве; для отдельного учёта планируется виртуальный склад 1С. Потребность по рецептуре не уменьшать за счёт этого запаса. 05.10, 42:23–46:53."
+                        }
                       }
                     ],
                     "parent_id": "local_new_batch_plan_ready",
@@ -7317,7 +8880,29 @@ window.LAKOM_SCHEMA_EXPORT = {
               }
             ],
             "parent_id": "f_227_4068",
-            "comments": []
+            "comments": [],
+            "before_screen_extension": {
+              "id": "f_227_4095",
+              "title": "Вход: масса, состав, оборудование и назначения замеса определены",
+              "kind": "task",
+              "links": [
+                "local_new_batch_plan_ready"
+              ],
+              "checked": {
+                "login": "admin",
+                "user": "Админ",
+                "ts": "2026-10-04T13:09:45+00:00"
+              },
+              "open": true,
+              "parent_id": "f_227_4068",
+              "child_ids": [
+                "local_new_batch_plan_ready"
+              ],
+              "comments": [],
+              "notes": "Исполнение подтверждённого плана, а не повторное планирование. Сохранить позиции заказов, складское пополнение, партии, сроки и этап внесения переработки. Для прямого входа без утверждённого плана сначала открыть планирование.\nТип и номенклатура базы определены для всего замеса. Краска и смола для затирки не могут быть частями одного замеса; совместимость проверена в плане.",
+              "review_status": "pending",
+              "edge": ""
+            }
           }
         ],
         "notes": "",
@@ -7435,7 +9020,28 @@ window.LAKOM_SCHEMA_EXPORT = {
                             ],
                             "children": [],
                             "parent_id": "f_230_4732",
-                            "comments": []
+                            "comments": [],
+                            "before_screen_extension": {
+                              "id": "f_273_5194",
+                              "title": "Добавить объём в выбранный неначатый замес. Сохранить назначения по каждой позиции счёта; пересчитать общий состав, распределение и сроки. Начатый замес не изменять.",
+                              "kind": "task",
+                              "edge": "Да",
+                              "links": [
+                                "f_230_4736"
+                              ],
+                              "checked": {
+                                "login": "admin",
+                                "user": "Админ",
+                                "ts": "2026-10-04T13:38:26+00:00"
+                              },
+                              "parent_id": "f_230_4732",
+                              "child_ids": [
+                                "f_230_4736"
+                              ],
+                              "comments": [],
+                              "open": true,
+                              "review_status": "pending"
+                            }
                           },
                           {
                             "id": "f_273_5198",
@@ -7868,7 +9474,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                               }
                                                                                             ],
                                                                                             "parent_id": "f_273_5214",
-                                                                                            "comments": []
+                                                                                            "comments": [],
+                                                                                            "before_screen_extension": {
+                                                                                              "id": "f_230_4744",
+                                                                                              "title": "Сравнить время доступности допустимых пар. Учесть очередь оборудования, занятость ёмкости, подготовку / мойку и исполнителя, срочность, приоритет разделения замесов. Запланировать начало и окончание каждого замеса.",
+                                                                                              "kind": "task",
+                                                                                              "edge": "Да",
+                                                                                              "links": [
+                                                                                                "f_230_4748"
+                                                                                              ],
+                                                                                              "checked": {
+                                                                                                "login": "admin",
+                                                                                                "user": "Админ",
+                                                                                                "ts": "2026-10-05T10:53:05+00:00"
+                                                                                              },
+                                                                                              "parent_id": "f_273_5214",
+                                                                                              "child_ids": [
+                                                                                                "f_230_4748"
+                                                                                              ],
+                                                                                              "comments": [],
+                                                                                              "open": true,
+                                                                                              "notes": "",
+                                                                                              "review_status": "pending"
+                                                                                            }
                                                                                           },
                                                                                           {
                                                                                             "id": "planning_below_all_minima",
@@ -7966,7 +9594,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                                   }
                                                                                                 ],
                                                                                                 "parent_id": "planning_below_all_minima",
-                                                                                                "comments": []
+                                                                                                "comments": [],
+                                                                                                "before_screen_extension": {
+                                                                                                  "id": "f_273_5218",
+                                                                                                  "title": "Разделить замес на несколько меньших замесов в других емкостях.",
+                                                                                                  "kind": "task",
+                                                                                                  "edge": "Нет",
+                                                                                                  "parent_id": "f_273_5214",
+                                                                                                  "child_ids": [],
+                                                                                                  "comments": [],
+                                                                                                  "open": true,
+                                                                                                  "links": [
+                                                                                                    "f_230_4740"
+                                                                                                  ],
+                                                                                                  "notes": "Разделить по справочнику приоритетов разделения, сохранив общую массу, назначения по исходным позициям и пополнению, кратность фасовке. Затем повторно подобрать допустимую пару для каждой части. Не пересчитывать и не добавлять повторно исходную потребность. Если ни один допустимый вариант разделения не подходит, показать причину планировщику и не запускать замес; не повторять один и тот же вариант бесконечно.",
+                                                                                                  "review_status": "pending"
+                                                                                                }
                                                                                               }
                                                                                             ],
                                                                                             "parent_id": "f_273_5214",
@@ -7986,7 +9629,29 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                               }
                                                                             ],
                                                                             "parent_id": "local_plan_stock_recalculate",
-                                                                            "comments": []
+                                                                            "comments": [],
+                                                                            "before_screen_extension": {
+                                                                              "id": "f_230_4740",
+                                                                              "title": "По справочникам распределения деж и сопряжения оборудования подобрать допустимые пары «ёмкость + оборудование»",
+                                                                              "kind": "task",
+                                                                              "links": [
+                                                                                "f_273_5214"
+                                                                              ],
+                                                                              "checked": {
+                                                                                "login": "admin",
+                                                                                "user": "Админ",
+                                                                                "ts": "2026-10-04T13:57:36+00:00"
+                                                                              },
+                                                                              "parent_id": "local_batch_replenishment_invoice",
+                                                                              "child_ids": [
+                                                                                "f_273_5214"
+                                                                              ],
+                                                                              "comments": [],
+                                                                              "open": true,
+                                                                              "edge": "Пополнение ПФ включено в план",
+                                                                              "notes": "\nРазделение объёма выполняется в ветке «Нет» следующей проверки. После разделения подбор повторяется для каждой части; занятое оборудование учитывается при выборе времени, а не автоматически исключается как неподходящее.\nПри подборе учитывать продукт, плотность, рабочий объём и допустимую загрузку; неисправные пары исключить.",
+                                                                              "review_status": "pending"
+                                                                            }
                                                                           }
                                                                         ],
                                                                         "parent_id": "local_batch_replenishment_invoice",
@@ -7994,11 +9659,91 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                       }
                                                                     ],
                                                                     "parent_id": "local_pf_replenishment_min300",
-                                                                    "comments": []
+                                                                    "comments": [],
+                                                                    "before_danila_2026_10_08": {
+                                                                      "title": "Создать дополнительный счёт пополнения ПФ в Bitrix и Лакомке",
+                                                                      "notes": "После согласования добавочного объёма пополнения склада ПФ создать дополнительный счёт в Bitrix и связанный с ним счёт в Лакомке. Указать номенклатуру ПФ и количество в кг; включить позицию этого счёта в план замеса. Это один связанный объём пополнения в двух системах, а не два независимых заказа. Сохранить связь счетов и замеса. При повторном расчёте использовать уже созданный счёт без дубля. Если пополнение не выбрано или объём равен нулю, дополнительный счёт не создавать. Способ создания и синхронизации счетов между системами уточнить при реализации."
+                                                                    },
+                                                                    "before_screen_extension": {
+                                                                      "id": "local_batch_replenishment_invoice",
+                                                                      "title": "Зафиксировать пополнение ПФ в плане замеса",
+                                                                      "kind": "task",
+                                                                      "parent_id": "local_pf_replenishment_min300",
+                                                                      "child_ids": [
+                                                                        "f_230_4740"
+                                                                      ],
+                                                                      "links": [
+                                                                        "f_230_4740"
+                                                                      ],
+                                                                      "comments": [],
+                                                                      "open": true,
+                                                                      "notes": "Текущий порядок: планировщик добавляет объём пополнения ПФ без создания счёта. Сохранить базу, массу и связь с замесом. Создание отдельного счёта в Bitrix и Лакомке остаётся предложением для обсуждения, не обязательным шагом. Для пополнения ГП счёт на контрагента «Пополнение склада» нужен.",
+                                                                      "edge": "Объём пополнения согласован",
+                                                                      "review_status": "partial",
+                                                                      "before_danila_2026_10_08": {
+                                                                        "title": "Создать дополнительный счёт пополнения ПФ в Bitrix и Лакомке",
+                                                                        "notes": "После согласования добавочного объёма пополнения склада ПФ создать дополнительный счёт в Bitrix и связанный с ним счёт в Лакомке. Указать номенклатуру ПФ и количество в кг; включить позицию этого счёта в план замеса. Это один связанный объём пополнения в двух системах, а не два независимых заказа. Сохранить связь счетов и замеса. При повторном расчёте использовать уже созданный счёт без дубля. Если пополнение не выбрано или объём равен нулю, дополнительный счёт не создавать. Способ создания и синхронизации счетов между системами уточнить при реализации."
+                                                                      },
+                                                                      "approved_scope": "Текущий порядок пополнения ПФ без счёта; вариант реализации в Лакомке требует утверждения",
+                                                                      "approval_sources": [
+                                                                        {
+                                                                          "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                                          "comment_id": "AAACIF6YlTw",
+                                                                          "author": "Данила",
+                                                                          "date": "2026-10-08"
+                                                                        },
+                                                                        {
+                                                                          "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                                          "comment_id": "AAACIF4yhr4",
+                                                                          "author": "Данила",
+                                                                          "date": "2026-10-08"
+                                                                        }
+                                                                      ]
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "parent_id": "local_pf_replenishment_registry",
-                                                                "comments": []
+                                                                "comments": [],
+                                                                "before_danila_2026_10_08": {
+                                                                  "title": "Добавить согласованное пополнение ПФ от 300 кг",
+                                                                  "notes": "Учитывать потребность склада, min/max, уже запланированное пополнение и допустимую вместимость. Добавляемый складской объём должен быть не меньше 300 кг: масса заказов в эти 300 кг не входит. Если нет потребности или допустимого места для такого пополнения, не добавлять меньший объём и продолжить без пополнения. Сохранить отдельное назначение складского объёма."
+                                                                },
+                                                                "before_screen_extension": {
+                                                                  "id": "local_pf_replenishment_min300",
+                                                                  "title": "Добавить согласованное пополнение ПФ от 300 кг",
+                                                                  "kind": "task",
+                                                                  "parent_id": "local_pf_replenishment_registry",
+                                                                  "child_ids": [
+                                                                    "local_batch_replenishment_invoice"
+                                                                  ],
+                                                                  "links": [
+                                                                    "local_batch_replenishment_invoice"
+                                                                  ],
+                                                                  "comments": [],
+                                                                  "open": true,
+                                                                  "notes": "Учитывать потребность склада, min/max, уже запланированное пополнение и допустимую вместимость. Добавляемый складской объём должен быть не меньше 300 кг: масса заказов в эти 300 кг не входит. Если нет потребности или допустимого места для такого пополнения, не добавлять меньший объём и продолжить без пополнения. Сохранить отдельное назначение складского объёма.\nПополнение ПФ: однородная база, учитываются мин/макс. Для ПФ из реестра хранения в кубах — от 300 кг; отдельный счёт ПФ сейчас не создают. Автоматизация в Лакомке требует утверждения.",
+                                                                  "edge": "Да — минимум 300 кг",
+                                                                  "review_status": "partial",
+                                                                  "before_danila_2026_10_08": {
+                                                                    "title": "Добавить согласованное пополнение ПФ от 300 кг",
+                                                                    "notes": "Учитывать потребность склада, min/max, уже запланированное пополнение и допустимую вместимость. Добавляемый складской объём должен быть не меньше 300 кг: масса заказов в эти 300 кг не входит. Если нет потребности или допустимого места для такого пополнения, не добавлять меньший объём и продолжить без пополнения. Сохранить отдельное назначение складского объёма."
+                                                                  },
+                                                                  "approved_scope": "Правила однородности и порога 300 кг для ПФ в кубах",
+                                                                  "approval_sources": [
+                                                                    {
+                                                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                                      "comment_id": "AAACIF4yhr8",
+                                                                      "author": "Данила",
+                                                                      "date": "2026-10-08"
+                                                                    },
+                                                                    {
+                                                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                                      "comment_id": "AAACIF6YlTw",
+                                                                      "author": "Данила",
+                                                                      "date": "2026-10-08"
+                                                                    }
+                                                                  ]
+                                                                }
                                                               },
                                                               {
                                                                 "id": "local_pf_replenishment_any",
@@ -8038,11 +9783,53 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                 ],
                                                                 "children": [],
                                                                 "parent_id": "local_pf_replenishment_registry",
-                                                                "comments": []
+                                                                "comments": [],
+                                                                "before_danila_2026_10_08": {
+                                                                  "title": "Добавить любой согласованный объём пополнения ПФ",
+                                                                  "notes": "Объём выбирается с учётом потребности склада, min/max, ранее запланированного пополнения и допустимой вместимости замеса. Порог 300 кг не применяется. При отсутствии потребности продолжить без пополнения; сохранить отдельное назначение добавленной массы."
+                                                                },
+                                                                "before_screen_extension": {
+                                                                  "id": "local_pf_replenishment_any",
+                                                                  "title": "Добавить любой согласованный объём пополнения ПФ",
+                                                                  "kind": "task",
+                                                                  "parent_id": "local_pf_replenishment_registry",
+                                                                  "child_ids": [],
+                                                                  "links": [
+                                                                    "local_batch_replenishment_invoice"
+                                                                  ],
+                                                                  "comments": [],
+                                                                  "open": true,
+                                                                  "notes": "Объём выбирается с учётом потребности склада, min/max, ранее запланированного пополнения и допустимой вместимости замеса. Порог 300 кг не применяется. При отсутствии потребности продолжить без пополнения; сохранить отдельное назначение добавленной массы.\nПополнение ПФ: однородная база, учитываются мин/макс. Для ПФ из реестра хранения в кубах — от 300 кг; отдельный счёт ПФ сейчас не создают. Автоматизация в Лакомке требует утверждения.",
+                                                                  "edge": "Нет — без порога 300 кг",
+                                                                  "review_status": "partial",
+                                                                  "before_danila_2026_10_08": {
+                                                                    "title": "Добавить любой согласованный объём пополнения ПФ",
+                                                                    "notes": "Объём выбирается с учётом потребности склада, min/max, ранее запланированного пополнения и допустимой вместимости замеса. Порог 300 кг не применяется. При отсутствии потребности продолжить без пополнения; сохранить отдельное назначение добавленной массы."
+                                                                  },
+                                                                  "approved_scope": "Правила однородности и порога 300 кг для ПФ в кубах",
+                                                                  "approval_sources": [
+                                                                    {
+                                                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                                      "comment_id": "AAACIF4yhr8",
+                                                                      "author": "Данила",
+                                                                      "date": "2026-10-08"
+                                                                    },
+                                                                    {
+                                                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                                                      "comment_id": "AAACIF6YlTw",
+                                                                      "author": "Данила",
+                                                                      "date": "2026-10-08"
+                                                                    }
+                                                                  ]
+                                                                }
                                                               }
                                                             ],
                                                             "parent_id": "local_batch_stock_target",
-                                                            "comments": []
+                                                            "comments": [],
+                                                            "before_danila_2026_10_08": {
+                                                              "title": "ПФ на пополнение склада есть в реестре с минимальным порогом пополнения?",
+                                                              "notes": "Проверка относится к дополнительному объёму для пополнения склада ПФ, а не к потребности заказов. Для ПФ из реестра минимальное добавляемое пополнение — 300 кг."
+                                                            }
                                                           },
                                                           {
                                                             "id": "local_batch_gp_stock_plan",
@@ -8065,7 +9852,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     ],
                                                     "main_branch_id": "f_230_4740",
                                                     "parent_id": "local_plan_rework_recalculate",
-                                                    "comments": []
+                                                    "comments": [],
+                                                    "before_danila_2026_10_08": {
+                                                      "title": "Добавляем пополнение склада ПФ в этот замес?",
+                                                      "notes": "Согласованное дополнительное пополнение необязательно. Нет — перейти к подбору оборудования без создания дополнительного счёта. Да — проверить порог, согласовать массу и создать связанный счёт в Bitrix и Лакомке."
+                                                    }
                                                   }
                                                 ],
                                                 "parent_id": "local_5f255159617746bd9e46f86e07d2d037",
@@ -8077,7 +9868,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                           }
                                         ],
                                         "parent_id": "local_batch_rework_approved",
-                                        "comments": []
+                                        "comments": [],
+                                        "before_screen_extension": {
+                                          "id": "local_batch_rework_account",
+                                          "title": "Учесть партии и массу переработки; подтвердить состав и массу нового замеса",
+                                          "kind": "task",
+                                          "parent_id": "local_batch_rework_approved",
+                                          "child_ids": [
+                                            "local_batch_stock_topup_selected"
+                                          ],
+                                          "links": [
+                                            "local_batch_stock_topup_selected"
+                                          ],
+                                          "comments": [],
+                                          "open": true,
+                                          "notes": "По подтверждённому составу технолога показать отдельно новое сырьё/базу и согласованную переработку. Учитывать её фактический объём при подборе ёмкости, если переработка вносится именно в этот замес. Если она будет добавлена позже при колеровке выделенной части, сохранить это назначение и не прибавлять её к базовому замесу. Уже уменьшенную потребность повторно не вычитать. Массу переработки нельзя автоматически считать заменой ПФ один к одному без подтверждённого рецепта. Сохранить назначение партий и количества по исходным позициям; резерв согласованной переработки должен быть закреплён, без дубля ранее поставленного резерва.",
+                                          "edge": "Да — партии и масса согласованы",
+                                          "review_status": "pending"
+                                        }
                                       },
                                       {
                                         "id": "local_batch_without_rework",
@@ -8105,7 +9913,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                         ],
                                         "children": [],
                                         "parent_id": "local_batch_rework_approved",
-                                        "comments": []
+                                        "comments": [],
+                                        "before_screen_extension": {
+                                          "id": "local_batch_without_rework",
+                                          "title": "Планировать замес без переработки",
+                                          "kind": "task",
+                                          "parent_id": "local_batch_rework_approved",
+                                          "child_ids": [],
+                                          "links": [
+                                            "local_batch_stock_topup_selected"
+                                          ],
+                                          "comments": [],
+                                          "open": true,
+                                          "notes": "Использовать подтверждённую потребность в новой базе. Материал переработки в состав и доступное обеспечение не включать. Если исходный расчёт был выполнен с переработкой, а решение изменилось, вернуть массу на подтверждение технологу до утверждения плана.",
+                                          "edge": "Нет — переработку не используем",
+                                          "review_status": "pending"
+                                        }
                                       },
                                       {
                                         "id": "local_plan_rework_timer",
@@ -8167,7 +9990,11 @@ window.LAKOM_SCHEMA_EXPORT = {
                                     "text": "От 300 кг",
                                     "ts": "2026-10-05T10:48:54+00:00"
                                   }
-                                ]
+                                ],
+                                "before_danila_2026_10_08": {
+                                  "title": "Сложить совместимые объёмы ПФ под заказы или пополнение склада",
+                                  "notes": "Объединить необеспеченную потребность в совместимой базе ПФ. Сохранить массу и назначение по каждой исходной позиции. Пополнение склада добавляется отдельным следующим шагом, чтобы не учитывать его дважды.\nСовместимость означает одну технологически совместимую базу. Краска и смола для затирки в один замес не объединяются."
+                                }
                               },
                               {
                                 "id": "f_230_4748",
@@ -8229,7 +10056,53 @@ window.LAKOM_SCHEMA_EXPORT = {
                                   }
                                 ],
                                 "parent_id": "f_273_5198",
-                                "comments": []
+                                "comments": [],
+                                "before_danila_2026_10_08": {
+                                  "title": "Планировщик подтверждает замесы, очередь, оборудования.",
+                                  "notes": "Подтвердить очередь по каждому агрегату с плановыми сроками. Приоритет замеса передать в очереди кладовщика, подборщика сырья и замесчика. После подтверждения плана параллельно выдать задание на необходимые стикеры и подготовку маркированной тары; печать не должна ждать окончания замеса или ОТК. Если задание печати уже выдано, в следующих маршрутах проверить готовность, не создавать повторное. 05.10, 54:20–58:56."
+                                },
+                                "before_screen_extension": {
+                                  "id": "f_230_4748",
+                                  "title": "Сотрудник по планированию производства: подтвердить замесы и очередь",
+                                  "kind": "task",
+                                  "links": [
+                                    "f_273_5246"
+                                  ],
+                                  "parent_id": "f_230_4744",
+                                  "child_ids": [
+                                    "f_273_5246"
+                                  ],
+                                  "comments": [],
+                                  "open": true,
+                                  "notes": "Рабочее место — офис на производстве. Планировщик №1 задаёт замесы, очередь, сроки и резервы. Планировщик №2 — очередь, сроки и резервы. Права и наименования ролей настраиваются; ФИО не нужны.",
+                                  "edge": "",
+                                  "review_status": "approved",
+                                  "before_danila_2026_10_08": {
+                                    "title": "Планировщик подтверждает замесы, очередь, оборудования.",
+                                    "notes": "Подтвердить очередь по каждому агрегату с плановыми сроками. Приоритет замеса передать в очереди кладовщика, подборщика сырья и замесчика. После подтверждения плана параллельно выдать задание на необходимые стикеры и подготовку маркированной тары; печать не должна ждать окончания замеса или ОТК. Если задание печати уже выдано, в следующих маршрутах проверить готовность, не создавать повторное. 05.10, 54:20–58:56."
+                                  },
+                                  "approved_scope": "Роль, место и распределение обязанностей планировщиков",
+                                  "approval_sources": [
+                                    {
+                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                      "comment_id": "AAACIF6YlUE",
+                                      "author": "Данила",
+                                      "date": "2026-10-08"
+                                    },
+                                    {
+                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                      "comment_id": "AAACIF6YlUQ",
+                                      "author": "Данила",
+                                      "date": "2026-10-08"
+                                    },
+                                    {
+                                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                                      "comment_id": "AAACIF2Btsw",
+                                      "author": "Данила",
+                                      "date": "2026-10-08"
+                                    }
+                                  ]
+                                }
                               },
                               {
                                 "id": "local_cancel_position",
@@ -8367,7 +10240,26 @@ window.LAKOM_SCHEMA_EXPORT = {
                               }
                             ],
                             "parent_id": "f_230_4732",
-                            "comments": []
+                            "comments": [],
+                            "before_screen_extension": {
+                              "id": "f_273_5198",
+                              "title": "Создать новый план замеса под эту потребность. Совместимые позиции разных счетов можно объединить, сохранив количество для каждой позиции.",
+                              "kind": "task",
+                              "edge": "Нет",
+                              "links": [
+                                "f_230_4736"
+                              ],
+                              "checked": {
+                                "login": "admin",
+                                "user": "Админ",
+                                "ts": "2026-10-04T13:38:25+00:00"
+                              },
+                              "parent_id": "f_230_4732",
+                              "child_ids": [],
+                              "comments": [],
+                              "open": true,
+                              "review_status": "pending"
+                            }
                           }
                         ],
                         "parent_id": "f_230_4728",
@@ -8404,7 +10296,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                   "section": "Задания на расчёт"
                 },
                 "parent_id": "f_274_5232",
-                "comments": []
+                "comments": [],
+                "before_screen_extension": {
+                  "id": "local_batch_colored_pf_mass",
+                  "title": "Технолог: подтвердить массу базы ПФ по рецепту цвета",
+                  "kind": "task",
+                  "parent_id": "f_274_5232",
+                  "child_ids": [
+                    "f_230_4728"
+                  ],
+                  "links": [
+                    "f_230_4728"
+                  ],
+                  "comments": [],
+                  "open": true,
+                  "notes": "Использовать рассчитанный рецепт; при его отсутствии выдать задание технологу. Отдельно сохранить массу ПФ, пигментов и добавок. Массу конечной цветной продукции не принимать автоматически за массу базы. Учесть согласованную переработку в составе один раз. До подтверждения не утверждать массу замеса этой позиции.",
+                  "edge": "Колерованная",
+                  "review_status": "pending"
+                }
               },
               {
                 "id": "local_batch_uncolored_pf_mass",
@@ -8581,7 +10490,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                       ]
                                     },
                                     "parent_id": "local_km_gp_transfer_onec",
-                                    "comments": []
+                                    "comments": [],
+                                    "before_screen_extension": {
+                                      "id": "local_km_gp_move",
+                                      "title": "Сотрудник склада ГП: передать готовые вёдра на КМ",
+                                      "kind": "task",
+                                      "parent_id": "local_km_gp_transfer_onec",
+                                      "child_ids": [],
+                                      "links": [
+                                        "f_230_4810"
+                                      ],
+                                      "comments": [],
+                                      "open": true,
+                                      "notes": "Передать зарезервированные вёдра в нужном количестве; повторная фасовка не требуется.",
+                                      "edge": "Перемещение учтено",
+                                      "review_status": "pending"
+                                    }
                                   }
                                 ],
                                 "parent_id": "f_230_4802",
@@ -8881,7 +10805,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                           ]
                                                                         },
                                                                         "parent_id": "f_262_6522",
-                                                                        "comments": []
+                                                                        "comments": [],
+                                                                        "before_screen_extension": {
+                                                                          "id": "f_262_6521",
+                                                                          "title": "Задание кладовщику: подготовить позиции к отгрузке",
+                                                                          "kind": "task",
+                                                                          "links": [
+                                                                            "f_262_6524"
+                                                                          ],
+                                                                          "parent_id": "f_262_6522",
+                                                                          "child_ids": [
+                                                                            "f_262_6524"
+                                                                          ],
+                                                                          "comments": [],
+                                                                          "open": true,
+                                                                          "edge": "Продукция принята на ГП",
+                                                                          "notes": "Подготовить уже маркированные позиции к отгрузке. Повторную наклейку этикеток и стикеров не выполнять.",
+                                                                          "review_status": "pending"
+                                                                        }
                                                                       }
                                                                     ],
                                                                     "task_card": {
@@ -8894,11 +10835,32 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                       ]
                                                                     },
                                                                     "parent_id": "f_262_6523",
-                                                                    "comments": []
+                                                                    "comments": [],
+                                                                    "before_screen_extension": {
+                                                                      "id": "f_262_6522",
+                                                                      "title": "Задание кладовщику на перемещение на склад ГП",
+                                                                      "kind": "task",
+                                                                      "links": [
+                                                                        "f_262_6521"
+                                                                      ],
+                                                                      "parent_id": "f_262_6523",
+                                                                      "child_ids": [
+                                                                        "f_262_6521"
+                                                                      ],
+                                                                      "comments": [],
+                                                                      "open": true,
+                                                                      "notes": "Выполнить физическое перемещение продукции на склад ГП; подтвердить количество и партии. Оформление документов 1С — отдельный шаг системы.",
+                                                                      "edge": "МХ-18 оформлена",
+                                                                      "review_status": "pending"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "parent_id": "f_230_4830",
-                                                                "comments": []
+                                                                "comments": [],
+                                                                "before_danila_2026_10_08": {
+                                                                  "title": "1С: оформить МХ-18 — передачу выпущенной продукции с производства на склад ГП",
+                                                                  "notes": "Документ передачи оформляется в контексте проведённого производства. Сохранить связь с выпуском, партии и фактическое количество. Это заменяет ранее показанное отдельное перемещение выпуска; вторую учётную операцию перемещения не создавать."
+                                                                }
                                                               }
                                                             ],
                                                             "parent_id": "mark_ready_f_230_4826",
@@ -8920,7 +10882,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     ],
                                                     "main_branch_id": "mark_ready_f_230_4826",
                                                     "parent_id": "quality_km_self",
-                                                    "comments": []
+                                                    "comments": [],
+                                                    "before_marking_workflow": {
+                                                      "id": "f_230_4826",
+                                                      "title": "Подготовить этикетки и стикеры: число вёдер + 1; маркировать вёдра и арбитражный образец",
+                                                      "kind": "task",
+                                                      "edge": "Да",
+                                                      "links": [
+                                                        "f_230_4830"
+                                                      ],
+                                                      "parent_id": "f_230_4822",
+                                                      "child_ids": [
+                                                        "f_230_4830"
+                                                      ],
+                                                      "comments": [],
+                                                      "open": true,
+                                                      "notes": "Данила 06.10, часть 1, 29:12–30:34: для колерованной продукции число стикеров равно числу единиц тары плюс один. Дополнительный стикер — на арбитражный образец, а не на дополнительное ведро. Маркировка: цвет, партия, дата колеровки. После КМ повторная фасовка не нужна. Правило +1 относится к стикерам, количество этикеток — по основной таре.",
+                                                      "review_status": "pending"
+                                                    }
                                                   },
                                                   {
                                                     "id": "f_230_4878",
@@ -9003,7 +10982,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                             ],
                                                             "children": [],
                                                             "parent_id": "local_km_correction_supply",
-                                                            "comments": []
+                                                            "comments": [],
+                                                            "before_screen_extension": {
+                                                              "id": "local_km_correction_apply",
+                                                              "title": "Оператор КМ: довести цвет; записать расход и передать повторную пробу",
+                                                              "kind": "task",
+                                                              "parent_id": "local_km_correction_supply",
+                                                              "child_ids": [],
+                                                              "links": [
+                                                                "f_230_4822"
+                                                              ],
+                                                              "comments": [],
+                                                              "open": true,
+                                                              "notes": "Внести только назначенные дополнительные количества. Сохранить партии, фактический расход и комментарии по исходному заданию. Затем повторный ОТК; не повторять всю первоначальную колеровку.",
+                                                              "edge": "Да",
+                                                              "review_status": "pending"
+                                                            }
                                                           },
                                                           {
                                                             "id": "local_km_correction_move",
@@ -9068,7 +11062,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                               ]
                                                             },
                                                             "parent_id": "local_km_correction_supply",
-                                                            "comments": []
+                                                            "comments": [],
+                                                            "before_screen_extension": {
+                                                              "id": "local_km_correction_move",
+                                                              "title": "Кладовщик: доставить недостающие пигменты и добавки для доведения",
+                                                              "kind": "task",
+                                                              "parent_id": "local_km_correction_supply",
+                                                              "child_ids": [
+                                                                "local_km_correction_onec"
+                                                              ],
+                                                              "links": [
+                                                                "local_km_correction_onec"
+                                                              ],
+                                                              "comments": [],
+                                                              "open": true,
+                                                              "notes": "Со склада сырья на производство. Передать только дефицит, подтвердить фактические материалы и количества.",
+                                                              "edge": "Нет — доставить дефицит",
+                                                              "review_status": "pending"
+                                                            }
                                                           }
                                                         ],
                                                         "main_branch_id": "local_km_correction_apply",
@@ -9077,7 +11088,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                       }
                                                     ],
                                                     "parent_id": "quality_km_self",
-                                                    "comments": []
+                                                    "comments": [],
+                                                    "before_screen_extension": {
+                                                      "id": "f_230_4878",
+                                                      "title": "ОТК: указать пигменты и добавки для доведения цвета",
+                                                      "kind": "task",
+                                                      "edge": "Нет",
+                                                      "links": [
+                                                        "local_km_correction_supply"
+                                                      ],
+                                                      "parent_id": "f_230_4822",
+                                                      "child_ids": [
+                                                        "local_km_correction_supply"
+                                                      ],
+                                                      "comments": [],
+                                                      "open": true,
+                                                      "notes": "Сохранить замечания и назначенные количества по той же партии. Перед внесением проверить обеспечение материалов. Все попытки и фактические добавления входят в итоговый расход, первоначальную загрузку не повторять.",
+                                                      "review_status": "pending"
+                                                    }
                                                   },
                                                   {
                                                     "id": "local_route_jump_0fa0245eeea2",
@@ -9163,7 +11191,26 @@ window.LAKOM_SCHEMA_EXPORT = {
                                               }
                                             ],
                                             "parent_id": "f_230_4818",
-                                            "comments": []
+                                            "comments": [],
+                                            "before_screen_extension": {
+                                              "id": "f_230_4822",
+                                              "title": "Сотрудник КМ: цвет соответствует образцу?",
+                                              "kind": "check",
+                                              "links": [
+                                                "f_230_4826",
+                                                "f_230_4878"
+                                              ],
+                                              "parent_id": "f_230_4818",
+                                              "child_ids": [
+                                                "f_230_4826",
+                                                "f_230_4878"
+                                              ],
+                                              "comments": [],
+                                              "open": true,
+                                              "notes": "Внутренний контроль цвета самим исполнителем; при затруднениях — автор рецепта / главный технолог. Не подменяет лабораторную приёмку качества базы после нового замеса и не требует повторной лабораторной приёмки уже принятого ПФ. Для затирки окончательное место контроля цвета требует подтверждения. 06.10, часть 1, 27:10–27:28; 40:48–42:22; часть 2, 43:00–44:12.",
+                                              "edge": "",
+                                              "review_status": "pending"
+                                            }
                                           }
                                         ],
                                         "task_card": {
@@ -9180,7 +11227,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                       }
                                     ],
                                     "parent_id": "local_km_base_to_production_onec",
-                                    "comments": []
+                                    "comments": [],
+                                    "before_screen_extension": {
+                                      "id": "f_230_4810",
+                                      "title": "Оператор КМ: принять вёдра; подтвердить количество и партии",
+                                      "kind": "task",
+                                      "links": [
+                                        "f_230_4818"
+                                      ],
+                                      "parent_id": "local_km_base_to_production_onec",
+                                      "child_ids": [
+                                        "f_230_4818"
+                                      ],
+                                      "comments": [],
+                                      "open": true,
+                                      "notes": "Общий шаг для ГП, ПФ и нового замеса. Использовать ранее подтверждённую приёмку, если она уже выполнена. Дальше колеровать каждое ведро отдельно.",
+                                      "edge": "Подготовка ПФ завершена",
+                                      "review_status": "pending"
+                                    }
                                   }
                                 ],
                                 "parent_id": "f_230_4802",
@@ -9250,7 +11314,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                       ]
                                     },
                                     "parent_id": "local_km_new_batch_fill",
-                                    "comments": []
+                                    "comments": [],
+                                    "before_screen_extension": {
+                                      "id": "local_km_new_batch_move",
+                                      "title": "Сотрудник производства: передать вёдра новой базы на КМ",
+                                      "kind": "task",
+                                      "parent_id": "local_km_new_batch_fill",
+                                      "child_ids": [],
+                                      "links": [
+                                        "f_230_4810"
+                                      ],
+                                      "comments": [],
+                                      "open": true,
+                                      "notes": "Физическая передача внутри производства. Отдельный документ перемещения между складами 1С не нужен, если база уже учтена на Производстве. Если склад выпуска другой, учётный маршрут нужно уточнить до колеровки.",
+                                      "edge": "Вёдра наполнены",
+                                      "review_status": "pending"
+                                    }
                                   },
                                   {
                                     "id": "local_route_jump_0a23a9835871",
@@ -9279,7 +11358,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                   ]
                                 },
                                 "parent_id": "f_230_4802",
-                                "comments": []
+                                "comments": [],
+                                "before_screen_extension": {
+                                  "id": "local_km_new_batch_fill",
+                                  "title": "Фасовщик на производстве: разлить принятую базу замеса в вёдра для КМ",
+                                  "kind": "task",
+                                  "parent_id": "f_230_4802",
+                                  "child_ids": [
+                                    "local_km_new_batch_move"
+                                  ],
+                                  "links": [
+                                    "local_km_new_batch_move"
+                                  ],
+                                  "comments": [],
+                                  "open": true,
+                                  "notes": "Рабочее предположение: свежая база находится на производстве, поэтому фасовка там; конкретное место и роль для ветки КМ требуют подтверждения Данилы. Не направлять свежий замес сначала на склад ПФ без отдельной необходимости. Сохранить партию и фактическую массу вёдер. Условие: база уже выпущена и учтена на складе Производство в 1С; тогда отдельного межскладского перемещения для КМ нет.",
+                                  "edge": "Новый замес; база принята ОТК",
+                                  "review_status": "pending"
+                                }
                               }
                             ],
                             "parent_id": "local_km_pigment_reserve",
@@ -9352,7 +11448,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                           ]
                         },
                         "parent_id": "local_km_pigment_supply_check",
-                        "comments": []
+                        "comments": [],
+                        "before_screen_extension": {
+                          "id": "local_km_pigment_move",
+                          "title": "Кладовщик: доставить недостающие пигменты и добавки со склада сырья на производство",
+                          "kind": "task",
+                          "parent_id": "local_km_pigment_supply_check",
+                          "child_ids": [
+                            "local_km_pigment_transfer_onec"
+                          ],
+                          "links": [
+                            "local_km_pigment_transfer_onec"
+                          ],
+                          "comments": [],
+                          "open": true,
+                          "notes": "Передать только недостающее количество; исполнитель подтверждает получение. Если на складе сырья тоже нет материалов — показать дефицит ответственному за снабжение и ждать поступления. Не считать задание выполненным до фактической передачи.",
+                          "edge": "Нет — требуется пополнение",
+                          "review_status": "pending"
+                        }
                       }
                     ],
                     "parent_id": "f_230_4814",
@@ -9368,11 +11481,45 @@ window.LAKOM_SCHEMA_EXPORT = {
                   "section": "Задания на расчёт"
                 },
                 "parent_id": "f_230_4798",
-                "comments": []
+                "comments": [],
+                "before_screen_extension": {
+                  "id": "f_230_4814",
+                  "title": "Подтвердить рецепт цвета: для образца 1 кг использовать уже рассчитанный; для обычного объёма — задание технологу на расчёт",
+                  "kind": "task",
+                  "links": [
+                    "local_km_pigment_supply_check"
+                  ],
+                  "parent_id": "f_230_4798",
+                  "child_ids": [
+                    "local_km_pigment_supply_check"
+                  ],
+                  "comments": [],
+                  "open": true,
+                  "notes": "Сразу после выбора базы, источника и объёма — задание технологу: рассчитать / подтвердить рецепт цвета для нужной фасовки. Показать комментарии предыдущих колеровок по этой связке.\nОбразец 1 кг: использовать подтверждённый рецепт и место колеровки из предварительного выбора. Повторное самостоятельное задание на расчёт не создавать; корректировка нужна только при изменении источника, объёма или состава.",
+                  "review_status": "pending",
+                  "edge": ""
+                }
               }
             ],
             "parent_id": "f_241_5098",
-            "comments": []
+            "comments": [],
+            "before_screen_extension": {
+              "id": "f_230_4798",
+              "title": "Вход: выбраны КМ и источник базы; зафиксированы резерв, партии и количество по позициям",
+              "kind": "task",
+              "links": [
+                "f_230_4814"
+              ],
+              "parent_id": "f_241_5098",
+              "child_ids": [
+                "f_230_4814"
+              ],
+              "comments": [],
+              "open": true,
+              "notes": "Источники: готовые вёдра ГП, складской ПФ или принятая ОТК база нового замеса. Сохранить отдельно физическое место и склад учёта 1С. Если подготовка выполнена в обеспечении ПФ, использовать её факты: задания и документы ниже повторно не создавать.",
+              "review_status": "pending",
+              "edge": ""
+            }
           }
         ],
         "notes": "",
@@ -9559,7 +11706,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                           ]
                                         },
                                         "parent_id": "local_prod_gp_move",
-                                        "comments": []
+                                        "comments": [],
+                                        "before_screen_extension": {
+                                          "id": "local_prod_gp_pour",
+                                          "title": "Исполнитель на производстве: слить базу из вёдер в технологическую ёмкость",
+                                          "kind": "task",
+                                          "parent_id": "local_prod_gp_move",
+                                          "child_ids": [],
+                                          "links": [
+                                            "f_230_4908"
+                                          ],
+                                          "comments": [],
+                                          "open": true,
+                                          "notes": "Подтвердить фактическую массу и исходные партии; вёдра после перелива не считать новой тарой готового выпуска.",
+                                          "edge": "Вёдра переданы",
+                                          "review_status": "pending"
+                                        }
                                       }
                                     ],
                                     "task_card": {
@@ -9572,7 +11734,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                       ]
                                     },
                                     "parent_id": "local_prod_gp_transfer_onec",
-                                    "comments": []
+                                    "comments": [],
+                                    "before_screen_extension": {
+                                      "id": "local_prod_gp_move",
+                                      "title": "Сотрудник склада ГП: передать вёдра на производство",
+                                      "kind": "task",
+                                      "parent_id": "local_prod_gp_transfer_onec",
+                                      "child_ids": [
+                                        "local_prod_gp_pour"
+                                      ],
+                                      "links": [
+                                        "local_prod_gp_pour"
+                                      ],
+                                      "comments": [],
+                                      "open": true,
+                                      "notes": "",
+                                      "edge": "Перемещение учтено",
+                                      "review_status": "pending"
+                                    }
                                   }
                                 ],
                                 "parent_id": "local_prod_preparation_done",
@@ -9953,7 +12132,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                               ]
                                                                                             },
                                                                                             "parent_id": "f_262_6910",
-                                                                                            "comments": []
+                                                                                            "comments": [],
+                                                                                            "before_screen_extension": {
+                                                                                              "id": "f_262_6909",
+                                                                                              "title": "Задание кладовщику: подготовить позиции к отгрузке",
+                                                                                              "kind": "task",
+                                                                                              "links": [
+                                                                                                "f_262_6912"
+                                                                                              ],
+                                                                                              "parent_id": "f_262_6910",
+                                                                                              "child_ids": [
+                                                                                                "f_262_6912"
+                                                                                              ],
+                                                                                              "comments": [],
+                                                                                              "open": true,
+                                                                                              "edge": "Продукция принята на ГП",
+                                                                                              "notes": "Подготовить уже маркированные позиции к отгрузке. Повторную наклейку этикеток и стикеров не выполнять.",
+                                                                                              "review_status": "pending"
+                                                                                            }
                                                                                           }
                                                                                         ],
                                                                                         "task_card": {
@@ -9966,11 +12162,32 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                           ]
                                                                                         },
                                                                                         "parent_id": "f_262_6911",
-                                                                                        "comments": []
+                                                                                        "comments": [],
+                                                                                        "before_screen_extension": {
+                                                                                          "id": "f_262_6910",
+                                                                                          "title": "Задание кладовщику на перемещение на склад ГП",
+                                                                                          "kind": "task",
+                                                                                          "links": [
+                                                                                            "f_262_6909"
+                                                                                          ],
+                                                                                          "open": true,
+                                                                                          "parent_id": "f_262_6911",
+                                                                                          "child_ids": [
+                                                                                            "f_262_6909"
+                                                                                          ],
+                                                                                          "comments": [],
+                                                                                          "notes": "Выполнить физическое перемещение продукции на склад ГП; подтвердить количество и партии. Оформление документов 1С — отдельный шаг системы.",
+                                                                                          "edge": "МХ-18 оформлена",
+                                                                                          "review_status": "pending"
+                                                                                        }
                                                                                       }
                                                                                     ],
                                                                                     "parent_id": "f_230_4936",
-                                                                                    "comments": []
+                                                                                    "comments": [],
+                                                                                    "before_danila_2026_10_08": {
+                                                                                      "title": "1С: оформить МХ-18 — передачу выпущенной продукции с производства на склад ГП",
+                                                                                      "notes": "Документ передачи оформляется в контексте проведённого производства. Сохранить связь с выпуском, партии и фактическое количество. Это заменяет ранее показанное отдельное перемещение выпуска; вторую учётную операцию перемещения не создавать."
+                                                                                    }
                                                                                   }
                                                                                 ],
                                                                                 "parent_id": "f_230_4932",
@@ -10003,7 +12220,27 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                               ]
                                                                             },
                                                                             "parent_id": "f_230_4928",
-                                                                            "comments": []
+                                                                            "comments": [],
+                                                                            "before_marking_workflow": {
+                                                                              "id": "f_230_4932",
+                                                                              "title": "Экран «Фасовка»",
+                                                                              "kind": "task",
+                                                                              "edge": "Нет",
+                                                                              "links": [
+                                                                                "f_230_4936"
+                                                                              ],
+                                                                              "open": true,
+                                                                              "parent_id": "f_230_4928",
+                                                                              "child_ids": [
+                                                                                "f_230_4936"
+                                                                              ],
+                                                                              "comments": [],
+                                                                              "notes": "Название экрана:\nФасовка — общий экран заданий на фасовку, перефасовку и комплектацию; место выполнения (склад ПФ или производство) указано в задании.\n\nСостав экрана:\n• Список заданий и карточка: счёт / позиция, продукция, партия, масса, фасовка, тара, план/факт количества; состав комплекта для затирки.\n• Фильтры / сортировка: место фасовки, тип продукции, статус, срок, приоритет.\n• Исполнитель, статус, срок, план/факт, причина проблемы и история.\n\nТекущее задание:\nРасфасовать принятую колерованную продукцию\nРоль: Фасовщик или сотрудник склада ПФ — согласно текущему заданию и месту выполнения.\nМесто: указано в задании; неподтверждённые места требуют уточнения.\n\nВход — как здесь оказаться:\n• Из списка заданий своего рабочего места.\n• Из обеспечения счёта — открыть связанное задание позиции.\n• Задание возникает по текущему маршруту после завершения предшествующего шага; сохранить счёт/позицию/партию и исходное задание.\n\nКнопки:\n• «Взять в работу» — закрепить исполнителя и начать задание.\n• «Выполнено» — сохранить факт / решение и продолжить маршрут по существующим связям.\n• «Проблема» — указать причину в карточке; сохранить факт и приостановить задание.\n\nРезультат:\nФакт / решение и проблема видны в исходной позиции на экране обеспечения счёта и в задании. После решения проблемы возобновляется то же задание с сохранённым фактом; повторный экземпляр не создаётся. Нет оборудования / проблема рецептуры — планировщик; сырьё — Снабжение; ошибка обмена — Оператор 1С только для устранения ошибки.\n\nСогласование:\nНовые экраны, кнопки и неподтверждённые роли / места требуют утверждения.\n\nПравила процесса:\nФасовать по исходным позициям; подтвердить фактическое количество, тару и партию. Маркировка — следующим заданием.",
+                                                                              "review_status": "pending",
+                                                                              "screen_id": "packing_tasks",
+                                                                              "screen_task": "Расфасовать принятую колерованную продукцию",
+                                                                              "ui_review_status": "pending"
+                                                                            }
                                                                           },
                                                                           {
                                                                             "id": "local_prod_colored_a_release_pending",
@@ -10082,11 +12319,32 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                   ]
                                                                                 },
                                                                                 "parent_id": "local_prod_colored_a_release_pending",
-                                                                                "comments": []
+                                                                                "comments": [],
+                                                                                "before_screen_extension": {
+                                                                                  "id": "local_colored_a_to_pf",
+                                                                                  "title": "Задание сотруднику склада: передать принятый компонент А на склад ПФ для комплектации",
+                                                                                  "kind": "task",
+                                                                                  "parent_id": "local_prod_colored_a_release_pending",
+                                                                                  "child_ids": [
+                                                                                    "f_241_5194"
+                                                                                  ],
+                                                                                  "links": [
+                                                                                    "f_241_5194"
+                                                                                  ],
+                                                                                  "comments": [],
+                                                                                  "open": true,
+                                                                                  "edge": "Далее — передача на склад ПФ",
+                                                                                  "notes": "Физическая передача с производства к месту комплектации на складе ПФ. Подтвердить массу, партию и получение. Если А уже доставлен, повторную передачу не выдавать. Документ перемещения в 1С автоматически не создавать: физическое место и склад учёта различаются; необходимость учётного движения А требует подтверждения 1С.",
+                                                                                  "review_status": "pending"
+                                                                                }
                                                                               }
                                                                             ],
                                                                             "parent_id": "f_230_4928",
-                                                                            "comments": []
+                                                                            "comments": [],
+                                                                            "before_danila_2026_10_08": {
+                                                                              "title": "1С: производство колерованного ПФ (компонент А) — ждём уточнения",
+                                                                              "notes": "Предварительный шаг, не подтверждённый порядок 1С. Уточнить: нужен ли отдельный документ производства колерованного ПФ перед комплектацией? Если да: продукция — колерованный компонент А; материалы — исходный ПФ, фактические пигменты и добавки; в последующей сборке использовать уже выпущенный А без повторного списания. Если нет: где в производстве готового комплекта учесть расход колеровки? Также уточнить склад-получатель и необходимость передачи в учёте. Физически после колеровки компонент А передают на склад ПФ, там фасуют и комплектуют. До ответа этот блок не считать согласованным требованием к методу 1С."
+                                                                            }
                                                                           }
                                                                         ],
                                                                         "notes": "",
@@ -10166,7 +12424,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                 ],
                                                                                 "children": [],
                                                                                 "parent_id": "local_prod_correction_supply",
-                                                                                "comments": []
+                                                                                "comments": [],
+                                                                                "before_screen_extension": {
+                                                                                  "id": "local_prod_correction_apply",
+                                                                                  "title": "Колеровщик: довести цвет; записать расход и передать повторную пробу",
+                                                                                  "kind": "task",
+                                                                                  "parent_id": "local_prod_correction_supply",
+                                                                                  "child_ids": [],
+                                                                                  "links": [
+                                                                                    "f_230_4924"
+                                                                                  ],
+                                                                                  "comments": [],
+                                                                                  "open": true,
+                                                                                  "notes": "Внести только назначенные дополнительные количества. Сохранить партии, фактический расход и комментарии по исходному заданию. Затем повторный ОТК; не повторять всю первоначальную колеровку.",
+                                                                                  "edge": "Да",
+                                                                                  "review_status": "pending"
+                                                                                }
                                                                               },
                                                                               {
                                                                                 "id": "local_prod_correction_move",
@@ -10231,7 +12504,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                                   ]
                                                                                 },
                                                                                 "parent_id": "local_prod_correction_supply",
-                                                                                "comments": []
+                                                                                "comments": [],
+                                                                                "before_screen_extension": {
+                                                                                  "id": "local_prod_correction_move",
+                                                                                  "title": "Кладовщик: доставить недостающие пигменты и добавки для доведения",
+                                                                                  "kind": "task",
+                                                                                  "parent_id": "local_prod_correction_supply",
+                                                                                  "child_ids": [
+                                                                                    "local_prod_correction_onec"
+                                                                                  ],
+                                                                                  "links": [
+                                                                                    "local_prod_correction_onec"
+                                                                                  ],
+                                                                                  "comments": [],
+                                                                                  "open": true,
+                                                                                  "notes": "Со склада сырья на производство. Передать только дефицит, подтвердить фактические материалы и количества.",
+                                                                                  "edge": "Нет — доставить дефицит",
+                                                                                  "review_status": "pending"
+                                                                                }
                                                                               }
                                                                             ],
                                                                             "main_branch_id": "local_prod_correction_apply",
@@ -10240,7 +12530,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                           }
                                                                         ],
                                                                         "parent_id": "quality_prod_self",
-                                                                        "comments": []
+                                                                        "comments": [],
+                                                                        "before_screen_extension": {
+                                                                          "id": "f_230_4980",
+                                                                          "title": "ОТК: указать пигменты и добавки для доведения цвета",
+                                                                          "kind": "task",
+                                                                          "edge": "Нет",
+                                                                          "links": [
+                                                                            "local_prod_correction_supply"
+                                                                          ],
+                                                                          "parent_id": "f_230_4924",
+                                                                          "child_ids": [
+                                                                            "local_prod_correction_supply"
+                                                                          ],
+                                                                          "comments": [],
+                                                                          "open": true,
+                                                                          "notes": "Сохранить замечания и назначенные количества по той же партии. Перед внесением проверить обеспечение материалов. Все попытки и фактические добавления входят в итоговый расход, первоначальную загрузку не повторять.",
+                                                                          "review_status": "pending"
+                                                                        }
                                                                       },
                                                                       {
                                                                         "id": "local_route_jump_6dc76b7fda2c",
@@ -10326,7 +12633,26 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                   }
                                                                 ],
                                                                 "parent_id": "f_230_4920",
-                                                                "comments": []
+                                                                "comments": [],
+                                                                "before_screen_extension": {
+                                                                  "id": "f_230_4924",
+                                                                  "title": "Колеровщик: цвет соответствует образцу?",
+                                                                  "kind": "check",
+                                                                  "links": [
+                                                                    "f_230_4928",
+                                                                    "f_230_4980"
+                                                                  ],
+                                                                  "open": true,
+                                                                  "parent_id": "f_230_4920",
+                                                                  "child_ids": [
+                                                                    "f_230_4928",
+                                                                    "f_230_4980"
+                                                                  ],
+                                                                  "comments": [],
+                                                                  "notes": "Внутренний контроль цвета самим исполнителем; при затруднениях — автор рецепта / главный технолог. Не подменяет лабораторную приёмку качества базы после нового замеса и не требует повторной лабораторной приёмки уже принятого ПФ. Для затирки окончательное место контроля цвета требует подтверждения. 06.10, часть 1, 27:10–27:28; 40:48–42:22; часть 2, 43:00–44:12.",
+                                                                  "review_status": "pending",
+                                                                  "edge": ""
+                                                                }
                                                               }
                                                             ],
                                                             "task_card": {
@@ -10339,7 +12665,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                               ]
                                                             },
                                                             "parent_id": "mark_ready_mark_check_f_230_4932",
-                                                            "comments": []
+                                                            "comments": [],
+                                                            "before_screen_extension": {
+                                                              "id": "f_230_4920",
+                                                              "title": "Колеровщик выполняет колеровку в назначенной ёмкости. Записывает фактические пигменты, добавки и повторные внесения",
+                                                              "kind": "task",
+                                                              "links": [
+                                                                "f_230_4924"
+                                                              ],
+                                                              "open": true,
+                                                              "parent_id": "f_230_4908",
+                                                              "child_ids": [
+                                                                "f_230_4924"
+                                                              ],
+                                                              "comments": [],
+                                                              "edge": "Приёмка подтверждена",
+                                                              "notes": "\nЕсли технолог назначил переработку на колеровку, добавить её по рецепту и записать фактическую массу каждой исходной партии. Материал, уже вошедший в состав базы при замесе, повторно не учитывать.",
+                                                              "review_status": "pending"
+                                                            }
                                                           }
                                                         ],
                                                         "task_card": {
@@ -10358,11 +12701,45 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                     ],
                                                     "main_branch_id": "mark_ready_mark_check_f_230_4932",
                                                     "parent_id": "f_230_4908",
-                                                    "comments": []
+                                                    "comments": [],
+                                                    "before_marking_workflow": {
+                                                      "id": "mark_check_f_230_4932",
+                                                      "title": "Подготовить маркировку",
+                                                      "kind": "task",
+                                                      "parent_id": "f_230_4932",
+                                                      "child_ids": [
+                                                        "f_230_4936"
+                                                      ],
+                                                      "links": [
+                                                        "f_230_4936"
+                                                      ],
+                                                      "comments": [],
+                                                      "open": true,
+                                                      "notes": "",
+                                                      "review_status": "pending",
+                                                      "edge": "Продукция расфасована"
+                                                    }
                                                   }
                                                 ],
                                                 "parent_id": "local_prod_coloring_rework_transfer",
-                                                "comments": []
+                                                "comments": [],
+                                                "before_screen_extension": {
+                                                  "id": "f_230_4908",
+                                                  "title": "Исполнитель колеровки: принять подготовленную базу и материалы; подтвердить массы и партии",
+                                                  "kind": "task",
+                                                  "edge": "Материалы готовы",
+                                                  "links": [
+                                                    "f_230_4920"
+                                                  ],
+                                                  "open": true,
+                                                  "parent_id": "local_prod_coloring_rework_transfer",
+                                                  "child_ids": [
+                                                    "f_230_4920"
+                                                  ],
+                                                  "comments": [],
+                                                  "notes": "Общая приёмка после подготовки ГП, ПФ или новой базы. В ветке ПФ при согласованной переработке также принять её партии и массу. Для ГП и нового замеса проход к этой приёмке прямой. Колеровку выполнять по подтверждённому рецепту.",
+                                                  "review_status": "pending"
+                                                }
                                               }
                                             ],
                                             "parent_id": "local_prod_coloring_rework_move",
@@ -10379,7 +12756,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                           ]
                                         },
                                         "parent_id": "local_prod_coloring_rework_check",
-                                        "comments": []
+                                        "comments": [],
+                                        "before_screen_extension": {
+                                          "id": "local_prod_coloring_rework_move",
+                                          "title": "Сотрудник склада переработки: передать согласованные партии и массу на производство",
+                                          "kind": "task",
+                                          "parent_id": "local_prod_coloring_rework_check",
+                                          "child_ids": [
+                                            "local_prod_coloring_rework_transfer"
+                                          ],
+                                          "links": [
+                                            "local_prod_coloring_rework_transfer"
+                                          ],
+                                          "comments": [],
+                                          "open": true,
+                                          "notes": "Закрепить резерв под задание, если он ещё не создан. Передать только утверждённый объём, сохранить исходные партии и подтвердить фактическое получение. Если доставка уже выполнена, использовать её факт без повторного задания. При недостаче сообщить планировщику/технологу и не начинать колеровку по неподтверждённому составу.",
+                                          "edge": "Да",
+                                          "review_status": "pending"
+                                        }
                                       }
                                     ],
                                     "main_branch_id": "f_230_4908",
@@ -10434,7 +12828,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                   ]
                                 },
                                 "parent_id": "local_prod_preparation_done",
-                                "comments": []
+                                "comments": [],
+                                "before_screen_extension": {
+                                  "id": "local_prod_new_batch_prepare",
+                                  "title": "Исполнитель на производстве: выделить принятую часть замеса в ёмкость для колеровки",
+                                  "kind": "task",
+                                  "parent_id": "local_prod_preparation_done",
+                                  "child_ids": [],
+                                  "links": [
+                                    "f_230_4908"
+                                  ],
+                                  "comments": [],
+                                  "open": true,
+                                  "notes": "База уже принята ОТК. Зафиксировать массу, партию и назначение по исходным позициям. Физически доставить ёмкость к месту колеровки, если нужно. Если база уже учтена на Производстве, межскладское перемещение 1С не создавать. Колеровка в оставленной деже — отдельный существующий маршрут; здесь подготовка для колеровки в выделенной ёмкости.",
+                                  "edge": "Новый замес; база принята ОТК",
+                                  "review_status": "pending"
+                                }
                               }
                             ],
                             "parent_id": "local_prod_pigment_reserve",
@@ -10507,7 +12916,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                           ]
                         },
                         "parent_id": "local_prod_pigment_supply_check",
-                        "comments": []
+                        "comments": [],
+                        "before_screen_extension": {
+                          "id": "local_prod_pigment_move",
+                          "title": "Кладовщик: доставить недостающие пигменты и добавки со склада сырья на производство",
+                          "kind": "task",
+                          "parent_id": "local_prod_pigment_supply_check",
+                          "child_ids": [
+                            "local_prod_pigment_transfer_onec"
+                          ],
+                          "links": [
+                            "local_prod_pigment_transfer_onec"
+                          ],
+                          "comments": [],
+                          "open": true,
+                          "notes": "Передать только недостающее количество; исполнитель подтверждает получение. Если на складе сырья тоже нет материалов — показать дефицит ответственному за снабжение и ждать поступления. Не считать задание выполненным до фактической передачи.",
+                          "edge": "Нет — требуется пополнение",
+                          "review_status": "pending"
+                        }
                       }
                     ],
                     "parent_id": "f_230_4916",
@@ -10523,11 +12949,45 @@ window.LAKOM_SCHEMA_EXPORT = {
                   "section": "Задания на расчёт"
                 },
                 "parent_id": "f_230_4904",
-                "comments": []
+                "comments": [],
+                "before_screen_extension": {
+                  "id": "f_230_4916",
+                  "title": "Подтвердить рецепт: для образца 1 кг использовать уже рассчитанный; для остальных позиций — расчёт технологом до передачи базы",
+                  "kind": "task",
+                  "links": [
+                    "local_prod_pigment_supply_check"
+                  ],
+                  "open": true,
+                  "parent_id": "f_230_4904",
+                  "child_ids": [
+                    "local_prod_pigment_supply_check"
+                  ],
+                  "comments": [],
+                  "notes": "При выборе маршрута и объёма — задание технологу: рассчитать / подтвердить рецепт с учётом базы и выбранной переработки. Показать прежние комментарии по базе и цвету. Расчёт можно выполнять параллельно новому замесу, до передачи базы на колеровку.\nОбразец 1 кг: использовать подтверждённый рецепт и место колеровки из предварительного выбора. Повторное самостоятельное задание на расчёт не создавать; корректировка нужна только при изменении источника, объёма или состава.",
+                  "review_status": "pending",
+                  "edge": ""
+                }
               }
             ],
             "parent_id": "f_241_5114",
-            "comments": []
+            "comments": [],
+            "before_screen_extension": {
+              "id": "f_230_4904",
+              "title": "Вход: выбраны производство и источник базы; зафиксированы масса, цвет, партии и позиции",
+              "kind": "task",
+              "links": [
+                "f_230_4916"
+              ],
+              "open": true,
+              "parent_id": "f_241_5114",
+              "child_ids": [
+                "f_230_4916"
+              ],
+              "comments": [],
+              "notes": "Источник базы: ГП, ПФ или принятый ОТК новый замес. Согласованная переработка и фактические добавки сохраняются в рецепте, а не как отдельные проверки под картой. Использовать выполненную подготовку из обеспечения ПФ без повторных заданий и документов.",
+              "review_status": "pending",
+              "edge": ""
+            }
           }
         ],
         "notes": "",
@@ -10679,7 +13139,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                           ]
                         },
                         "parent_id": "local_defect_gp_onec_pending",
-                        "comments": []
+                        "comments": [],
+                        "before_screen_extension": {
+                          "id": "local_defect_gp_move",
+                          "title": "Кладовщик: передать согласованную продукцию на склад ГП",
+                          "kind": "task",
+                          "parent_id": "local_defect_gp_onec_pending",
+                          "child_ids": [
+                            "local_defect_gp_ready"
+                          ],
+                          "links": [
+                            "local_defect_gp_ready"
+                          ],
+                          "comments": [],
+                          "open": true,
+                          "notes": "Figma 303:6889. Подтвердить фактическое количество, партии и место хранения. Отбраковку автоматически на ГП не принимать.",
+                          "edge": "После уточнения учёта",
+                          "review_status": "pending"
+                        }
                       }
                     ],
                     "parent_id": "local_defect_gp_release_order",
@@ -10696,7 +13173,47 @@ window.LAKOM_SCHEMA_EXPORT = {
                   ]
                 },
                 "parent_id": "f_269_5098",
-                "comments": []
+                "comments": [],
+                "before_danila_2026_10_08": {
+                  "title": "Снять привязку объёма к исходному счёту; оформить пополнение ГП",
+                  "notes": "Figma 303:6860: «Расформировать счет / переместить на склад ГП». Сохранить историю исходного счёта; не удалять весь клиентский счёт из-за части продукции. Для согласованного пополнения оформить связанный счёт Bitrix/Лакомка. Смысл расформирования и порядок действий для уже учтённого возврата требуют уточнения Данилы. По исходному описанию цветная продукция на ГП — по согласованию руководства."
+                },
+                "before_screen_extension": {
+                  "id": "local_defect_gp_release_order",
+                  "title": "Снять привязку объёма к исходному счёту; оформить пополнение ГП",
+                  "kind": "task",
+                  "parent_id": "f_269_5110",
+                  "child_ids": [
+                    "local_defect_gp_onec_pending"
+                  ],
+                  "links": [
+                    "local_defect_gp_onec_pending"
+                  ],
+                  "comments": [],
+                  "open": true,
+                  "notes": "Figma 303:6860: «Расформировать счет / переместить на склад ГП». Сохранить историю исходного счёта; не удалять весь клиентский счёт из-за части продукции. Для согласованного пополнения оформить связанный счёт Bitrix/Лакомка. Смысл расформирования и порядок действий для уже учтённого возврата требуют уточнения Данилы. По исходному описанию цветная продукция на ГП — по согласованию руководства.\nДля пополнения ГП создать счёт на контрагента «Пополнение склада», далее обработка как у клиентского счёта. Инициатор — менеджер, руководитель склада или планировщик.",
+                  "edge": "На ГП",
+                  "review_status": "approved",
+                  "before_danila_2026_10_08": {
+                    "title": "Снять привязку объёма к исходному счёту; оформить пополнение ГП",
+                    "notes": "Figma 303:6860: «Расформировать счет / переместить на склад ГП». Сохранить историю исходного счёта; не удалять весь клиентский счёт из-за части продукции. Для согласованного пополнения оформить связанный счёт Bitrix/Лакомка. Смысл расформирования и порядок действий для уже учтённого возврата требуют уточнения Данилы. По исходному описанию цветная продукция на ГП — по согласованию руководства."
+                  },
+                  "approved_scope": "Пополнение ГП через счёт",
+                  "approval_sources": [
+                    {
+                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                      "comment_id": "AAACIF4yhr4",
+                      "author": "Данила",
+                      "date": "2026-10-08"
+                    },
+                    {
+                      "document": "https://docs.google.com/document/d/1Ntr---4zZwMs9tB4augJXX60sO7YnmjbJVDA0QyFlVM/edit",
+                      "comment_id": "AAACIF6YlTw",
+                      "author": "Данила",
+                      "date": "2026-10-08"
+                    }
+                  ]
+                }
               },
               {
                 "id": "f_269_5182",
@@ -10777,7 +13294,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                           ]
                         },
                         "parent_id": "local_rework_pigment_account_pending",
-                        "comments": []
+                        "comments": [],
+                        "before_screen_extension": {
+                          "id": "f_269_5150",
+                          "title": "Кладовщик склада ПФ: забрать материал и поставить на хранение переработки",
+                          "kind": "task",
+                          "links": [
+                            "f_269_5158"
+                          ],
+                          "parent_id": "local_rework_pigment_account_pending",
+                          "child_ids": [
+                            "f_269_5158"
+                          ],
+                          "comments": [],
+                          "open": true,
+                          "notes": "Актуальная основная Figma 269:5150 прямо указывает сотрудника склада ПФ. Взять из фактического места материала; для возврата — из согласованного места приёмки. Физический участок склада ПФ и склад учёта переработки в 1С не обязательно одно название: уточнить у Данилы место хранения.",
+                          "edge": "Учёт переработки оформлен",
+                          "review_status": "pending"
+                        }
                       }
                     ],
                     "parent_id": "f_269_5182",
@@ -10801,7 +13335,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                 "review_status": "pending",
                 "children": [],
                 "parent_id": "f_269_5098",
-                "comments": []
+                "comments": [],
+                "before_screen_extension": {
+                  "id": "f_269_5118",
+                  "title": "Ожидать решения; не включать материал в доступные остатки",
+                  "kind": "task",
+                  "edge": "Решение не принято",
+                  "links": [
+                    "f_269_5110"
+                  ],
+                  "parent_id": "f_269_5110",
+                  "child_ids": [],
+                  "comments": [],
+                  "open": true,
+                  "notes": "Сохранить материал и заявку без назначения в ГП или переработку. После решения повторно выбрать согласованное направление.",
+                  "review_status": "pending"
+                }
               }
             ],
             "task_card": {
@@ -10815,7 +13364,24 @@ window.LAKOM_SCHEMA_EXPORT = {
               ]
             },
             "parent_id": "f_269_5088",
-            "comments": []
+            "comments": [],
+            "before_screen_extension": {
+              "id": "f_269_5098",
+              "title": "Создать заявку: исходная продукция, масса, партия и место",
+              "kind": "task",
+              "edge": "Брак передан на рассмотрение",
+              "links": [
+                "f_269_5110"
+              ],
+              "parent_id": "local_defect_notify_otk",
+              "child_ids": [
+                "f_269_5110"
+              ],
+              "comments": [],
+              "open": true,
+              "notes": "Figma 269:5098: реестр заявок на переработку. Сохранить дату, причину брака/возврата, продукцию, базу, цвет, исходную партию, счёт, фактическую массу и местонахождение. Статус — ждёт решения; не включать в доступный остаток переработки до назначения и приёмки.",
+              "review_status": "pending"
+            }
           },
           {
             "id": "f_269_5094",
@@ -10879,7 +13445,24 @@ window.LAKOM_SCHEMA_EXPORT = {
               ]
             },
             "parent_id": "f_269_5088",
-            "comments": []
+            "comments": [],
+            "before_screen_extension": {
+              "id": "f_269_5094",
+              "title": "Принять возврат: продукция, партия, количество и причина",
+              "kind": "task",
+              "links": [
+                "local_return_onec_pending"
+              ],
+              "parent_id": "f_269_5088",
+              "child_ids": [
+                "local_return_onec_pending"
+              ],
+              "comments": [],
+              "open": true,
+              "notes": "Фактически вернувшийся объём, состояние, место приёмки и связь с исходной отгрузкой/счётом. Кто принимает возврат, проверяет качество и разрешает дальнейшее назначение — ждём уточнения Данилы. Сам факт возврата не означает доступность переработки.",
+              "edge": "Возврат",
+              "review_status": "pending"
+            }
           }
         ],
         "notes": "",
@@ -11239,7 +13822,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                       ]
                                                                     },
                                                                     "parent_id": "local_deja_f_262_6910",
-                                                                    "comments": []
+                                                                    "comments": [],
+                                                                    "before_screen_extension": {
+                                                                      "id": "local_deja_f_262_6909",
+                                                                      "title": "Задание кладовщику: подготовить позиции к отгрузке",
+                                                                      "kind": "task",
+                                                                      "links": [
+                                                                        "local_deja_f_262_6912"
+                                                                      ],
+                                                                      "parent_id": "local_deja_f_262_6910",
+                                                                      "child_ids": [
+                                                                        "local_deja_f_262_6912"
+                                                                      ],
+                                                                      "comments": [],
+                                                                      "open": true,
+                                                                      "edge": "Продукция принята на ГП",
+                                                                      "notes": "Подготовить уже маркированные позиции к отгрузке. Повторную наклейку этикеток и стикеров не выполнять.",
+                                                                      "review_status": "pending"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "task_card": {
@@ -11252,11 +13852,32 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                                   ]
                                                                 },
                                                                 "parent_id": "local_deja_f_262_6911",
-                                                                "comments": []
+                                                                "comments": [],
+                                                                "before_screen_extension": {
+                                                                  "id": "local_deja_f_262_6910",
+                                                                  "title": "Задание кладовщику на перемещение на склад ГП",
+                                                                  "kind": "task",
+                                                                  "links": [
+                                                                    "local_deja_f_262_6909"
+                                                                  ],
+                                                                  "open": true,
+                                                                  "parent_id": "local_deja_f_262_6911",
+                                                                  "child_ids": [
+                                                                    "local_deja_f_262_6909"
+                                                                  ],
+                                                                  "comments": [],
+                                                                  "notes": "Выполнить физическое перемещение продукции на склад ГП; подтвердить количество и партии. Оформление документов 1С — отдельный шаг системы.",
+                                                                  "edge": "МХ-18 оформлена",
+                                                                  "review_status": "pending"
+                                                                }
                                                               }
                                                             ],
                                                             "parent_id": "local_deja_f_230_4936",
-                                                            "comments": []
+                                                            "comments": [],
+                                                            "before_danila_2026_10_08": {
+                                                              "title": "1С: оформить МХ-18 — передачу выпущенной продукции с производства на склад ГП",
+                                                              "notes": "Документ передачи оформляется в контексте проведённого производства. Сохранить связь с выпуском, партии и фактическое количество. Это заменяет ранее показанное отдельное перемещение выпуска; вторую учётную операцию перемещения не создавать."
+                                                            }
                                                           }
                                                         ],
                                                         "parent_id": "local_deja_f_230_4932",
@@ -11289,7 +13910,27 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                       ]
                                                     },
                                                     "parent_id": "local_deja_f_230_4928",
-                                                    "comments": []
+                                                    "comments": [],
+                                                    "before_marking_workflow": {
+                                                      "id": "local_deja_f_230_4932",
+                                                      "title": "Экран «Фасовка»",
+                                                      "kind": "task",
+                                                      "edge": "Нет",
+                                                      "links": [
+                                                        "local_deja_f_230_4936"
+                                                      ],
+                                                      "open": true,
+                                                      "parent_id": "local_deja_f_230_4928",
+                                                      "child_ids": [
+                                                        "local_deja_f_230_4936"
+                                                      ],
+                                                      "comments": [],
+                                                      "notes": "Название экрана:\nФасовка — общий экран заданий на фасовку, перефасовку и комплектацию; место выполнения (склад ПФ или производство) указано в задании.\n\nСостав экрана:\n• Список заданий и карточка: счёт / позиция, продукция, партия, масса, фасовка, тара, план/факт количества; состав комплекта для затирки.\n• Фильтры / сортировка: место фасовки, тип продукции, статус, срок, приоритет.\n• Исполнитель, статус, срок, план/факт, причина проблемы и история.\n\nТекущее задание:\nРасфасовать принятую колерованную продукцию\nРоль: Фасовщик или сотрудник склада ПФ — согласно текущему заданию и месту выполнения.\nМесто: указано в задании; неподтверждённые места требуют уточнения.\n\nВход — как здесь оказаться:\n• Из списка заданий своего рабочего места.\n• Из обеспечения счёта — открыть связанное задание позиции.\n• Задание возникает по текущему маршруту после завершения предшествующего шага; сохранить счёт/позицию/партию и исходное задание.\n\nКнопки:\n• «Взять в работу» — закрепить исполнителя и начать задание.\n• «Выполнено» — сохранить факт / решение и продолжить маршрут по существующим связям.\n• «Проблема» — указать причину в карточке; сохранить факт и приостановить задание.\n\nРезультат:\nФакт / решение и проблема видны в исходной позиции на экране обеспечения счёта и в задании. После решения проблемы возобновляется то же задание с сохранённым фактом; повторный экземпляр не создаётся. Нет оборудования / проблема рецептуры — планировщик; сырьё — Снабжение; ошибка обмена — Оператор 1С только для устранения ошибки.\n\nСогласование:\nНовые экраны, кнопки и неподтверждённые роли / места требуют утверждения.\n\nПравила процесса:\nФасовать по исходным позициям; подтвердить фактическое количество, тару и партию. Маркировка — следующим заданием.",
+                                                      "review_status": "pending",
+                                                      "screen_id": "packing_tasks",
+                                                      "screen_task": "Расфасовать принятую колерованную продукцию",
+                                                      "ui_review_status": "pending"
+                                                    }
                                                   },
                                                   {
                                                     "id": "local_deja_colored_a_release_pending",
@@ -11359,11 +14000,32 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                           ]
                                                         },
                                                         "parent_id": "local_deja_colored_a_release_pending",
-                                                        "comments": []
+                                                        "comments": [],
+                                                        "before_screen_extension": {
+                                                          "id": "local_deja_colored_a_to_pf",
+                                                          "title": "Задание сотруднику склада: передать принятый компонент А на склад ПФ для комплектации",
+                                                          "kind": "task",
+                                                          "parent_id": "local_deja_colored_a_release_pending",
+                                                          "child_ids": [
+                                                            "local_deja_f_241_5194"
+                                                          ],
+                                                          "links": [
+                                                            "local_deja_f_241_5194"
+                                                          ],
+                                                          "comments": [],
+                                                          "open": true,
+                                                          "edge": "Далее — передача на склад ПФ",
+                                                          "notes": "Физическая передача с производства к месту комплектации на складе ПФ. Подтвердить массу, партию и получение. Если А уже доставлен, повторную передачу не выдавать. Документ перемещения в 1С автоматически не создавать: физическое место и склад учёта различаются; необходимость учётного движения А требует подтверждения 1С.",
+                                                          "review_status": "pending"
+                                                        }
                                                       }
                                                     ],
                                                     "parent_id": "local_deja_f_230_4928",
-                                                    "comments": []
+                                                    "comments": [],
+                                                    "before_danila_2026_10_08": {
+                                                      "title": "1С: производство колерованного ПФ (компонент А) — ждём уточнения",
+                                                      "notes": "Предварительный шаг, не подтверждённый порядок 1С. Уточнить: нужен ли отдельный документ производства колерованного ПФ перед комплектацией? Если да: продукция — колерованный компонент А; материалы — исходный ПФ, фактические пигменты и добавки; в последующей сборке использовать уже выпущенный А без повторного списания. Если нет: где в производстве готового комплекта учесть расход колеровки? Также уточнить склад-получатель и необходимость передачи в учёте. Физически после колеровки компонент А передают на склад ПФ, там фасуют и комплектуют. До ответа этот блок не считать согласованным требованием к методу 1С."
+                                                    }
                                                   }
                                                 ],
                                                 "notes": "",
@@ -11443,7 +14105,22 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                         ],
                                                         "children": [],
                                                         "parent_id": "local_deja_correction_supply",
-                                                        "comments": []
+                                                        "comments": [],
+                                                        "before_screen_extension": {
+                                                          "id": "local_deja_correction_apply",
+                                                          "title": "Колеровщик в деже: довести цвет; записать расход и передать повторную пробу",
+                                                          "kind": "task",
+                                                          "parent_id": "local_deja_correction_supply",
+                                                          "child_ids": [],
+                                                          "links": [
+                                                            "local_deja_f_230_4924"
+                                                          ],
+                                                          "comments": [],
+                                                          "open": true,
+                                                          "notes": "Внести только назначенные дополнительные количества. Сохранить партии, фактический расход и комментарии по исходному заданию. Затем повторный ОТК; не повторять всю первоначальную колеровку.",
+                                                          "edge": "Да",
+                                                          "review_status": "pending"
+                                                        }
                                                       },
                                                       {
                                                         "id": "local_deja_correction_move",
@@ -11508,7 +14185,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                           ]
                                                         },
                                                         "parent_id": "local_deja_correction_supply",
-                                                        "comments": []
+                                                        "comments": [],
+                                                        "before_screen_extension": {
+                                                          "id": "local_deja_correction_move",
+                                                          "title": "Кладовщик: доставить недостающие пигменты и добавки для доведения",
+                                                          "kind": "task",
+                                                          "parent_id": "local_deja_correction_supply",
+                                                          "child_ids": [
+                                                            "local_deja_correction_onec"
+                                                          ],
+                                                          "links": [
+                                                            "local_deja_correction_onec"
+                                                          ],
+                                                          "comments": [],
+                                                          "open": true,
+                                                          "notes": "Со склада сырья на производство. Передать только дефицит, подтвердить фактические материалы и количества.",
+                                                          "edge": "Нет — доставить дефицит",
+                                                          "review_status": "pending"
+                                                        }
                                                       }
                                                     ],
                                                     "main_branch_id": "local_deja_correction_apply",
@@ -11517,7 +14211,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                                                   }
                                                 ],
                                                 "parent_id": "quality_deja_self",
-                                                "comments": []
+                                                "comments": [],
+                                                "before_screen_extension": {
+                                                  "id": "local_deja_f_230_4980",
+                                                  "title": "ОТК: указать пигменты и добавки для доведения цвета",
+                                                  "kind": "task",
+                                                  "edge": "Нет",
+                                                  "links": [
+                                                    "local_deja_correction_supply"
+                                                  ],
+                                                  "parent_id": "local_deja_f_230_4924",
+                                                  "child_ids": [
+                                                    "local_deja_correction_supply"
+                                                  ],
+                                                  "comments": [],
+                                                  "open": true,
+                                                  "notes": "Сохранить замечания и назначенные количества по той же партии. Перед внесением проверить обеспечение материалов. Все попытки и фактические добавления входят в итоговый расход, первоначальную загрузку не повторять.",
+                                                  "review_status": "pending"
+                                                }
                                               },
                                               {
                                                 "id": "local_route_jump_8332b387f21a",
@@ -11603,7 +14314,26 @@ window.LAKOM_SCHEMA_EXPORT = {
                                           }
                                         ],
                                         "parent_id": "local_deja_f_230_4920",
-                                        "comments": []
+                                        "comments": [],
+                                        "before_screen_extension": {
+                                          "id": "local_deja_f_230_4924",
+                                          "title": "Колеровщик: цвет соответствует образцу?",
+                                          "kind": "check",
+                                          "links": [
+                                            "local_deja_f_230_4928",
+                                            "local_deja_f_230_4980"
+                                          ],
+                                          "open": true,
+                                          "parent_id": "local_deja_f_230_4920",
+                                          "child_ids": [
+                                            "local_deja_f_230_4928",
+                                            "local_deja_f_230_4980"
+                                          ],
+                                          "comments": [],
+                                          "notes": "Внутренний контроль цвета самим исполнителем; при затруднениях — автор рецепта / главный технолог. Не подменяет лабораторную приёмку качества базы после нового замеса и не требует повторной лабораторной приёмки уже принятого ПФ. Для затирки окончательное место контроля цвета требует подтверждения. 06.10, часть 1, 27:10–27:28; 40:48–42:22; часть 2, 43:00–44:12.",
+                                          "edge": "",
+                                          "review_status": "pending"
+                                        }
                                       }
                                     ],
                                     "task_card": {
@@ -11616,7 +14346,23 @@ window.LAKOM_SCHEMA_EXPORT = {
                                       ]
                                     },
                                     "parent_id": "mark_ready_mark_check_local_deja_f_230_4932",
-                                    "comments": []
+                                    "comments": [],
+                                    "before_screen_extension": {
+                                      "id": "local_deja_f_230_4920",
+                                      "title": "Колеровщик выполняет колеровку в деже; записывает фактический расход пигментов и добавок",
+                                      "kind": "task",
+                                      "links": [
+                                        "local_deja_f_230_4924"
+                                      ],
+                                      "open": true,
+                                      "parent_id": "local_deja_coloring_materials",
+                                      "child_ids": [
+                                        "local_deja_f_230_4924"
+                                      ],
+                                      "comments": [],
+                                      "edge": "Материалы готовы",
+                                      "review_status": "pending"
+                                    }
                                   }
                                 ],
                                 "task_card": {
@@ -11635,7 +14381,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                             ],
                             "main_branch_id": "mark_ready_mark_check_local_deja_f_230_4932",
                             "parent_id": "local_deja_coloring_materials",
-                            "comments": []
+                            "comments": [],
+                            "before_marking_workflow": {
+                              "id": "mark_check_local_deja_f_230_4932",
+                              "title": "Подготовить маркировку",
+                              "kind": "task",
+                              "parent_id": "local_deja_f_230_4932",
+                              "child_ids": [
+                                "local_deja_f_230_4936"
+                              ],
+                              "links": [
+                                "local_deja_f_230_4936"
+                              ],
+                              "comments": [],
+                              "open": true,
+                              "notes": "",
+                              "review_status": "pending",
+                              "edge": "Продукция расфасована"
+                            }
                           }
                         ],
                         "parent_id": "local_deja_pigment_check",
@@ -11704,7 +14467,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                           ]
                         },
                         "parent_id": "local_deja_pigment_check",
-                        "comments": []
+                        "comments": [],
+                        "before_screen_extension": {
+                          "id": "local_deja_pigment_move",
+                          "title": "Кладовщик: доставить недостающие пигменты и добавки на производство",
+                          "kind": "task",
+                          "parent_id": "local_deja_pigment_check",
+                          "child_ids": [
+                            "local_deja_pigment_transfer"
+                          ],
+                          "links": [
+                            "local_deja_pigment_transfer"
+                          ],
+                          "comments": [],
+                          "open": true,
+                          "notes": "",
+                          "edge": "Нет — пополнить",
+                          "review_status": "pending"
+                        }
                       }
                     ],
                     "parent_id": "local_deja_coloring_recipe",
@@ -11720,7 +14500,24 @@ window.LAKOM_SCHEMA_EXPORT = {
                   "section": "Задания на расчёт"
                 },
                 "parent_id": "local_deja_coloring_ready",
-                "comments": []
+                "comments": [],
+                "before_screen_extension": {
+                  "id": "local_deja_coloring_recipe",
+                  "title": "Технолог подтверждает ранее рассчитанный рецепт на массу части, оставленной в деже",
+                  "kind": "task",
+                  "parent_id": "local_deja_coloring_ready",
+                  "child_ids": [
+                    "local_deja_pigment_check"
+                  ],
+                  "links": [
+                    "local_deja_pigment_check"
+                  ],
+                  "comments": [],
+                  "open": true,
+                  "notes": "Если масса или состав изменились после распределения замеса — скорректировать рецепт. Повторное задание на расчёт без изменения исходных данных не создавать. Показать историю комментариев по базе и цвету.",
+                  "edge": "",
+                  "review_status": "pending"
+                }
               }
             ],
             "parent_id": "local_deja_coloring_route",
@@ -12309,11 +15106,6 @@ window.LAKOM_SCHEMA_EXPORT = {
       "label": "Да — в заказе есть шприцы"
     },
     {
-      "end1Id": "f_227_4155",
-      "end2Id": "f_241_5130",
-      "label": ""
-    },
-    {
       "end1Id": "f_227_4157",
       "end2Id": "f_227_4159",
       "label": ""
@@ -12336,11 +15128,6 @@ window.LAKOM_SCHEMA_EXPORT = {
     {
       "end1Id": "f_227_4169",
       "end2Id": "f_227_4171",
-      "label": ""
-    },
-    {
-      "end1Id": "f_227_4170",
-      "end2Id": "f_258_5072",
       "label": ""
     },
     {
@@ -12567,11 +15354,6 @@ window.LAKOM_SCHEMA_EXPORT = {
       "end1Id": "f_227_4064",
       "end2Id": "f_227_4105",
       "label": "ГП уже в вёдрах: без фасовки"
-    },
-    {
-      "end1Id": "f_227_4105",
-      "end2Id": "f_241_5106",
-      "label": ""
     },
     {
       "end1Id": "f_227_4061",
@@ -13669,16 +16451,6 @@ window.LAKOM_SCHEMA_EXPORT = {
       "label": ""
     },
     {
-      "end1Id": "f_241_5130",
-      "end2Id": "f_241_5114",
-      "label": "Далее → схема «Колеровка на производстве»"
-    },
-    {
-      "end1Id": "f_258_5072",
-      "end2Id": "f_258_5068",
-      "label": "Далее → схема «Изготовление колерованных шприцов»"
-    },
-    {
       "end1Id": "f_230_5078",
       "end2Id": "f_230_5038",
       "label": "Готово — Поступили: повторная проверка"
@@ -13702,11 +16474,6 @@ window.LAKOM_SCHEMA_EXPORT = {
       "end1Id": "f_241_5162",
       "end2Id": "f_241_5114",
       "label": "Далее → схема «Колеровка на производстве»"
-    },
-    {
-      "end1Id": "f_241_5106",
-      "end2Id": "f_241_5098",
-      "label": "Далее → схема «Колеровка на КМ»"
     },
     {
       "end1Id": "f_227_4087",
@@ -15507,6 +18274,21 @@ window.LAKOM_SCHEMA_EXPORT = {
       "end1Id": "local_syringe_pf_stock_account",
       "end2Id": "local_syringe_pf_stock_ready",
       "label": "Запас ПФ учтён"
+    },
+    {
+      "end1Id": "f_227_4105",
+      "end2Id": "f_230_4798",
+      "label": "Перейти к первому шагу маршрута"
+    },
+    {
+      "end1Id": "f_227_4155",
+      "end2Id": "f_230_4904",
+      "label": "Перейти к первому шагу маршрута"
+    },
+    {
+      "end1Id": "f_227_4170",
+      "end2Id": "f_227_4163",
+      "label": "Перейти к первому шагу маршрута"
     }
   ],
   "issues": [
@@ -15531,4067 +18313,6065 @@ window.LAKOM_SCHEMA_EXPORT = {
       "from": "root",
       "to": "f_227_4031",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:41:25+00:00"
     },
     "root\tf_262_6981": {
       "from": "root",
       "to": "f_262_6981",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:39+00:00"
     },
     "root\tf_257_6365": {
       "from": "root",
       "to": "f_257_6365",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "root\tf_257_6364": {
       "from": "root",
       "to": "f_257_6364",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "root\tf_258_5065": {
       "from": "root",
       "to": "f_258_5065",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "root\tf_227_4068": {
       "from": "root",
       "to": "f_227_4068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "root\tf_230_4726": {
       "from": "root",
       "to": "f_230_4726",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "root\tf_241_5098": {
       "from": "root",
       "to": "f_241_5098",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "root\tf_241_5114": {
       "from": "root",
       "to": "f_241_5114",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "root\tf_269_5088": {
       "from": "root",
       "to": "f_269_5088",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "root\tlocal_deja_coloring_route": {
       "from": "root",
       "to": "local_deja_coloring_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4031\tlocal_start_account_work": {
       "from": "f_227_4031",
       "to": "local_start_account_work",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:47:57+00:00"
     },
     "f_227_4040\tf_227_4034": {
       "from": "f_227_4040",
       "to": "f_227_4034",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4033\tf_227_4035": {
       "from": "f_227_4033",
       "to": "f_227_4035",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4034\tf_227_4038": {
       "from": "f_227_4034",
       "to": "f_227_4038",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4035\tf_227_4049": {
       "from": "f_227_4035",
       "to": "f_227_4049",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4038\tlocal_initial_gp_partial_reserve": {
       "from": "f_227_4038",
       "to": "local_initial_gp_partial_reserve",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4048\tf_227_4033": {
       "from": "f_227_4048",
       "to": "f_227_4033",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4049\tf_227_4058": {
       "from": "f_227_4049",
       "to": "f_227_4058",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4049\tf_265_5077": {
       "from": "f_227_4049",
       "to": "f_265_5077",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4058\tf_227_4063": {
       "from": "f_227_4058",
       "to": "f_227_4063",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4058\tlocal_gp_other_pack_check": {
       "from": "f_227_4058",
       "to": "local_gp_other_pack_check",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4063\tf_227_4133": {
       "from": "f_227_4063",
       "to": "f_227_4133",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_262_6981\tf_227_4054": {
       "from": "f_262_6981",
       "to": "f_227_4054",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_262_6981\tlocal_colored_grout_route": {
       "from": "f_262_6981",
       "to": "local_colored_grout_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_262_6981\tf_241_5170": {
       "from": "f_262_6981",
       "to": "f_241_5170",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_262_6981\tf_258_5068": {
       "from": "f_262_6981",
       "to": "f_258_5068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4054\tf_227_4145": {
       "from": "f_227_4054",
       "to": "f_227_4145",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4145\tf_227_4131": {
       "from": "f_227_4145",
       "to": "f_227_4131",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4145\tf_227_4147": {
       "from": "f_227_4145",
       "to": "f_227_4147",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4144\tf_227_4146": {
       "from": "f_227_4144",
       "to": "f_227_4146",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4146\tf_227_4148": {
       "from": "f_227_4146",
       "to": "f_227_4148",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4146\tf_227_4130": {
       "from": "f_227_4146",
       "to": "f_227_4130",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4148\tf_227_4152": {
       "from": "f_227_4148",
       "to": "f_227_4152",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4147\tlocal_b93b71843809415bad27c69d83255b95": {
       "from": "f_227_4147",
       "to": "local_b93b71843809415bad27c69d83255b95",
       "button": "Готово",
-      "who": "Роль: Специалист по снабжению.\nЭкран: Снабжение."
+      "who": "Роль: Специалист по снабжению.\nЭкран: Снабжение.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4131\tlocal_grout_clear_route": {
       "from": "f_227_4131",
       "to": "local_grout_clear_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4131\tf_227_4154": {
       "from": "f_227_4131",
       "to": "f_227_4154",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4154\tlocal_grout_clear_gp_kit": {
       "from": "f_227_4154",
       "to": "local_grout_clear_gp_kit",
       "button": "",
-      "who": "Автоматизация"
-    },
-    "f_227_4155\tf_241_5130": {
-      "from": "f_227_4155",
-      "to": "f_241_5130",
-      "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4157\tf_227_4159": {
       "from": "f_227_4157",
       "to": "f_227_4159",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4159\tf_227_4161": {
       "from": "f_227_4159",
       "to": "f_227_4161",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4159\tf_227_4170": {
       "from": "f_227_4159",
       "to": "f_227_4170",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4161\tf_227_4169": {
       "from": "f_227_4161",
       "to": "f_227_4169",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4169\tf_227_4171": {
       "from": "f_227_4169",
       "to": "f_227_4171",
       "button": "",
-      "who": "Автоматизация"
-    },
-    "f_227_4170\tf_258_5072": {
-      "from": "f_227_4170",
-      "to": "f_258_5072",
-      "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_241_5170\tf_230_5034": {
       "from": "f_241_5170",
       "to": "f_230_5034",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_230_5034\tf_230_5038": {
       "from": "f_230_5034",
       "to": "f_230_5038",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_230_5038\tf_262_7031": {
       "from": "f_230_5038",
       "to": "f_262_7031",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_230_5038\tf_230_5078": {
       "from": "f_230_5038",
       "to": "f_230_5078",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_262_7031\tf_262_7102": {
       "from": "f_262_7031",
       "to": "f_262_7102",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_262_7031\tf_262_7058": {
       "from": "f_262_7031",
       "to": "f_262_7058",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_262_7102\tf_262_7262": {
       "from": "f_262_7102",
       "to": "f_262_7262",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_262_7262\tmark_ready_f_262_7262": {
       "from": "f_262_7262",
       "to": "mark_ready_f_262_7262",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_230_5042\tf_230_5046": {
       "from": "f_230_5042",
       "to": "f_230_5046",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_230_5046\tf_230_5050": {
       "from": "f_230_5046",
       "to": "f_230_5050",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_230_5050\tlocal_grout_assembly_output_onec": {
       "from": "f_230_5050",
       "to": "local_grout_assembly_output_onec",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_262_7160\tf_262_7159": {
       "from": "f_262_7160",
       "to": "f_262_7159",
       "button": "Готово",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_262_7159\tlocal_c4fc033279a04f0c8b11f7929854de1e": {
       "from": "f_262_7159",
       "to": "local_c4fc033279a04f0c8b11f7929854de1e",
       "button": "Готово",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_258_5068\tf_227_4163": {
       "from": "f_258_5068",
       "to": "f_227_4163",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4163\tlocal_syringe_material_check": {
       "from": "f_227_4163",
       "to": "local_syringe_material_check",
       "button": "Подтвердить расчёт",
-      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт."
+      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_257_6365\tf_227_4050": {
       "from": "f_257_6365",
       "to": "f_227_4050",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4050\tf_227_4075": {
       "from": "f_227_4050",
       "to": "f_227_4075",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4050\tf_271_5169": {
       "from": "f_227_4050",
       "to": "f_271_5169",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4075\tf_227_4094": {
       "from": "f_227_4075",
       "to": "f_227_4094",
       "button": "Подтвердить решение",
-      "who": "Роль: Химик-технолог / роли по приоритету.\nЭкран: Переработка — Задания."
+      "who": "Роль: Химик-технолог / роли по приоритету.\nЭкран: Переработка — Задания.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4094\tf_227_4096": {
       "from": "f_227_4094",
       "to": "f_227_4096",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4094\tf_227_4101": {
       "from": "f_227_4094",
       "to": "f_227_4101",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4096\tf_227_4097": {
       "from": "f_227_4096",
       "to": "f_227_4097",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4097\tf_227_4098": {
       "from": "f_227_4097",
       "to": "f_227_4098",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4098\tf_227_4099": {
       "from": "f_227_4098",
       "to": "f_227_4099",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4098\tf_227_4100": {
       "from": "f_227_4098",
       "to": "f_227_4100",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4099\tf_227_4107": {
       "from": "f_227_4099",
       "to": "f_227_4107",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4107\tf_241_5154": {
       "from": "f_227_4107",
       "to": "f_241_5154",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4100\tf_241_5050": {
       "from": "f_227_4100",
       "to": "f_241_5050",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4101\tf_227_4119": {
       "from": "f_227_4101",
       "to": "f_227_4119",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_271_5169\tf_300_6438": {
       "from": "f_271_5169",
       "to": "f_300_6438",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_271_5169\tf_227_4198": {
       "from": "f_271_5169",
       "to": "f_227_4198",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4198\tf_227_4102": {
       "from": "f_227_4198",
       "to": "f_227_4102",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4102\tf_227_4104": {
       "from": "f_227_4102",
       "to": "f_227_4104",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4104\tf_227_4059": {
       "from": "f_227_4104",
       "to": "f_227_4059",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4104\tf_227_4060": {
       "from": "f_227_4104",
       "to": "f_227_4060",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4060\tf_227_4065": {
       "from": "f_227_4060",
       "to": "f_227_4065",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4060\tf_227_4203": {
       "from": "f_227_4060",
       "to": "f_227_4203",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4060\tf_227_4132": {
       "from": "f_227_4060",
       "to": "f_227_4132",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4065\tf_227_4106": {
       "from": "f_227_4065",
       "to": "f_227_4106",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4106\tf_241_5162": {
       "from": "f_227_4106",
       "to": "f_241_5162",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4203\tlocal_colored_plaster_gp_reserve": {
       "from": "f_227_4203",
       "to": "local_colored_plaster_gp_reserve",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4203\tlocal_plaster_new_batch_route": {
       "from": "f_227_4203",
       "to": "local_plaster_new_batch_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4059\tf_227_4064": {
       "from": "f_227_4059",
       "to": "f_227_4064",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4059\tf_227_4061": {
       "from": "f_227_4059",
       "to": "f_227_4061",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4064\tf_227_4105": {
       "from": "f_227_4064",
       "to": "f_227_4105",
       "button": "",
-      "who": "Автоматизация"
-    },
-    "f_227_4105\tf_241_5106": {
-      "from": "f_227_4105",
-      "to": "f_241_5106",
-      "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4061\tlocal_colored_km_pf_reserve": {
       "from": "f_227_4061",
       "to": "local_colored_km_pf_reserve",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_271_5173\tf_305_6994": {
       "from": "f_271_5173",
       "to": "f_305_6994",
       "button": "Подтвердить расчёт",
-      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт."
+      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4044\tlocal_gp_sticker_required": {
       "from": "f_227_4044",
       "to": "local_gp_sticker_required",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4081\tmark_ready_f_227_4081": {
       "from": "f_227_4081",
       "to": "mark_ready_f_227_4081",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4076\tf_227_4092": {
       "from": "f_227_4076",
       "to": "f_227_4092",
       "button": "Готово",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4092\tf_227_4093": {
       "from": "f_227_4092",
       "to": "f_227_4093",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4045\tf_227_4077": {
       "from": "f_227_4045",
       "to": "f_227_4077",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4077\tmark_ready_f_227_4077": {
       "from": "f_227_4077",
       "to": "mark_ready_f_227_4077",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4084\tlocal_repacking_gp_production_transfer": {
       "from": "f_227_4084",
       "to": "local_repacking_gp_production_transfer",
       "button": "Готово",
-      "who": "Роль: Кладовщик — передача; Фасовщик — приёмка.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — передача; Фасовщик — приёмка.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4090\tlocal_repacking_parallel_outputs": {
       "from": "f_227_4090",
       "to": "local_repacking_parallel_outputs",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4089\tlocal_repacking_prepare_ready": {
       "from": "f_227_4089",
       "to": "local_repacking_prepare_ready",
       "button": "Готово",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4046\tf_227_4078": {
       "from": "f_227_4046",
       "to": "f_227_4078",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4078\tmark_ready_f_227_4078": {
       "from": "f_227_4078",
       "to": "mark_ready_f_227_4078",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4123\tf_227_4125": {
       "from": "f_227_4123",
       "to": "f_227_4125",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4123\tf_227_4188": {
       "from": "f_227_4123",
       "to": "f_227_4188",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_258_5065\tlocal_pf_supply_type": {
       "from": "f_258_5065",
       "to": "local_pf_supply_type",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:47:57+00:00"
     },
     "f_227_4079\tmark_ready_f_227_4079": {
       "from": "f_227_4079",
       "to": "mark_ready_f_227_4079",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4222\tf_227_4221": {
       "from": "f_227_4222",
       "to": "f_227_4221",
       "button": "Готово",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4221\tf_227_4229": {
       "from": "f_227_4221",
       "to": "f_227_4229",
       "button": "Готово",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4228\tpilot_pf_gp_mh18": {
       "from": "f_227_4228",
       "to": "pilot_pf_gp_mh18",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4068\tf_227_4095": {
       "from": "f_227_4068",
       "to": "f_227_4095",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:40+00:00"
     },
     "f_227_4095\tlocal_new_batch_plan_ready": {
       "from": "f_227_4095",
       "to": "local_new_batch_plan_ready",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_227_4223\tf_227_4224": {
       "from": "f_227_4223",
       "to": "f_227_4224",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4239\tf_227_4243": {
       "from": "f_227_4239",
       "to": "f_227_4243",
       "button": "Готово",
-      "who": "Роль: Замесчик.\nЭкран: Замесы."
+      "who": "Роль: Замесчик.\nЭкран: Замесы.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4243\tf_227_4244": {
       "from": "f_227_4243",
       "to": "f_227_4244",
       "button": "Готово",
-      "who": "Роль: Замесчик.\nЭкран: Замесы."
+      "who": "Роль: Замесчик.\nЭкран: Замесы.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4244\tf_227_4245": {
       "from": "f_227_4244",
       "to": "f_227_4245",
       "button": "Назначить доведение",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4244\tf_227_4248": {
       "from": "f_227_4244",
       "to": "f_227_4248",
       "button": "Принять партию",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4244\tlocal_quality_unfixable_defect_route": {
       "from": "f_227_4244",
       "to": "local_quality_unfixable_defect_route",
       "button": "Исправить нельзя",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4245\tlocal_new_batch_extra_available": {
       "from": "f_227_4245",
       "to": "local_new_batch_extra_available",
       "button": "Готово — Доведение назначено",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4248\tquality_generate_passport": {
       "from": "f_227_4248",
       "to": "quality_generate_passport",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4702\tlocal_new_batch_grout_type": {
       "from": "f_230_4702",
       "to": "local_new_batch_grout_type",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_227_4249\tlocal_new_batch_part_destination": {
       "from": "f_227_4249",
       "to": "local_new_batch_part_destination",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4257\tlocal_resume_coloring_after_batch": {
       "from": "f_227_4257",
       "to": "local_resume_coloring_after_batch",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_227_4259\tmark_ready_f_227_4259": {
       "from": "f_227_4259",
       "to": "mark_ready_f_227_4259",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_227_4261\tequipment_wash_decision": {
       "from": "f_227_4261",
       "to": "equipment_wash_decision",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4264\tf_227_4263": {
       "from": "f_227_4264",
       "to": "f_227_4263",
       "button": "Готово",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4263\tf_227_4267": {
       "from": "f_227_4263",
       "to": "f_227_4267",
       "button": "Готово",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4266\tf_227_4264": {
       "from": "f_227_4266",
       "to": "f_227_4264",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4726\tf_274_5232": {
       "from": "f_230_4726",
       "to": "f_274_5232",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4728\tf_230_4732": {
       "from": "f_230_4728",
       "to": "f_230_4732",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4732\tf_273_5194": {
       "from": "f_230_4732",
       "to": "f_273_5194",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4732\tf_273_5198": {
       "from": "f_230_4732",
       "to": "f_273_5198",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4744\tlocal_plan_final_validate": {
       "from": "f_230_4744",
       "to": "local_plan_final_validate",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_274_5232\tlocal_batch_colored_pf_mass": {
       "from": "f_274_5232",
       "to": "local_batch_colored_pf_mass",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_274_5232\tlocal_batch_uncolored_pf_mass": {
       "from": "f_274_5232",
       "to": "local_batch_uncolored_pf_mass",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_241_5098\tf_230_4798": {
       "from": "f_241_5098",
       "to": "f_230_4798",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4798\tf_230_4814": {
       "from": "f_230_4798",
       "to": "f_230_4814",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4814\tlocal_km_pigment_supply_check": {
       "from": "f_230_4814",
       "to": "local_km_pigment_supply_check",
       "button": "Подтвердить расчёт",
-      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт."
+      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_230_4802\tlocal_km_gp_transfer_onec": {
       "from": "f_230_4802",
       "to": "local_km_gp_transfer_onec",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4802\tlocal_km_base_to_production_onec": {
       "from": "f_230_4802",
       "to": "local_km_base_to_production_onec",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4802\tlocal_km_new_batch_fill": {
       "from": "f_230_4802",
       "to": "local_km_new_batch_fill",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4810\tf_230_4818": {
       "from": "f_230_4810",
       "to": "f_230_4818",
       "button": "Готово",
-      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_230_4818\tf_230_4822": {
       "from": "f_230_4818",
       "to": "f_230_4822",
       "button": "Готово",
-      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_230_4822\tquality_km_self": {
       "from": "f_230_4822",
       "to": "quality_km_self",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4822\tquality_km_lab": {
       "from": "f_230_4822",
       "to": "quality_km_lab",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4826\tmark_ready_f_230_4826": {
       "from": "f_230_4826",
       "to": "mark_ready_f_230_4826",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4830\tf_262_6523": {
       "from": "f_230_4830",
       "to": "f_262_6523",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_262_6522\tf_262_6521": {
       "from": "f_262_6522",
       "to": "f_262_6521",
       "button": "Готово",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_262_6523\tf_262_6522": {
       "from": "f_262_6523",
       "to": "f_262_6522",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_262_6521\tf_262_6524": {
       "from": "f_262_6521",
       "to": "f_262_6524",
       "button": "Готово",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_230_4878\tlocal_km_correction_supply": {
       "from": "f_230_4878",
       "to": "local_km_correction_supply",
       "button": "Готово",
-      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_241_5114\tf_230_4904": {
       "from": "f_241_5114",
       "to": "f_230_4904",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4904\tf_230_4916": {
       "from": "f_230_4904",
       "to": "f_230_4916",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4916\tlocal_prod_pigment_supply_check": {
       "from": "f_230_4916",
       "to": "local_prod_pigment_supply_check",
       "button": "Подтвердить расчёт",
-      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт."
+      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_230_4912\tlocal_prod_coloring_rework_check": {
       "from": "f_230_4912",
       "to": "local_prod_coloring_rework_check",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4920\tf_230_4924": {
       "from": "f_230_4920",
       "to": "f_230_4924",
       "button": "Готово",
-      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_230_4924\tquality_prod_self": {
       "from": "f_230_4924",
       "to": "quality_prod_self",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4924\tquality_prod_lab": {
       "from": "f_230_4924",
       "to": "quality_prod_lab",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4928\tf_230_4932": {
       "from": "f_230_4928",
       "to": "f_230_4932",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4928\tlocal_prod_colored_a_release_pending": {
       "from": "f_230_4928",
       "to": "local_prod_colored_a_release_pending",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_230_4936\tf_262_6911": {
       "from": "f_230_4936",
       "to": "f_262_6911",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_262_6910\tf_262_6909": {
       "from": "f_262_6910",
       "to": "f_262_6909",
       "button": "Готово",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_262_6911\tf_262_6910": {
       "from": "f_262_6911",
       "to": "f_262_6910",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_262_6909\tf_262_6912": {
       "from": "f_262_6909",
       "to": "f_262_6912",
       "button": "Готово",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_230_4980\tlocal_prod_correction_supply": {
       "from": "f_230_4980",
       "to": "local_prod_correction_supply",
       "button": "Готово",
-      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_repacking_remainder_destination\tlocal_2072f40c1e824f81b2482a3720797b08": {
       "from": "local_repacking_remainder_destination",
       "to": "local_2072f40c1e824f81b2482a3720797b08",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_repacking_remainder_destination\tlocal_14565bca119a4b0a8cb1781e02cad8a7": {
       "from": "local_repacking_remainder_destination",
       "to": "local_14565bca119a4b0a8cb1781e02cad8a7",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_repacking_remainder_destination\tlocal_repacking_no_remainder": {
       "from": "local_repacking_remainder_destination",
       "to": "local_repacking_no_remainder",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_purchased_product_route\tf_227_4123": {
       "from": "local_purchased_product_route",
       "to": "f_227_4123",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_300_6438\tf_271_5173": {
       "from": "f_300_6438",
       "to": "f_271_5173",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_300_6438\tf_300_6454": {
       "from": "f_300_6438",
       "to": "f_300_6454",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_300_6454\tlocal_sample_missing_base_recipe": {
       "from": "f_300_6454",
       "to": "local_sample_missing_base_recipe",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "f_305_6994\tlocal_sample_reserved_source": {
       "from": "f_305_6994",
       "to": "local_sample_reserved_source",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_colored_km_pf_reserve\tlocal_colored_km_pf_supply": {
       "from": "local_colored_km_pf_reserve",
       "to": "local_colored_km_pf_supply",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_large_batch_color_allocation\tlocal_keep_largest_colored_base_in_deja": {
       "from": "local_large_batch_color_allocation",
       "to": "local_keep_largest_colored_base_in_deja",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_large_batch_color_allocation\tlocal_other_colored_base_container": {
       "from": "local_large_batch_color_allocation",
       "to": "local_other_colored_base_container",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_resume_coloring_after_batch\tlocal_sample_fresh_batch_destination": {
       "from": "local_resume_coloring_after_batch",
       "to": "local_sample_fresh_batch_destination",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_resume_coloring_after_batch\tlocal_large_batch_color_allocation": {
       "from": "local_resume_coloring_after_batch",
       "to": "local_large_batch_color_allocation",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_sample_missing_base_recipe\tlocal_sample_new_batch_route": {
       "from": "local_sample_missing_base_recipe",
       "to": "local_sample_new_batch_route",
       "button": "Подтвердить расчёт",
-      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт."
+      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_deja_coloring_route\tlocal_deja_coloring_ready": {
       "from": "local_deja_coloring_route",
       "to": "local_deja_coloring_ready",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_deja_coloring_ready\tlocal_deja_coloring_recipe": {
       "from": "local_deja_coloring_ready",
       "to": "local_deja_coloring_recipe",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_deja_coloring_recipe\tlocal_deja_pigment_check": {
       "from": "local_deja_coloring_recipe",
       "to": "local_deja_pigment_check",
       "button": "Подтвердить расчёт",
-      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт."
+      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_deja_f_230_4920\tlocal_deja_f_230_4924": {
       "from": "local_deja_f_230_4920",
       "to": "local_deja_f_230_4924",
       "button": "Готово",
-      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_deja_f_230_4924\tquality_deja_self": {
       "from": "local_deja_f_230_4924",
       "to": "quality_deja_self",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_deja_f_230_4924\tquality_deja_lab": {
       "from": "local_deja_f_230_4924",
       "to": "quality_deja_lab",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_deja_f_230_4928\tlocal_deja_f_230_4932": {
       "from": "local_deja_f_230_4928",
       "to": "local_deja_f_230_4932",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_deja_f_230_4928\tlocal_deja_colored_a_release_pending": {
       "from": "local_deja_f_230_4928",
       "to": "local_deja_colored_a_release_pending",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_deja_f_230_4936\tlocal_deja_f_262_6911": {
       "from": "local_deja_f_230_4936",
       "to": "local_deja_f_262_6911",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_deja_f_262_6910\tlocal_deja_f_262_6909": {
       "from": "local_deja_f_262_6910",
       "to": "local_deja_f_262_6909",
       "button": "Готово",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_deja_f_262_6911\tlocal_deja_f_262_6910": {
       "from": "local_deja_f_262_6911",
       "to": "local_deja_f_262_6910",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_deja_f_262_6909\tlocal_deja_f_262_6912": {
       "from": "local_deja_f_262_6909",
       "to": "local_deja_f_262_6912",
       "button": "Готово",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_deja_f_230_4980\tlocal_deja_correction_supply": {
       "from": "local_deja_f_230_4980",
       "to": "local_deja_correction_supply",
       "button": "Готово",
-      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_grout_clear_route\tf_227_4144": {
       "from": "local_grout_clear_route",
       "to": "f_227_4144",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_grout_clear_gp_kit\tlocal_grout_clear_gp_reserve": {
       "from": "local_grout_clear_gp_kit",
       "to": "local_grout_clear_gp_reserve",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_grout_base_ready\tlocal_grout_base_color": {
       "from": "local_grout_base_ready",
       "to": "local_grout_base_color",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_grout_base_syringes\tf_227_4155": {
       "from": "local_grout_base_syringes",
       "to": "f_227_4155",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_grout_base_syringes\tf_227_4157": {
       "from": "local_grout_base_syringes",
       "to": "f_227_4157",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_colored_grout_route\tlocal_grout_base_syringes": {
       "from": "local_colored_grout_route",
       "to": "local_grout_base_syringes",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_syringe_material_check\tlocal_syringe_paste_mix": {
       "from": "local_syringe_material_check",
       "to": "local_syringe_paste_mix",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_syringe_material_check\tlocal_syringe_material_move": {
       "from": "local_syringe_material_check",
       "to": "local_syringe_material_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_syringe_material_move\tlocal_syringe_material_transfer": {
       "from": "local_syringe_material_move",
       "to": "local_syringe_material_transfer",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_syringe_paste_mix\tf_227_4165": {
       "from": "local_syringe_paste_mix",
       "to": "f_227_4165",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ; при отсутствии — Колеровщик.\nЭкран: Колеровка."
+      "who": "Роль: Сотрудник склада ПФ; при отсутствии — Колеровщик.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_syringe_labels\tmark_ready_local_syringe_labels": {
       "from": "local_syringe_labels",
       "to": "mark_ready_local_syringe_labels",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_syringe_production\tlocal_syringe_output_allocation": {
       "from": "local_syringe_production",
       "to": "local_syringe_output_allocation",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:41+00:00"
     },
     "local_14565bca119a4b0a8cb1781e02cad8a7\tlocal_repacking_remainder_pf_onec": {
       "from": "local_14565bca119a4b0a8cb1781e02cad8a7",
       "to": "local_repacking_remainder_pf_onec",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_repacking_samples_labels\tmark_ready_local_repacking_samples_labels": {
       "from": "local_repacking_samples_labels",
       "to": "mark_ready_local_repacking_samples_labels",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_repacking_samples_warehouse\tlocal_repacking_samples_done": {
       "from": "local_repacking_samples_warehouse",
       "to": "local_repacking_samples_done",
       "button": "Готово",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_repacking_samples_production\tlocal_repacking_samples_transfer": {
       "from": "local_repacking_samples_production",
       "to": "local_repacking_samples_transfer",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_repacking_samples_transfer\tlocal_repacking_samples_warehouse": {
       "from": "local_repacking_samples_transfer",
       "to": "local_repacking_samples_warehouse",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_repacking_remainder_pf_onec\tlocal_repacking_remainder_pf_done": {
       "from": "local_repacking_remainder_pf_onec",
       "to": "local_repacking_remainder_pf_done",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_repacking_main_production\tlocal_repacking_output_onec": {
       "from": "local_repacking_main_production",
       "to": "local_repacking_output_onec",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_pf_supply_type\tlocal_pf_supply_grout": {
       "from": "local_pf_supply_type",
       "to": "local_pf_supply_grout",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_pf_supply_type\tlocal_pf_supply_color": {
       "from": "local_pf_supply_type",
       "to": "local_pf_supply_color",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_pf_supply_grout\tlocal_grout_base_ready": {
       "from": "local_pf_supply_grout",
       "to": "local_grout_base_ready",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_pf_supply_color\tf_227_4079": {
       "from": "local_pf_supply_color",
       "to": "f_227_4079",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_pf_supply_color\tlocal_pf_supply_coloring_place": {
       "from": "local_pf_supply_color",
       "to": "local_pf_supply_coloring_place",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_pf_supply_coloring_place\tlocal_pf_to_km_physical": {
       "from": "local_pf_supply_coloring_place",
       "to": "local_pf_to_km_physical",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_pf_supply_coloring_place\tlocal_pf_to_prod_physical": {
       "from": "local_pf_supply_coloring_place",
       "to": "local_pf_to_prod_physical",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_km_base_to_production_onec\tf_230_4810": {
       "from": "local_km_base_to_production_onec",
       "to": "f_230_4810",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_colored_a_to_pf\tf_241_5194": {
       "from": "local_colored_a_to_pf",
       "to": "f_241_5194",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_deja_colored_a_to_pf\tlocal_deja_f_241_5194": {
       "from": "local_deja_colored_a_to_pf",
       "to": "local_deja_f_241_5194",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_pf_to_km_physical\tlocal_pf_to_km_onec": {
       "from": "local_pf_to_km_physical",
       "to": "local_pf_to_km_onec",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_pf_to_prod_physical\tlocal_pf_to_prod_onec": {
       "from": "local_pf_to_prod_physical",
       "to": "local_pf_to_prod_onec",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_prod_preparation_done\tlocal_prod_gp_transfer_onec": {
       "from": "local_prod_preparation_done",
       "to": "local_prod_gp_transfer_onec",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_prod_preparation_done\tf_230_4912": {
       "from": "local_prod_preparation_done",
       "to": "f_230_4912",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_prod_preparation_done\tlocal_prod_new_batch_prepare": {
       "from": "local_prod_preparation_done",
       "to": "local_prod_new_batch_prepare",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_sample_reserved_source\tlocal_sample_gp_place": {
       "from": "local_sample_reserved_source",
       "to": "local_sample_gp_place",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_sample_reserved_source\tlocal_sample_pf_supply": {
       "from": "local_sample_reserved_source",
       "to": "local_sample_pf_supply",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_sample_gp_place\tf_300_6524": {
       "from": "local_sample_gp_place",
       "to": "f_300_6524",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_sample_gp_place\tf_300_6530": {
       "from": "local_sample_gp_place",
       "to": "f_300_6530",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_sample_pf_supply\tlocal_sample_pf_coloring_destination": {
       "from": "local_sample_pf_supply",
       "to": "local_sample_pf_coloring_destination",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_km_gp_transfer_onec\tlocal_km_gp_move": {
       "from": "local_km_gp_transfer_onec",
       "to": "local_km_gp_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_km_new_batch_fill\tlocal_km_new_batch_move": {
       "from": "local_km_new_batch_fill",
       "to": "local_km_new_batch_move",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_prod_gp_transfer_onec\tlocal_prod_gp_move": {
       "from": "local_prod_gp_transfer_onec",
       "to": "local_prod_gp_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_prod_gp_move\tlocal_prod_gp_pour": {
       "from": "local_prod_gp_move",
       "to": "local_prod_gp_pour",
       "button": "Готово",
-      "who": "Роль: Кладовщик.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_km_pigment_supply_check\tlocal_km_pigment_reserve": {
       "from": "local_km_pigment_supply_check",
       "to": "local_km_pigment_reserve",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_km_pigment_supply_check\tlocal_km_pigment_move": {
       "from": "local_km_pigment_supply_check",
       "to": "local_km_pigment_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_km_pigment_reserve\tf_230_4802": {
       "from": "local_km_pigment_reserve",
       "to": "f_230_4802",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_km_pigment_move\tlocal_km_pigment_transfer_onec": {
       "from": "local_km_pigment_move",
       "to": "local_km_pigment_transfer_onec",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_prod_pigment_supply_check\tlocal_prod_pigment_reserve": {
       "from": "local_prod_pigment_supply_check",
       "to": "local_prod_pigment_reserve",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_prod_pigment_supply_check\tlocal_prod_pigment_move": {
       "from": "local_prod_pigment_supply_check",
       "to": "local_prod_pigment_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_prod_pigment_reserve\tlocal_prod_preparation_done": {
       "from": "local_prod_pigment_reserve",
       "to": "local_prod_preparation_done",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_prod_pigment_move\tlocal_prod_pigment_transfer_onec": {
       "from": "local_prod_pigment_move",
       "to": "local_prod_pigment_transfer_onec",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_batch_colored_pf_mass\tf_230_4728": {
       "from": "local_batch_colored_pf_mass",
       "to": "f_230_4728",
       "button": "Подтвердить расчёт",
-      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт."
+      "who": "Роль: Оператор ПК.\nЭкран: Колеровка.\nРаздел: Задания на расчёт.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_pf_replenishment_registry\tlocal_pf_replenishment_min300": {
       "from": "local_pf_replenishment_registry",
       "to": "local_pf_replenishment_min300",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_pf_replenishment_registry\tlocal_pf_replenishment_any": {
       "from": "local_pf_replenishment_registry",
       "to": "local_pf_replenishment_any",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_pf_replenishment_min300\tlocal_batch_replenishment_invoice": {
       "from": "local_pf_replenishment_min300",
       "to": "local_batch_replenishment_invoice",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_batch_rework_approved\tlocal_batch_rework_account": {
       "from": "local_batch_rework_approved",
       "to": "local_batch_rework_account",
       "button": "Подтвердить решение",
-      "who": "Роль: Химик-технолог / роли по приоритету.\nЭкран: Переработка — Задания."
+      "who": "Роль: Химик-технолог / роли по приоритету.\nЭкран: Переработка — Задания.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_batch_rework_approved\tlocal_batch_without_rework": {
       "from": "local_batch_rework_approved",
       "to": "local_batch_without_rework",
       "button": "Подтвердить решение",
-      "who": "Роль: Химик-технолог / роли по приоритету.\nЭкран: Переработка — Задания."
+      "who": "Роль: Химик-технолог / роли по приоритету.\nЭкран: Переработка — Задания.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_prod_coloring_rework_check\tlocal_prod_coloring_rework_move": {
       "from": "local_prod_coloring_rework_check",
       "to": "local_prod_coloring_rework_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_prod_coloring_rework_move\tlocal_prod_coloring_rework_transfer": {
       "from": "local_prod_coloring_rework_move",
       "to": "local_prod_coloring_rework_transfer",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ; при занятости — оператор погрузчика производства по команде технолога или начальника смены.\nЭкран: Задания склада."
+      "who": "Роль: Сотрудник склада ПФ; при занятости — оператор погрузчика производства по команде технолога или начальника смены.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_prod_coloring_rework_transfer\tf_230_4908": {
       "from": "local_prod_coloring_rework_transfer",
       "to": "f_230_4908",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_plan_ready\tlocal_new_batch_recipe": {
       "from": "local_new_batch_plan_ready",
       "to": "local_new_batch_recipe",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_plan_ready\tf_241_5090": {
       "from": "local_new_batch_plan_ready",
       "to": "f_241_5090",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_recipe\tlocal_new_batch_raw_available": {
       "from": "local_new_batch_recipe",
       "to": "local_new_batch_raw_available",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_raw_available\tlocal_new_batch_raw_pick": {
       "from": "local_new_batch_raw_available",
       "to": "local_new_batch_raw_pick",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_raw_available\tf_227_4223": {
       "from": "local_new_batch_raw_available",
       "to": "f_227_4223",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_rework_check\tlocal_new_batch_rework_move": {
       "from": "local_new_batch_rework_check",
       "to": "local_new_batch_rework_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_rework_check\tf_227_4237": {
       "from": "local_new_batch_rework_check",
       "to": "f_227_4237",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_rework_move\tlocal_new_batch_rework_onec": {
       "from": "local_new_batch_rework_move",
       "to": "local_new_batch_rework_onec",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ; при занятости — оператор погрузчика производства по команде технолога или начальника смены.\nЭкран: Задания склада."
+      "who": "Роль: Сотрудник склада ПФ; при занятости — оператор погрузчика производства по команде технолога или начальника смены.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_new_batch_extra_available\tlocal_new_batch_apply_correction": {
       "from": "local_new_batch_extra_available",
       "to": "local_new_batch_apply_correction",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_extra_available\tlocal_new_batch_extra_pick": {
       "from": "local_new_batch_extra_available",
       "to": "local_new_batch_extra_pick",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:56:36+00:00"
     },
     "local_new_batch_extra_move\tlocal_new_batch_extra_onec": {
       "from": "local_new_batch_extra_move",
       "to": "local_new_batch_extra_onec",
       "button": "Готово",
-      "who": "Роль: Оператор погрузчика склада; при отсутствии — Руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Оператор погрузчика склада; при отсутствии — Руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_new_batch_part_destination\tf_230_4702": {
       "from": "local_new_batch_part_destination",
       "to": "f_230_4702",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_part_destination\tlocal_new_batch_pf_stock_move": {
       "from": "local_new_batch_part_destination",
       "to": "local_new_batch_pf_stock_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_pf_stock_move\tlocal_new_batch_pf_stock_account": {
       "from": "local_new_batch_pf_stock_move",
       "to": "local_new_batch_pf_stock_account",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_new_batch_pf_stock_account\tlocal_new_batch_pf_stock_ready": {
       "from": "local_new_batch_pf_stock_account",
       "to": "local_new_batch_pf_stock_ready",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_fill_production\tf_227_4266": {
       "from": "local_new_batch_fill_production",
       "to": "f_227_4266",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_batch_replenishment_invoice\tlocal_plan_stock_recalculate": {
       "from": "local_batch_replenishment_invoice",
       "to": "local_plan_stock_recalculate",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_new_batch_grout_type\tf_227_4257": {
       "from": "local_new_batch_grout_type",
       "to": "f_227_4257",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_batch_stock_topup_selected\tlocal_batch_stock_target": {
       "from": "local_batch_stock_topup_selected",
       "to": "local_batch_stock_target",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_grout_assembly_output_onec\tf_262_7160": {
       "from": "local_grout_assembly_output_onec",
       "to": "f_262_7160",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_repacking_output_onec\tf_227_4089": {
       "from": "local_repacking_output_onec",
       "to": "f_227_4089",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_deja_pigment_check\tlocal_deja_coloring_materials": {
       "from": "local_deja_pigment_check",
       "to": "local_deja_coloring_materials",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_deja_pigment_check\tlocal_deja_pigment_move": {
       "from": "local_deja_pigment_check",
       "to": "local_deja_pigment_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_deja_pigment_move\tlocal_deja_pigment_transfer": {
       "from": "local_deja_pigment_move",
       "to": "local_deja_pigment_transfer",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_prod_colored_a_release_pending\tlocal_colored_a_to_pf": {
       "from": "local_prod_colored_a_release_pending",
       "to": "local_colored_a_to_pf",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_deja_colored_a_release_pending\tlocal_deja_colored_a_to_pf": {
       "from": "local_deja_colored_a_release_pending",
       "to": "local_deja_colored_a_to_pf",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_km_correction_supply\tlocal_km_correction_apply": {
       "from": "local_km_correction_supply",
       "to": "local_km_correction_apply",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_km_correction_supply\tlocal_km_correction_move": {
       "from": "local_km_correction_supply",
       "to": "local_km_correction_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_km_correction_move\tlocal_km_correction_onec": {
       "from": "local_km_correction_move",
       "to": "local_km_correction_onec",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_prod_correction_supply\tlocal_prod_correction_apply": {
       "from": "local_prod_correction_supply",
       "to": "local_prod_correction_apply",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_prod_correction_supply\tlocal_prod_correction_move": {
       "from": "local_prod_correction_supply",
       "to": "local_prod_correction_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_prod_correction_move\tlocal_prod_correction_onec": {
       "from": "local_prod_correction_move",
       "to": "local_prod_correction_onec",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_deja_correction_supply\tlocal_deja_correction_apply": {
       "from": "local_deja_correction_supply",
       "to": "local_deja_correction_apply",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_deja_correction_supply\tlocal_deja_correction_move": {
       "from": "local_deja_correction_supply",
       "to": "local_deja_correction_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_deja_correction_move\tlocal_deja_correction_onec": {
       "from": "local_deja_correction_move",
       "to": "local_deja_correction_onec",
       "button": "Готово",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_gp_sticker_required\tf_227_4076": {
       "from": "local_gp_sticker_required",
       "to": "f_227_4076",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "local_gp_sticker_required\tf_227_4081": {
       "from": "local_gp_sticker_required",
       "to": "f_227_4081",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "pilot_pf_gp_mh18\tf_227_4222": {
       "from": "pilot_pf_gp_mh18",
       "to": "f_227_4222",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "mark_ready_f_262_7262\tf_230_5042": {
       "from": "mark_ready_f_262_7262",
       "to": "f_230_5042",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Маркировка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "mark_ready_f_227_4078\tf_227_4087": {
       "from": "mark_ready_f_227_4078",
       "to": "f_227_4087",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "mark_ready_f_230_4826\tf_230_4830": {
       "from": "mark_ready_f_230_4826",
       "to": "f_230_4830",
       "button": "Готово",
-      "who": "Роль: Колеровщик КМ.\nЭкран: Маркировка."
+      "who": "Роль: Колеровщик КМ.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "mark_check_f_230_4932\tmark_ready_mark_check_f_230_4932": {
       "from": "mark_check_f_230_4932",
       "to": "mark_ready_mark_check_f_230_4932",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "mark_check_local_deja_f_230_4932\tmark_ready_mark_check_local_deja_f_230_4932": {
       "from": "mark_check_local_deja_f_230_4932",
       "to": "mark_ready_mark_check_local_deja_f_230_4932",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:42+00:00"
     },
     "quality_km_self\tf_230_4826": {
       "from": "quality_km_self",
       "to": "f_230_4826",
       "button": "Готово",
-      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "quality_km_self\tf_230_4878": {
       "from": "quality_km_self",
       "to": "f_230_4878",
       "button": "На доведение",
-      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "quality_prod_self\tf_230_4928": {
       "from": "quality_prod_self",
       "to": "f_230_4928",
       "button": "Готово",
-      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "quality_prod_self\tf_230_4980": {
       "from": "quality_prod_self",
       "to": "f_230_4980",
       "button": "На доведение",
-      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "quality_deja_self\tlocal_deja_f_230_4928": {
       "from": "quality_deja_self",
       "to": "local_deja_f_230_4928",
       "button": "Готово",
-      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "quality_deja_self\tlocal_deja_f_230_4980": {
       "from": "quality_deja_self",
       "to": "local_deja_f_230_4980",
       "button": "На доведение",
-      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "quality_generate_passport\tf_227_4249": {
       "from": "quality_generate_passport",
       "to": "f_227_4249",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "equipment_wash_decision\tequipment_wash_task": {
       "from": "equipment_wash_decision",
       "to": "equipment_wash_task",
       "button": "Инициировать мойку",
-      "who": "Роль: Начальник смены.\nЭкран: Мойка."
+      "who": "Роль: Начальник смены.\nЭкран: Мойка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "equipment_wash_decision\tequipment_wash_waiting": {
       "from": "equipment_wash_decision",
       "to": "equipment_wash_waiting",
       "button": "Нет",
-      "who": "Роль: Начальник смены.\nЭкран: Мойка."
+      "who": "Роль: Начальник смены.\nЭкран: Мойка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "equipment_wash_task\tequipment_wash_available": {
       "from": "equipment_wash_task",
       "to": "equipment_wash_available",
       "button": "Готово",
-      "who": "Роль: Мойщик.\nЭкран: Мойка."
+      "who": "Роль: Мойщик.\nЭкран: Мойка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "local_repacking_parallel_outputs\tlocal_repacking_remainder_destination": {
       "from": "local_repacking_parallel_outputs",
       "to": "local_repacking_remainder_destination",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_initial_gp_partial_reserve\tf_227_4048": {
       "from": "local_initial_gp_partial_reserve",
       "to": "f_227_4048",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4038\tlocal_route_jump_e0f6b0e136bd": {
       "from": "f_227_4038",
       "to": "local_route_jump_e0f6b0e136bd",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "f_227_4133\tf_258_5065": {
       "from": "f_227_4133",
       "to": "f_258_5065",
       "button": "",
-      "who": "Автоматизация"
-    },
-    "f_241_5130\tf_241_5114": {
-      "from": "f_241_5130",
-      "to": "f_241_5114",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "f_258_5072\tf_258_5068": {
-      "from": "f_258_5072",
-      "to": "f_258_5068",
-      "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_230_5078\tf_230_5038": {
       "from": "f_230_5078",
       "to": "f_230_5038",
       "button": "Готово",
-      "who": "Роль: Специалист по снабжению.\nЭкран: Снабжение."
+      "who": "Роль: Специалист по снабжению.\nЭкран: Снабжение.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_258_5076\tf_241_5170": {
       "from": "f_258_5076",
       "to": "f_241_5170",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_230_5126\tf_227_4165": {
       "from": "f_230_5126",
       "to": "f_227_4165",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ; при отсутствии — Колеровщик.\nЭкран: Колеровка."
+      "who": "Роль: Сотрудник склада ПФ; при отсутствии — Колеровщик.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_241_5154\tf_241_5114": {
       "from": "f_241_5154",
       "to": "f_241_5114",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_241_5162\tf_241_5114": {
       "from": "f_241_5162",
       "to": "f_241_5114",
       "button": "",
-      "who": "Автоматизация"
-    },
-    "f_241_5106\tf_241_5098": {
-      "from": "f_241_5106",
-      "to": "f_241_5098",
-      "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4087\tf_227_4076": {
       "from": "f_227_4087",
       "to": "f_227_4076",
       "button": "Готово",
-      "who": "Роль: Кладовщик; этикеровщик выдаёт этикетки.\nЭкран: Маркировка."
+      "who": "Роль: Кладовщик; этикеровщик выдаёт этикетки.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_227_4125\tlocal_route_jump_029c19082d8d": {
       "from": "f_227_4125",
       "to": "local_route_jump_029c19082d8d",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "f_241_5090\tf_230_4726": {
       "from": "f_241_5090",
       "to": "f_230_4726",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_273_5246\tf_227_4068": {
       "from": "f_273_5246",
       "to": "f_227_4068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_273_5198\tf_230_4736": {
       "from": "f_273_5198",
       "to": "f_230_4736",
       "button": "Пересчитать",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:37+00:00"
     },
     "f_241_5194\tf_241_5170": {
       "from": "f_241_5194",
       "to": "f_241_5170",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_gp_other_pack_check\tlocal_general_gp_repacking_route": {
       "from": "local_gp_other_pack_check",
       "to": "local_general_gp_repacking_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:10:54+00:00"
     },
     "local_gp_other_pack_check\tlocal_general_new_batch_route": {
       "from": "local_gp_other_pack_check",
       "to": "local_general_new_batch_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:10:54+00:00"
     },
     "f_300_6524\tf_241_5098": {
       "from": "f_300_6524",
       "to": "f_241_5098",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_300_6530\tf_241_5114": {
       "from": "f_300_6530",
       "to": "f_241_5114",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4198\tf_227_4060": {
       "from": "f_227_4198",
       "to": "f_227_4060",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4061\tf_227_4132": {
       "from": "f_227_4061",
       "to": "f_227_4132",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_colored_plaster_gp_reserve\tlocal_route_jump_3bfa3d120d22": {
       "from": "local_colored_plaster_gp_reserve",
       "to": "local_route_jump_3bfa3d120d22",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_other_colored_base_container\tlocal_route_jump_9234472839d5": {
       "from": "local_other_colored_base_container",
       "to": "local_route_jump_9234472839d5",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_300_6454\tf_271_5173": {
       "from": "f_300_6454",
       "to": "f_271_5173",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_sample_new_batch_route\tf_227_4068": {
       "from": "local_sample_new_batch_route",
       "to": "f_227_4068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_sample_new_batch_route\tlocal_route_jump_a3301c3faacd": {
       "from": "local_sample_new_batch_route",
       "to": "local_route_jump_a3301c3faacd",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_plaster_new_batch_route\tf_227_4068": {
       "from": "local_plaster_new_batch_route",
       "to": "f_227_4068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_plaster_new_batch_route\tlocal_route_jump_19ebbe5fc252": {
       "from": "local_plaster_new_batch_route",
       "to": "local_route_jump_19ebbe5fc252",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_deja_f_241_5194\tf_241_5170": {
       "from": "local_deja_f_241_5194",
       "to": "f_241_5170",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_keep_largest_colored_base_in_deja\tlocal_route_jump_a634ff6c9098": {
       "from": "local_keep_largest_colored_base_in_deja",
       "to": "local_route_jump_a634ff6c9098",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4040\tlocal_route_jump_8a027ae32814": {
       "from": "f_227_4040",
       "to": "local_route_jump_8a027ae32814",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "f_227_4033\tlocal_route_jump_c0d5413d27ec": {
       "from": "f_227_4033",
       "to": "local_route_jump_c0d5413d27ec",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "f_227_4035\tlocal_route_jump_9f555ceb21bd": {
       "from": "f_227_4035",
       "to": "local_route_jump_9f555ceb21bd",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "f_227_4144\tf_227_4130": {
       "from": "f_227_4144",
       "to": "f_227_4130",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4154\tlocal_grout_clear_route": {
       "from": "f_227_4154",
       "to": "local_grout_clear_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_grout_clear_gp_kit\tlocal_grout_clear_route": {
       "from": "local_grout_clear_gp_kit",
       "to": "local_grout_clear_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_grout_clear_gp_reserve\tf_227_4157": {
       "from": "local_grout_clear_gp_reserve",
       "to": "f_227_4157",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4130\tf_227_4068": {
       "from": "f_227_4130",
       "to": "f_227_4068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4130\tlocal_route_jump_d1c94384ebb5": {
       "from": "f_227_4130",
       "to": "local_route_jump_d1c94384ebb5",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_grout_base_color\tlocal_route_jump_27ab3e857ff5": {
       "from": "local_grout_base_color",
       "to": "local_route_jump_27ab3e857ff5",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_grout_base_color\tlocal_route_jump_5e792f7015c1": {
       "from": "local_grout_base_color",
       "to": "local_route_jump_5e792f7015c1",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_syringe_material_transfer\tlocal_syringe_paste_mix": {
       "from": "local_syringe_material_transfer",
       "to": "local_syringe_paste_mix",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_grout_clear_route\tf_227_4157": {
       "from": "local_grout_clear_route",
       "to": "f_227_4157",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4152\tf_258_5065": {
       "from": "f_227_4152",
       "to": "f_258_5065",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_pf_to_km_onec\tlocal_route_jump_4ca445979b1f": {
       "from": "local_pf_to_km_onec",
       "to": "local_route_jump_4ca445979b1f",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_pf_to_prod_onec\tlocal_route_jump_7655c012fe23": {
       "from": "local_pf_to_prod_onec",
       "to": "local_route_jump_7655c012fe23",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "f_227_4106\tf_258_5065": {
       "from": "f_227_4106",
       "to": "f_258_5065",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4107\tf_258_5065": {
       "from": "f_227_4107",
       "to": "f_258_5065",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_colored_km_pf_supply\tf_258_5065": {
       "from": "local_colored_km_pf_supply",
       "to": "f_258_5065",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_colored_km_pf_supply\tlocal_route_jump_4c4259d7f7e5": {
       "from": "local_colored_km_pf_supply",
       "to": "local_route_jump_4c4259d7f7e5",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_sample_pf_supply\tf_258_5065": {
       "from": "local_sample_pf_supply",
       "to": "f_258_5065",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_sample_pf_coloring_destination\tlocal_route_jump_db8d8fc9844a": {
       "from": "local_sample_pf_coloring_destination",
       "to": "local_route_jump_db8d8fc9844a",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_sample_pf_coloring_destination\tlocal_route_jump_b1bb632030e6": {
       "from": "local_sample_pf_coloring_destination",
       "to": "local_route_jump_b1bb632030e6",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_km_gp_move\tf_230_4810": {
       "from": "local_km_gp_move",
       "to": "f_230_4810",
       "button": "Готово",
-      "who": "Роль: Кладовщик.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_km_new_batch_move\tf_230_4810": {
       "from": "local_km_new_batch_move",
       "to": "f_230_4810",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_prod_gp_pour\tf_230_4908": {
       "from": "local_prod_gp_pour",
       "to": "f_230_4908",
       "button": "Готово",
-      "who": "Роль: Фасовщик или Колеровщик — по назначению начальника смены.\nЭкран: Колеровка."
+      "who": "Роль: Фасовщик или Колеровщик — по назначению начальника смены.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_prod_new_batch_prepare\tf_230_4908": {
       "from": "local_prod_new_batch_prepare",
       "to": "f_230_4908",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_km_pigment_transfer_onec\tlocal_km_pigment_reserve": {
       "from": "local_km_pigment_transfer_onec",
       "to": "local_km_pigment_reserve",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_prod_pigment_transfer_onec\tlocal_prod_pigment_reserve": {
       "from": "local_prod_pigment_transfer_onec",
       "to": "local_prod_pigment_reserve",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_batch_uncolored_pf_mass\tf_230_4728": {
       "from": "local_batch_uncolored_pf_mass",
       "to": "f_230_4728",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_pf_replenishment_any\tlocal_batch_replenishment_invoice": {
       "from": "local_pf_replenishment_any",
       "to": "local_batch_replenishment_invoice",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_prod_coloring_rework_check\tf_230_4908": {
       "from": "local_prod_coloring_rework_check",
       "to": "f_230_4908",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4224\tlocal_new_batch_raw_pick": {
       "from": "f_227_4224",
       "to": "local_new_batch_raw_pick",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_new_batch_rework_onec\tf_227_4237": {
       "from": "local_new_batch_rework_onec",
       "to": "f_227_4237",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_new_batch_extra_onec\tlocal_new_batch_apply_correction": {
       "from": "local_new_batch_extra_onec",
       "to": "local_new_batch_apply_correction",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_new_batch_apply_correction\tf_227_4243": {
       "from": "local_new_batch_apply_correction",
       "to": "f_227_4243",
       "button": "Готово",
-      "who": "Роль: Замесчик.\nЭкран: Замесы — исходная карточка задания, статус «Доведение»."
+      "who": "Роль: Замесчик.\nЭкран: Замесы — исходная карточка задания, статус «Доведение».",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_sample_fresh_batch_destination\tlocal_route_jump_630d49cdeb59": {
       "from": "local_sample_fresh_batch_destination",
       "to": "local_route_jump_630d49cdeb59",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_sample_fresh_batch_destination\tlocal_route_jump_74c778161734": {
       "from": "local_sample_fresh_batch_destination",
       "to": "local_route_jump_74c778161734",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_new_batch_grout_type\tlocal_route_jump_841a9a56f5bd": {
       "from": "local_new_batch_grout_type",
       "to": "local_route_jump_841a9a56f5bd",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_batch_without_rework\tlocal_batch_stock_topup_selected": {
       "from": "local_batch_without_rework",
       "to": "local_batch_stock_topup_selected",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_batch_stock_topup_selected\tf_230_4740": {
       "from": "local_batch_stock_topup_selected",
       "to": "f_230_4740",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_262_7058\tf_258_5068": {
       "from": "f_262_7058",
       "to": "f_258_5068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_repacking_prepare_ready\tf_227_4093": {
       "from": "local_repacking_prepare_ready",
       "to": "f_227_4093",
       "button": "Готово",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_deja_pigment_transfer\tlocal_deja_coloring_materials": {
       "from": "local_deja_pigment_transfer",
       "to": "local_deja_coloring_materials",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_241_5050\tf_227_4068": {
       "from": "f_241_5050",
       "to": "f_227_4068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_241_5050\tlocal_route_jump_51e4b85481db": {
       "from": "f_241_5050",
       "to": "local_route_jump_51e4b85481db",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "f_227_4119\tf_227_4068": {
       "from": "f_227_4119",
       "to": "f_227_4068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4119\tlocal_route_jump_fd9cac87b3a3": {
       "from": "f_227_4119",
       "to": "local_route_jump_fd9cac87b3a3",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "f_227_4132\tf_227_4068": {
       "from": "f_227_4132",
       "to": "f_227_4068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "f_227_4132\tlocal_route_jump_af578fcd3154": {
       "from": "f_227_4132",
       "to": "local_route_jump_af578fcd3154",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_km_correction_onec\tlocal_km_correction_apply": {
       "from": "local_km_correction_onec",
       "to": "local_km_correction_apply",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_km_correction_apply\tf_230_4822": {
       "from": "local_km_correction_apply",
       "to": "f_230_4822",
       "button": "Готово",
-      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_prod_correction_onec\tlocal_prod_correction_apply": {
       "from": "local_prod_correction_onec",
       "to": "local_prod_correction_apply",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_prod_correction_apply\tf_230_4924": {
       "from": "local_prod_correction_apply",
       "to": "f_230_4924",
       "button": "Готово",
-      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_deja_correction_onec\tlocal_deja_correction_apply": {
       "from": "local_deja_correction_onec",
       "to": "local_deja_correction_apply",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:43+00:00"
     },
     "local_deja_correction_apply\tlocal_deja_f_230_4924": {
       "from": "local_deja_correction_apply",
       "to": "local_deja_f_230_4924",
       "button": "Готово",
-      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_262_7299\tf_262_7262": {
       "from": "f_262_7299",
       "to": "f_262_7262",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4222\tlocal_route_jump_ed4a6c89c812": {
       "from": "f_227_4222",
       "to": "local_route_jump_ed4a6c89c812",
       "button": "Проблема",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4221\tlocal_route_jump_d0269749d49f": {
       "from": "f_227_4221",
       "to": "local_route_jump_d0269749d49f",
       "button": "Проблема",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_pf_supply_grout\tlocal_route_jump_db8610c19325": {
       "from": "local_pf_supply_grout",
       "to": "local_route_jump_db8610c19325",
       "button": "Проблема",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_pf_to_km_physical\tlocal_route_jump_df5d39ea39df": {
       "from": "local_pf_to_km_physical",
       "to": "local_route_jump_df5d39ea39df",
       "button": "Проблема",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_pf_to_prod_physical\tlocal_route_jump_64aabfeb8d2e": {
       "from": "local_pf_to_prod_physical",
       "to": "local_route_jump_64aabfeb8d2e",
       "button": "Проблема",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "mark_ready_f_227_4079\tlocal_route_jump_7fc9be5ef123": {
       "from": "mark_ready_f_227_4079",
       "to": "local_route_jump_7fc9be5ef123",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "f_227_4085\tlocal_route_jump_7e3bc79712b9": {
       "from": "f_227_4085",
       "to": "local_route_jump_7e3bc79712b9",
       "button": "Проблема",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "mark_ready_f_227_4081\tf_227_4076": {
       "from": "mark_ready_f_227_4081",
       "to": "f_227_4076",
       "button": "Готово",
-      "who": "Роль: Кладовщик.\nЭкран: Маркировка."
+      "who": "Роль: Кладовщик.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_km_lab\tf_230_4826": {
       "from": "quality_km_lab",
       "to": "f_230_4826",
       "button": "Готово",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_km_lab\tf_230_4878": {
       "from": "quality_km_lab",
       "to": "f_230_4878",
       "button": "Отправить на доведение",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_prod_lab\tf_230_4928": {
       "from": "quality_prod_lab",
       "to": "f_230_4928",
       "button": "Готово",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_prod_lab\tf_230_4980": {
       "from": "quality_prod_lab",
       "to": "f_230_4980",
       "button": "Отправить на доведение",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_deja_lab\tlocal_deja_f_230_4928": {
       "from": "quality_deja_lab",
       "to": "local_deja_f_230_4928",
       "button": "Готово",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_deja_lab\tlocal_deja_f_230_4980": {
       "from": "quality_deja_lab",
       "to": "local_deja_f_230_4980",
       "button": "Отправить на доведение",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_syringe_lab\tlocal_syringe_paste_to_pf": {
       "from": "quality_syringe_lab",
       "to": "local_syringe_paste_to_pf",
       "button": "Готово",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_syringe_lab\tf_230_5126": {
       "from": "quality_syringe_lab",
       "to": "f_230_5126",
       "button": "На доведение",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_230_5042\tlocal_route_jump_76aab0668582": {
       "from": "f_230_5042",
       "to": "local_route_jump_76aab0668582",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_262_7299\tlocal_route_jump_a9b163e7fb39": {
       "from": "f_262_7299",
       "to": "local_route_jump_a9b163e7fb39",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4167\tlocal_route_jump_5a716a88fa70": {
       "from": "f_227_4167",
       "to": "local_route_jump_5a716a88fa70",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4090\tlocal_route_jump_c9878e858bb7": {
       "from": "f_227_4090",
       "to": "local_route_jump_c9878e858bb7",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4085\tlocal_route_jump_88798a76550f": {
       "from": "f_227_4085",
       "to": "local_route_jump_88798a76550f",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_230_4932\tlocal_route_jump_423559ebdfe5": {
       "from": "f_230_4932",
       "to": "local_route_jump_423559ebdfe5",
       "button": "Готово",
-      "who": "Роль: Фасовщик; для затирки и пигментной пасты — сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик; для затирки и пигментной пасты — сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_deja_f_230_4932\tlocal_route_jump_33b53fa8d927": {
       "from": "local_deja_f_230_4932",
       "to": "local_route_jump_33b53fa8d927",
       "button": "Готово",
-      "who": "Роль: Фасовщик; для затирки и пигментной пасты — сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик; для затирки и пигментной пасты — сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_pf_to_km_physical\tlocal_route_jump_d8863f532a95": {
       "from": "local_pf_to_km_physical",
       "to": "local_route_jump_d8863f532a95",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_km_new_batch_fill\tlocal_route_jump_0a23a9835871": {
       "from": "local_km_new_batch_fill",
       "to": "local_route_jump_0a23a9835871",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_repacking_samples_fill\tlocal_route_jump_9f2ac657a1e7": {
       "from": "local_repacking_samples_fill",
       "to": "local_route_jump_9f2ac657a1e7",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_initial_gp_partial_reserve\tlocal_route_jump_f23d1dc97202": {
       "from": "local_initial_gp_partial_reserve",
       "to": "local_route_jump_f23d1dc97202",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "local_quality_unfixable_defect_route\tf_269_5088": {
       "from": "local_quality_unfixable_defect_route",
       "to": "f_269_5088",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "quality_km_self\tlocal_route_jump_0fa0245eeea2": {
       "from": "quality_km_self",
       "to": "local_route_jump_0fa0245eeea2",
       "button": "Исправить нельзя",
-      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "quality_km_lab\tlocal_route_jump_819301e7dc3a": {
       "from": "quality_km_lab",
       "to": "local_route_jump_819301e7dc3a",
       "button": "Исправить нельзя",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_prod_self\tlocal_route_jump_6dc76b7fda2c": {
       "from": "quality_prod_self",
       "to": "local_route_jump_6dc76b7fda2c",
       "button": "Исправить нельзя",
-      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_prod_lab\tlocal_route_jump_fe6f86170b72": {
       "from": "quality_prod_lab",
       "to": "local_route_jump_fe6f86170b72",
       "button": "Исправить нельзя",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_deja_self\tlocal_route_jump_8332b387f21a": {
       "from": "quality_deja_self",
       "to": "local_route_jump_8332b387f21a",
       "button": "Исправить нельзя",
-      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; при необходимости — колеровщик КМ.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_deja_lab\tlocal_route_jump_21b3f4bd1a39": {
       "from": "quality_deja_lab",
       "to": "local_route_jump_21b3f4bd1a39",
       "button": "Исправить нельзя",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "quality_syringe_lab\tlocal_route_jump_ca75edd3a65c": {
       "from": "quality_syringe_lab",
       "to": "local_route_jump_ca75edd3a65c",
       "button": "Исправить нельзя",
-      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория."
+      "who": "Роль: Лаборант ОТК.\nЭкран: ОТК / лаборатория.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_230_4740\tplanning_minmax_sources": {
       "from": "f_230_4740",
       "to": "planning_minmax_sources",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "f_273_5214\tf_230_4744": {
       "from": "f_273_5214",
       "to": "f_230_4744",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "f_273_5214\tplanning_below_all_minima": {
       "from": "f_273_5214",
       "to": "planning_below_all_minima",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "planning_below_all_minima\tplanning_no_feasible_plan": {
       "from": "planning_below_all_minima",
       "to": "planning_no_feasible_plan",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "planning_below_all_minima\tf_273_5218": {
       "from": "planning_below_all_minima",
       "to": "f_273_5218",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "f_273_5218\tplanning_split_found": {
       "from": "f_273_5218",
       "to": "planning_split_found",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "planning_split_found\tplanning_no_feasible_plan": {
       "from": "planning_split_found",
       "to": "planning_no_feasible_plan",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "planning_minmax_sources\tplanning_minimum_rule_confirmed": {
       "from": "planning_minmax_sources",
       "to": "planning_minimum_rule_confirmed",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "planning_minimum_rule_confirmed\tf_273_5214": {
       "from": "planning_minimum_rule_confirmed",
       "to": "f_273_5214",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "planning_minimum_rule_confirmed\tplanning_no_feasible_plan": {
       "from": "planning_minimum_rule_confirmed",
       "to": "planning_no_feasible_plan",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_batch_stock_target\tlocal_pf_replenishment_registry": {
       "from": "local_batch_stock_target",
       "to": "local_pf_replenishment_registry",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_batch_stock_target\tlocal_batch_gp_stock_plan": {
       "from": "local_batch_stock_target",
       "to": "local_batch_gp_stock_plan",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_batch_gp_stock_plan\tlocal_batch_replenishment_invoice": {
       "from": "local_batch_gp_stock_plan",
       "to": "local_batch_replenishment_invoice",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "f_273_5194\tf_273_5198": {
       "from": "f_273_5194",
       "to": "f_273_5198",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_batch_rework_approved\tlocal_plan_rework_timer": {
       "from": "local_batch_rework_approved",
       "to": "local_plan_rework_timer",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:49:02+00:00"
     },
     "local_plan_rework_timer\tlocal_batch_without_rework": {
       "from": "local_plan_rework_timer",
       "to": "local_batch_without_rework",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_plan_rework_recalculate\tlocal_batch_stock_topup_selected": {
       "from": "local_plan_rework_recalculate",
       "to": "local_batch_stock_topup_selected",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_plan_stock_recalculate\tf_230_4740": {
       "from": "local_plan_stock_recalculate",
       "to": "f_230_4740",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_plan_final_validate\tlocal_plan_valid": {
       "from": "local_plan_final_validate",
       "to": "local_plan_valid",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_plan_valid\tplanning_no_feasible_plan": {
       "from": "local_plan_valid",
       "to": "planning_no_feasible_plan",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "f_273_5198\tlocal_cancel_position": {
       "from": "f_273_5198",
       "to": "local_cancel_position",
       "button": "Отменить изготовление позиции",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_cancel_position\tlocal_cancel_started": {
       "from": "local_cancel_position",
       "to": "local_cancel_started",
       "button": "Готово",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_cancel_started\tlocal_cancel_apply": {
       "from": "local_cancel_started",
       "to": "local_cancel_apply",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_cancel_started\tlocal_cancel_started_question": {
       "from": "local_cancel_started",
       "to": "local_cancel_started_question",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_cancel_apply\tlocal_cancelled_position": {
       "from": "local_cancel_apply",
       "to": "local_cancelled_position",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_cancel_apply\tplanning_no_feasible_plan": {
       "from": "local_cancel_apply",
       "to": "planning_no_feasible_plan",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_cancelled_position\tlocal_restart_position": {
       "from": "local_cancelled_position",
       "to": "local_restart_position",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_restart_position\tlocal_route_jump_d90b3677ac7c": {
       "from": "local_restart_position",
       "to": "local_route_jump_d90b3677ac7c",
       "button": "Принять в работу",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_230_4748\tf_273_5246": {
       "from": "f_230_4748",
       "to": "f_273_5246",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_new_batch_raw_pick\tlocal_new_batch_picked_delivery": {
       "from": "local_new_batch_raw_pick",
       "to": "local_new_batch_picked_delivery",
       "button": "Готово",
-      "who": "Роль: Подборщик сырья.\nЭкран: Задания склада."
+      "who": "Роль: Подборщик сырья.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_new_batch_picked_delivery\tlocal_new_batch_rework_check": {
       "from": "local_new_batch_picked_delivery",
       "to": "local_new_batch_rework_check",
       "button": "Готово",
-      "who": "Роль: Оператор погрузчика склада.\nЭкран: Задания склада."
+      "who": "Роль: Оператор погрузчика склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "mark_ready_f_227_4079\tmark_apply_f_227_4085": {
       "from": "mark_ready_f_227_4079",
       "to": "mark_apply_f_227_4085",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "mark_apply_f_227_4085\tf_227_4085": {
       "from": "mark_apply_f_227_4085",
       "to": "f_227_4085",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Маркировка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4085\tf_227_4228": {
       "from": "f_227_4085",
       "to": "f_227_4228",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4257\tf_227_4261": {
       "from": "f_227_4257",
       "to": "f_227_4261",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "f_227_4261\tlocal_new_batch_fill_production": {
       "from": "f_227_4261",
       "to": "local_new_batch_fill_production",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4237\tf_227_4259": {
       "from": "f_227_4237",
       "to": "f_227_4259",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "mark_ready_f_227_4259\tmark_apply_f_227_4261": {
       "from": "mark_ready_f_227_4259",
       "to": "mark_apply_f_227_4261",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "mark_apply_f_227_4261\tf_227_4239": {
       "from": "mark_apply_f_227_4261",
       "to": "f_227_4239",
       "button": "Готово",
-      "who": "Роль: Этикеровщик; мелкая фасовка на ПФ — сотрудник склада ПФ.\nЭкран: Маркировка."
+      "who": "Роль: Этикеровщик; мелкая фасовка на ПФ — сотрудник склада ПФ.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_repacking_gp_production_transfer\tlocal_repacking_label_task": {
       "from": "local_repacking_gp_production_transfer",
       "to": "local_repacking_label_task",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_repacking_label_task\tf_227_4090": {
       "from": "local_repacking_label_task",
       "to": "f_227_4090",
       "button": "Готово",
-      "who": "Роль: Этикеровщик.\nЭкран: Маркировка."
+      "who": "Роль: Этикеровщик.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_repacking_parallel_outputs\tlocal_repacking_main_production": {
       "from": "local_repacking_parallel_outputs",
       "to": "local_repacking_main_production",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "f_230_4932\tf_230_4936": {
       "from": "f_230_4932",
       "to": "f_230_4936",
       "button": "Готово",
-      "who": "Роль: Фасовщик; для затирки и пигментной пасты — сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик; для затирки и пигментной пасты — сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_230_4908\tmark_check_f_230_4932": {
       "from": "f_230_4908",
       "to": "mark_check_f_230_4932",
       "button": "Готово",
-      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка."
+      "who": "Роль: Колеровщик; для затирки — сотрудник склада ПФ, при отсутствии — Колеровщик.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "mark_ready_mark_check_f_230_4932\tf_230_4920": {
       "from": "mark_ready_mark_check_f_230_4932",
       "to": "f_230_4920",
       "button": "Готово",
-      "who": "Роль: Этикеровщик; для компонента А на ПФ — сотрудник склада ПФ.\nЭкран: Маркировка."
+      "who": "Роль: Этикеровщик; для компонента А на ПФ — сотрудник склада ПФ.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_deja_f_230_4932\tlocal_deja_f_230_4936": {
       "from": "local_deja_f_230_4932",
       "to": "local_deja_f_230_4936",
       "button": "Готово",
-      "who": "Роль: Фасовщик; для затирки и пигментной пасты — сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик; для затирки и пигментной пасты — сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_deja_coloring_materials\tmark_check_local_deja_f_230_4932": {
       "from": "local_deja_coloring_materials",
       "to": "mark_check_local_deja_f_230_4932",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "mark_ready_mark_check_local_deja_f_230_4932\tlocal_deja_f_230_4920": {
       "from": "mark_ready_mark_check_local_deja_f_230_4932",
       "to": "local_deja_f_230_4920",
       "button": "Готово",
-      "who": "Роль: Этикеровщик; для компонента А на ПФ — сотрудник склада ПФ.\nЭкран: Маркировка."
+      "who": "Роль: Этикеровщик; для компонента А на ПФ — сотрудник склада ПФ.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4167\tlocal_syringe_production": {
       "from": "f_227_4167",
       "to": "local_syringe_production",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_syringe_paste_to_pf\tlocal_syringe_labels": {
       "from": "local_syringe_paste_to_pf",
       "to": "local_syringe_labels",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "mark_ready_local_syringe_labels\tf_227_4167": {
       "from": "mark_ready_local_syringe_labels",
       "to": "f_227_4167",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ; на производстве — этикеровщик.\nЭкран: Маркировка."
+      "who": "Роль: Сотрудник склада ПФ; на производстве — этикеровщик.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_repacking_samples_fill\tlocal_repacking_samples_production": {
       "from": "local_repacking_samples_fill",
       "to": "local_repacking_samples_production",
       "button": "Готово",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_2072f40c1e824f81b2482a3720797b08\tlocal_repacking_samples_labels": {
       "from": "local_2072f40c1e824f81b2482a3720797b08",
       "to": "local_repacking_samples_labels",
       "button": "Готово",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "mark_ready_local_repacking_samples_labels\tlocal_repacking_samples_fill": {
       "from": "mark_ready_local_repacking_samples_labels",
       "to": "local_repacking_samples_fill",
       "button": "Готово",
-      "who": "Роль: Этикеровщик.\nЭкран: Маркировка."
+      "who": "Роль: Этикеровщик.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_262_7102\tlocal_hardener_tare_prepare": {
       "from": "f_262_7102",
       "to": "local_hardener_tare_prepare",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:44+00:00"
     },
     "local_hardener_tare_prepare\tf_262_7299": {
       "from": "local_hardener_tare_prepare",
       "to": "f_262_7299",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Маркировка."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_230_4736\tlocal_batch_rework_approved": {
       "from": "f_230_4736",
       "to": "local_batch_rework_approved",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "planning_split_found\tplanning_apply_split": {
       "from": "planning_split_found",
       "to": "planning_apply_split",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "planning_apply_split\tf_230_4740": {
       "from": "planning_apply_split",
       "to": "f_230_4740",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "local_plan_valid\tf_273_5198": {
       "from": "local_plan_valid",
       "to": "f_273_5198",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "f_273_5198\tf_230_4748": {
       "from": "f_273_5198",
       "to": "f_230_4748",
       "button": "Подтвердить план",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "planning_no_feasible_plan\tf_273_5198": {
       "from": "planning_no_feasible_plan",
       "to": "f_273_5198",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "local_batch_rework_account\tlocal_5f255159617746bd9e46f86e07d2d037": {
       "from": "local_batch_rework_account",
       "to": "local_5f255159617746bd9e46f86e07d2d037",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "local_5f255159617746bd9e46f86e07d2d037\tlocal_plan_rework_recalculate": {
       "from": "local_5f255159617746bd9e46f86e07d2d037",
       "to": "local_plan_rework_recalculate",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "local_start_account_work\tlocal_account_specification_check": {
       "from": "local_start_account_work",
       "to": "local_account_specification_check",
       "button": "Принять в работу",
-      "who": "Роль: Менеджер (Битрикс) / Специалист по планированию производства (Лакомка).\nЭкран: Карточка обеспечения счёта (Лакомка) / карточка заказа (Битрикс)."
+      "who": "Роль: Менеджер (Битрикс) / Специалист по планированию производства (Лакомка).\nЭкран: Карточка обеспечения счёта (Лакомка) / карточка заказа (Битрикс).",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_265_5077\tlocal_uncolored_large_batch_route": {
       "from": "f_265_5077",
       "to": "local_uncolored_large_batch_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "local_uncolored_large_batch_route\tf_227_4068": {
       "from": "local_uncolored_large_batch_route",
       "to": "f_227_4068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "f_257_6364\tf_227_4199": {
       "from": "f_257_6364",
       "to": "f_227_4199",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "f_227_4199\tf_227_4043": {
       "from": "f_227_4199",
       "to": "f_227_4043",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "f_227_4043\tf_227_4044": {
       "from": "f_227_4043",
       "to": "f_227_4044",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "f_227_4043\tlocal_gp_repacking_pf_gate": {
       "from": "f_227_4043",
       "to": "local_gp_repacking_pf_gate",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "f_227_4043\tf_227_4046": {
       "from": "f_227_4043",
       "to": "f_227_4046",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "root\tlocal_purchased_product_route": {
       "from": "root",
       "to": "local_purchased_product_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "f_227_4076\tlocal_route_jump_780907f786e1": {
       "from": "f_227_4076",
       "to": "local_route_jump_780907f786e1",
       "button": "Проблема",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "mark_ready_f_227_4081\tlocal_route_jump_20ffc912b385": {
       "from": "mark_ready_f_227_4081",
       "to": "local_route_jump_20ffc912b385",
       "button": "Проблема",
-      "who": "Роль: Кладовщик.\nЭкран: Маркировка."
+      "who": "Роль: Кладовщик.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4084\tlocal_route_jump_03a04a77f77a": {
       "from": "f_227_4084",
       "to": "local_route_jump_03a04a77f77a",
       "button": "Проблема",
-      "who": "Роль: Кладовщик — передача; Фасовщик — приёмка.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — передача; Фасовщик — приёмка.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_repacking_label_task\tlocal_route_jump_6c103f8fdf88": {
       "from": "local_repacking_label_task",
       "to": "local_route_jump_6c103f8fdf88",
       "button": "Проблема",
-      "who": "Роль: Этикеровщик.\nЭкран: Маркировка."
+      "who": "Роль: Этикеровщик.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "f_227_4090\tlocal_route_jump_ae668be6ac01": {
       "from": "f_227_4090",
       "to": "local_route_jump_ae668be6ac01",
       "button": "Проблема",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_2072f40c1e824f81b2482a3720797b08\tlocal_route_jump_b34ace4649a0": {
       "from": "local_2072f40c1e824f81b2482a3720797b08",
       "to": "local_route_jump_b34ace4649a0",
       "button": "Проблема",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "mark_ready_local_repacking_samples_labels\tlocal_route_jump_9c9b6732ddbf": {
       "from": "mark_ready_local_repacking_samples_labels",
       "to": "local_route_jump_9c9b6732ddbf",
       "button": "Проблема",
-      "who": "Роль: Этикеровщик.\nЭкран: Маркировка."
+      "who": "Роль: Этикеровщик.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "local_repacking_samples_fill\tlocal_route_jump_36051dffe83e": {
       "from": "local_repacking_samples_fill",
       "to": "local_route_jump_36051dffe83e",
       "button": "Проблема",
-      "who": "Роль: Фасовщик.\nЭкран: Фасовка."
+      "who": "Роль: Фасовщик.\nЭкран: Фасовка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_repacking_samples_warehouse\tlocal_route_jump_dde1d3c21d88": {
       "from": "local_repacking_samples_warehouse",
       "to": "local_route_jump_dde1d3c21d88",
       "button": "Проблема",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_14565bca119a4b0a8cb1781e02cad8a7\tlocal_route_jump_927e8a9424c8": {
       "from": "local_14565bca119a4b0a8cb1781e02cad8a7",
       "to": "local_route_jump_927e8a9424c8",
       "button": "Проблема",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4089\tlocal_route_jump_c808b27078a9": {
       "from": "f_227_4089",
       "to": "local_route_jump_c808b27078a9",
       "button": "Проблема",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_repacking_prepare_ready\tlocal_route_jump_00b8842cbd10": {
       "from": "local_repacking_prepare_ready",
       "to": "local_route_jump_00b8842cbd10",
       "button": "Проблема",
-      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_227_4087\tlocal_route_jump_aa00522eceb3": {
       "from": "f_227_4087",
       "to": "local_route_jump_aa00522eceb3",
       "button": "Проблема",
-      "who": "Роль: Кладовщик; этикеровщик выдаёт этикетки.\nЭкран: Маркировка."
+      "who": "Роль: Кладовщик; этикеровщик выдаёт этикетки.\nЭкран: Маркировка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "mark_ready_f_227_4077\tf_227_4084": {
       "from": "mark_ready_f_227_4077",
       "to": "f_227_4084",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "f_273_5198\tlocal_batch_colored_pf_mass": {
       "from": "f_273_5198",
       "to": "local_batch_colored_pf_mass",
       "button": "Уточнить расчёт",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_gp_repacking_pf_gate\tf_227_4045": {
       "from": "local_gp_repacking_pf_gate",
       "to": "f_227_4045",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T13:45:45+00:00"
     },
     "local_gp_repacking_pf_gate\tlocal_route_jump_5a2b64541ed2": {
       "from": "local_gp_repacking_pf_gate",
       "to": "local_route_jump_5a2b64541ed2",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "root\tlocal_material_supply_route": {
       "from": "root",
       "to": "local_material_supply_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:04:23+00:00"
     },
     "local_material_supply_route\tlocal_material_supply_order_decision": {
       "from": "local_material_supply_route",
       "to": "local_material_supply_order_decision",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:04:23+00:00"
     },
     "local_material_supply_route\tlocal_material_supply_task": {
       "from": "local_material_supply_route",
       "to": "local_material_supply_task",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:04:23+00:00"
     },
     "local_material_supply_order_decision\tlocal_material_supply_continue": {
       "from": "local_material_supply_order_decision",
       "to": "local_material_supply_continue",
       "button": "Продолжить обеспеченные позиции",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_order_decision\tlocal_material_supply_hold": {
       "from": "local_material_supply_order_decision",
       "to": "local_material_supply_hold",
       "button": "Приостановить счёт",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_task\tlocal_material_supply_wait": {
       "from": "local_material_supply_task",
       "to": "local_material_supply_wait",
       "button": "Сохранить срок",
-      "who": "Роль: Специалист по снабжению.\nЭкран: Снабжение."
+      "who": "Роль: Специалист по снабжению.\nЭкран: Снабжение.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_wait\tlocal_material_supply_stock_check": {
       "from": "local_material_supply_wait",
       "to": "local_material_supply_stock_check",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:04:23+00:00"
     },
     "local_material_supply_stock_check\tlocal_material_supply_resume": {
       "from": "local_material_supply_stock_check",
       "to": "local_material_supply_resume",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:04:23+00:00"
     },
     "local_material_supply_stock_check\tlocal_material_supply_overdue": {
       "from": "local_material_supply_stock_check",
       "to": "local_material_supply_overdue",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:04:23+00:00"
     },
     "local_material_supply_overdue\tlocal_material_supply_task": {
       "from": "local_material_supply_overdue",
       "to": "local_material_supply_task",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:04:23+00:00"
     },
     "f_227_4223\tlocal_route_jump_eed1aa7267dc": {
       "from": "f_227_4223",
       "to": "local_route_jump_eed1aa7267dc",
       "button": "Нет на складе",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_ac343fc57376": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_ac343fc57376",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "local_new_batch_extra_move\tlocal_route_jump_7eeadabf5cb1": {
       "from": "local_new_batch_extra_move",
       "to": "local_route_jump_7eeadabf5cb1",
       "button": "Нет на складе",
-      "who": "Роль: Оператор погрузчика склада; при отсутствии — Руководитель склада.\nЭкран: Задания склада."
+      "who": "Роль: Оператор погрузчика склада; при отсутствии — Руководитель склада.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_f2434fef7f7c": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_f2434fef7f7c",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "local_km_pigment_move\tlocal_route_jump_0f191b8bcf8b": {
       "from": "local_km_pigment_move",
       "to": "local_route_jump_0f191b8bcf8b",
       "button": "Нет на складе",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_c72ffbd87a4d": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_c72ffbd87a4d",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "local_prod_pigment_move\tlocal_route_jump_bea3316624f9": {
       "from": "local_prod_pigment_move",
       "to": "local_route_jump_bea3316624f9",
       "button": "Нет на складе",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_c98bccca8f0a": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_c98bccca8f0a",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "local_deja_pigment_move\tlocal_route_jump_be34fc9948a6": {
       "from": "local_deja_pigment_move",
       "to": "local_route_jump_be34fc9948a6",
       "button": "Нет на складе",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_45fce2d7ad86": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_45fce2d7ad86",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
     },
     "local_syringe_material_move\tlocal_route_jump_d114b7f0942f": {
       "from": "local_syringe_material_move",
       "to": "local_route_jump_d114b7f0942f",
       "button": "Нет на складе",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_9bd47c95d905": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_9bd47c95d905",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
     },
     "local_km_correction_move\tlocal_route_jump_a0dd6aff9c37": {
       "from": "local_km_correction_move",
       "to": "local_route_jump_a0dd6aff9c37",
       "button": "Нет на складе",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_e7eb965ed4fd": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_e7eb965ed4fd",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
     },
     "local_prod_correction_move\tlocal_route_jump_5d6dee9c29b1": {
       "from": "local_prod_correction_move",
       "to": "local_route_jump_5d6dee9c29b1",
       "button": "Нет на складе",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_e916a57be827": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_e916a57be827",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
     },
     "local_deja_correction_move\tlocal_route_jump_476a5b875520": {
       "from": "local_deja_correction_move",
       "to": "local_route_jump_476a5b875520",
       "button": "Нет на складе",
-      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик; конкретный склад указан в задании.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_ca4e46fcfa66": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_ca4e46fcfa66",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
     },
     "local_material_supply_route\tlocal_material_supply_wait": {
       "from": "local_material_supply_route",
       "to": "local_material_supply_wait",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:05:13+00:00"
     },
     "local_material_supply_stock_check\tlocal_material_supply_wait": {
       "from": "local_material_supply_stock_check",
       "to": "local_material_supply_wait",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:05:13+00:00"
     },
     "f_230_5126\tlocal_paste_correction_material_move": {
       "from": "f_230_5126",
       "to": "local_paste_correction_material_move",
       "button": "Не хватает пигмента",
-      "who": "Роль: Сотрудник склада ПФ; при отсутствии — Колеровщик..\nЭкран: Колеровка."
+      "who": "Роль: Сотрудник склада ПФ; при отсутствии — Колеровщик..\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_paste_correction_material_move\tlocal_paste_correction_material_onec": {
       "from": "local_paste_correction_material_move",
       "to": "local_paste_correction_material_onec",
       "button": "Готово",
-      "who": "Роль: Кладовщик.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_paste_correction_material_onec\tf_230_5126": {
       "from": "local_paste_correction_material_onec",
       "to": "f_230_5126",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:09:13+00:00"
     },
     "local_paste_correction_material_move\tlocal_route_jump_84e560e98cb8": {
       "from": "local_paste_correction_material_move",
       "to": "local_route_jump_84e560e98cb8",
       "button": "Нет на складе",
-      "who": "Роль: Кладовщик.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_62e29596a70a": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_62e29596a70a",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
     },
     "local_account_specification_check\tf_227_4040": {
       "from": "local_account_specification_check",
       "to": "f_227_4040",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:16:59+00:00"
     },
     "local_account_specification_check\tlocal_account_specification_missing": {
       "from": "local_account_specification_check",
       "to": "local_account_specification_missing",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:16:59+00:00"
     },
     "local_account_specification_missing\tlocal_account_specification_request": {
       "from": "local_account_specification_missing",
       "to": "local_account_specification_request",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:16:59+00:00"
     },
     "local_account_specification_request\tlocal_account_specification_check": {
       "from": "local_account_specification_request",
       "to": "local_account_specification_check",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:16:59+00:00"
     },
     "root\tlocal_equipment_fault_event": {
       "from": "root",
       "to": "local_equipment_fault_event",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:16:59+00:00"
     },
     "local_equipment_fault_event\tlocal_equipment_fault_engineer": {
       "from": "local_equipment_fault_event",
       "to": "local_equipment_fault_engineer",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:16:59+00:00"
     },
     "f_269_5088\tf_269_5098": {
       "from": "f_269_5088",
       "to": "f_269_5098",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:20:02+00:00"
     },
     "f_269_5088\tf_269_5094": {
       "from": "f_269_5088",
       "to": "f_269_5094",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:20:02+00:00"
     },
     "f_269_5098\tlocal_defect_gp_release_order": {
       "from": "f_269_5098",
       "to": "local_defect_gp_release_order",
       "button": "Передать на ГП",
-      "who": "Роль: Лаборант ОТК.\nЭкран: Брак / возвраты."
+      "who": "Роль: Лаборант ОТК.\nЭкран: Брак / возвраты.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_269_5098\tf_269_5182": {
       "from": "f_269_5098",
       "to": "f_269_5182",
       "button": "Оформить переработку",
-      "who": "Роль: Лаборант ОТК.\nЭкран: Брак / возвраты."
+      "who": "Роль: Лаборант ОТК.\nЭкран: Брак / возвраты.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:38+00:00"
     },
     "f_269_5098\tf_269_5118": {
       "from": "f_269_5098",
       "to": "f_269_5118",
       "button": "Ожидать решения",
-      "who": "Роль: Лаборант ОТК.\nЭкран: Брак / возвраты."
+      "who": "Роль: Лаборант ОТК.\nЭкран: Брак / возвраты.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:39+00:00"
     },
     "f_269_5118\tf_269_5098": {
       "from": "f_269_5118",
       "to": "f_269_5098",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:20:02+00:00"
     },
     "local_defect_gp_release_order\tlocal_defect_gp_onec_pending": {
       "from": "local_defect_gp_release_order",
       "to": "local_defect_gp_onec_pending",
       "button": "Готово",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Карточка обеспечения счёта.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:39+00:00"
     },
     "local_defect_gp_onec_pending\tlocal_defect_gp_move": {
       "from": "local_defect_gp_onec_pending",
       "to": "local_defect_gp_move",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:20:02+00:00"
     },
     "local_defect_gp_move\tlocal_defect_gp_ready": {
       "from": "local_defect_gp_move",
       "to": "local_defect_gp_ready",
       "button": "Готово",
-      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада."
+      "who": "Роль: Кладовщик — приёмка; Начальник смены — сдача.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:39+00:00"
     },
     "f_269_5182\tlocal_rework_pigment_account_pending": {
       "from": "f_269_5182",
       "to": "local_rework_pigment_account_pending",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:20:03+00:00"
     },
     "local_rework_pigment_account_pending\tf_269_5150": {
       "from": "local_rework_pigment_account_pending",
       "to": "f_269_5150",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:20:03+00:00"
     },
     "f_269_5150\tf_269_5166": {
       "from": "f_269_5150",
       "to": "f_269_5166",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада."
+      "who": "Роль: Сотрудник склада ПФ.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:39+00:00"
     },
     "f_269_5094\tlocal_return_onec_pending": {
       "from": "f_269_5094",
       "to": "local_return_onec_pending",
       "button": "Готово",
-      "who": "Роль: Кладовщик — количество на ГП; сотрудник склада ПФ — количество на ПФ / переработке; Главный технолог — качество.\nЭкран: Брак / возвраты."
+      "who": "Роль: Кладовщик — количество на ГП; сотрудник склада ПФ — количество на ПФ / переработке; Главный технолог — качество.\nЭкран: Брак / возвраты.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:57:33+00:00"
     },
     "local_return_onec_pending\tf_269_5098": {
       "from": "local_return_onec_pending",
       "to": "f_269_5098",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T14:20:03+00:00"
     },
     "local_new_batch_extra_pick\tlocal_new_batch_extra_move": {
       "from": "local_new_batch_extra_pick",
       "to": "local_new_batch_extra_move",
       "button": "Готово",
-      "who": "Роль: Подборщик сырья.\nЭкран: Задания склада."
+      "who": "Роль: Подборщик сырья.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:39+00:00"
     },
     "local_new_batch_extra_pick\tlocal_route_jump_263865f92093": {
       "from": "local_new_batch_extra_pick",
       "to": "local_route_jump_263865f92093",
       "button": "Нет на складе",
-      "who": "Роль: Подборщик сырья.\nЭкран: Задания склада."
+      "who": "Роль: Подборщик сырья.\nЭкран: Задания склада.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
     },
     "local_material_supply_resume\tlocal_route_jump_e9f7576f21d7": {
       "from": "local_material_supply_resume",
       "to": "local_route_jump_e9f7576f21d7",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
     },
     "local_general_gp_repacking_route\tf_227_4043": {
       "from": "local_general_gp_repacking_route",
       "to": "f_227_4043",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:10:54+00:00"
     },
     "local_general_new_batch_route\tf_227_4068": {
       "from": "local_general_new_batch_route",
       "to": "f_227_4068",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:10:54+00:00"
     },
     "local_route_jump_e0f6b0e136bd\tf_257_6364": {
       "from": "local_route_jump_e0f6b0e136bd",
       "to": "f_257_6364",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_route_jump_029c19082d8d\tf_227_4044": {
       "from": "local_route_jump_029c19082d8d",
       "to": "f_227_4044",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_route_jump_3bfa3d120d22\tf_241_5114": {
       "from": "local_route_jump_3bfa3d120d22",
       "to": "f_241_5114",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_route_jump_9234472839d5\tf_241_5114": {
       "from": "local_route_jump_9234472839d5",
       "to": "f_241_5114",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_route_jump_a3301c3faacd\tlocal_sample_fresh_batch_destination": {
       "from": "local_route_jump_a3301c3faacd",
       "to": "local_sample_fresh_batch_destination",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_route_jump_19ebbe5fc252\tf_241_5114": {
       "from": "local_route_jump_19ebbe5fc252",
       "to": "f_241_5114",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_route_jump_a634ff6c9098\tlocal_deja_coloring_route": {
       "from": "local_route_jump_a634ff6c9098",
       "to": "local_deja_coloring_route",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_route_jump_8a027ae32814\tlocal_purchased_product_route": {
       "from": "local_route_jump_8a027ae32814",
       "to": "local_purchased_product_route",
       "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_9f555ceb21bd\tf_257_6365": {
-      "from": "local_route_jump_9f555ceb21bd",
-      "to": "f_257_6365",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_d1c94384ebb5\tlocal_grout_base_ready": {
-      "from": "local_route_jump_d1c94384ebb5",
-      "to": "local_grout_base_ready",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_27ab3e857ff5\tf_241_5170": {
-      "from": "local_route_jump_27ab3e857ff5",
-      "to": "f_241_5170",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_5e792f7015c1\tlocal_colored_grout_route": {
-      "from": "local_route_jump_5e792f7015c1",
-      "to": "local_colored_grout_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_4ca445979b1f\tf_241_5098": {
-      "from": "local_route_jump_4ca445979b1f",
-      "to": "f_241_5098",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_7655c012fe23\tf_241_5114": {
-      "from": "local_route_jump_7655c012fe23",
-      "to": "f_241_5114",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_4c4259d7f7e5\tf_241_5098": {
-      "from": "local_route_jump_4c4259d7f7e5",
-      "to": "f_241_5098",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_db8d8fc9844a\tf_241_5098": {
-      "from": "local_route_jump_db8d8fc9844a",
-      "to": "f_241_5098",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_b1bb632030e6\tf_241_5114": {
-      "from": "local_route_jump_b1bb632030e6",
-      "to": "f_241_5114",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_630d49cdeb59\tf_241_5098": {
-      "from": "local_route_jump_630d49cdeb59",
-      "to": "f_241_5098",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_74c778161734\tf_241_5114": {
-      "from": "local_route_jump_74c778161734",
-      "to": "f_241_5114",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_841a9a56f5bd\tlocal_grout_base_ready": {
-      "from": "local_route_jump_841a9a56f5bd",
-      "to": "local_grout_base_ready",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_51e4b85481db\tlocal_resume_coloring_after_batch": {
-      "from": "local_route_jump_51e4b85481db",
-      "to": "local_resume_coloring_after_batch",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_fd9cac87b3a3\tlocal_resume_coloring_after_batch": {
-      "from": "local_route_jump_fd9cac87b3a3",
-      "to": "local_resume_coloring_after_batch",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_af578fcd3154\tlocal_resume_coloring_after_batch": {
-      "from": "local_route_jump_af578fcd3154",
-      "to": "local_resume_coloring_after_batch",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_ed4a6c89c812\tlocal_start_account_work": {
-      "from": "local_route_jump_ed4a6c89c812",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_d0269749d49f\tlocal_start_account_work": {
-      "from": "local_route_jump_d0269749d49f",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_db8610c19325\tlocal_start_account_work": {
-      "from": "local_route_jump_db8610c19325",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_df5d39ea39df\tlocal_start_account_work": {
-      "from": "local_route_jump_df5d39ea39df",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_64aabfeb8d2e\tlocal_start_account_work": {
-      "from": "local_route_jump_64aabfeb8d2e",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_7fc9be5ef123\tlocal_start_account_work": {
-      "from": "local_route_jump_7fc9be5ef123",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_7e3bc79712b9\tlocal_start_account_work": {
-      "from": "local_route_jump_7e3bc79712b9",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_76aab0668582\tequipment_wash_decision": {
-      "from": "local_route_jump_76aab0668582",
-      "to": "equipment_wash_decision",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_a9b163e7fb39\tequipment_wash_decision": {
-      "from": "local_route_jump_a9b163e7fb39",
-      "to": "equipment_wash_decision",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_5a716a88fa70\tequipment_wash_decision": {
-      "from": "local_route_jump_5a716a88fa70",
-      "to": "equipment_wash_decision",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_c9878e858bb7\tequipment_wash_decision": {
-      "from": "local_route_jump_c9878e858bb7",
-      "to": "equipment_wash_decision",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_88798a76550f\tequipment_wash_decision": {
-      "from": "local_route_jump_88798a76550f",
-      "to": "equipment_wash_decision",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_423559ebdfe5\tequipment_wash_decision": {
-      "from": "local_route_jump_423559ebdfe5",
-      "to": "equipment_wash_decision",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_33b53fa8d927\tequipment_wash_decision": {
-      "from": "local_route_jump_33b53fa8d927",
-      "to": "equipment_wash_decision",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_d8863f532a95\tequipment_wash_decision": {
-      "from": "local_route_jump_d8863f532a95",
-      "to": "equipment_wash_decision",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_0a23a9835871\tequipment_wash_decision": {
-      "from": "local_route_jump_0a23a9835871",
-      "to": "equipment_wash_decision",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_9f2ac657a1e7\tequipment_wash_decision": {
-      "from": "local_route_jump_9f2ac657a1e7",
-      "to": "equipment_wash_decision",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_f23d1dc97202\tf_257_6364": {
-      "from": "local_route_jump_f23d1dc97202",
-      "to": "f_257_6364",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_0fa0245eeea2\tlocal_quality_unfixable_defect_route": {
-      "from": "local_route_jump_0fa0245eeea2",
-      "to": "local_quality_unfixable_defect_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_819301e7dc3a\tlocal_quality_unfixable_defect_route": {
-      "from": "local_route_jump_819301e7dc3a",
-      "to": "local_quality_unfixable_defect_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_6dc76b7fda2c\tlocal_quality_unfixable_defect_route": {
-      "from": "local_route_jump_6dc76b7fda2c",
-      "to": "local_quality_unfixable_defect_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_fe6f86170b72\tlocal_quality_unfixable_defect_route": {
-      "from": "local_route_jump_fe6f86170b72",
-      "to": "local_quality_unfixable_defect_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_8332b387f21a\tlocal_quality_unfixable_defect_route": {
-      "from": "local_route_jump_8332b387f21a",
-      "to": "local_quality_unfixable_defect_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_21b3f4bd1a39\tlocal_quality_unfixable_defect_route": {
-      "from": "local_route_jump_21b3f4bd1a39",
-      "to": "local_quality_unfixable_defect_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_ca75edd3a65c\tlocal_quality_unfixable_defect_route": {
-      "from": "local_route_jump_ca75edd3a65c",
-      "to": "local_quality_unfixable_defect_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_d90b3677ac7c\tf_227_4040": {
-      "from": "local_route_jump_d90b3677ac7c",
-      "to": "f_227_4040",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_780907f786e1\tlocal_start_account_work": {
-      "from": "local_route_jump_780907f786e1",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_20ffc912b385\tlocal_start_account_work": {
-      "from": "local_route_jump_20ffc912b385",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_03a04a77f77a\tlocal_start_account_work": {
-      "from": "local_route_jump_03a04a77f77a",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_6c103f8fdf88\tlocal_start_account_work": {
-      "from": "local_route_jump_6c103f8fdf88",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_ae668be6ac01\tlocal_start_account_work": {
-      "from": "local_route_jump_ae668be6ac01",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_b34ace4649a0\tlocal_start_account_work": {
-      "from": "local_route_jump_b34ace4649a0",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_9c9b6732ddbf\tlocal_start_account_work": {
-      "from": "local_route_jump_9c9b6732ddbf",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_36051dffe83e\tlocal_start_account_work": {
-      "from": "local_route_jump_36051dffe83e",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_dde1d3c21d88\tlocal_start_account_work": {
-      "from": "local_route_jump_dde1d3c21d88",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_927e8a9424c8\tlocal_start_account_work": {
-      "from": "local_route_jump_927e8a9424c8",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_c808b27078a9\tlocal_start_account_work": {
-      "from": "local_route_jump_c808b27078a9",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_00b8842cbd10\tlocal_start_account_work": {
-      "from": "local_route_jump_00b8842cbd10",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_aa00522eceb3\tlocal_start_account_work": {
-      "from": "local_route_jump_aa00522eceb3",
-      "to": "local_start_account_work",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_5a2b64541ed2\tf_227_4058": {
-      "from": "local_route_jump_5a2b64541ed2",
-      "to": "f_227_4058",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_eed1aa7267dc\tlocal_material_supply_route": {
-      "from": "local_route_jump_eed1aa7267dc",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_ac343fc57376\tf_227_4223": {
-      "from": "local_route_jump_ac343fc57376",
-      "to": "f_227_4223",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_7eeadabf5cb1\tlocal_material_supply_route": {
-      "from": "local_route_jump_7eeadabf5cb1",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_f2434fef7f7c\tlocal_new_batch_extra_move": {
-      "from": "local_route_jump_f2434fef7f7c",
-      "to": "local_new_batch_extra_move",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_0f191b8bcf8b\tlocal_material_supply_route": {
-      "from": "local_route_jump_0f191b8bcf8b",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_c72ffbd87a4d\tlocal_km_pigment_move": {
-      "from": "local_route_jump_c72ffbd87a4d",
-      "to": "local_km_pigment_move",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_bea3316624f9\tlocal_material_supply_route": {
-      "from": "local_route_jump_bea3316624f9",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_c98bccca8f0a\tlocal_prod_pigment_move": {
-      "from": "local_route_jump_c98bccca8f0a",
-      "to": "local_prod_pigment_move",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_be34fc9948a6\tlocal_material_supply_route": {
-      "from": "local_route_jump_be34fc9948a6",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_45fce2d7ad86\tlocal_deja_pigment_move": {
-      "from": "local_route_jump_45fce2d7ad86",
-      "to": "local_deja_pigment_move",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_d114b7f0942f\tlocal_material_supply_route": {
-      "from": "local_route_jump_d114b7f0942f",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_9bd47c95d905\tlocal_syringe_material_move": {
-      "from": "local_route_jump_9bd47c95d905",
-      "to": "local_syringe_material_move",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_a0dd6aff9c37\tlocal_material_supply_route": {
-      "from": "local_route_jump_a0dd6aff9c37",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_e7eb965ed4fd\tlocal_km_correction_move": {
-      "from": "local_route_jump_e7eb965ed4fd",
-      "to": "local_km_correction_move",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_5d6dee9c29b1\tlocal_material_supply_route": {
-      "from": "local_route_jump_5d6dee9c29b1",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_e916a57be827\tlocal_prod_correction_move": {
-      "from": "local_route_jump_e916a57be827",
-      "to": "local_prod_correction_move",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_476a5b875520\tlocal_material_supply_route": {
-      "from": "local_route_jump_476a5b875520",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_ca4e46fcfa66\tlocal_deja_correction_move": {
-      "from": "local_route_jump_ca4e46fcfa66",
-      "to": "local_deja_correction_move",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_84e560e98cb8\tlocal_material_supply_route": {
-      "from": "local_route_jump_84e560e98cb8",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_62e29596a70a\tlocal_paste_correction_material_move": {
-      "from": "local_route_jump_62e29596a70a",
-      "to": "local_paste_correction_material_move",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_263865f92093\tlocal_material_supply_route": {
-      "from": "local_route_jump_263865f92093",
-      "to": "local_material_supply_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_route_jump_e9f7576f21d7\tlocal_new_batch_extra_pick": {
-      "from": "local_route_jump_e9f7576f21d7",
-      "to": "local_new_batch_extra_pick",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "equipment_wash_waiting\tlocal_wash_ready_planning_route": {
-      "from": "equipment_wash_waiting",
-      "to": "local_wash_ready_planning_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "equipment_wash_available\tlocal_wash_ready_planning_route": {
-      "from": "equipment_wash_available",
-      "to": "local_wash_ready_planning_route",
-      "button": "",
-      "who": "Автоматизация"
-    },
-    "local_wash_ready_planning_route\tf_230_4740": {
-      "from": "local_wash_ready_planning_route",
-      "to": "f_230_4740",
-      "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
     },
     "local_route_jump_c0d5413d27ec\tf_227_4054": {
       "from": "local_route_jump_c0d5413d27ec",
       "to": "f_227_4054",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:39:36+00:00"
+    },
+    "local_route_jump_9f555ceb21bd\tf_257_6365": {
+      "from": "local_route_jump_9f555ceb21bd",
+      "to": "f_257_6365",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_d1c94384ebb5\tlocal_grout_base_ready": {
+      "from": "local_route_jump_d1c94384ebb5",
+      "to": "local_grout_base_ready",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_27ab3e857ff5\tf_241_5170": {
+      "from": "local_route_jump_27ab3e857ff5",
+      "to": "f_241_5170",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_5e792f7015c1\tlocal_colored_grout_route": {
+      "from": "local_route_jump_5e792f7015c1",
+      "to": "local_colored_grout_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_4ca445979b1f\tf_241_5098": {
+      "from": "local_route_jump_4ca445979b1f",
+      "to": "f_241_5098",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_7655c012fe23\tf_241_5114": {
+      "from": "local_route_jump_7655c012fe23",
+      "to": "f_241_5114",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_4c4259d7f7e5\tf_241_5098": {
+      "from": "local_route_jump_4c4259d7f7e5",
+      "to": "f_241_5098",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_db8d8fc9844a\tf_241_5098": {
+      "from": "local_route_jump_db8d8fc9844a",
+      "to": "f_241_5098",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_b1bb632030e6\tf_241_5114": {
+      "from": "local_route_jump_b1bb632030e6",
+      "to": "f_241_5114",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_630d49cdeb59\tf_241_5098": {
+      "from": "local_route_jump_630d49cdeb59",
+      "to": "f_241_5098",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_74c778161734\tf_241_5114": {
+      "from": "local_route_jump_74c778161734",
+      "to": "f_241_5114",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_841a9a56f5bd\tlocal_grout_base_ready": {
+      "from": "local_route_jump_841a9a56f5bd",
+      "to": "local_grout_base_ready",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_51e4b85481db\tlocal_resume_coloring_after_batch": {
+      "from": "local_route_jump_51e4b85481db",
+      "to": "local_resume_coloring_after_batch",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_fd9cac87b3a3\tlocal_resume_coloring_after_batch": {
+      "from": "local_route_jump_fd9cac87b3a3",
+      "to": "local_resume_coloring_after_batch",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_af578fcd3154\tlocal_resume_coloring_after_batch": {
+      "from": "local_route_jump_af578fcd3154",
+      "to": "local_resume_coloring_after_batch",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_ed4a6c89c812\tlocal_start_account_work": {
+      "from": "local_route_jump_ed4a6c89c812",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_d0269749d49f\tlocal_start_account_work": {
+      "from": "local_route_jump_d0269749d49f",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_db8610c19325\tlocal_start_account_work": {
+      "from": "local_route_jump_db8610c19325",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_df5d39ea39df\tlocal_start_account_work": {
+      "from": "local_route_jump_df5d39ea39df",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_64aabfeb8d2e\tlocal_start_account_work": {
+      "from": "local_route_jump_64aabfeb8d2e",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:02+00:00"
+    },
+    "local_route_jump_7fc9be5ef123\tlocal_start_account_work": {
+      "from": "local_route_jump_7fc9be5ef123",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_7e3bc79712b9\tlocal_start_account_work": {
+      "from": "local_route_jump_7e3bc79712b9",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_76aab0668582\tequipment_wash_decision": {
+      "from": "local_route_jump_76aab0668582",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_a9b163e7fb39\tequipment_wash_decision": {
+      "from": "local_route_jump_a9b163e7fb39",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_5a716a88fa70\tequipment_wash_decision": {
+      "from": "local_route_jump_5a716a88fa70",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_c9878e858bb7\tequipment_wash_decision": {
+      "from": "local_route_jump_c9878e858bb7",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_88798a76550f\tequipment_wash_decision": {
+      "from": "local_route_jump_88798a76550f",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_423559ebdfe5\tequipment_wash_decision": {
+      "from": "local_route_jump_423559ebdfe5",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_33b53fa8d927\tequipment_wash_decision": {
+      "from": "local_route_jump_33b53fa8d927",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_d8863f532a95\tequipment_wash_decision": {
+      "from": "local_route_jump_d8863f532a95",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_0a23a9835871\tequipment_wash_decision": {
+      "from": "local_route_jump_0a23a9835871",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_9f2ac657a1e7\tequipment_wash_decision": {
+      "from": "local_route_jump_9f2ac657a1e7",
+      "to": "equipment_wash_decision",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_f23d1dc97202\tf_257_6364": {
+      "from": "local_route_jump_f23d1dc97202",
+      "to": "f_257_6364",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_0fa0245eeea2\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_0fa0245eeea2",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_819301e7dc3a\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_819301e7dc3a",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_6dc76b7fda2c\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_6dc76b7fda2c",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_fe6f86170b72\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_fe6f86170b72",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_8332b387f21a\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_8332b387f21a",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_21b3f4bd1a39\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_21b3f4bd1a39",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_ca75edd3a65c\tlocal_quality_unfixable_defect_route": {
+      "from": "local_route_jump_ca75edd3a65c",
+      "to": "local_quality_unfixable_defect_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_d90b3677ac7c\tf_227_4040": {
+      "from": "local_route_jump_d90b3677ac7c",
+      "to": "f_227_4040",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_780907f786e1\tlocal_start_account_work": {
+      "from": "local_route_jump_780907f786e1",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_20ffc912b385\tlocal_start_account_work": {
+      "from": "local_route_jump_20ffc912b385",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_03a04a77f77a\tlocal_start_account_work": {
+      "from": "local_route_jump_03a04a77f77a",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_6c103f8fdf88\tlocal_start_account_work": {
+      "from": "local_route_jump_6c103f8fdf88",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_ae668be6ac01\tlocal_start_account_work": {
+      "from": "local_route_jump_ae668be6ac01",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_b34ace4649a0\tlocal_start_account_work": {
+      "from": "local_route_jump_b34ace4649a0",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_9c9b6732ddbf\tlocal_start_account_work": {
+      "from": "local_route_jump_9c9b6732ddbf",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_36051dffe83e\tlocal_start_account_work": {
+      "from": "local_route_jump_36051dffe83e",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_dde1d3c21d88\tlocal_start_account_work": {
+      "from": "local_route_jump_dde1d3c21d88",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_927e8a9424c8\tlocal_start_account_work": {
+      "from": "local_route_jump_927e8a9424c8",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_c808b27078a9\tlocal_start_account_work": {
+      "from": "local_route_jump_c808b27078a9",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_00b8842cbd10\tlocal_start_account_work": {
+      "from": "local_route_jump_00b8842cbd10",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_aa00522eceb3\tlocal_start_account_work": {
+      "from": "local_route_jump_aa00522eceb3",
+      "to": "local_start_account_work",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_5a2b64541ed2\tf_227_4058": {
+      "from": "local_route_jump_5a2b64541ed2",
+      "to": "f_227_4058",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_eed1aa7267dc\tlocal_material_supply_route": {
+      "from": "local_route_jump_eed1aa7267dc",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_ac343fc57376\tf_227_4223": {
+      "from": "local_route_jump_ac343fc57376",
+      "to": "f_227_4223",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_7eeadabf5cb1\tlocal_material_supply_route": {
+      "from": "local_route_jump_7eeadabf5cb1",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_f2434fef7f7c\tlocal_new_batch_extra_move": {
+      "from": "local_route_jump_f2434fef7f7c",
+      "to": "local_new_batch_extra_move",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_0f191b8bcf8b\tlocal_material_supply_route": {
+      "from": "local_route_jump_0f191b8bcf8b",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_c72ffbd87a4d\tlocal_km_pigment_move": {
+      "from": "local_route_jump_c72ffbd87a4d",
+      "to": "local_km_pigment_move",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_bea3316624f9\tlocal_material_supply_route": {
+      "from": "local_route_jump_bea3316624f9",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_c98bccca8f0a\tlocal_prod_pigment_move": {
+      "from": "local_route_jump_c98bccca8f0a",
+      "to": "local_prod_pigment_move",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_be34fc9948a6\tlocal_material_supply_route": {
+      "from": "local_route_jump_be34fc9948a6",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_45fce2d7ad86\tlocal_deja_pigment_move": {
+      "from": "local_route_jump_45fce2d7ad86",
+      "to": "local_deja_pigment_move",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_d114b7f0942f\tlocal_material_supply_route": {
+      "from": "local_route_jump_d114b7f0942f",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:03+00:00"
+    },
+    "local_route_jump_9bd47c95d905\tlocal_syringe_material_move": {
+      "from": "local_route_jump_9bd47c95d905",
+      "to": "local_syringe_material_move",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "local_route_jump_a0dd6aff9c37\tlocal_material_supply_route": {
+      "from": "local_route_jump_a0dd6aff9c37",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "local_route_jump_e7eb965ed4fd\tlocal_km_correction_move": {
+      "from": "local_route_jump_e7eb965ed4fd",
+      "to": "local_km_correction_move",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "local_route_jump_5d6dee9c29b1\tlocal_material_supply_route": {
+      "from": "local_route_jump_5d6dee9c29b1",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "local_route_jump_e916a57be827\tlocal_prod_correction_move": {
+      "from": "local_route_jump_e916a57be827",
+      "to": "local_prod_correction_move",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "local_route_jump_476a5b875520\tlocal_material_supply_route": {
+      "from": "local_route_jump_476a5b875520",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "local_route_jump_ca4e46fcfa66\tlocal_deja_correction_move": {
+      "from": "local_route_jump_ca4e46fcfa66",
+      "to": "local_deja_correction_move",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "local_route_jump_84e560e98cb8\tlocal_material_supply_route": {
+      "from": "local_route_jump_84e560e98cb8",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "local_route_jump_62e29596a70a\tlocal_paste_correction_material_move": {
+      "from": "local_route_jump_62e29596a70a",
+      "to": "local_paste_correction_material_move",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "local_route_jump_263865f92093\tlocal_material_supply_route": {
+      "from": "local_route_jump_263865f92093",
+      "to": "local_material_supply_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "local_route_jump_e9f7576f21d7\tlocal_new_batch_extra_pick": {
+      "from": "local_route_jump_e9f7576f21d7",
+      "to": "local_new_batch_extra_pick",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-16T15:17:04+00:00"
+    },
+    "equipment_wash_waiting\tlocal_wash_ready_planning_route": {
+      "from": "equipment_wash_waiting",
+      "to": "local_wash_ready_planning_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T08:11:00+00:00"
+    },
+    "equipment_wash_available\tlocal_wash_ready_planning_route": {
+      "from": "equipment_wash_available",
+      "to": "local_wash_ready_planning_route",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T08:11:00+00:00"
+    },
+    "local_wash_ready_planning_route\tf_230_4740": {
+      "from": "local_wash_ready_planning_route",
+      "to": "f_230_4740",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T08:11:00+00:00"
     },
     "f_227_4171\tf_241_5170": {
       "from": "f_227_4171",
       "to": "f_241_5170",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:42:25+00:00"
     },
     "f_227_4165\tquality_syringe_lab": {
       "from": "f_227_4165",
       "to": "quality_syringe_lab",
       "button": "Готово",
-      "who": "Роль: Сотрудник склада ПФ; при отсутствии — Колеровщик.\nЭкран: Колеровка."
+      "who": "Роль: Сотрудник склада ПФ; при отсутствии — Колеровщик.\nЭкран: Колеровка.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:39+00:00"
     },
     "local_syringe_output_allocation\tlocal_syringe_order_reserved": {
       "from": "local_syringe_output_allocation",
       "to": "local_syringe_order_reserved",
       "button": "Подтвердить распределение",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:39+00:00"
     },
     "local_syringe_output_allocation\tlocal_syringe_pf_stock_account": {
       "from": "local_syringe_output_allocation",
       "to": "local_syringe_pf_stock_account",
       "button": "Подтвердить распределение",
-      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса."
+      "who": "Роль: Специалист по планированию производства.\nЭкран: Планирование замеса.",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:56:39+00:00"
     },
     "local_syringe_order_reserved\tlocal_syringe_order_use": {
       "from": "local_syringe_order_reserved",
       "to": "local_syringe_order_use",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:50:50+00:00"
     },
     "local_syringe_order_use\tf_258_5076": {
       "from": "local_syringe_order_use",
       "to": "f_258_5076",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:50:50+00:00"
     },
     "local_syringe_order_use\tlocal_syringe_separate_order_pending": {
       "from": "local_syringe_order_use",
       "to": "local_syringe_separate_order_pending",
       "button": "",
-      "who": "Автоматизация"
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:50:50+00:00"
     },
     "local_syringe_pf_stock_account\tlocal_syringe_pf_stock_ready": {
       "from": "local_syringe_pf_stock_account",
       "to": "local_syringe_pf_stock_ready",
+      "button": "",
+      "who": "Автоматизация",
+      "user": "guest",
+      "login": "guest",
+      "ts": "2026-10-19T16:50:50+00:00"
+    },
+    "f_227_4105\tf_230_4798": {
+      "from": "f_227_4105",
+      "to": "f_230_4798",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "f_227_4155\tf_230_4904": {
+      "from": "f_227_4155",
+      "to": "f_230_4904",
+      "button": "",
+      "who": "Автоматизация"
+    },
+    "f_227_4170\tf_227_4163": {
+      "from": "f_227_4170",
+      "to": "f_227_4163",
       "button": "",
       "who": "Автоматизация"
     }
