@@ -499,10 +499,12 @@ html[data-theme="dark"] .sm-plus {
     border-color: #b91c1c;
     color: #fff;
     font-weight: 800;
-    z-index: 16;
+    z-index: 7;
 }
-.sm-plus.is-link:hover {
+.sm-plus.is-link:hover,
+.sm-plus.is-link:focus-visible {
     background: #b91c1c;
+    z-index: 16;
 }
 .sm-port {
     position: absolute;
