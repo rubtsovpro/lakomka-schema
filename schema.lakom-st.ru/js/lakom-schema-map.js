@@ -61,8 +61,9 @@
             n.children = next;
         })(ROOT);
     }
+    var rightSideBranches = ["f_269_5088", "local_material_supply_route"];
     (ROOT.children || []).forEach(function (c, i) {
-        c.side = i < 5 ? "right" : "left";
+        c.side = i < 5 || rightSideBranches.indexOf(c.id) >= 0 ? "right" : "left";
     });
 
     var pageEl = document.getElementById("smPage");
@@ -2061,16 +2062,41 @@
                 styleFocusControl(apiBtn, n.id);
                 board.appendChild(apiBtn);
             }
+            if (isTopLevelRoute(n)) {
+                var branchBtn = document.createElement("button");
+                branchBtn.type = "button";
+                var branchOpen = isRouteBranchExpanded(n);
+                branchBtn.className = "sm-branch-expand" + (branchOpen ? " is-expanded" : "");
+                branchBtn.setAttribute("data-route-id", n.id);
+                branchBtn.style.left = (n._x + n._w / 2 - 15) + "px";
+                branchBtn.style.top = (n._y + n._h - 11) + "px";
+                branchBtn.title = branchOpen ? "Свернуть маршрут целиком" : "Раскрыть маршрут целиком";
+                branchBtn.setAttribute("aria-label", branchBtn.title + ": " + ru(n.title));
+                branchBtn.setAttribute("aria-expanded", branchOpen ? "true" : "false");
+                var branchIcon = branchOpen
+                    ? "M3 3l6 6M4 9h5V4M21 3l-6 6M15 4v5h5M3 21l6-6M4 15h5v5M21 21l-6-6M15 20v-5h5"
+                    : "M8 3H3v5M3 3l6 6M16 21h5v-5M21 21l-6-6M16 3h5v5M21 3l-6 6M8 21H3v-5M3 21l6-6";
+                branchBtn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + branchIcon + '" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                branchBtn.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    toggleRouteBranch(n.id);
+                });
+                styleFocusControl(branchBtn, n.id);
+                board.appendChild(branchBtn);
+            }
             if (n.children && n.children.length) {
                 var open = state.open[n.id] === true;
                 function plusAt(leftPx) {
                     var btn = document.createElement("button");
                     btn.type = "button";
                     btn.className = "sm-plus";
-                    btn.textContent = open ? "−" : "+";
+                    setMapToggleIcon(btn, open ? "minus" : "plus");
+                    btn.setAttribute("data-node-id", n.id);
                     btn.style.top = (n._y + n._h / 2 - 9) + "px";
                     btn.style.left = leftPx + "px";
                     btn.title = open ? "Скрыть ветку" : "Показать ветку";
+                    btn.setAttribute("aria-label", btn.title);
+                    btn.setAttribute("aria-expanded", open ? "true" : "false");
                     btn.addEventListener("click", function (e) {
                         e.stopPropagation();
                         state.open[n.id] = !open;
@@ -2112,7 +2138,7 @@
                 var lbtn = document.createElement("button");
                 lbtn.type = "button";
                 lbtn.className = "sm-plus is-link";
-                lbtn.textContent = vis[tid] ? "→" : "+";
+                setMapToggleIcon(lbtn, vis[tid] ? "arrow" : "plus");
                 lbtn.style.left = (px - 9) + "px";
                 lbtn.style.top = (py - 22) + "px";
                 lbtn.title = vis[tid]
@@ -2297,6 +2323,56 @@
         document.getElementById("smBoard").style.transform = t;
         var cursors = document.getElementById("smCursors");
         if (cursors) cursors.style.transform = t;
+    }
+
+    function setMapToggleIcon(button, symbol) {
+        var path = symbol === "minus" ? "M5 12h14"
+            : symbol === "arrow" ? "M5 12h14M13 6l6 6-6 6"
+            : "M5 12h14M12 5v14";
+        button.setAttribute("data-control-symbol", symbol);
+        button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + path + '" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    }
+
+    function isTopLevelRoute(n) {
+        return !!(n && n.kind === "route" && n.children && n.children.length
+            && ALL[n.id] && ALL[n.id].parent && ALL[n.id].parent.id === ROOT.id);
+    }
+
+    function routeBranchNodes(route) {
+        var seen = new Set(), pending = [route], branch = [];
+        while (pending.length) {
+            var n = pending.pop();
+            if (!n || seen.has(n.id)) continue;
+            seen.add(n.id);
+            if (n.children && n.children.length) {
+                branch.push(n);
+                n.children.forEach(function (child) { pending.push(child); });
+            }
+        }
+        return branch;
+    }
+
+    function isRouteBranchExpanded(route) {
+        var branch = routeBranchNodes(route);
+        return branch.length > 0 && branch.every(function (n) { return state.open[n.id] === true; });
+    }
+
+    function toggleRouteBranch(id) {
+        var route = ALL[id] && ALL[id].node;
+        if (!isTopLevelRoute(route)) return;
+        var anchor = {
+            x: state.x + (route._x + route._w / 2) * state.scale,
+            y: state.y + (route._y + route._h / 2) * state.scale
+        };
+        var open = !isRouteBranchExpanded(route);
+        routeBranchNodes(route).forEach(function (n) { state.open[n.id] = open; });
+        // Follow only the branch tree: cross-links remain explicit route transitions.
+        draw();
+        state.x = anchor.x - (route._x + route._w / 2) * state.scale;
+        state.y = anchor.y - (route._y + route._h / 2) * state.scale;
+        applyTransform();
+        save();
+        shareOpen();
     }
 
     function expandAll(on) {
