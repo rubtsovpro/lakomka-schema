@@ -2,7 +2,7 @@
 declare(strict_types=1);
 $csrf = bin2hex(random_bytes(16));
 $meLogin = 'guest';
-$v = '2026-10-26-paste-no-auto-passport';
+$v = '2026-10-26-return-warehouse-screen';
 ?><!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
