@@ -2,7 +2,7 @@
 declare(strict_types=1);
 $csrf = bin2hex(random_bytes(16));
 $meLogin = 'guest';
-$v = '2026-10-26-qc-roles-sample-priority';
+$v = '2026-10-26-defect-chemist-role';
 ?><!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
